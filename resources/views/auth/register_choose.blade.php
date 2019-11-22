@@ -73,52 +73,83 @@
 
 }
 
-    @media (max-width: 1050px){
+@media (max-width: 1050px){
 
     .left-card {
-    padding-left:px;
-    margin-left:0px;
+        padding-left:0px;
+        margin-left:0px;
     }
 
     .card {
-    width:80%;
-    margin-left:20%;
-    margin-right:20%;
+        width:80%;
+        margin-left:10%;
+        margin-right:10%;
     }
 
     .card-holder {
-    width:210px;
+        width:22%;
+        height:250px;
     }
 
     #text_choose {
-        margin-top: -60px;
+        margin-top: 70px;
+    }
+    .role_text   {
+        font-size:22px;
+    }
+}
+
+@media (max-width: 820px){
+
+    .left-card {
+        padding-left:0px;
+        margin-left:0px;
     }
 
+    .card {
+        width:80%;
+        margin-left:20%;
+        margin-right:20%;
     }
 
-    @media (max-width: 950px){
+    .card-holder {
+        width:45%;
+        height: 400px;
+    }
+
+    #text_choose {
+        margin-top: 10px;
+    }
+    .role_text   {
+        font-size:22px;
+    }
+}
+
+@media (max-width: 700px){
     .left-card {
     margin-left:0px;
     }
 
     .card	{
-    width:75%;
-    margin-left:25%;
-    margin-right:30%;
-
+    width:85%;
+    margin-left:20%;
+    margin-right:20;
     }
 
     .card-holder	{
     width:40%;
-    height:360px;
+    height:315px;
     }
 
     #text_choose {
         margin-top: 40px;
     }
+    .role_text   {
+        font-size:22px;
+    }
 }
 
-    @media (max-width: 600px){
+@media (max-width: 550px){
     .left-card {
     margin-left:0px;
     }
@@ -137,7 +168,18 @@
     #text_choose {
         margin-top: 80px;
     }
+
+    .role_text   {
+        font-size:21px;
+    }
 }
+@media (max-width: 450px) {
+    .role_text   {
+        font-size:15px;
+    }
+}
+
+
 
 @endsection
 </style>
@@ -165,7 +207,7 @@
                         <a>
                             <img src="images/student.png" alt="Avatar" style="width:100%">
                             <div class="container">
-                                <h2 class=""><b>Student <br>(Coming Soon)</b></h2>
+                                <h2 class="role_text"><b>Student <br>(Coming Soon)</b></h2>
                                 <p>&nbsp</p>
                             </div>
                         </a>
@@ -176,7 +218,7 @@
                         <a href="/register/form?c=teacher">
                             <img src="images/teacher.png" alt="Avatar" style="width:100%">
                             <div class="container">
-                                <h2 class="register-user__title"><b>Teacher</b></h2>
+                                <h2 class="role_text"><b>Teacher</b></h2>
                                 <p>&nbsp</p>
                             </div>
                         </a>
@@ -189,7 +231,7 @@
                         <a>
                             <img src="images/parent.png" alt="Avatar" style="width:100%">
                             <div class="container">
-                                <h2 class="register-user__title"><b>Parent <br>(Coming Soon)</b></h2>
+                                <h2 class="role_text"><b>Parent <br>(Coming Soon)</b></h2>
                                 <p>&nbsp</p>
                             </div>
                         </a>
@@ -202,7 +244,7 @@
                         <a>
                             <img src="images/volunteer.png" alt="Avatar" style="width:100%">
                             <div class="container">
-                                <h2 class="register-user__title"><b>Volunteer<br>(Coming Soon)</b></h2>
+                                <h2 class="role_text"><b>Volunteer<br>(Coming Soon)</b></h2>
                                 <p>&nbsp</p>
                             </div>
                         </a>

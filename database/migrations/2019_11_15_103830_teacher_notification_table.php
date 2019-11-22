@@ -17,8 +17,6 @@ class TeacherNotificationTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_teacher_id');
             $table->boolean('welcome');
-
-            $table->foreign('user_teacher_id')->references('id')->on('users');
         });
     }
 

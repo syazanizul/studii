@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -139,19 +140,19 @@
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\syazani\website\pictocat\resources\views\dashboard\teacher" />
-      <recent name="C:\Users\syazani\website\pictocat\resources\views\auth\categories" />
-      <recent name="C:\Users\syazani\website\pictocat\resources\views\auth" />
-      <recent name="C:\Users\syazani\website\pictocat\public\js\paper-dashboard" />
-      <recent name="C:\Users\syazani\website\pictocat\public\css\paper-dashboard" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\syazani\website\pictocat\public\css\introjs" />
       <recent name="C:\Users\syazani\website\pictocat\public\js\introjs" />
       <recent name="C:\Users\syazani\website\pictocat\public\js\paperdashboard" />
       <recent name="C:\Users\syazani\website\pictocat\public\css\paper-dashboard" />
       <recent name="C:\Users\syazani\website\pictocat\public\js\paper-dashboard\plugins" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\syazani\website\pictocat\resources\views\dashboard\teacher" />
+      <recent name="C:\Users\syazani\website\pictocat\resources\views\auth\categories" />
+      <recent name="C:\Users\syazani\website\pictocat\resources\views\auth" />
+      <recent name="C:\Users\syazani\website\pictocat\public\js\paper-dashboard" />
+      <recent name="C:\Users\syazani\website\pictocat\public\css\paper-dashboard" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -248,7 +249,7 @@
       <workItem from="1574254072988" duration="623000" />
       <workItem from="1574387485018" duration="3827000" />
       <workItem from="1574427031363" duration="3841000" />
-      <workItem from="1574434258527" duration="732000" />
+      <workItem from="1574434258527" duration="874000" />
     </task>
     <servers />
   </component>

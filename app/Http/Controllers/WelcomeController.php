@@ -16,6 +16,6 @@ class WelcomeController extends Controller
 
         $noti['feedback_form'] = session('feedback');
 
-        return view('Welcome', compact('property' , 'noti'));
+        return view('welcome', compact('property' , 'noti'));
     }
 }

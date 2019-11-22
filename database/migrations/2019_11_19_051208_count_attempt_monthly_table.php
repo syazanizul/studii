@@ -20,8 +20,6 @@ class CountAttemptMonthlyTable extends Migration
             $table->integer('year');
             $table->integer('month');
             $table->integer('day');
-
-            $table->foreign('user_teacher_id')->references('id')->on('users');
         });
     }
 

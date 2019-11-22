@@ -58,6 +58,10 @@ class LoginController extends Controller
 
 //         return $next($request);
     }
+//
+//    protected function loggedOut(Request $request) {
+//        return redirect('/about');
+//    }
 
     /**
      * Create a new controller instance.

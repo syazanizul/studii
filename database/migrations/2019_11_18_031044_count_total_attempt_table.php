@@ -18,8 +18,6 @@ class CountTotalAttemptTable extends Migration
             $table->integer('question_id');
             $table->integer('total_attempt');
             $table->timestamps();
-
-            $table->foreign('question_id')->references('id')->on('questions');
         });
     }
 

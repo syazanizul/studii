@@ -219,7 +219,7 @@
 @endsection
 
 @section('modal')
-    @if($feedback)
+    @if($feedback == 1)
         <!-- Modal to ask if users need instructions -->
         <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modal1" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
@@ -356,7 +356,7 @@
 
 {{--        --------------------------------------------------------}}
 {{--    For Feedback--}}
-    @if($feedback)
+    @if($feedback == 1)
     $(window).on('load',function(){
         $('#modal2').modal('show');
     });

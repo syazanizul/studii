@@ -174,6 +174,21 @@
     }
 }
 @media (max-width: 450px) {
+    .card	{
+        width:90%;
+        margin-left:10%;
+        margin-right:10%;
+    }
+
+    .card-holder {
+        width:45%;
+        height:300px;
+    }
+
+    #text_choose {
+        margin-top: 80px;
+    }
+
     .role_text   {
         font-size:15px;
     }

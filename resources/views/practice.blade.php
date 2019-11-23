@@ -377,18 +377,18 @@
                 <div class="col-lg-3 offset-1" id="right-panel"
                      data-step="6" data-intro="Finally, you have a control panel right here. Everything that you may need can be find here. That's it, goodluck!">
                     <div style="padding:35px;">
-                        @if (isset(session('qid')[$data['num']+1]))
-                        <a href="/practice?num={{$data['num']+1}}" class="btn btn-lg btn-block btn-primary">Next Question</a>
-                        @else
-                        <p style="padding:0.6em 1em; border:1.5px solid grey; text-align: center; font-size:1.1em; cursor:default;">No More Question</p>
-                        @endif
-                        <a class="btn btn-secondary btn-lg btn-block" onclick="introJs().setOption('showProgress', true).start();">How to use <br>this page?</a>
-{{--                        <a data-toggle="collapse" href="#report_text" role="button" aria-expanded="false" aria-controls="report_text" class="btn btn-lg btn-warning" style="margin:10% auto 10% auto; display:block;">Report Question</a>--}}
-
-                        <div class="collapse multi-collapse" id="report_text">
-                            <textarea rows="4" placeholder="Your Report"></textarea>
-
-                            <button class="btn btn-info d-inline-block m-1" onclick="report()" style="float:right; width:35%;">Send</button>
+                        <div>
+                            @if (isset(session('qid')[$data['num']+1]))
+                                <a href="/practice?num={{$data['num']+1}}" class="btn btn-lg btn-block btn-primary">Next Question</a>
+                            @else
+                                <p style="padding:0.6em 1em; border:1.5px solid grey; text-align: center; font-size:1.1em; cursor:default; border-radius: 10px;">No More Question</p>
+                            @endif
+                        </div>
+                    <br>
+                        <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">
+                            <p>tutorial & explanation:</p>
+                            <a class="btn btn-secondary btn-block" onclick="introJs().setOption('showProgress', true).start();" style="color:white">How to use <br>this page?</a>
+                            <a class="btn btn-secondary btn-block" id="tutorial_difficulty_rating" style="color:white">Difficulty rating</a>
                         </div>
                     </div>
                 </div>
@@ -719,6 +719,21 @@
     @endif
     // END MODAL POP UP--------------------------------------------------------------------------------------
 
+    //Alertify -------------------------------------------------------------------------
+    //---------------------------------------------------------------------------------
+
+    let text_difficulty_rating = "We want to make the difficulty of any question is based on the students, not on teachers. This is because, if"+
+        " a teacher says a question is easy, but many students find it hard, we think that the question can be considered as hard, even if the teacher" +
+        " says it is easy. It can also work the other way around. So, we want the students to decide the difficulty of all the questions.";
+
+    $(document).ready(function() {
+        $('#tutorial_difficulty_rating').click(function(){
+            alertify.alert('Why do we have difficulty rating?',text_difficulty_rating);
+        });
+    });
+
+    //End Alertify ---------------------------------------------------------------------
+
     // JAVASCRIPT FUNCTIONS-----------------------------------------------------------------------------------------
     function show_instruction() {
         introJs().setOption('showProgress', true).start();
@@ -806,7 +821,6 @@
         $(s5).unbind('mouseenter').unbind('mouseleave');
     }
     //End rating difficulty form under content
-
 
     @endsection
 </script>

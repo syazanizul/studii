@@ -18,7 +18,7 @@ if (env('APP_ENV') === 'production') {
 }
 
 Route::get('/', 'WelcomeController@index');
-Route::get('//home', function() {
+Route::get('/home', function() {
     return redirect('/');
 });
 

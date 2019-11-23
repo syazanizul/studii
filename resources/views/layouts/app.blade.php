@@ -201,6 +201,10 @@
     <script type="text/javascript" src="{{asset('js/introjs/intro.js')}}"></script>
 
     <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        });
+
         @yield('script')
     </script>
 

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 
@@ -110,5 +110,26 @@ class AjaxController extends Controller
         );
 
         return 1;
+    }
+
+    public function rating()    {
+        $question_id = request() -> get('question_id');
+        $rating = request() -> get('rating');
+
+        if (Auth::check()) {
+            $user = Auth::user() -> id;
+        }   else    {
+            $user = 0;
+        }
+
+        $db = DB::table('difficulty_rating') -> insert(
+            ['user_id' => $user, 'question_id' => $question_id, 'rating' => $rating, 'created_at' => now(), 'updated_at' => now()]
+        );
+
+        //Get new average
+        $average = DB::table('difficulty_rating')-> where('question_id', $question_id) -> avg('rating');
+
+        //Save into 'question' table
+        $update = DB::table('questions') -> where('id', $question_id) -> update(['difficulty' => (int)$average]);
     }
 }

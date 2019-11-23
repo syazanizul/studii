@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="{{asset('css/alertify/alertify.min.css')}}" />
     <link rel="stylesheet" href="{{asset('css/alertify/default.min.css')}}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
@@ -236,6 +237,16 @@
         align-items: center;
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
     }
+    /*END CSS FEEDBACK ----------------------------------------- */
+
+    /*For rating form under content*/
+    .checked {
+        color: orange;
+    }
+
+    .rating_star    {
+        cursor: pointer;
+    }
 
     @endsection
 </style>
@@ -310,7 +321,20 @@
                             </div>
                         </div>
                     </div>
-                    <p>&nbsp</p>
+                    <div>
+                        <div class="float-right" data-toggle="tooltip" data-placement="right" title="please take some time to rate the difficulty of this question">
+                            <p class="d-inline-block mr-2">Easy (1)</p>
+                            @for($i=1; $i<= 5; $i++)
+                                @if($i<= $question -> difficulty)
+                                <span id="s{{$i}}" class="fa fa-star rating_star checked" onclick="rating_click({{$i}})"></span>
+                                @else
+                                    <span id="s{{$i}}" class="fa fa-star rating_star" onclick="rating_click({{$i}})"></span>
+                                @endif
+                            @endfor
+                            <p class="d-inline-block ml-2">Hardest (5)</p>
+                        </div>
+                        <p>&nbsp</p>
+                    </div>
 
 {{--                3. Content for answers    --}}
                     <div id="row-answer" data-step="4"
@@ -534,7 +558,7 @@
 <script>
     @section('script')
 
-    // CHECKING METHOD -> CORRECT OR NOT  ------------------
+    // CHECKING METHOD -> CORRECT OR NOT  ------------------------------------------------------
     let alertify_correct = [
         'Correct!',
         'Amazing!',
@@ -603,9 +627,78 @@
         }
 
     }
-    // END CHECKING METHOD ----------------------------------
+    // END CHECKING METHOD ------------------------------------------------------------------------------------
 
-    // MODAL POP UP - IF NEED INSTRUCTIONS
+    //For rating form under content -------------------------------------------------------------------------------
+    let s1 = document.getElementById("s1");
+    let s2 = document.getElementById("s2");
+    let s3 = document.getElementById("s3");
+    let s4 = document.getElementById("s4");
+    let s5 = document.getElementById("s5");
+
+    $(s1).hover(function(){
+        $(this).css("color", "orange");
+    }, function(){
+        $(s1).css("color", "black");
+        $(s2).css("color", "black");
+        $(s3).css("color", "black");
+        $(s4).css("color", "black");
+        $(s5).css("color", "black");
+    });
+
+    $(s2).hover(function(){
+        $(this).css("color", "orange");
+        $(s1).css("color", "orange");
+    }, function(){
+        $(s1).css("color", "black");
+        $(s2).css("color", "black");
+        $(s3).css("color", "black");
+        $(s4).css("color", "black");
+        $(s5).css("color", "black");
+    });
+
+    $(s3).hover(function(){
+        $(this).css("color", "orange");
+        $(s1).css("color", "orange");
+        $(s2).css("color", "orange");
+    }, function(){
+        $(s1).css("color", "black");
+        $(s2).css("color", "black");
+        $(s3).css("color", "black");
+        $(s4).css("color", "black");
+        $(s5).css("color", "black");
+    });
+
+    $(s4).hover(function(){
+        $(this).css("color", "orange");
+        $(s1).css("color", "orange");
+        $(s2).css("color", "orange");
+        $(s3).css("color", "orange");
+    }, function(){
+        $(s1).css("color", "black");
+        $(s2).css("color", "black");
+        $(s3).css("color", "black");
+        $(s4).css("color", "black");
+        $(s5).css("color", "black");
+    });
+
+    $(s5).hover(function(){
+        $(this).css("color", "orange");
+        $(s1).css("color", "orange");
+        $(s2).css("color", "orange");
+        $(s3).css("color", "orange");
+        $(s4).css("color", "orange");
+    }, function(){
+        $(s1).css("color", "black");
+        $(s2).css("color", "black");
+        $(s3).css("color", "black");
+        $(s4).css("color", "black");
+        $(s5).css("color", "black");
+    });
+
+    //END Functions -------------------------------------------------------------------------------------------------
+
+    // MODAL POP UP - IF NEED INSTRUCTIONS--------------------------------------------------------------------
     @if($noti['need_instruction'] == 1)
     $(window).on('load',function(){
         $('#modal1').modal('show');
@@ -617,9 +710,9 @@
         $('#modal2').modal('show');
     });
     @endif
-    // END MODAL POP UP
+    // END MODAL POP UP--------------------------------------------------------------------------------------
 
-    // JAVASCRIPT FUNCTIONS
+    // JAVASCRIPT FUNCTIONS-----------------------------------------------------------------------------------------
     function show_instruction() {
         introJs().setOption('showProgress', true).start();
     }
@@ -646,7 +739,12 @@
         });
     }
 
-    //Function for feedback ------------------------------------------
+    //Functions - mainly javascript stuff, not Jquery -------------------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------------------------------------------
+
+    //Function for feedback ----------------------------------------------------------------------------------------------
+
     document.getElementById('btn_feedback').disabled = true;
 
     function able_button()  {
@@ -673,6 +771,22 @@
         document.getElementById('text_feedback_success').innerHTML = "<span style='color:#26d153'>Thank you for your feedback</span>";
         document.getElementById('btn_feedback').disabled = true;
     }
+
+    //For rating difficulty form under content
+    function rating_click(v)  {
+        let question_id = '{{$data['id']}}';
+        alertify.warning("<span style='font-size:1.3em'>thank you for rating this question</span>");
+
+        $.ajax({
+            type: 'get',
+            url: '/ajax/practice/rating',
+            data: {
+                question_id : question_id,
+                rating : v
+            },
+        });
+    }
+    //End rating difficulty form under content
 
 
     @endsection

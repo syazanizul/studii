@@ -98,3 +98,7 @@ Route::get('/ajax/dashboard/hide-modal', 'AjaxController@hide_modal');
 //Ajax for practicelink
 Route::get('/ajax/practice/session-for-new', 'AjaxController@session_for_new');
 Route::get('/ajax/practice/count-attempt', 'AjaxController@count_attempt');
+Route::get('/ajax/practice/rating', 'AjaxController@rating');
+
+//End ALL AJAX ----------
+

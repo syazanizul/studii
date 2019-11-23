@@ -322,7 +322,8 @@
                         </div>
                     </div>
                     <div>
-                        <div class="float-right" data-toggle="tooltip" data-placement="right" title="please take some time to rate the difficulty of this question">
+                        <div class="float-right" data-toggle="tooltip" data-placement="right" title="please take some time to rate the difficulty of this question"
+                             data-step="4" data-intro="Here you can rate the difficulty of this question. Your rating will contribute to an average value, collected from other students also.">
                             <p class="d-inline-block mr-2">Easy (1)</p>
                             @for($i=1; $i<= 5; $i++)
                                 @if($i<= $question -> difficulty)
@@ -337,7 +338,7 @@
                     </div>
 
 {{--                3. Content for answers    --}}
-                    <div id="row-answer" data-step="4"
+                    <div id="row-answer" data-step="5"
                          data-intro="And this area is where you will input your answers. Before you click the submit button, make sure you are absolutely certain of your answer first.">
 
                         @foreach($answers as $n)
@@ -374,7 +375,7 @@
                 </div>
 
                 <div class="col-lg-3 offset-1" id="right-panel"
-                     data-step="5" data-intro="Finally, you have a control panel right here. Everything that you may need can be find here. That's it, goodluck!">
+                     data-step="6" data-intro="Finally, you have a control panel right here. Everything that you may need can be find here. That's it, goodluck!">
                     <div style="padding:35px;">
                         @if (isset(session('qid')[$data['num']+1]))
                         <a href="/practice?num={{$data['num']+1}}" class="btn btn-lg btn-block btn-primary">Next Question</a>
@@ -558,9 +559,12 @@
 <script>
     @section('script')
 
+    //VARIABLES ---------------------------------------------------------------------------
     let submitted_rating = 0;
+    //END VARIABLES -----------------------------------------------------------------------
 
     // CHECKING METHOD -> CORRECT OR NOT  ------------------------------------------------------
+    // -----------------------------------------------------------------------------------------
     let alertify_correct = [
         'Correct!',
         'Amazing!',
@@ -638,9 +642,10 @@
     let s4 = document.getElementById("s4");
     let s5 = document.getElementById("s5");
 
-    $(s1).hover(function(){
+
+    $(s1).hover(function () {
         $(this).css("color", "orange");
-    }, function(){
+    }, function () {
         $(s1).css("color", "black");
         $(s2).css("color", "black");
         $(s3).css("color", "black");
@@ -648,10 +653,10 @@
         $(s5).css("color", "black");
     });
 
-    $(s2).hover(function(){
+    $(s2).hover(function () {
         $(this).css("color", "orange");
         $(s1).css("color", "orange");
-    }, function(){
+    }, function () {
         $(s1).css("color", "black");
         $(s2).css("color", "black");
         $(s3).css("color", "black");
@@ -659,11 +664,11 @@
         $(s5).css("color", "black");
     });
 
-    $(s3).hover(function(){
+    $(s3).hover(function () {
         $(this).css("color", "orange");
         $(s1).css("color", "orange");
         $(s2).css("color", "orange");
-    }, function(){
+    }, function () {
         $(s1).css("color", "black");
         $(s2).css("color", "black");
         $(s3).css("color", "black");
@@ -671,12 +676,12 @@
         $(s5).css("color", "black");
     });
 
-    $(s4).hover(function(){
+    $(s4).hover(function () {
         $(this).css("color", "orange");
         $(s1).css("color", "orange");
         $(s2).css("color", "orange");
         $(s3).css("color", "orange");
-    }, function(){
+    }, function () {
         $(s1).css("color", "black");
         $(s2).css("color", "black");
         $(s3).css("color", "black");
@@ -684,13 +689,13 @@
         $(s5).css("color", "black");
     });
 
-    $(s5).hover(function(){
+    $(s5).hover(function () {
         $(this).css("color", "orange");
         $(s1).css("color", "orange");
         $(s2).css("color", "orange");
         $(s3).css("color", "orange");
         $(s4).css("color", "orange");
-    }, function(){
+    }, function () {
         $(s1).css("color", "black");
         $(s2).css("color", "black");
         $(s3).css("color", "black");
@@ -794,6 +799,11 @@
             });
         }
         submitted_rating = 1;
+        $(s1).unbind('mouseenter').unbind('mouseleave');
+        $(s2).unbind('mouseenter').unbind('mouseleave');
+        $(s3).unbind('mouseenter').unbind('mouseleave');
+        $(s4).unbind('mouseenter').unbind('mouseleave');
+        $(s5).unbind('mouseenter').unbind('mouseleave');
     }
     //End rating difficulty form under content
 

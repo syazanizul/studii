@@ -169,10 +169,10 @@
                 <div class="container" style="padding:0;">
                     <div class="row">
                         <div class="col-sm-4">
-                            <h4>The Principle</h4>
-                            <p>Always remember you're unique, just like everyone else.</p>
+                            <h4>Why Studii exists?</h4>
+                            <p>The only goal is to make exercise questions free for students. Literally that's it. </p>
                         </div>
-                        <div id="div-right" class="col-sm-4">
+                        <div id="div-right" class="col-sm-3">
                             <h4>Easy Navigate</h4>
                             <ul id="footer-links" style="list-style: none; padding-left: 0; color:white;">
                                 <a href="/"><li>Practice</li></a>
@@ -181,9 +181,11 @@
 {{--                                @endguest--}}
                             </ul>
                         </div>
-{{--                        <div class="col-sm-4">--}}
-{{--                            <h5><span style="font-weight: bold">Pictocat</span> - coolest website you can possibly browse EVER</h5>--}}
-{{--                        </div>--}}
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <h5>Do note that we will have our own <span style="font-weight: bold">mobile app</span> later on, that will allow you to practice
+                            exercise questions easier. Stay tuned.</h5>
+                        </div>
                     </div>
                 </div>
             </section>

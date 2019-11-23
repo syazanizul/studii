@@ -190,7 +190,7 @@
     }
 
     .role_text   {
-        font-size:16px;
+        font-size:20px;
     }
 }
 

@@ -558,6 +558,8 @@
 <script>
     @section('script')
 
+    let submitted_rating = 0;
+
     // CHECKING METHOD -> CORRECT OR NOT  ------------------------------------------------------
     let alertify_correct = [
         'Correct!',
@@ -773,18 +775,25 @@
     }
 
     //For rating difficulty form under content
-    function rating_click(v)  {
-        let question_id = '{{$data['id']}}';
-        alertify.warning("<span style='font-size:1.3em'>thank you for rating this question</span>");
 
-        $.ajax({
-            type: 'get',
-            url: '/ajax/practice/rating',
-            data: {
-                question_id : question_id,
-                rating : v
-            },
-        });
+    function rating_click(v)  {
+        console.log(submitted_rating);
+
+        if(submitted_rating === 0) {
+
+            let question_id = '{{$data['id']}}';
+            alertify.warning("<span style='font-size:1.3em'>thank you for rating this question</span>");
+
+            $.ajax({
+                type: 'get',
+                url: '/ajax/practice/rating',
+                data: {
+                    question_id: question_id,
+                    rating: v
+                },
+            });
+        }
+        submitted_rating = 1;
     }
     //End rating difficulty form under content
 

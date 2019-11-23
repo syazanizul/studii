@@ -13,6 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
+if (env('APP_ENV') === 'production') {
+    URL::forceSchema('https');
+}
+
 Route::get('/', 'WelcomeController@index');
 Route::get('//home', function() {
     return redirect('/');
@@ -94,4 +98,3 @@ Route::get('/ajax/dashboard/hide-modal', 'AjaxController@hide_modal');
 //Ajax for practicelink
 Route::get('/ajax/practice/session-for-new', 'AjaxController@session_for_new');
 Route::get('/ajax/practice/count-attempt', 'AjaxController@count_attempt');
-

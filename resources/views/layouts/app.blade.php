@@ -7,8 +7,15 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+{{--    Meta--}}
     <title>Studii</title>
-    <link rel="icon" type="image/png" sizes="96x96" href="images/cat.png">
+    <meta name="description" content="Practice exercise questions for free | SPM , PT3, UPSR | A Malaysian-made study platform">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{asset('images/cat.png')}}">
+
+{{--    For whatsapp--}}
+    <meta property="og:image" content="{{asset('images/cat.png')}}"/>
+    <meta property="og:title" content="Studii - Free exercise questions"/>
+    <meta property="og:description" content="Practice exercise questions for free | SPM , PT3, UPSR |"/>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">

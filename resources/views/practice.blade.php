@@ -388,7 +388,8 @@
                         <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">
                             <p>tutorial & explanation:</p>
                             <a class="btn btn-secondary btn-block" onclick="introJs().setOption('showProgress', true).start();" style="color:white">How to use <br>this page?</a>
-                            <a class="btn btn-secondary btn-block" id="tutorial_difficulty_rating" style="color:white">Difficulty rating</a>
+                            <a class="btn btn-secondary btn-block" id="btn_computer_or_mobile" style="color:white">Computer or<br>mobile phone?</a>
+                            <a class="btn btn-secondary btn-block" id="btn_tutorial_difficulty_rating" style="color:white">Difficulty rating</a>
                         </div>
                     </div>
                 </div>
@@ -722,13 +723,23 @@
     //Alertify -------------------------------------------------------------------------
     //---------------------------------------------------------------------------------
 
-    let text_difficulty_rating = "We want to make the difficulty of any question is based on the students, not on teachers. This is because, if"+
-        " a teacher says a question is easy, but many students find it hard, we think that the question can be considered as hard, even if the teacher" +
-        " says it is easy. It can also work the other way around. So, we want the students to decide the difficulty of all the questions.";
+    let text_difficulty_rating = "We want to make the difficulty of any question is based on the students, not on teachers. <br><br>If"+
+        " a teacher says a question is easy, but many students find it hard, then we think the question should be considered as hard. It can also work the other way around."+
+        "<br><br> So, with this difficulty rating, the response will be collected from all students, in which the average will indicate the real difficulty of the question.";
 
     $(document).ready(function() {
-        $('#tutorial_difficulty_rating').click(function(){
+        $('#btn_tutorial_difficulty_rating').click(function(){
             alertify.alert('Why do we have difficulty rating?',text_difficulty_rating);
+        });
+    });
+
+
+    let text_computer_mobile = "Actually, this page works best with a computer.<br><br> Eventhough it can still be opened with a browser on a mobile phone, "+
+        "it is supposed to be through an app, that is still under development.";
+
+    $(document).ready(function() {
+        $('#btn_computer_or_mobile').click(function(){
+            alertify.alert('Better to practice on a computer or a mobile phone?',text_computer_mobile);
         });
     });
 

@@ -89,7 +89,7 @@
         </div>
     </section>
 
-    <section style="background-color: #c3d8e8;">
+    <section id="register-form" style="background-color: #c3d8e8;">
         <div class="container">
             <div class="row py-5">
                 <div class="col">

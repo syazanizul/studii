@@ -735,7 +735,8 @@
 
 
     let text_computer_mobile = "Actually, this page works best with a computer.<br><br> Eventhough it can still be opened with a browser on a mobile phone, "+
-        "it is supposed to be through an app, that is still under development.";
+        "it is supposed to be through an app, that is still under development."+
+        "<br><br>So stay tuned for the apps ya!";
 
     $(document).ready(function() {
         $('#btn_computer_or_mobile').click(function(){

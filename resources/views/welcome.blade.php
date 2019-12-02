@@ -238,13 +238,14 @@
         </div>
     </section>
 
-    <section class="main-content" style="margin:3em 0; background-image:url(images/assets/sky.jpg) ">
+    <section class="main-content" style="margin:3em 0 0 0; background-image:url(images/assets/sky.jpg) ">
             <div class="container" style="padding:0;">
                 <div class="row row-jumbo">
                     <div class="col-sm-12">
                         <p class="text-wish">What do you wish to study today?</p>
                         <div class="jumbotron" data-step="2" data-intro="If you're not actually looking for any specific questions, you can just quick browse on any subjects.
-                             This will fetch random questions from the database.">
+                             This will fetch random questions from the database."
+                             data-toggle="tooltip" title="If you're not looking for specific chapters, use this">
                             <form method="get" action="/redirect/quick">
                                 <div class="row">
                                     <div id="quick-browse">
@@ -260,7 +261,8 @@
                             </form>
                         </div>
                         <div class="jumbotron" data-step="3" data-intro="If you want something specific, for example, chapter 10 of Add Math, with difficulty hard (4). You can
-                            use this panel.">
+                            use this panel."
+                             data-toggle="tooltip" title="If want to specify your search, use this">
                             <form method="get" action="/redirect/detailed">
                                 <div id="detailed-browse">
                                     <div class="col-sm-12">
@@ -367,11 +369,39 @@
                             </form>
                         </div>
 
-                        <button onclick="introJs().setOption('showProgress', true).start();" class="btn btn-primary btn-lg m-3 mb-5 float-right" style="font-size:1.5em">Help me</button>
+                        <button onclick="introJs().setOption('showProgress', true).start();" class="btn btn-primary btn-lg m-3 mb-5 float-right" style="font-size:1.5em"
+                                data-toggle="tooltip" title="Click me if you don't know what to do">Help me</button>
                     </div>
                 </div>
             </div>
     </section>
+    <section style="background-color: #f8fafc">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 style="font-size:4em">Shout out to teachers!</h1>
+                    <p style="font-size:1.5em">We work with teachers to gather the best exercise questions for our users. If you are a teacher, we want to collaborate with you</p>
+                </div>
+                <div class="col-lg-4">
+                    <a href="\joinUs" class="btn btn-lg btn-primary btn-block mt-5">Teachers, Click Here</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{{--    <section style="background-color: white">--}}
+{{--        <div class="container py-5">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-lg-3">--}}
+{{--                    <a href="#" class="btn btn-lg btn-primary btn-block mt-3 mb-5">Join The Team</a>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-1"></div>--}}
+{{--                <div class="col-lg-8">--}}
+{{--                    <h1 style="font-size:4em">Calling for the enthusiasts!</h1>--}}
+{{--                    <p style="font-size:1.5em">We really value people who are willing to work hard for the benefit of others. If you do, we want you to be apart of our team</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
 @endsection
 

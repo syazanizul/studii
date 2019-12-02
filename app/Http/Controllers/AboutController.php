@@ -8,6 +8,11 @@ class AboutController extends Controller
 {
     public function index()
     {
-        return view('about');
+        return view('about.about');
+    }
+
+    public function teacherJoinUs()
+    {
+        return view('about.about_teachers');
     }
 }

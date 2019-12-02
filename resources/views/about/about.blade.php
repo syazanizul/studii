@@ -9,7 +9,7 @@
         @import url('https://fonts.googleapis.com/css?family=Lobster+Two&display=swap');
 
         #headline {
-            margin-top: 1em;
+            margin-top: 0.5em;
             font-family: 'Lobster Two', cursive;
             font-size:60px;
             color:black;

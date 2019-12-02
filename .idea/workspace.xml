@@ -275,7 +275,8 @@
       <workItem from="1575141721690" duration="1151000" />
       <workItem from="1575257564041" duration="4737000" />
       <workItem from="1575265367635" duration="29000" />
-      <workItem from="1575265412152" duration="17000" />
+      <workItem from="1575265412152" duration="103000" />
+      <workItem from="1575265574338" duration="9000" />
     </task>
     <servers />
   </component>
@@ -299,10 +300,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="477" y="239" key="com.intellij.ide.util.TipDialog" timestamp="1575265412162">
+    <state x="477" y="239" key="com.intellij.ide.util.TipDialog" timestamp="1575265574299">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="477" y="239" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1575265412162" />
+    <state x="477" y="239" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1575265574299" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1575111336582">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

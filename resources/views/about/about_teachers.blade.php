@@ -71,7 +71,7 @@
                     <h1 class="headline">We appreciate your contribution</h1>
                     <p class="big-p mt-4">For every question that you submit, and a student attempts it, you will get compensated for it.</p>
                     <p class="big-p my-2"><b>1 cent for every attempt</b></p>
-                    <p style="font-size:1em">* 1 cent = 1 attempt is apart of the <b>Early Involvement Offer</b>, up until July 2019 only. After that the rate may reduced.</p>
+                    <p style="font-size:1em">* 1 cent = 1 attempt is apart of the <b>Early Involvement Offer</b>, up until July 2020 only. After that the rate may reduced.</p>
                 </div>
             </div>
             <div class="row">

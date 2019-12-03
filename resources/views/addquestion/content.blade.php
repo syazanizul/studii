@@ -39,7 +39,7 @@
                         </p>
                         <br>
                         @if ($image == 1)
-                            <img src="/images/question_images/id-{{$id}}.jpg" alt="question_image">
+                            <img src="/images/question_images/id-{{$id}}.jpg?n={{rand(1,10)}}" alt="question_image">
                         @endif
                         <br><br>
                         <p id="display_2">

@@ -557,7 +557,7 @@
 
 @endsection
 
-<script>
+<script type="text/javascript">
     @section('script')
 
     //VARIABLES ---------------------------------------------------------------------------
@@ -587,15 +587,15 @@
 
     @foreach($answers as $n)
         @if($n[0] -> correct == 1)
-            answer[{{$loop->iteration}}] = '1';
-        @else
-            answer[{{$loop->iteration}}] = '2';
+        answer[{{$loop->iteration}}] = '1';
+    @else
+        answer[{{$loop->iteration}}] = '2';
         @endif
-    @endforeach
+        @endforeach
 
-        let count_attempt = 0;
-        let answer_size = '{{$data['answer_size']}}';
-        let question_id = '{{$data['id']}}';
+    let count_attempt = 0;
+    let answer_size = '{{$data['answer_size']}}';
+    let question_id = '{{$data['id']}}';
 
     function check_answer(x) {
 

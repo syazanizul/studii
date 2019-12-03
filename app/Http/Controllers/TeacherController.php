@@ -50,8 +50,14 @@ class TeacherController extends Controller
                     $x_day = 0;
                 }
                 $data_attempt_today += $x_day;
-                $y_month = DB::table('count_total_attempt') -> where('question_id', $q_id) -> where('updated_at', '>=', Carbon::now()-> month) -> first() -> total_attempt;
-                $data_attempt_month += $y_month;
+                $y_month = DB::table('count_total_attempt') -> where('question_id', $q_id) -> where('updated_at', '>=', Carbon::now()-> month) -> first();
+
+                if ($y_month -> isnotEmpty())   {
+                    $y_month = $y_month -> total_attempt;
+                    $data_attempt_month += $y_month;
+                }   else    {
+                    $data_attempt_month += 0;
+                }
 
             }
         //End Attempt today

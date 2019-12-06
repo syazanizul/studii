@@ -192,10 +192,10 @@
                             <form action="/mail/newsletter">
                                 <div class="row">
                                     <div class="m-1" style="display:inline-block; width: 55%">
-                                        <input type="email" name="email" class="form-control" placeholder="your email" style="background-color: #e8eaed;">
+                                        <input type="email" name="email" class="form-control" placeholder="your email" style="background-color: #e8eaed;" onkeyup="document.getElementById('btn-newsletter').disabled = false">
                                     </div>
                                     <div class="m-1" style="display:inline-block; width:35%">
-                                        <input type="submit" value="subscribe" class="btn btn-primary w-100">
+                                        <input id="btn-newsletter" type="submit" value="subscribe" class="btn btn-primary w-100" disabled>
                                     </div>
                                 </div>
                             </form>

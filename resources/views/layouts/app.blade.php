@@ -195,7 +195,7 @@
                                         <input type="email" name="email" class="form-control" placeholder="your email" style="background-color: #e8eaed;">
                                     </div>
                                     <div class="m-1" style="display:inline-block; width:35%">
-                                        <input type="submit" value="subscribe" class="btn w-100">
+                                        <input type="submit" value="subscribe" class="btn btn-primary w-100">
                                     </div>
                                 </div>
                             </form>

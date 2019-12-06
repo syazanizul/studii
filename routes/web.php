@@ -53,6 +53,7 @@ Route::get('/admin', 'AdminController@index')->name('admin')->middleware('admin'
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/practice', 'QuestionController@index');
 Route::get('/about', 'AboutController@index');
+Route::get('/contact', 'ContactController@index');
 Route::get('/joinUs', 'AboutController@teacherJoinUs');
 
 /* Routes to add question */

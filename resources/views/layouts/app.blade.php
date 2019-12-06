@@ -107,6 +107,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/">Practice</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">Contact Us</a>
+                        </li>
 
 {{--                        <li class="nav-item">--}}
 {{--                            <a class="nav-link" href="/about">About</a>--}}
@@ -120,11 +123,11 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('register') }}">Sign Up</a>
                             </li>
-                            @if (Route::has('register'))
+{{--                            @if (Route::has('register'))--}}
 {{--                                <li class="nav-item">--}}
 {{--                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>--}}
 {{--                                </li>--}}
-                            @endif
+{{--                            @endif--}}
                         @else
 
                             <li class="nav-item dropdown">
@@ -181,7 +184,8 @@
                             <h4>Easy Navigate</h4>
                             <ul id="footer-links" style="list-style: none; padding-left: 0; color:white;">
                                 <a href="/"><li>Practice</li></a>
-                                <a href="/joinUs">Join us as a Teacher</a>
+                                <a href="/joinUs"><li>Join us as a Teacher</li></a>
+                                <a href="/contact"><li>Contact Us</li></a>
 {{--                                @guest--}}
 {{--                                    <a href="{{ route('login') }}">{{ __('Login') }}</a>--}}
 {{--                                @endguest--}}

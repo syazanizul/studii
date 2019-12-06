@@ -59,8 +59,6 @@
         }
 
         .section-footer div div {
-            padding:15px;
-            padding-top:2em;
             color:white;
             font-family:'Quicksand', sans-serif;
         }
@@ -174,12 +172,12 @@
         <main>
             <section class="section-footer">
                 <div class="container" style="padding:0;">
-                    <div class="row">
-                        <div class="col-sm-4">
+                    <div class="pt-5 pb-2 px-4 row">
+                        <div class="col-md-4 my-3">
                             <h4>Why Studii exists?</h4>
                             <p>The only goal is to make exercise questions free for students. Literally that's it. </p>
                         </div>
-                        <div id="div-right" class="col-sm-3">
+                        <div id="div-right" class="col-sm-3 my-3">
                             <h4>Easy Navigate</h4>
                             <ul id="footer-links" style="list-style: none; padding-left: 0; color:white;">
                                 <a href="/"><li>Practice</li></a>
@@ -188,10 +186,26 @@
 {{--                                @endguest--}}
                             </ul>
                         </div>
-                        <div class="col-sm-1"></div>
-                        <div class="col-sm-4">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4 my-3">
+                            <h4>Subscribe to our newsletter</h4>
+                            <form action="/mail/newsletter">
+                                <div class="row">
+                                    <div class="m-1" style="display:inline-block; width: 55%">
+                                        <input type="email" name="email" class="form-control" placeholder="your email" style="background-color: #e8eaed;">
+                                    </div>
+                                    <div class="m-1" style="display:inline-block; width:35%">
+                                        <input type="submit" value="subscribe" class="btn w-100">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="py-2 px-4 pb-5 row">
+                        <div class="col-lg-7"></div>
+                        <div class="col-lg-5" style="text-align: right">
                             <h5>Do note that we will have our own <span style="font-weight: bold">mobile app</span> later on, that will allow you to practice
-                            exercise questions easier. Stay tuned.</h5>
+                                exercise questions easier. Stay tuned.</h5>
                         </div>
                     </div>
                 </div>

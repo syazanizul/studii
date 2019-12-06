@@ -1,4 +1,4 @@
-@extends('dashboard.dashboardApp')
+@extends('layouts.dashboardApp')
 
 @section('dashboard-name')
     teacher's dashboard

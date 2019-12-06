@@ -417,6 +417,7 @@
     let output;
     let table;
     let column;
+
     function fetch(input , output, table , column)
     {
         //First Ajax

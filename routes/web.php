@@ -103,3 +103,13 @@ Route::get('/ajax/practice/rating', 'AjaxController@rating');
 
 //End ALL AJAX ----------
 
+
+//----------------------------------------------------------------------------------
+//Start for Mail
+
+//Mail for newsletter
+Route::get('/mail/newsletter','MailController@newsletter');
+
+//End for Mail
+//----------------------------------------------------------------------------------
+

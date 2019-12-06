@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Mail/newsletter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/emails/newsletter.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/addquestion/contributeQuestion.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/addquestion/contributeQuestion.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/dashboardApp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboardApp.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/details.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/performance.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/performance.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/teacher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/teacher.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,19 +157,19 @@
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images\assets" />
-      <recent name="C:\Users\syazani\Documents\GitHub\studii\resources\views\about" />
-      <recent name="C:\Users\syazani\website\pictocat\resources\views\dashboard\teacher" />
-      <recent name="C:\Users\syazani\website\pictocat\resources\views\auth\categories" />
-      <recent name="C:\Users\syazani\website\pictocat\resources\views\auth" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images" />
       <recent name="C:\Users\syazani\website\pictocat\public\css\introjs" />
       <recent name="C:\Users\syazani\website\pictocat\public\js\introjs" />
       <recent name="C:\Users\syazani\website\pictocat\public\js\paperdashboard" />
       <recent name="C:\Users\syazani\website\pictocat\public\css\paper-dashboard" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\resources\views\layouts" />
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images\assets" />
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\resources\views\about" />
+      <recent name="C:\Users\syazani\website\pictocat\resources\views\dashboard\teacher" />
+      <recent name="C:\Users\syazani\website\pictocat\resources\views\auth\categories" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.practice.blade.php">
@@ -290,6 +302,10 @@
       <workItem from="1575382185078" duration="16000" />
       <workItem from="1575382210519" duration="4382000" />
       <workItem from="1575426801899" duration="479000" />
+      <workItem from="1575431130422" duration="608000" />
+      <workItem from="1575535031030" duration="418000" />
+      <workItem from="1575552642661" duration="6549000" />
+      <workItem from="1575594325552" duration="397000" />
     </task>
     <servers />
   </component>
@@ -313,6 +329,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="535" y="222" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1575553399340">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="535" y="222" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1575553399340" />
     <state x="449" y="143" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575382196293">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -333,14 +353,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1575387005620" />
-    <state x="477" y="239" key="com.intellij.ide.util.TipDialog" timestamp="1575426820787">
+    <state x="477" y="239" key="com.intellij.ide.util.TipDialog" timestamp="1575594358259">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="477" y="239" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1575426820787" />
+    <state x="477" y="239" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1575594358259" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1575111336582">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1575111336582" />
+    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup" timestamp="1575556806497">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1575556806497" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

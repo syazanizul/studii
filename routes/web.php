@@ -109,6 +109,9 @@ Route::get('/ajax/practice/rating', 'AjaxController@rating');
 
 //Mail for newsletter
 Route::get('/mail/newsletter','MailController@newsletter');
+Route::get('/test', function (){
+    return view('emails.newsletter');
+});
 
 //End for Mail
 //----------------------------------------------------------------------------------

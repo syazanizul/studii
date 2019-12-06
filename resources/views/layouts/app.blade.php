@@ -177,7 +177,7 @@
                             <h4>Why Studii exists?</h4>
                             <p>The only goal is to make exercise questions free for students. Literally that's it. </p>
                         </div>
-                        <div id="div-right" class="col-sm-3 my-3">
+                        <div id="div-right" class="col-md-3 my-3">
                             <h4>Easy Navigate</h4>
                             <ul id="footer-links" style="list-style: none; padding-left: 0; color:white;">
                                 <a href="/"><li>Practice</li></a>

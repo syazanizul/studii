@@ -77,7 +77,7 @@
             <div class="row">
                 <div class="col-lg-3"></div>
                 <div class="col-lg-6">
-                    <img src="{{asset('images/assets/relationships.png')}}" alt="" style="width:100%">
+                    <img src="{{asset('images/assets/relationships.jpg')}}" alt="" style="width:100%">
                 </div>
             </div>
             <div class="my-1 row">

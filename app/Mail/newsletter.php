@@ -28,6 +28,6 @@ class newsletter extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.newsletter');
+        return $this->view('emails.newsletter')->subject('Successfully Subscribed!');
     }
 }

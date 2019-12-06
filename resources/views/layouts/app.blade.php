@@ -181,6 +181,7 @@
                             <h4>Easy Navigate</h4>
                             <ul id="footer-links" style="list-style: none; padding-left: 0; color:white;">
                                 <a href="/"><li>Practice</li></a>
+                                <a href="/joinUs">Join us as a Teacher</a>
 {{--                                @guest--}}
 {{--                                    <a href="{{ route('login') }}">{{ __('Login') }}</a>--}}
 {{--                                @endguest--}}

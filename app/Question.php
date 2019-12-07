@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Question extends Model
 {
@@ -33,6 +34,14 @@ class Question extends Model
 
     public function submitter2() {
         return $this->belongsTo(User::class , 'submitted_by2','id');
+    }
+
+    public static function give_subject_name($subject_id) {
+        return DB::table('subjects_list')->where('id', $subject_id)->pluck('name')[0];
+    }
+
+    public static function give_chapter_name($chapter_id) {
+        return DB::table('chapters_list')->where('id', $chapter_id)->pluck('name')[0];
     }
 
 }

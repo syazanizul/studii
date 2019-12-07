@@ -52,13 +52,11 @@
 {{--                <div class="table-responsive">--}}
                 <div class="">
                     <h4 class="text-primary">Questions in draft</h4>
+                    @if(!$data['list_draft_question'] -> isEmpty())
                     <table class="table">
                         <thead class=" text-primary">
                             <th>
                                 No
-                            </th>
-                            <th>
-                                Exam
                             </th>
                             <th>
                                 Subject
@@ -66,20 +64,29 @@
                             <th>
                                 Chapter
                             </th>
+                            <th>
+                                Question ID
+                            </th>
                             <th class="text-right">
                                 Action
                             </th>
                         </thead>
                         <tbody>
+
+                        @for($i=0; $i< $data['list_draft_question']->count(); $i++)
                             <tr>
-                                <td>1</td>
-                                <td>SPM</td>
-                                <td>Add Math</td>
-                                <td>Linear Law</td>
-                                <td class="text-right"><a class="btn btn-primary">Continue</a></td>
+                                <td>{{$i+1}}</td>
+                                <td>{{\App\Question::give_subject_name($data['list_draft_question'][$i]->subject)}}</td>
+                                <td>{{\App\Question::give_chapter_name($data['list_draft_question'][$i]->chapter)}}</td>
+                                <td>{{$data['list_draft_question'][$i]->id}}</td>
+                                <td class="text-right"><a href="/question/update/{{$data['list_draft_question'][$i]->id}}" class="btn btn-primary">Continue</a></td>
                             </tr>
+                        @endfor
                         </tbody>
                     </table>
+                        @else
+                    <p>None</p>
+                        @endif
                 </div>
 
             </div>
@@ -88,14 +95,54 @@
 </div>
 
 <div class="row">
-    <div class="col-lg-5">
+    <div class="col-lg-7">
+        <div class="card card-stats">
+            <div class="card-header">
+                <h4 class="my-1">Finished Questions</h4>
+            </div>
+            <div class="card-body ">
+                <table class="table">
+                    <thead class=" text-primary">
+                    <th>
+                        No
+                    </th>
+                    <th>
+                        Subject
+                    </th>
+                    <th>
+                        Chapter
+                    </th>
+                    <th>
+                        Question ID
+                    </th>
+                    <th class="text-right">
+                        Action
+                    </th>
+                    </thead>
+                    <tbody>
+
+                    @for($i=0; $i< $data['list_finished_question']->count(); $i++)
+                        <tr>
+                            <td>{{$i+1}}</td>
+                            <td>{{\App\Question::give_subject_name($data['list_finished_question'][$i]->subject)}}</td>
+                            <td>{{\App\Question::give_chapter_name($data['list_finished_question'][$i]->chapter)}}</td>
+                            <td>{{$data['list_finished_question'][$i]->id}}</td>
+                            <td class="text-right"><a href="/question/update/{{$data['list_finished_question'][$i]->id}}" class="btn btn-primary">Edit</a></td>
+                        </tr>
+                    @endfor
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
         <div class="card card-stats">
             <div class="card-body ">
                 <div class="row">
                     <div class="col-12 col-md-12">
                         <div class="numbers">
                             <p class="card-category">Total Questions Submitted</p>
-                            <p class="card-title">--
+                            <p class="card-title">{{$data['total_question']}}
                             <p>
                         </div>
                     </div>

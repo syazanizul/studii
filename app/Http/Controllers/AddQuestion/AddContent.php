@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\AddQuestion;
 
 use App\Content;
+use App\Question;
 use App\Http\Controllers\AddQuestion\AddController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;

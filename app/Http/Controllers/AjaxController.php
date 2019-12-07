@@ -97,7 +97,7 @@ class AjaxController extends Controller
                 ['question_id' => $question_id, 'total_attempt' => 1 , 'created_at' => now() , 'updated_at' => now()]
             );
         }   else    {
-            DB::table('count_total_attempt')->where('question_id', $question_id)->increment('total_attempt');
+            DB::table('count_total_attempt')->where('question_id', $question_id)->whereDate('created_at', Carbon::today())->increment('total_attempt');
         }
     }
 

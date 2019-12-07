@@ -13,9 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
-if (env('APP_ENV') === 'production') {
-    URL::forceScheme('https');
-}
+//if (env('APP_ENV') === 'production') {
+//    URL::forceScheme('https');
+//}
 
 Route::get('/', 'WelcomeController@index');
 Route::get('/home', function() {
@@ -57,25 +57,25 @@ Route::get('/contact', 'ContactController@index');
 Route::get('/joinUs', 'AboutController@teacherJoinUs');
 
 /* Routes to add question */
-Route::get('/teacher/question', 'AddController@index');
+Route::get('/teacher/question', 'AddQuestion\AddController@index');
 
     //Save 1
-    Route::get('/question/add', 'AddController@property');     //Show Add Property Page
-    Route::post('/question/add/save/property', 'AddController@store1');     //Save Property
-    Route::post('/question/add/newproperty/1','AddController@newsubject');      //Add new property
-    Route::post('/question/add/newproperty/2','AddController@newchapter');      //Add new property
+    Route::get('/question/add', 'AddQuestion\AddProperty@property');     //Show Add Property Page
+    Route::post('/question/add/newproperty/1','AddQuestion\AddProperty@newsubject');      //Add new property
+    Route::post('/question/add/newproperty/2','AddQuestion\AddProperty@newchapter');      //Add new property
+    Route::post('/question/add/save/property', 'AddQuestion\AddProperty@store1');     //Save Property
 
     //Save 2
-    Route::get('/question/update/{id}', 'AddController@update');        //Show Update Content Page
-    Route::post('/question/add/save/content/{id}', 'AddController@store2');     //Save update
-    Route::get('/question/add/save/content/{id}/remove', 'AddController@removeimage');
-    Route::get('/question/add/save/content/{id}/remove/{order}', 'AddController@removecontent');
+    Route::get('/question/update/{id}', 'AddQuestion\AddContent@update');        //Show Update Content Page
+    Route::post('/question/add/save/content/{id}', 'AddQuestion\AddContent@store2');     //Save update
+    Route::get('/question/add/save/content/{id}/remove', 'AddQuestion\AddContent@removeimage');
+    Route::get('/question/add/save/content/{id}/remove/{order}', 'AddQuestion\AddContent@removecontent');
 
     //Save 3
-    Route::get('/question/update/answer/{id}', 'AddController@answer'); //view answer page
-    Route::get('/question/add/check/answer/{id}','AddController@check_answer');
-    Route::get('/question/add/save/answer/{id}','AddController@store3');
-    Route::get('/question/publish/{id}','AddController@publish');
+    Route::get('/question/update/answer/{id}', 'AddQuestion\AddAnswer@answer'); //view answer page
+    Route::get('/question/add/check/answer/{id}','AddQuestion\AddAnswer@check_answer');
+    Route::get('/question/add/save/answer/{id}','AddQuestion\AddAnswer@store3');
+    Route::get('/question/publish/{id}','AddQuestion\AddAnswer@publish');
     /* End Routes to add question */
 /* End Routes to add question */
 

@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/contact/contact.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AddQuestion/AddAnswer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AddQuestion/AddContent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AddQuestion/AddProperty.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AddController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AddQuestion/AddController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/contact/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/contact/contact.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -150,19 +153,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\app\Http\Controllers\AddQuestion" />
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\resources\views\layouts" />
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images\assets" />
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\resources\views\about" />
+      <recent name="C:\Users\syazani\website\pictocat\resources\views\dashboard\teacher" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images" />
       <recent name="C:\Users\syazani\website\pictocat\public\css\introjs" />
       <recent name="C:\Users\syazani\website\pictocat\public\js\introjs" />
       <recent name="C:\Users\syazani\website\pictocat\public\js\paperdashboard" />
       <recent name="C:\Users\syazani\website\pictocat\public\css\paper-dashboard" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\syazani\Documents\GitHub\studii\resources\views\layouts" />
-      <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images\assets" />
-      <recent name="C:\Users\syazani\Documents\GitHub\studii\resources\views\about" />
-      <recent name="C:\Users\syazani\website\pictocat\resources\views\dashboard\teacher" />
-      <recent name="C:\Users\syazani\website\pictocat\resources\views\auth\categories" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.practice.blade.php">
@@ -306,7 +309,9 @@
       <workItem from="1575605684628" duration="768000" />
       <workItem from="1575606605894" duration="809000" />
       <workItem from="1575617423190" duration="2103000" />
-      <workItem from="1575660637676" duration="4867000" />
+      <workItem from="1575660637676" duration="4961000" />
+      <workItem from="1575688342866" duration="5145000" />
+      <workItem from="1575717440329" duration="16000" />
     </task>
     <servers />
   </component>
@@ -338,6 +343,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="449" y="143" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1575382196293" />
+    <state x="499" y="170" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1575698652127">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="170" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1575698652127" />
     <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1575387005620">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -358,10 +367,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="279" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1575662530868" />
-    <state x="477" y="239" key="com.intellij.ide.util.TipDialog" timestamp="1575660650784">
+    <state x="477" y="239" key="com.intellij.ide.util.TipDialog" timestamp="1575717446237">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="477" y="239" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1575660650784" />
+    <state x="477" y="239" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1575717446237" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1575618017429">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

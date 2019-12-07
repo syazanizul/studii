@@ -46,7 +46,17 @@
                     <p class="big-p my-1">In order to improve, we want to know what do you think of the platform and the ideas. We appreciate all kinds of responses.</p>
                     <p class="big-p my-4"><b>You have a direct impact in our direction, so feel free</b></p>
                 </div>
-                <div class="col-md-5"></div>
+                <div class="col-md-1"></div>
+                <div class="col-md-4" style="text-align: center">
+                    <div class="">
+                        <h4>Email :</h4>
+                        <h2><b>studii.malaysia@gmail.com</b></h2>
+                    </div>
+                    <div class="mt-5">
+                        <h4>Telephone, Whatsapp :</h4>
+                        <h3><b>019-209 9853 <br>(Syazani Zulkhairi)</b></h3>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

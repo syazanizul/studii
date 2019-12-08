@@ -31,6 +31,22 @@
 
 @section('content')
 <div class="row">
+    <div class="col-lg-10">
+        <div class="card card-stats">
+            <div class="card-body ">
+                <div class="row">
+                    <div class="col-12 col-md-12">
+                        <h5><b>Note :</b> Right now, the process to input questions into the database is still manual. This is because we still need to check for bugs and errors.<br><br>
+                            So, for you, we will upload your exercise questions ourselves. You just need to submit your exercise questions to us through email and the rest will be taken care by us.</h5>
+                        <h4 class="text-center"><b>syazanizul@gmail.com</b><br>Syazani Zulkhairi</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
     <div class="col-sm-10">
         <div class="card">
             <div class="card-header">

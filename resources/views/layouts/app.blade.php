@@ -186,6 +186,7 @@
                                 <a href="/"><li>Practice</li></a>
                                 <a href="/joinUs"><li>Join us as a Teacher</li></a>
                                 <a href="/contact"><li>Contact Us</li></a>
+                                <a href="/disclaimer"><li>Disclaimer</li></a>
 {{--                                @guest--}}
 {{--                                    <a href="{{ route('login') }}">{{ __('Login') }}</a>--}}
 {{--                                @endguest--}}

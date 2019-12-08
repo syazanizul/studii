@@ -15,4 +15,9 @@ class AboutController extends Controller
     {
         return view('about.about_teachers');
     }
+
+    public function disclaimer()
+    {
+        return view('about.disclaimer');
+    }
 }

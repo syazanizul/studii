@@ -55,6 +55,7 @@ Route::get('/practice', 'QuestionController@index');
 Route::get('/about', 'AboutController@index');
 Route::get('/contact', 'ContactController@index');
 Route::get('/joinUs', 'AboutController@teacherJoinUs');
+Route::get('/disclaimer', 'AboutController@disclaimer');
 
 /* Routes to add question */
 Route::get('/teacher/question', 'AddQuestion\AddController@index');

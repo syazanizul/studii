@@ -39,6 +39,8 @@ The above copyright notice and this permission notice shall be included in all c
     <!--Intro.js-->
     <link href="{{asset('css/introjs/introjs.css')}}" rel="stylesheet" />
 
+    @yield('link-in-head')
+
 </head>
 
 <body class="">

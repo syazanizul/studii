@@ -4,6 +4,13 @@
     teacher's dashboard
 @endsection
 
+@section('link-in-head')
+    <link rel="stylesheet" href="{{asset('css/alertify/alertify.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/alertify/default.min.css')}}" />
+
+    <script src="js/alertify/alertify.min.js"></script>
+@endsection
+
 @section('side-nav')
     <ul class="nav" data-step="7" data-intro="And here is the navigation area. Feel free to explore around :)">
         <li class="active">
@@ -33,7 +40,8 @@
 <div data-step="1" data-intro="This is your dashboard, where you can find all the information that is important.">
     <div class="row">
         <div class="col-sm-12">
-            <a href="javascript:void(0);" onclick="introJs().setOption('showProgress', true).start();" class="btn btn-primary btn-lg float-right">I need help</a>
+            <a href="javascript:void(0);" onclick="introJs().setOption('showProgress', true).start();" class="btn btn-primary btn-lg float-right m-2">I need help</a>
+            <a href="#" id="btn-role-teachers" class="btn btn-primary btn-lg float-right m-2">Role of teachers in Studii</a>
         </div>
     </div>
     <br>
@@ -312,6 +320,18 @@
             },
         });
     }
+
+    let text1 = "In short, teachers can submit their own work of exercise questions (self-made, not taken from anywhere) to us and it will be given to students." +
+        "<br><br>For every attempt made by students, the teacher who contribute that question will be compensated." +
+        "<br><br>If you contribute now, you will be valid to our promotional attempt rate of 1 Attempt = 1 Cent!" +
+        "<br><br>If you want to know more, you can read here." +
+        "<br><br><a class='btn btn-primary' href='/joinUs'>Read More</a>";
+
+    $(document).ready(function() {
+        $('#btn-role-teachers').click(function(){
+            alertify.alert('Better to practice on a computer or a mobile phone?',text1);
+        });
+    });
 
 @endsection
 </script>

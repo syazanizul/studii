@@ -329,7 +329,7 @@
 
     $(document).ready(function() {
         $('#btn-role-teachers').click(function(){
-            alertify.alert('Better to practice on a computer or a mobile phone?',text1);
+            alertify.alert("Teacher's role in Studii",text1);
         });
     });
 

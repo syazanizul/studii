@@ -10,6 +10,7 @@ use Illuminate\Support\Carbon;
 
 class AjaxController extends Controller
 {
+    //Function 1 used in Welcome Page
     public function fetch()
     {
         $input = request()->get('input');
@@ -24,6 +25,7 @@ class AjaxController extends Controller
         }
     }
 
+    //Function 2 used in Welcome Page
     public function count()
     {
         $subject = request() -> get('subject');
@@ -75,6 +77,7 @@ class AjaxController extends Controller
         return 1;
     }
 
+
     public function session_for_new(Request $request)  {
         $request->session()->push('need_instructions', 1);
 
@@ -87,9 +90,12 @@ class AjaxController extends Controller
 ////        $school =
 ////    }
 
+    //Function used in Practice Page
     public function count_attempt() {
         $question_id = request() -> get('question_id');
+        $teacher_id = request() -> get('teacher_id');
 
+        //Increment or insert in count_total_attempt table
         $check_if_exist = DB::table('count_total_attempt') -> where('question_id', $question_id)->whereDate('created_at', Carbon::today()) -> get();
 
         if ($check_if_exist -> isEmpty())   {
@@ -98,6 +104,17 @@ class AjaxController extends Controller
             );
         }   else    {
             DB::table('count_total_attempt')->where('question_id', $question_id)->whereDate('created_at', Carbon::today())->increment('total_attempt');
+        }
+
+        //Increment or insert in count_teacher_attempt table
+        $check_if_exist2 = DB::table('count_teacher_attempt') -> where('user_teacher_id', $teacher_id)->whereDate('created_at', Carbon::today()) -> get();
+
+        if ($check_if_exist2 -> isEmpty())   {
+            DB::table('count_teacher_attempt')-> insert(
+                ['user_teacher_id' => $teacher_id, 'total_attempt' => 1 , 'created_at' => now() , 'updated_at' => now()]
+            );
+        }   else    {
+            DB::table('count_teacher_attempt')->where('user_teacher_id', $teacher_id)->whereDate('created_at', Carbon::today())->increment('total_attempt');
         }
     }
 

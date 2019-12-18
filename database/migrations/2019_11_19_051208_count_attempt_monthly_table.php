@@ -13,14 +13,14 @@ class CountAttemptMonthlyTable extends Migration
      */
     public function up()
     {
-        Schema::create('count_attempt_monthly', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('user_teacher_id');
-            $table->integer('total_attempt');
-            $table->integer('year');
-            $table->integer('month');
-            $table->integer('day');
-        });
+//        Schema::create('count_attempt_monthly', function (Blueprint $table) {
+//            $table->bigIncrements('id');
+//            $table->integer('user_teacher_id');
+//            $table->integer('total_attempt');
+//            $table->integer('year');
+//            $table->integer('month');
+//            $table->integer('day');
+//        });
     }
 
     /**

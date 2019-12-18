@@ -596,6 +596,7 @@
     let count_attempt = 0;
     let answer_size = '{{$data['answer_size']}}';
     let question_id = '{{$data['id']}}';
+    let teacher_id = '{{$question -> submitted_by1}}';
 
     function check_answer(x) {
 
@@ -769,6 +770,7 @@
             url: '/ajax/practice/count-attempt',
             data: {
                 question_id : question_id,
+                teacher_id : teacher_id
             },
         });
     }

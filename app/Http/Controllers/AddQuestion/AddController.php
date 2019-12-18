@@ -105,5 +105,9 @@ class AddController extends Controller
         return $data;
     }
 
+    public function go_to_practicelink($id)    {
+        session(['qid' => [$id, -1]]);
+        return redirect('/practice?num=0');
+    }
 
 }

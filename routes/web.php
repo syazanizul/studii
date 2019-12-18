@@ -59,6 +59,7 @@ Route::get('/disclaimer', 'AboutController@disclaimer');
 
 /* Routes to add question */
 Route::get('/teacher/question', 'AddQuestion\AddController@index');
+Route::get('/teacher/question/go-practicelink/{id}', 'AddQuestion\AddController@go_to_practicelink');
 
     //Save 1
     Route::get('/question/add', 'AddQuestion\AddProperty@property');     //Show Add Property Page

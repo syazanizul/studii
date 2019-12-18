@@ -143,6 +143,7 @@
                             <td>{{\App\Question::give_subject_name($data['list_finished_question'][$i]->subject)}}</td>
                             <td>{{\App\Question::give_chapter_name($data['list_finished_question'][$i]->chapter)}}</td>
                             <td>{{$data['list_finished_question'][$i]->id}}</td>
+                            <td class="text-right"><a href="/teacher/question/go-practicelink/{{$data['list_finished_question'][$i]->id}}" class="btn btn-primary">Show</a></td>
                             <td class="text-right"><a href="/question/update/{{$data['list_finished_question'][$i]->id}}" class="btn btn-primary">Edit</a></td>
                         </tr>
                     @endfor

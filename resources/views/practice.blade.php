@@ -282,8 +282,8 @@
                                         <li>Source : {{$question -> source_name -> name}}</li>
                                         <li>Question No : {{$question -> question_number}}</li>
                                         <li>Difficulty : {{$data['difficulty']}}</li>
-                                        <li>Submitted By (1) : {{$question -> submitter1 -> name}}</li>
-                                        <li>Submitted By (2) : @if(isset($question -> submitter2 -> name)){$question -> submitter2 -> name}} @else    - @endif</li>
+                                        <li>Submitted By (1) : {{$question -> submitter1 -> firstname}} {{$question -> submitter1 -> lastname}}</li>
+                                        <li>Submitted By (2) : @if(isset($question -> submitter2 -> name)){{$question -> submitter2 -> firstname}} {{$question -> submitter2 -> lastname}} @else    - @endif</li>
                                     </ul>
                                 </div>
                             </div>

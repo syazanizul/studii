@@ -144,7 +144,7 @@ The above copyright notice and this permission notice shall be included in all c
                 ©
                 <script>
                   document.write(new Date().getFullYear())
-                </script>, Pictocat
+                </script>, Studii
               </span>
                     </div>
                 </div>

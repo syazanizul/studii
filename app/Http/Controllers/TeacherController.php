@@ -37,9 +37,14 @@ class TeacherController extends Controller
         //End count total questions submitted
 
         //Attempt today
-        $data_attempt_today = DB::table('count_teacher_attempt')-> where('user_teacher_id', $user_id)->whereDate('created_at', Carbon::today())->first()->total_attempt;
-        $data_attempt_month = DB::table('count_teacher_attempt')-> where('user_teacher_id', $user_id)->whereMonth('created_at', '=', date('m'))->first()->total_attempt;
+        if (!DB::table('count_teacher_attempt')-> where('user_teacher_id', $user_id)->whereDate('created_at', Carbon::today())->get() -> isEmpty())   {
+            $data_attempt_today = DB::table('count_teacher_attempt')-> where('user_teacher_id', $user_id)->whereDate('created_at', Carbon::today())->first()->total_attempt;
+            $data_attempt_month = DB::table('count_teacher_attempt')-> where('user_teacher_id', $user_id)->whereMonth('created_at', '=', date('m'))->first()->total_attempt;
 
+        }   else    {
+            $data_attempt_today = 0;
+            $data_attempt_month = 0;
+        }
 
             //Check teacher has submitted which question, and loop through each of them one by one to find its id
 //            foreach($question_submitted as $x)  {

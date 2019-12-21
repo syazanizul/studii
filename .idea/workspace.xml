@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Exam.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Teacher/DetailsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Traits/uploadTrait.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_19_190405_teacher_profile_tracker.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_20_075350_teacher_teaching_details_exam_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_20_075455_teacher_teaching_details_subject_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_21_104212_user_school_role_list.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/user_images/id-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/user_images/unknown.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Teacher/TeacherController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Subject.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Subject.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_17_040701_school_list_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_17_040701_school_list_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_17_095526_teacher_details_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_17_095526_teacher_details_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/details.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -342,7 +325,7 @@
       <workItem from="1576923107913" duration="3050000" />
       <workItem from="1576938926697" duration="5039000" />
       <workItem from="1576945790381" duration="1250000" />
-      <workItem from="1576952821906" duration="3456000" />
+      <workItem from="1576952821906" duration="4555000" />
     </task>
     <servers />
   </component>

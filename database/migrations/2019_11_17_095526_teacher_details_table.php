@@ -16,8 +16,13 @@ class TeacherDetailsTable extends Migration
         Schema::create('teacher_details', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_teacher_id');
-            $table->string('first_name', 50);
-            $table->string('last_name', 50);
+            $table->integer('title');
+            $table->integer('gender');
+            $table->integer('ic');
+            $table->string('phone');
+            $table->integer('preferred_mode_communication');
+            $table->integer('profile_pic')->nullable();
+            $table->boolean('background_pic')->nullable();
             $table->timestamps();
         });
     }

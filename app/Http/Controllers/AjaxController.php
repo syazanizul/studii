@@ -77,6 +77,18 @@ class AjaxController extends Controller
         return 1;
     }
 
+    public function subject_based_on_exam() {
+        $exam = request() -> get('exam');
+
+        $subjects = DB::table('subjects_list')->where('exam', $exam)-> get();
+
+        echo '<select name="subject" class="form-control m-1">';
+        foreach($subjects as $n)   {
+            echo '<option value="',$n->id,'">',$n->name,'</option>';
+        }
+        echo '</select>';
+    }
+
 
     public function session_for_new(Request $request)  {
         $request->session()->push('need_instructions', 1);

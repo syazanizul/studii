@@ -8,7 +8,7 @@ class Subject extends Model
 {
     protected $table = 'subjects_list';
 
-//    public function question()   {
-//        return $this->belongsTo('\App\Question', 'id');
-//    }
+    public static function subject_name($id)   {
+        return Subject::find($id)->name;
+    }
 }

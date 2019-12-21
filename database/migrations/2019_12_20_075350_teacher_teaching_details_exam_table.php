@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class SchoolListTable extends Migration
+class TeacherTeachingDetailsExamTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class SchoolListTable extends Migration
      */
     public function up()
     {
-        Schema::create('schools_list', function (Blueprint $table) {
+        Schema::create('teacher_teaching_details_exam', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id');
-            $table->string('name');
+            $table->integer('user_teacher_id');
+            $table->integer('exam_id');
             $table->timestamps();
         });
     }

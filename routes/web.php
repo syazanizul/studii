@@ -13,10 +13,6 @@ use Illuminate\Http\Request;
 |
 */
 
-//if (env('APP_ENV') === 'production') {
-//    URL::forceScheme('https');
-//}
-
 Route::get('/', 'WelcomeController@index');
 Route::get('/home', function() {
     return redirect('/');
@@ -38,12 +34,28 @@ Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
+//-----------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------
 // Login for different categories
+// For students
 Route::get('/student', 'StudentController@index')->name('student')->middleware('student');
+// End for students
 
-Route::get('/teacher', 'TeacherController@index')->name('teacher')->middleware('teacher');
-Route::get('/teacher/details', 'TeacherController@index_details')->name('teacher')->middleware('teacher');
-Route::get('/teacher/performance', 'TeacherController@index_performance')->name('teacher')->middleware('teacher');
+
+// For teachers ----------------------------------------------------------------------------------------
+Route::get('/teacher', 'Teacher\TeacherController@index')->name('teacher')->middleware('teacher');
+Route::get('/teacher/details', 'Teacher\DetailsController@index')->name('teacher')->middleware('teacher');
+Route::get('/teacher/performance', 'Teacher\TeacherController@index_performance')->name('teacher')->middleware('teacher');
+
+Route::post('/teacher/details/edit-profile', 'Teacher\DetailsController@edit_profile');
+Route::post('/teacher/details/teaching-details', 'Teacher\DetailsController@teaching_details');
+Route::post('/teacher/details/add-image', 'Teacher\DetailsController@add_image');
+Route::get('/teacher/details/add-image/no-image', 'Teacher\DetailsController@no_image');
+
+Route::post('/teacher/details/teaching-details/exam', 'Teacher\DetailsController@teaching_details_exam');
+Route::post('/teacher/details/teaching-details/subject', 'Teacher\DetailsController@teaching_details_subject');
+// End for teachers
+
 
 Route::get('/parent', 'ParentsController@index')->name('parents')->middleware('parents');
 Route::get('/volunteer', 'VolunteerController@index')->name('volunteer')->middleware('volunteer');
@@ -96,7 +108,7 @@ Route::get('/ajax/feedback', 'AjaxController@feedback');
 
 // AJAX for teacher dashboard
 Route::get('/ajax/dashboard/hide-modal', 'AjaxController@hide_modal');
-//Route::get('/ajax/dashboard/teacher/details/school_name/', 'AjaxController@school_name');
+Route::get('/ajax/dashboard/teacher/details/subject_based_on_exam', 'AjaxController@subject_based_on_exam');
 // End AJAX for teacher dashboard
 
 //Ajax for practicelink

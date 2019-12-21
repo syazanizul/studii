@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Teacher;
 
 use App\Question;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -36,7 +37,7 @@ class TeacherController extends Controller
         $data_question_submitted = $question_submitted->count();
         //End count total questions submitted
 
-        //Attempt today
+        //Attempt today and this month
         if (!DB::table('count_teacher_attempt')-> where('user_teacher_id', $user_id)->whereDate('created_at', Carbon::today())->get() -> isEmpty())   {
             $data_attempt_today = DB::table('count_teacher_attempt')-> where('user_teacher_id', $user_id)->whereDate('created_at', Carbon::today())->first()->total_attempt;
             $data_attempt_month = DB::table('count_teacher_attempt')-> where('user_teacher_id', $user_id)->whereMonth('created_at', '=', date('m'))->first()->total_attempt;
@@ -46,36 +47,6 @@ class TeacherController extends Controller
             $data_attempt_month = 0;
         }
 
-            //Check teacher has submitted which question, and loop through each of them one by one to find its id
-//            foreach($question_submitted as $x)  {
-//                $q_id = $x->id;
-//
-////                //Find total attempt for this teacher for TODAY
-//                $y_day = DB::table('count_total_attempt') -> where('question_id', $q_id) -> where('updated_at', '>=', Carbon::today()) -> first();
-//                if ($y_day!=null)   {
-//                    $x_day = $y_day -> total_attempt;
-//                }   else    {
-//                    $x_day = 0;
-//                }
-//
-//                $data_attempt_today += $x_day;
-//
-//                //Find total attempt for this teacher for THIS MONTH
-//                $y_month = DB::table('count_total_attempt') -> where('question_id', $q_id) -> where('updated_at', '>=', Carbon::now()-> month) -> first();
-//
-//                if ($y_month != null)   {
-//                    $y_month = $y_month -> total_attempt;
-//                    $data_attempt_month += $y_month;
-//                }   else    {
-//                    $data_attempt_month += 0;
-//                }
-//
-////                //get total question on site for whole year
-////                for($i=0; $i<15; $i++)   {
-////                    $y_day = DB::table('count_total_attempt') -> where('question_id', $q_id) -> where('updated_at', '>=', Carbon::today()) -> first();
-////                }
-//            }
-        //End Attempt today
 
         //Gather all the data in one variable
         $data['question_submitted'] = $data_question_submitted;
@@ -83,10 +54,6 @@ class TeacherController extends Controller
         $data['attempt_month'] = $data_attempt_month;
 
         return view('dashboard.teacher.teacher', compact('noti','data'));
-    }
-
-    public function index_details() {
-        return view('dashboard.teacher.details');
     }
 
     public function index_performance() {

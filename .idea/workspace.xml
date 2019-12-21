@@ -2,9 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Exam.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Teacher/DetailsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Traits/uploadTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_19_190405_teacher_profile_tracker.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_20_075350_teacher_teaching_details_exam_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_20_075455_teacher_teaching_details_subject_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_21_104212_user_school_role_list.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/user_images/id-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/user_images/unknown.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Teacher/TeacherController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Subject.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Subject.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_17_040701_school_list_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_17_040701_school_list_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_17_095526_teacher_details_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_17_095526_teacher_details_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/details.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/practice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/practice.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,11 +165,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\app\Http\Controllers\Teacher" />
       <recent name="C:\Users\syazani\Documents\GitHub\studii\app\Http\Controllers\AddQuestion" />
       <recent name="C:\Users\syazani\Documents\GitHub\studii\resources\views\layouts" />
       <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images\assets" />
       <recent name="C:\Users\syazani\Documents\GitHub\studii\resources\views\about" />
-      <recent name="C:\Users\syazani\website\pictocat\resources\views\dashboard\teacher" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images" />
@@ -316,7 +331,18 @@
       <workItem from="1575863137424" duration="602000" />
       <workItem from="1575872874577" duration="1507000" />
       <workItem from="1576680157371" duration="4066000" />
-      <workItem from="1576699523245" duration="6186000" />
+      <workItem from="1576699523245" duration="6325000" />
+      <workItem from="1576762730911" duration="2295000" />
+      <workItem from="1576779360529" duration="6312000" />
+      <workItem from="1576808016165" duration="268000" />
+      <workItem from="1576826728315" duration="3934000" />
+      <workItem from="1576838650008" duration="4319000" />
+      <workItem from="1576845457757" duration="2815000" />
+      <workItem from="1576905498442" duration="3870000" />
+      <workItem from="1576923107913" duration="3050000" />
+      <workItem from="1576938926697" duration="5039000" />
+      <workItem from="1576945790381" duration="1250000" />
+      <workItem from="1576952821906" duration="3456000" />
     </task>
     <servers />
   </component>
@@ -372,18 +398,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="279" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1575662530868" />
-    <state x="477" y="239" key="com.intellij.ide.util.TipDialog" timestamp="1576699533194">
+    <state x="477" y="239" key="com.intellij.ide.util.TipDialog" timestamp="1576952828095">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="477" y="239" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1576699533194" />
+    <state x="477" y="239" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1576952828095" />
+    <state x="474" y="173" width="588" height="478" key="find.popup" timestamp="1576784693540">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="474" y="173" width="588" height="478" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1576784693540" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1575618017429">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1575618017429" />
-    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup" timestamp="1575556806497">
+    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup" timestamp="1576763350346">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1575556806497" />
+    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1576763350346" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

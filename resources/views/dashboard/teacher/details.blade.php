@@ -29,62 +29,96 @@
     </ul>
 @endsection
 
-@section('content')
+@section('contents')
     <div class="row">
         <h1 class="m-4">Coming real soon</h1>
     </div>
 @endsection
 
-@section('contentnotfinished')
+@section('content')
     <div class="content">
         <div class="row">
+            <div class="col-md-7">
+                @if($completed['edit_profile'] == 1 || $completed['teaching_details'] == 1 || $completed['add_image'] == 1)
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    @if($completed['edit_profile'] == 1)
+                                        <h3>Edit Profile <span style="color:green">&#10003</span></h3>
+                                    @endif
+                                    @if($completed['teaching_details'] == 1)
+                                        <h3>Teaching Details <span style="color:green">&#10003</span></h3>
+                                    @endif
+                                    @if($completed['add_image'] == 1)
+                                        <h3>Add Image <span style="color:green">&#10003</span></h3>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+            </div>
+            @if($i!=0)
+            <div class="col-md-4">
+                <div class="card mb-1">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p><b>Complete these steps to set up your profile</b></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <h1 class="text-center mb-0">{{$i}}</h1>
+                                <p class="text-center mt-0">@if($i != 1) steps more @else step more @endif</p>
+                            </div>
+                            <div class="col-sm-8">
+                                @if($completed['edit_profile'] == 0)
+                                    <p class="my-1">- Edit Profile</p>
+                                @endif
+                                @if($completed['teaching_details'] == 0)
+                                    <p class="my-1">- Teaching Details</p>
+                                @endif
+                                @if($completed['add_image'] == 0)
+                                    <p class="my-1">- Add Image</p>
+                                @endif
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @else
+            <div class="col-md-4">
+                <div class="card mb-1">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3><b>You have finished setting up your profile!</b></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endif
+        </div>
+        <hr>
+        @if($i==0)
+            <div class="col-md-12">
+                <div class="card mb-1">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3><b>Display of your profile is coming soon</b></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+        <div class="row">
 {{--            <div class="col-md-4">--}}
-{{--                <div class="card card-user">--}}
-{{--                    <div class="image">--}}
-{{--                        <img src="../assets/img/damir-bosnjak.jpg" alt="...">--}}
-{{--                    </div>--}}
-{{--                    <div class="card-body">--}}
-{{--                        <div class="author">--}}
-{{--                            <a href="#">--}}
-{{--                                <img class="avatar border-gray" src="../assets/img/mike.jpg" alt="...">--}}
-{{--                                <h5 class="title">Chet Faker</h5>--}}
-{{--                            </a>--}}
-{{--                            <p class="description">--}}
-{{--                                @chetfaker--}}
-{{--                            </p>--}}
-{{--                        </div>--}}
-{{--                        <p class="description text-center">--}}
-{{--                            "I like the way you work it--}}
-{{--                            <br> No diggity--}}
-{{--                            <br> I wanna bag it up"--}}
-{{--                        </p>--}}
-{{--                    </div>--}}
-{{--                    <div class="card-footer">--}}
-{{--                        <hr>--}}
-{{--                        <div class="button-container">--}}
-{{--                            <div class="row">--}}
-{{--                                <div class="col-lg-3 col-md-6 col-6 ml-auto">--}}
-{{--                                    <h5>12--}}
-{{--                                        <br>--}}
-{{--                                        <small>Files</small>--}}
-{{--                                    </h5>--}}
-{{--                                </div>--}}
-{{--                                <div class="col-lg-4 col-md-6 col-6 ml-auto mr-auto">--}}
-{{--                                    <h5>2GB--}}
-{{--                                        <br>--}}
-{{--                                        <small>Used</small>--}}
-{{--                                    </h5>--}}
-{{--                                </div>--}}
-{{--                                <div class="col-lg-3 mr-auto">--}}
-{{--                                    <h5>24,6$--}}
-{{--                                        <br>--}}
-{{--                                        <small>Spent</small>--}}
-{{--                                    </h5>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
 {{--                <div class="card">--}}
 {{--                    <div class="card-header">--}}
 {{--                        <h4 class="card-title">Team Members</h4>--}}
@@ -152,104 +186,280 @@
 {{--                    </div>--}}
 {{--                </div>--}}
 {{--            </div>--}}
-            <div class="col-md-8">
+            @if($completed['edit_profile'] == 0)
+            <div class="col-md-11">
                 <div class="card card-user">
                     <div class="card-header">
                         <h5 class="card-title">Edit Profile</h5>
                     </div>
                     <div class="card-body">
-                        <form>
-                            <div class="row">
-                                <div class="col-md-6">
+                        <form method="post" action="/teacher/details/edit-profile">
+                            @csrf
+                            <div class="row my-1">
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label>Title</label>
+                                        <select name="title" class="form-control pb-2" required>
+                                            <option value="0">Select</option>
+                                            <option value="1">Cikgu</option>
+                                            <option value="2">Tuan</option>
+                                            <option value="3">Puan</option>
+                                            <option value="4">Mr</option>
+                                            <option value="5">Miss</option>
+                                            <option value="6">Bro</option>
+                                            <option value="7">Sis</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label>First Name</label>
-                                        <input type="text" class="form-control" placeholder="First Name">
+                                        <input type="text" class="form-control" name="firstname" placeholder="First Name" value="{{\Illuminate\Support\Facades\Auth::user()->firstname}}" required>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-5">
                                     <div class="form-group">
                                         <label>Last Name</label>
-                                        <input type="text" class="form-control" placeholder="Last Name">
+                                        <input type="text" class="form-control" name="lastname" placeholder="Last Name" value="{{\Illuminate\Support\Facades\Auth::user()->lastname}}" required>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-8">
+
+
+                            <div class="row my-1">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Email address</label>
-                                        <input type="email" class="form-control" placeholder="Email">
+                                        <label>Gender</label>
+                                        <select name="gender" class="form-control" required>
+                                            <option value="">Select</option>
+                                            <option value="1">Male</option>
+                                            <option value="2">Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>IC Number</label>
+                                        <input type="number" class="form-control" name="ic" placeholder="IC Number" min="0" required>
+                                        <p class="ml-1 mt-1">Without minus sign. Eg: 880314095197</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">You teach for which exam?</label>
-                                        <div class="d-flex">
-                                            <select class="form-control m-1">
-                                                <option>Choose Exam</option>
-                                                <option>SPM</option>
-                                                <option>PT3</option>
-                                            </select>
-                                            <button class="btn btn-primary d-inline-block m-1">Add Exam</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-1">
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Exam:</label>
-                                        <p>SPM</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">You are a teacher of what subject?</label>
-                                        <div class="d-flex">
-                                            <select class="form-control m-1">
-                                                <option>Choose Subject</option>
-                                                <option>Add Math</option>
-                                                <option>Math Mod</option>
-                                                <option>Sejarah</option>
-                                            </select>
-                                            <button class="btn btn-primary d-inline-block m-1">Add Subject</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-1">
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Subject:</label>
-                                        <p>Add Math</p>
-                                    </div>
-                                </div>
-                            </div>
-{{--                            <div class="row">--}}
-{{--                                <div class="col-md-12">--}}
+
+
+
+                            <div class="row my-1">
+{{--                                <div class="col-md-5">--}}
 {{--                                    <div class="form-group">--}}
-{{--                                        <label>Name of School</label>--}}
-{{--                                        <input id="input_school_name" type="text" class="form-control" placeholder="School Name and Location" onkeyup="">--}}
+{{--                                        <label>Email address</label>--}}
+{{--                                        <input name="email" type="email" class="form-control" placeholder="Email">--}}
 {{--                                    </div>--}}
 {{--                                </div>--}}
-{{--                                <div class="col-md-12">--}}
-{{--                                    <div>--}}
-{{--                                        <a href="" class="m-3" style="height:50px;">--}}
-{{--                                            <p>Mahad Attarbiyah Al-Islamiyah</p>--}}
-{{--                                        </a>--}}
-{{--                                        <a href="" class="m-3" style="height:50px;">--}}
-{{--                                            <p>SMK Taman Selayang</p>--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Phone Number</label>
+                                        <input name="phone" type="number" class="form-control" placeholder="Phone Number" min="0" required>
+                                        <p class="ml-1 mt-1">Also without minus sign. Eg: 01920333215</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="">How should we reach you?</label>
+                                        <select name="preferred_communication" class="form-control pb-2" required>
+                                            <option value="1">Whatsapp (Best)</option>
+                                            <option value="2">Call & SMS</option>
+                                            <option value="3">Email</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <input type="submit" class="btn btn-primary btn-lg m-2 float-right" value="Submit">
+
                         </form>
                     </div>
                 </div>
             </div>
+            @endif
+        </div>
+        <div class="row">
+            @if($completed['teaching_details'] == 0)
+            <div class="col-md-8">
+                <div class="card card-user">
+                    <div class="card-header">
+                        <h5 class="card-title">Teaching Details</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div>
+                                    <form action="/teacher/details/teaching-details/exam" method="post">
+                                        @csrf
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">You teach for which exam?</label>
+                                            <div class="d-flex">
+                                                <select name="exam" class="form-control m-1">
+                                                    <option>Choose Exam</option>
+                                                    @foreach($data['exam'] as $n)
+                                                        <option value="{{$n->id}}">{{$n->name_shortened}}</option>
+                                                    @endforeach
+                                                </select>
+                                                <input type="submit" class="btn btn-primary d-inline-block m-1" value="Add Exam">
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <form action="/teacher/details/teaching-details/subject" method="post">
+                                        @csrf
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">You are a teacher of what subject?</label>
+                                            <div class="d-flex">
+                                                <select name="exam" class="form-control m-1" onchange="subject_based_on_exam(this.value)">
+                                                    @if(!$data['exam_chosen']->isEmpty())
+                                                        @foreach($data['exam_chosen'] as $n)
+                                                            <option value="{{$n->exam_id}}">{{\App\Exam::exam_name($n->exam_id)}}</option>
+                                                        @endforeach
+                                                    @else
+                                                        <option value="">No exam</option>
+                                                    @endif
+                                                </select>
+                                                <select name="subject" id="select_subject_teaching_details" class="form-control m-1">
+                                                    @if(!$data['exam_chosen']->isEmpty())
+                                                        @foreach($data['subject'] as $b)
+                                                            @if($b->exam == $data['exam_chosen'][0]->exam_id)
+                                                                <option value="{{$b->id}}">{{$b->name}}</option>
+                                                            @endif
+                                                        @endforeach
+                                                    @else
+                                                        <option>Subject?</option>
+                                                    @endif
+                                                </select>
+                                                <button class="btn btn-primary d-inline-block m-1">Add Subject</button>
+                                            </div>
+                                            <p>Eg: Add Math for SPM, or Math for STPM</p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-4 p-2">
+                                @if(!$data['exam_chosen']->isEmpty())
+                                    @foreach($data['exam_chosen'] as $n)
+                                        <table class="p-5 my-3" style="border:2px solid #d4d4d4; border-radius:10px">
+                                            <tr>
+                                                <th class="p-2"><b>{{\App\Exam::exam_name($n->exam_id)}}</b></th>
+                                            </tr>
+                                            @foreach($data['subject_chosen'] as $m)
+                                                @if($m->exam_id == $n->exam_id)
+                                                    <tr>
+                                                        <td class="px-2">{{\App\Subject::subject_name($m->subject_id)}}</td>
+                                                        <td class="px-2"><button class="btn btn-primary m-1" disabled>Remove</button></td>
+                                                    </tr>
+                                                @endif
+                                            @endforeach
+                                        </table>
+                                    @endforeach
+                                @endif
+                            </div>
+                        </div>
+                        <form id="school_name_form" action="/teacher/details/teaching-details" method="post">
+                            @csrf
+                            <div class="row mb-4">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Name of School</label>
+                                        <select name="schoolname1" class="form-control" id="hidediv" required>
+                                            <option value="0">Choose School</option>
+                                            @foreach($data['school_name'] as $n)
+                                                <option value="{{$n->id}}">{{$n->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <a class="btn-primary btn m-0" onclick="not_in_list()">If your school is not in the list, click here</a>
+                                </div>
+                                <div class="col-md-6" id="revealdiv" style="visibility: hidden;">
+                                    <input id="schoolname2" class="form-control" type="text" name="schoolname2" placeholder="School Name">
+                                </div>
+                            </div>
+                            <hr>
+                            <a onclick="submit_form()" class="btn btn-primary btn-lg m-2 float-right">Submit</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            @endif
+            @if($completed['add_image'] == 0)
+            <div class="col-md-4">
+                <div class="card card-user">
+                    <div class="image">
+                        <img src="{{asset('images/user_images/background.jpg')}}" alt="Background" style="object-fit: stretch;">
+                    </div>
+                    <div class="card-body">
+                        <div class="author">
+                            <a href="#">
+                                <img class="avatar border-gray" src="{{asset('images/user_images/unknown.png')}}" alt="User Image" style="object-fit: cover;">
+                                <h5 class="title">{{Auth::user() -> firstname }} {{Auth::user() -> lastname }}</h5>
+                            </a>
+{{--                            <p class="description">--}}
+{{--                                &#64{{Auth::user() -> firstname }}{{Auth::user() -> lastname }}--}}
+{{--                            </p>--}}
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <button class=" btn btn-primary btn-block" onclick="this.style.display='none'; document.getElementById('form_add_button').style.display='block'">Add an image</button>
+                                <form id="form_add_button" style="display: none" action="/teacher/details/add-image" method="POST" role="form" enctype="multipart/form-data">
+                                    @csrf
+                                    <label for="fileupload"> Add an image of you</label>
+                                    <input type="file"
+                                           id="avatar" name="avatar"
+{{--                                           accept="image/png, image/jpeg"--}}
+                                    >
+                                    <input class="btn btn-primary" type="submit" value="Add Image">
+                                </form>
+                                <a href="#" onclick="document.getElementById('text-dont-have').innerText = 'Are you sure you dont want to add any?'; document.getElementById('btn-dont-have').style.visibility = 'visible'" class="my-4 btn btn-primary btn-block">I don't want any image</a>
+
+                                {{--                        <p class="description text-center">--}}
+                                {{--                            "I like the way you work it--}}
+                                {{--                            <br> No diggity--}}
+                                {{--                            <br> I wanna bag it up"--}}
+                                {{--                        </p>--}}
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <hr>
+                        <p class="text-center" id="text-dont-have">We don't have your image yet</p>
+                        <a href="/teacher/details/add-image/no-image" id="btn-dont-have" class="mb-3 btn btn-primary btn-block" style="visibility: hidden;">Yes I'm sure</a>
+{{--                        <div class="button-container">--}}
+{{--                            <div class="row">--}}
+{{--                                <div class="col-lg-3 col-md-6 col-6 ml-auto">--}}
+{{--                                    <h5>12--}}
+{{--                                        <br>--}}
+{{--                                        <small>Files</small>--}}
+{{--                                    </h5>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-lg-4 col-md-6 col-6 ml-auto mr-auto">--}}
+{{--                                    <h5>2GB--}}
+{{--                                        <br>--}}
+{{--                                        <small>Used</small>--}}
+{{--                                    </h5>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-lg-3 mr-auto">--}}
+{{--                                    <h5>24,6$--}}
+{{--                                        <br>--}}
+{{--                                        <small>Spent</small>--}}
+{{--                                    </h5>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+                    </div>
+                </div>
+            </div>
+            @endif
         </div>
     </div>
 @endsection
@@ -262,6 +472,19 @@
 
 <script>
     @section('script')
+
+    function subject_based_on_exam(exam)    {
+        $.ajax({
+            type: 'get',
+            url: '/ajax/dashboard/teacher/details/subject_based_on_exam',
+            data: {
+                exam: exam
+            },
+            success: function (response) {
+                document.getElementById('select_subject_teaching_details').innerHTML = response;
+            }
+        });
+    }
 
     $("#input_school_name").typeahead({
         hint: true,
@@ -287,22 +510,21 @@
         }
     });
 
-    // function showHint(str) {
-    //     if (str.length === 0) {
-    //         document.getElementById("txtHint").innerHTML = "";
-    //     } else {
-    //         $.ajax({
-    //             type: 'get',
-    //             url: '/ajax/dashboard/teacher/details/school_name',
-    //             data: {
-    //                 'str' : str,
-    //             },
-    //             success: function (response) {
-    //                 document.getElementById('txtHint').innerHTML = response;
-    //             },
-    //         });
-    //     }
-    // }
+    function not_in_list()  {
+        document.getElementById('revealdiv').style.visibility = 'visible';
+        document.getElementById('hidediv').style.display = 'none';
+    }
+
+    function submit_form()  {
+        let value1 = document.getElementById('hidediv').value;
+        let value2 = document.getElementById('schoolname2').value;
+
+        if (value1 == 0 && value2 == "")   {
+            window.alert('choose your school first');
+        }   else    {
+            document.getElementById('school_name_form').submit();
+        }
+    }
 
     @endsection
 </script>

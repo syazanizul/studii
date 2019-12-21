@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -147,19 +145,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\syazani\Documents\GitHub\studii\app\Http\Controllers\Teacher" />
-      <recent name="C:\Users\syazani\Documents\GitHub\studii\app\Http\Controllers\AddQuestion" />
-      <recent name="C:\Users\syazani\Documents\GitHub\studii\resources\views\layouts" />
-      <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images\assets" />
-      <recent name="C:\Users\syazani\Documents\GitHub\studii\resources\views\about" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images" />
       <recent name="C:\Users\syazani\website\pictocat\public\css\introjs" />
       <recent name="C:\Users\syazani\website\pictocat\public\js\introjs" />
       <recent name="C:\Users\syazani\website\pictocat\public\js\paperdashboard" />
       <recent name="C:\Users\syazani\website\pictocat\public\css\paper-dashboard" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\database\migrations" />
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\database\migrations\test" />
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\app\Http\Controllers\Teacher" />
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\app\Http\Controllers\AddQuestion" />
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\resources\views\layouts" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.practice.blade.php">
@@ -325,7 +323,7 @@
       <workItem from="1576923107913" duration="3050000" />
       <workItem from="1576938926697" duration="5039000" />
       <workItem from="1576945790381" duration="1250000" />
-      <workItem from="1576952821906" duration="4555000" />
+      <workItem from="1576952821906" duration="4896000" />
     </task>
     <servers />
   </component>

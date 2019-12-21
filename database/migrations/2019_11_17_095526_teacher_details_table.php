@@ -19,7 +19,7 @@ class TeacherDetailsTable extends Migration
             $table->integer('title');
             $table->integer('gender');
             $table->integer('ic');
-            $table->string('phone');
+            $table->integer('phone');
             $table->integer('preferred_mode_communication');
             $table->integer('profile_pic')->nullable();
             $table->boolean('background_pic')->nullable();

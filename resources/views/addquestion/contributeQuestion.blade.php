@@ -57,7 +57,7 @@
                     <div class="col-md-10">
                         <div class="row">
                             <div class="col-sm-12">
-                                <a href="/question/add" class="btn btn-primary btn-lg btn-block">Add New</a>
+                                <a href="/question/add" class="btn btn-primary btn-lg btn-block" disabled>Add New</a>
                             </div>
                         </div>
                     </div>

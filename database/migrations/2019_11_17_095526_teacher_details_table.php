@@ -18,8 +18,8 @@ class TeacherDetailsTable extends Migration
             $table->integer('user_teacher_id');
             $table->integer('title');
             $table->integer('gender');
-            $table->integer('ic');
-            $table->integer('phone');
+            $table->string('ic');
+            $table->string('phone');
             $table->integer('preferred_mode_communication');
             $table->integer('profile_pic')->nullable();
             $table->boolean('background_pic')->nullable();

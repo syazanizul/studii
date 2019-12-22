@@ -280,7 +280,7 @@
                                 <div>
                                     <ul>
                                         <li>Source : {{$question -> source_name -> name}}</li>
-                                        <li>Question No : {{$question -> question_number}}</li>
+{{--                                        <li>Question No : {{$question -> question_number}}</li>--}}
                                         <li>Difficulty : {{$data['difficulty']}}</li>
                                         <li>Submitted By (1) : {{$question -> submitter1 -> firstname}} {{$question -> submitter1 -> lastname}}</li>
                                         <li>Submitted By (2) : @if(isset($question -> submitter2 -> name)){{$question -> submitter2 -> firstname}} {{$question -> submitter2 -> lastname}} @else    - @endif</li>
@@ -384,13 +384,36 @@
                                 <p style="padding:0.6em 1em; border:1.5px solid grey; text-align: center; font-size:1.1em; cursor:default; border-radius: 10px;">No More Question</p>
                             @endif
                         </div>
-                    <br>
+                        <br>
                         <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">
                             <p>tutorial & explanation:</p>
                             <a class="btn btn-secondary btn-block" onclick="introJs().setOption('showProgress', true).start();" style="color:white">How to use <br>this page?</a>
                             <a class="btn btn-secondary btn-block" id="btn_computer_or_mobile" style="color:white">Computer or<br>mobile phone?</a>
                             <a class="btn btn-secondary btn-block" id="btn_tutorial_difficulty_rating" style="color:white">Difficulty rating</a>
                         </div>
+                        <br>
+                        @if($question -> source_name -> id == 1)
+                        <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">
+                            <p class="text-center">Submitted By:</p>
+                            <div>
+
+                            </div>
+                            @if($data['profile_pic'] == 1)
+                                <img src="{{asset('/images/user_images/id-'.$question->submitted_by1.'.jpg')}}" class="ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey; width: 50%;">
+                            @elseif($data['profile_pic'] == 2)
+                                <img src="{{asset('user_images/unknown.png')}}" class="w-50 ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey">
+                            @endif
+                                <p class="mt-1 text-center mb-0">{{$question->submitter1->firstname}} {{$question->submitter1->lastname}}</p>
+                                <p class="text-center">{{\App\School::school_name($question->submitted_by1)}}</p>
+                        </div>
+                        @elseif($question -> source_name -> id == 2)
+                        <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">
+                            <p class="text-center"><b>Question Owned By:</b></p>
+                            <img src="{{asset('images/cat.png')}}" class="w-50 ml-auto mr-auto d-block">
+                            <p class="text-center mt-1">Studii</p>
+                        </div>
+                        @endif
+                    </div>
                     </div>
                 </div>
             </div>

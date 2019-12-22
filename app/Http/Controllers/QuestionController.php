@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Answer;
 use App\Content;
 use App\Question;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
@@ -180,14 +181,6 @@ class QuestionController extends Controller
             }
         }
 
-//        dd($answers[0][0] -> correct);
-
-
-//        dd($question -> contents, $contents);   //Bodo punya code
-
-//        dd($symbol_finished);
-//        dd($contents);
-//        dd($answers);
 
         //-------------------------------------------------------------------------
         //FOR NOTIFICATIONS OR MODAL ----------------------------------------------
@@ -203,6 +196,25 @@ class QuestionController extends Controller
             $noti['feedback_form'] = 1;
             $request->session()->put('feedback_form', 1);
         }
+
+
+        //-------------------------------------------------------------------------
+        //FOR SUBMITTER CARD ----------------------------------------------
+        //Put session to track if student needs pop up modal for instructions
+
+
+        if ($question -> source_name -> id == 1)   {
+            $check = DB::table('teacher_details') -> where('user_teacher_id', $question -> submitted_by1) ->get();
+
+            if ($check -> isNotEmpty()) {
+                $profile_pic = $check->first()->profile_pic;
+
+               $data['profile_pic'] = $profile_pic;
+
+            }
+        }
+
+
 
         //-------------------------------------------------------------------------
         //-------------------------------------------------------------------------

@@ -71,8 +71,8 @@ class AddProperty extends Controller
         $question -> chapter = $chapter;
         $question -> year = 2019;
         $question -> paper = $paper;
-        $question -> source = 1;
-        $question -> question_number = 1;
+        $question -> source = 2;
+        $question -> question_number = 0;
         $question -> difficulty = $difficulty;
         $question -> finished = false;
         $question -> verified = false;

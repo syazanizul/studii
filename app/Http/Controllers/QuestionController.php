@@ -211,6 +211,8 @@ class QuestionController extends Controller
 
                $data['profile_pic'] = $profile_pic;
 
+            }   else    {
+                $data['profile_pic'] = 0;
             }
         }
 

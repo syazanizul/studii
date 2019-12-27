@@ -40,18 +40,25 @@ class TeacherController extends Controller
         //Attempt today and this month
         if (!DB::table('count_teacher_attempt')-> where('user_teacher_id', $user_id)->whereDate('created_at', Carbon::today())->get() -> isEmpty())   {
             $data_attempt_today = DB::table('count_teacher_attempt')-> where('user_teacher_id', $user_id)->whereDate('created_at', Carbon::today())->first()->total_attempt;
-            $data_attempt_month = DB::table('count_teacher_attempt')-> where('user_teacher_id', $user_id)->whereMonth('created_at', '=', date('m'))->first()->total_attempt;
+            $data_attempt_month = DB::table('count_teacher_attempt')-> where('user_teacher_id', $user_id)->whereMonth('created_at', Carbon::now()->month)->get();
+
+            $total_monthly = 0;
+
+            foreach($data_attempt_month as $m)    {
+                $total_monthly += $m->total_attempt;
+            }
 
         }   else    {
             $data_attempt_today = 0;
-            $data_attempt_month = 0;
+            $total_monthly = 0;
         }
 
+//        dd($total_monthly);
 
         //Gather all the data in one variable
         $data['question_submitted'] = $data_question_submitted;
         $data['attempt_today'] = $data_attempt_today;
-        $data['attempt_month'] = $data_attempt_month;
+        $data['attempt_month'] = $total_monthly;
 
         return view('dashboard.teacher.teacher', compact('noti','data'));
     }

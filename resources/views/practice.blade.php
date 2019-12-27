@@ -361,6 +361,24 @@
                                                 <div class="control__indicator"></div>
                                             </label>
                                         </div>
+                                        @if(isset($n[2]))
+                                        <div>
+                                            <img class="image_{{($loop->iteration)}}" src="" style="width:1.6em; padding-bottom: 0.3em; margin:0.1em; visibility: hidden;" alt="tick">
+                                            <label class="d-inline-block control control--radio">{{$n[2] -> answer}}
+                                                <input name="input_{{$loop->iteration}}" class="input_answer" type="radio" value="3"/>
+                                                <div class="control__indicator"></div>
+                                            </label>
+                                        </div>
+                                        @endif
+                                        @if(isset($n[3]))
+                                        <div>
+                                            <img class="image_{{($loop->iteration)}}" src="" style="width:1.6em; padding-bottom: 0.3em; margin:0.1em; visibility: hidden;" alt="tick">
+                                            <label class="d-inline-block control control--radio">{{$n[3] -> answer}}
+                                                <input name="input_{{$loop->iteration}}" class="input_answer" type="radio" value="4"/>
+                                                <div class="control__indicator"></div>
+                                            </label>
+                                        </div>
+                                        @endif
                                         <button id="check_question_{{$loop->iteration}}" onclick="check_answer({{$loop->iteration}})" style="float:right; cursor: pointer">Check Answer</button>
                                     </div>
                                 </div>
@@ -393,18 +411,17 @@
                         </div>
                         <br>
                         @if($question -> source_name -> id == 1)
-                        <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">
+                        <div id="div-submitter" style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">
                             <p class="text-center">Submitted By:</p>
-                            <div>
-
+                            <div id="img-submitter">
+                                @if($data['profile_pic'] == 1)
+                                    <img src="{{asset('/images/user_images/id-'.$question->submitted_by1.'.jpg')}}" class="ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey; width: 50%;">
+                                @elseif($data['profile_pic'] == 2)
+                                    <img src="{{asset('/images/user_images/unknown.png')}}" class="w-50 ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey">
+                                @else
+                                    <img src="{{asset('/images/user_images/unknown.png')}}" class="w-50 ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey">
+                                @endif
                             </div>
-                            @if($data['profile_pic'] == 1)
-                                <img src="{{asset('/images/user_images/id-'.$question->submitted_by1.'.jpg')}}" class="ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey; width: 50%;">
-                            @elseif($data['profile_pic'] == 2)
-                                <img src="{{asset('/images/user_images/unknown.png')}}" class="w-50 ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey">
-                            @else
-                                <img src="{{asset('/images/user_images/unknown.png')}}" class="w-50 ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey">
-                            @endif
                                 <p class="mt-1 text-center mb-0">{{$question->submitter1->firstname}} {{$question->submitter1->lastname}}</p>
                                 <p class="text-center">{{\App\School::school_name($question->submitted_by1)}}</p>
                         </div>
@@ -608,20 +625,22 @@
         'Even the Avengers got beaten the first round'
     ];
 
-    let answer=['0'];
-
-    @foreach($answers as $n)
-        @if($n[0] -> correct == 1)
-        answer[{{$loop->iteration}}] = '1';
-    @else
-        answer[{{$loop->iteration}}] = '2';
-        @endif
-        @endforeach
+    let answer='{{$data['answer_correct']}}';
+{{--    {{dd($answers[0][0]->correct)}}--}}
+{{--    @foreach($answers as $n)--}}
+{{--        @if($n[0] -> correct == 1)--}}
+{{--        answer[{{$loop->iteration}}] = '1';--}}
+{{--    @else--}}
+{{--        answer[{{$loop->iteration}}] = '2';--}}
+{{--        @endif--}}
+{{--        @endforeach--}}
+{{--    console.log(answer);--}}
 
     let count_attempt = 0;
     let answer_size = '{{$data['answer_size']}}';
     let question_id = '{{$data['id']}}';
     let teacher_id = '{{$question -> submitted_by1}}';
+    console.log(answer);
 
     function check_answer(x) {
 
@@ -633,7 +652,7 @@
         let image_class = 'image_' + x;
         let z = document.getElementsByClassName(image_class);
 
-        if (answer[x] === y)    {
+        if (answer === y)    {
 
             z[y-1].src = '/images/tick.png';
             z[y-1].style.visibility = 'visible';

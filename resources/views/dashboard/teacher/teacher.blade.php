@@ -199,24 +199,27 @@
 
         {{-- Big Ones  --}}
     </div>
-    <div class="row">
-        <div class="col-md-12" data-step="6" data-intro="Here you can see how many students attempt we have in Studii in monthly basis. God we hope the graph is increasing.">
-            <div class="card ">
-                <div class="card-header ">
-                    <h5 class="card-title">Number of students who visit the site</h5>
-                </div>
-                <div class="card-body ">
-                    <canvas id=chart1 width="400" height="100"></canvas>
-                </div>
-                <div class="card-footer ">
-                    <hr>
-                    <div class="stats">
-                        <i class="fa fa-history"></i> Updated Today
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+{{--    <div class="row">--}}
+{{--        <div class="col-md-12" data-step="6" data-intro="Here you can see how many students attempt we have in Studii in monthly basis. God we hope the graph is increasing.">--}}
+{{--            <div class="card ">--}}
+{{--                <div class="card-header ">--}}
+{{--                    <h5 class="card-title">Number of students who visit the site ()</h5>--}}
+{{--                </div>--}}
+{{--                <div class="card-body ">--}}
+{{--                    <canvas id=chart1 width="400" height="100"></canvas>--}}
+{{--                </div>--}}
+{{--                <div class="card-footer ">--}}
+{{--                    <hr>--}}
+{{--                    <div class="stats">--}}
+{{--                        <i class="fa fa-history"></i> Updated Today--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+
+
+
     {{--            <div class="row">--}}
     {{--                <div class="col-md-4">--}}
     {{--                    <div class="card ">--}}

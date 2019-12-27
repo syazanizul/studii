@@ -77,6 +77,18 @@
                                     <p id="answer_{{$i+1}}_2" style="
                                     @if($answers[$i][1] -> correct == 1) color:green; @else color:indianred @endif
                                     ">{{$answers[$i][1] -> answer}}</p>
+
+                                    @if(isset($answers[$i][2]))
+                                        <p id="answer_{{$i+1}}_3" style="
+                                        @if($answers[$i][2] -> correct == 1) color:green; @else color:indianred @endif
+                                            ">{{$answers[$i][2] -> answer}}</p>
+                                    @endif
+
+                                    @if(isset($answers[$i][3]))
+                                        <p id="answer_{{$i+1}}_4" style="
+                                        @if($answers[$i][3] -> correct == 1) color:green; @else color:indianred @endif
+                                            ">{{$answers[$i][3] -> answer}}</p>
+                                    @endif
                                 </div>
                             </div>
                         @endif
@@ -103,7 +115,7 @@
                     <p style="color:#fcba03; display: inline-block">&nbsp&nbsp New</p>
                 @endif
                 <form action="/question/add/check/answer/{{$id}}">
-                    <select name="contentid" id="contentid" class="margin input is-one-fifth" onchange="this.form.submit()">
+                    <select name="contentid" id="contentid" class="input" onchange="this.form.submit()">
                         <option value="0"> - </option>
 
                         @for($i=2; $i<7; $i++)
@@ -117,6 +129,15 @@
                     </select>
                 </form>
             </div>
+            <div>
+                <p style="color:white; display: inline-block">Question Size</p>
+                <select class="input" onchange="change_answer_size(this.value)">
+                    <option value="0">Chooose</option>
+                    <option value="1">2 possible answer</option>
+                    <option value="2">3 possible answer</option>
+                    <option value="3">4 possible answer</option>
+                </select>
+            </div>
         </div>
         <form class="column margin is-four-fifths" action="/question/add/save/answer/{{$id}}">
             <div class="columns">
@@ -127,17 +148,29 @@
                             <option>-</option>
                             <option @if (Session::has('correct') && session('correct') == 1) selected @endif>1</option>
                             <option @if (Session::has('correct') && session('correct') == 2) selected @endif>2</option>
+                            <option @if (Session::has('correct') && session('correct') == 2) selected @endif>3</option>
+                            <option @if (Session::has('correct') && session('correct') == 2) selected @endif>4</option>
                         </select>
                     </div>
                 </div>
-                <div class="column is-four-fifths">
+                <div class="column is-two-fifths">
                     <div>
                         <p style="margin:0.5em; color:white;">Answer 1</p>
-                        <textarea name="answer1" class="input" onkeyup="change(1, this.value)">@if(Session::has('content1')) {{session('content1')}} @endif</textarea>
+                        <textarea id="textarea_answer_1" name="answer1" class="input" onkeyup="change(1, this.value)" disabled>@if(Session::has('content1')) {{session('content1')}} @endif</textarea>
                     </div>
                     <div>
                         <p style="margin:0.5em; color:white;">Answer 2</p>
-                        <textarea name="answer2" class="input" onkeyup="change(2, this.value)">@if(Session::has('content2')) {{session('content2')}} @endif</textarea>
+                        <textarea id="textarea_answer_2" name="answer2" class="input" onkeyup="change(2, this.value)" disabled>@if(Session::has('content2')) {{session('content2')}} @endif</textarea>
+                    </div>
+                </div>
+                <div class="column is-two-fifths">
+                    <div>
+                        <p style="margin:0.5em; color:white;">Answer 3</p>
+                        <textarea id="textarea_answer_3" name="answer3" class="input" onkeyup="change(3, this.value)" disabled>@if(Session::has('content3')) {{session('content3')}} @endif</textarea>
+                    </div>
+                    <div>
+                        <p style="margin:0.5em; color:white;">Answer 4</p>
+                        <textarea id="textarea_answer_4" name="answer4" class="input" onkeyup="change(4, this.value)" disabled>@if(Session::has('content4')) {{session('content4')}} @endif</textarea>
                     </div>
                 </div>
 
@@ -175,6 +208,35 @@
         let id = "answer_" + content + "_" + x;
         // document.write(id);
         document.getElementById(id).innerText = y;
+    }
+
+    function change_answer_size(x) {
+        let t1 = document.getElementById('textarea_answer_1');
+        let t2 = document.getElementById('textarea_answer_2');
+        let t3 = document.getElementById('textarea_answer_3');
+        let t4 = document.getElementById('textarea_answer_4');
+
+        t1.disabled = false;
+        t2.disabled = false;
+
+        if (x === '1')  {
+            t3.disabled = true;
+            t4.disabled = true;
+            t3.style.backgroundColor = 'grey';
+            t4.style.backgroundColor = 'grey';
+
+        }   else if (x === '2') {
+            t3.disabled = false;
+            t4.disabled = true;
+            t3.style.backgroundColor = 'white';
+            t4.style.backgroundColor = 'grey';
+
+        }   else    {
+            t3.disabled = false;
+            t4.disabled = false;
+            t3.style.backgroundColor = 'white';
+            t4.style.backgroundColor = 'white';
+        }
     }
 
 </script>

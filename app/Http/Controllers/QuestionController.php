@@ -171,15 +171,27 @@ class QuestionController extends Controller
         $image = $data['image'];
         $symbol_finished = $data['symbol_finished'];
         $answer_size = 0;
+        $answer_correct = 1;
 
         for($i=0; $i<7; $i++) {
             if (isset($contents[$i]))   {
                 if (Answer::where('content_id', $contents[$i] -> id) -> first() != null)   {
                     $answers[$i] = Answer::where('content_id', $contents[$i]-> id) -> get();
                     $answer_size++;
+
                 }
             }
         }
+
+        foreach ($answers[0] as $n)     {
+            if ($n -> correct != 1) {
+                $answer_correct++;
+            }   else    {
+                break;
+            }
+        }
+
+//        dd($answer_correct);
 
 
         //-------------------------------------------------------------------------
@@ -227,6 +239,7 @@ class QuestionController extends Controller
             $data['num'] = $num;
             $data['id'] = $qid;
             $data['answer_size'] = $answer_size;
+            $data['answer_correct'] = $answer_correct;
 
         return view('practice' , compact('question','contents', 'image', 'symbol_finished' , 'answers', 'data', 'noti' ));
 

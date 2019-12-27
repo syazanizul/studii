@@ -11,6 +11,12 @@ use App\Http\Controllers\Controller;
 
 class AddContent extends Controller
 {
+//    public function __construct()
+//    {
+//        $question_id = $id;
+//        $this->middleware('owner:'.$question_id);
+//    }
+
     public function update($id)
     {
         $data = AddController::show_update($id);

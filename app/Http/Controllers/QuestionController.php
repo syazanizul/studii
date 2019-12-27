@@ -183,6 +183,7 @@ class QuestionController extends Controller
             }
         }
 
+        dd($answers);
         foreach ($answers[0] as $n)     {
             if ($n -> correct != 1) {
                 $answer_correct++;

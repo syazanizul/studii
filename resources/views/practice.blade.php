@@ -625,7 +625,13 @@
         'Even the Avengers got beaten the first round'
     ];
 
-    let answer='{{$data['answer_correct']}}';
+    let answer = [0];
+    @foreach($data['answer_correct'] as $n)
+        answer['{{$loop->iteration}}'] = '{{$n}}';
+    @endforeach()
+        console.log(answer);
+
+{{--    let answer='{{$data['answer_correct']}}';--}}
 {{--    {{dd($answers[0][0]->correct)}}--}}
 {{--    @foreach($answers as $n)--}}
 {{--        @if($n[0] -> correct == 1)--}}
@@ -652,7 +658,7 @@
         let image_class = 'image_' + x;
         let z = document.getElementsByClassName(image_class);
 
-        if (answer === y)    {
+        if (answer[x] === y)    {
 
             z[y-1].src = '/images/tick.png';
             z[y-1].style.visibility = 'visible';

@@ -171,25 +171,33 @@ class QuestionController extends Controller
         $image = $data['image'];
         $symbol_finished = $data['symbol_finished'];
         $answer_size = 0;
-        $answer_correct = 1;
+        $answer_correct = [0];
+        $i=1;
+        $j=0;
 
         for($i=0; $i<7; $i++) {
             if (isset($contents[$i]))   {
                 if (Answer::where('content_id', $contents[$i] -> id) -> first() != null)   {
-                    $answers[$i] = Answer::where('content_id', $contents[$i]-> id) -> get();
+                    $answers[] = Answer::where('content_id', $contents[$i]-> id) -> get();
                     $answer_size++;
 
                 }
             }
         }
 
-        dd($answers);
-        foreach ($answers[0] as $n)     {
-            if ($n -> correct != 1) {
-                $answer_correct++;
-            }   else    {
-                break;
+//        dd($answers);
+        foreach ($answers as $n)     {
+//            dd($);
+            $i=1;
+            foreach ($n as $m)  {
+                if ($m -> correct == 1) {
+                    $answer_correct[$j] = $i;
+                }
+
+//                echo $m->correct, '<br>';
+                $i++;
             }
+            $j++;
         }
 
 //        dd($answer_correct);

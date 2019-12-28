@@ -36,7 +36,7 @@ class AjaxController extends Controller
         $year = request() -> get('year');
         $difficulty = request() -> get('difficulty');
 
-        $count = DB::table('questions')-> where('subject', $subject);
+        $count = DB::table('questions')-> where('subject', $subject) -> where('finished', 1);
 
         if ($chapter != 0) {
             $count = $count -> where('chapter', $chapter);

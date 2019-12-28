@@ -117,11 +117,10 @@
     <section id="register-form" style="background-color: #c3d8e8;">
         <div class="container">
             <div class="row py-5">
-                <div class="col">
+                <div class="col my-2 mb-4">
                     <h1 class="headline mb-4" style="color;">If you like the idea, join us!</h1>
-                    <p class="big-p mt-4">Just fill in few information about you. Use the scroll to move the form. Thank you so much :)</p>
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeM6eFUUkAstKOgle2r9OW0Ua95z9bmBjDioS14nt-Lm5_XCw/viewform?embedded=true" width="100%" height="650" frameborder="" marginheight="0" marginwidth="0">Loading…</iframe>
-                    <p class="big-p mt-5">If you cannot fill in the form here, you can do it at Google's page too. Just click <a href="https://forms.gle/oQKFEiFLzTphTVi88">here</a>.</p>
+                    <p class="big-p mt-4">Just spend a few minutes to register your own account. It's totally free. Thank you so much :)</p>
+                    <a href="/register/form?c=teacher" class="btn btn-info btn-block mt-4"><h3 class="m-3">Click Here To Register</h3></a>
                 </div>
             </div>
         </div>

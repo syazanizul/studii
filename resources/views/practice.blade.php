@@ -301,7 +301,7 @@
                             </p>
                             @if ($image == 1)
                                 <br>
-                                <img src="/images/question_images/id-{{$data['id']}}.jpg?<?php rand(1, 15ma )?>" alt="question_image" style="width:100%">
+                                <img src="/images/question_images/id-{{$data['id']}}.jpg?<?php rand(1, 15)?>" alt="question_image" style="width:100%">
                                 <br><br>
                             @endif
                             <p id="display_2">

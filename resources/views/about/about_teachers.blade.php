@@ -22,6 +22,20 @@
         .headline {
             font-size: 45px;
         }
+
+        .section-image {
+            background-size:50%;
+        }
+    }
+
+    @media only screen and (max-width: 780px) {
+        .headline {
+            font-size: 45px;
+        }
+
+        .section-image {
+            background-size:200%;
+        }
     }
 
     @media only screen and (max-width: 462px) {
@@ -34,12 +48,12 @@
 </style>
 
 @section('content')
-    <section class="py-4" style="margin-top: -25px; background-color: #3281a8;">
+    <section class="py-4 section-image" style="margin-top: -25px; background-image: url({{asset('images/sea.jpg')}}); background-size: 100%;">
         <div class="container">
             <div class="row">
                 <div class="col-md-11">
                     <h1 class="headline" style="text-align: right; color: white">Studii</h1>
-                    <p class="big-p" style="text-align: right; color: white">Studii aims to be the number 1 study platform in Malaysia</p>
+                    <h2 class="" style="text-align: right; color: white">Studii aims to help as many students as possible to study easier</h2>
                 </div>
             </div>
         </div>
@@ -65,7 +79,7 @@
         </div>
     </section>
 
-    <section class=" py-4" style=";background-image: url({{asset('images/assets/about_joinus_teacher.jpg')}}); background-size: 100%;">
+    <section class=" py-4" style="background-image: url({{asset('images/assets/about_joinus_teacher.jpg')}}); background-size: 100%;">
         <div class="container">
             <div class="row">
                 <div class="col">

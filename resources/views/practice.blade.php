@@ -301,7 +301,7 @@
                             </p>
                             @if ($image == 1)
                                 <br>
-                                <img src="/images/question_images/id-{{$data['id']}}.jpg" alt="question_image" style="width:100%">
+                                <img src="/images/question_images/id-{{$data['id']}}.jpg?<?php rand(10)?>" alt="question_image" style="width:100%">
                                 <br><br>
                             @endif
                             <p id="display_2">
@@ -411,7 +411,7 @@
                             <a class="btn btn-secondary btn-block" id="btn_tutorial_difficulty_rating" style="color:white">Difficulty rating</a>
                         </div>
                         <br>
-                        @if($question -> source_name -> id == 1)
+                        @if($question -> source_name -> id != 2)
                         <div id="div-submitter" style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">
                             <p class="text-center">Submitted By:</p>
                             <div id="img-submitter">
@@ -423,10 +423,10 @@
                                     <img src="{{asset('/images/user_images/unknown.png')}}" class="w-50 ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey">
                                 @endif
                             </div>
-                                <p class="mt-1 text-center mb-0">{{$question->submitter1->firstname}} {{$question->submitter1->lastname}}</p>
+                                <p class="mt-1 text-center mb-0">{{ucwords($question->submitter1->firstname)}} {{ucwords($question->submitter1->lastname)}}</p>
                                 <p class="text-center">{{\App\School::school_name($question->submitted_by1)}}</p>
                         </div>
-                        @elseif($question -> source_name -> id == 2)
+                        @else
                         <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">
                             <p class="text-center"><b>Question Owned By:</b></p>
                             <img src="{{asset('images/cat.png')}}" class="w-50 ml-auto mr-auto d-block">

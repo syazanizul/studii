@@ -224,7 +224,7 @@ class QuestionController extends Controller
         //Put session to track if student needs pop up modal for instructions
 
 
-        if ($question -> source_name -> id == 1)   {
+        if ($question -> source_name -> id != 2)   {
             $check = DB::table('teacher_details') -> where('user_teacher_id', $question -> submitted_by1) ->get();
 
             if ($check -> isNotEmpty()) {

@@ -296,7 +296,7 @@
                         <div>
                             <p>
                                 @if (isset($contents[0]))
-                                    {{$contents[0]-> content}}
+                                    {!!$contents[0]-> content!!}
                                 @endif
                             </p>
                             @if ($image == 1)
@@ -306,7 +306,7 @@
                             @endif
                             <p id="display_2">
                                 @if (isset($contents[1]))
-                                    {{$contents[1]-> content}}
+                                    {!!$contents[1]-> content!!}
                                 @endif
                             </p>
                             <div style="padding-left:20px;">
@@ -314,8 +314,8 @@
                                 @for($k=2; $k<7; $k++)
                                     @if(isset($contents[$k]))
                                     <div>
-                                        <p id="symbol_{{$k+1}}" style="width:5%; display: inline-block">@if (isset($contents[$k])) {{$symbol_finished[$k]}} @endif</p>
-                                        <p id="display_{{$k+1}}" style="display: inline-block">@if (isset($contents[$k])) {{$contents[$k]-> content}} @endif</p>
+                                        <p id="symbol_{{$k+1}}" style="width:5%; display: inline-block">@if (isset($contents[$k])) {!! $symbol_finished[$k] !!} @endif</p>
+                                        <p id="display_{{$k+1}}" style="display: inline-block">@if (isset($contents[$k])) {!! $contents[$k]-> content !!} @endif</p>
                                     </div>
                                     @endif
                                 @endfor
@@ -350,14 +350,14 @@
                                     <div>
                                         <div>
                                             <img class="image_{{($loop->iteration)}}" src="" style="width:1.6em; padding-bottom: 0.3em; margin:0.1em; visibility: hidden;" alt="tick">
-                                            <label class="control control--radio d-inline-block">{{$n[0] -> answer}}
+                                            <label class="control control--radio d-inline-block">{!!$n[0] -> answer!!}
                                                 <input name="input_{{$loop->iteration}}" type="radio" value="1"/>
                                                 <div class="control__indicator"></div>
                                             </label>
                                         </div>
                                         <div>
                                             <img class="image_{{($loop->iteration)}}" src="" style="width:1.6em; padding-bottom: 0.3em; margin:0.1em; visibility: hidden;" alt="tick">
-                                            <label class="d-inline-block control control--radio">{{$n[1] -> answer}}
+                                            <label class="d-inline-block control control--radio">{!!$n[1] -> answer!!}
                                                 <input name="input_{{$loop->iteration}}" class="input_answer" type="radio" value="2"/>
                                                 <div class="control__indicator"></div>
                                             </label>
@@ -365,7 +365,7 @@
                                         @if(isset($n[2]))
                                         <div>
                                             <img class="image_{{($loop->iteration)}}" src="" style="width:1.6em; padding-bottom: 0.3em; margin:0.1em; visibility: hidden;" alt="tick">
-                                            <label class="d-inline-block control control--radio">{{$n[2] -> answer}}
+                                            <label class="d-inline-block control control--radio">{!!$n[2] -> answer!!}
                                                 <input name="input_{{$loop->iteration}}" class="input_answer" type="radio" value="3"/>
                                                 <div class="control__indicator"></div>
                                             </label>
@@ -374,7 +374,7 @@
                                         @if(isset($n[3]))
                                         <div>
                                             <img class="image_{{($loop->iteration)}}" src="" style="width:1.6em; padding-bottom: 0.3em; margin:0.1em; visibility: hidden;" alt="tick">
-                                            <label class="d-inline-block control control--radio">{{$n[3] -> answer}}
+                                            <label class="d-inline-block control control--radio">{!!$n[3] -> answer!!}
                                                 <input name="input_{{$loop->iteration}}" class="input_answer" type="radio" value="4"/>
                                                 <div class="control__indicator"></div>
                                             </label>

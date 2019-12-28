@@ -279,6 +279,7 @@
                                 </div>
                                 <div>
                                     <ul>
+                                        <li>Question ID : {{$question ->  id}}</li>
                                         <li>Source : {{$question -> source_name -> name}}</li>
 {{--                                        <li>Question No : {{$question -> question_number}}</li>--}}
                                         <li>Difficulty : {{$data['difficulty']}}</li>

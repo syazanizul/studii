@@ -360,7 +360,7 @@
                                                         <option value="5">Harder (5)</option>
                                                     </select>
                                                 </div>
-                                                <button class="btn btn-lg mt-4 m-2 float-right" id="button_detail" data-step="5" data-intro="Click here when you are ready
+                                                <button class="btn btn-lg btn-primary mt-4 m-2 float-right" id="button_detail" data-step="5" data-intro="Click here when you are ready
                                                 to practice. That's it. We hope you like it :)">Browse</button>
                                             </div>
                                         </form>

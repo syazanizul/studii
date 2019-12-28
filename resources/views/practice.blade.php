@@ -313,7 +313,7 @@
 
                                 @for($k=2; $k<7; $k++)
                                     @if(isset($contents[$k]))
-                                    <div style="width:100%">
+                                    <div style="width:100%; margin:8px auto">
                                         <p id="symbol_{{$k+1}}" style="width:7%; display: inline-block; float:left">@if (isset($contents[$k])) {!! $symbol_finished[$k] !!} @endif</p>
                                         <p id="display_{{$k+1}}" style="width:90%;display: inline-block">@if (isset($contents[$k])) {!! $contents[$k]-> content !!} @endif</p>
                                     </div>

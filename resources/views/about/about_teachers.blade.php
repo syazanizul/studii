@@ -34,6 +34,17 @@
 </style>
 
 @section('content')
+    <section class="py-4" style="margin-top: -25px; background-color: #3281a8;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-11">
+                    <h1 class="headline" style="text-align: right; color: white">Studii</h1>
+                    <p class="big-p" style="text-align: right; color: white">Studii aims to be the number 1 study platform in Malaysia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="mt-5">
         <div class="container" style="margin-bottom: 70px">
             <div class="my-1 row">

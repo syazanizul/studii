@@ -423,7 +423,7 @@
                                     <img src="{{asset('/images/user_images/unknown.png')}}" class="w-50 ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey">
                                 @endif
                             </div>
-                                <p class="mt-1 text-center mb-0">{{ucfirst($question->submitter1->firstname)}} {{ucfirst($question->submitter1->lastname)}}</p>
+                                <p class="mt-1 text-center mb-0"><b>{{ucfirst($question->submitter1->firstname)}} {{ucfirst($question->submitter1->lastname)}}</b></p>
                                 <p class="text-center">{{\App\School::school_name($question->submitted_by1)}}</p>
                         </div>
                         @else

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\event;
 use Illuminate\Http\Request;
 use App\Mail;
 use App\Mail\newsletter;
@@ -9,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 class MailController extends Controller
 {
+
     public function newsletter()    {
         $email = request() -> get('email');
 
@@ -18,7 +20,8 @@ class MailController extends Controller
             DB::table('newsletter')-> insert(['email' => $email, 'created_at' => now(), 'updated_at' => now()]);
             \Mail::to($email)->send(new newsletter);
         }
-  
+
         return redirect('/');
     }
+
 }

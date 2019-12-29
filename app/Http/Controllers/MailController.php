@@ -19,7 +19,7 @@ class MailController extends Controller
         if ($newsletter -> isEmpty())   {
             DB::table('newsletter')-> insert(['email' => $email, 'created_at' => now(), 'updated_at' => now()]);
             \Mail::to($email)->send(new newsletter);
-            \Mail::to('syazanizul@gmail.com')->send(new event('register'));
+            \Mail::to('syazanizul@gmail.com')->send(new event('newsletter'));
         }
 
         return redirect('/');

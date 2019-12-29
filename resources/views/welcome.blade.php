@@ -296,6 +296,7 @@
                                                         </div>
                                                         <div class="d-inline-block" style="width:70%;">
                                                             <select name="s_subject" id="s_subject" class="form-control form-control-lg" style="width:100%;" onchange="fetch(this.value , 's_chapter' , 'chapters_list' , 'subject'); count()">
+                                                                <option value="-">Select Subject</option>
                                                                 @foreach ($property['subjects'] as $subject)
                                                                     <option value="{{$subject -> id}}">{{  $subject -> name }}</option>
                                                                 @endforeach

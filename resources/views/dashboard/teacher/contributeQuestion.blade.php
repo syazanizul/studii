@@ -6,18 +6,18 @@
 
 @section('side-nav')
     <ul class="nav">
-        <li class="">
+        <li>
             <a href="/teacher">
                 <p>Dashboard</p>
             </a>
         </li>
-        <li>
+        <li class="active">
             <a href="/teacher/details">
                 <p>User details</p>
             </a>
         </li>
-        <li class="active">
-            <a href="/question">
+        <li>
+            <a href="/teacher/question">
                 <p>Add Question</p>
             </a>
         </li>

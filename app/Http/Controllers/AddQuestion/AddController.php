@@ -49,7 +49,7 @@ class AddController extends Controller
         $data['list_draft_question'] = $x2;
         $data['list_finished_question'] = $x3;
 
-        return view('addquestion/contributeQuestion', compact('data'));
+        return view('dashboard.teacher.contributeQuestion', compact('data'));
     }
 
     //   ----------------- GENERAL METHOD USED BY ADD_CONTENT AND ADD_ANSWER

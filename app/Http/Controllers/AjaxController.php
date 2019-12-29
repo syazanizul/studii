@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Mail;
 
 class AjaxController extends Controller
 {
@@ -137,6 +139,8 @@ class AjaxController extends Controller
         $db = DB::table('feedback_form') -> insert(
             ['like' => $like, 'suggestion' => $suggestion, 'created_at' => now(), 'updated_at' => now()]
         );
+
+        Mail::to('syazanizul@gmail.com')->send(new event('Feedback'));
 
         return 1;
     }

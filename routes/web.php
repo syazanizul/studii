@@ -64,10 +64,18 @@ Route::get('/admin', 'AdminController@index')->name('admin')->middleware('admin'
 // Basics
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/practice', 'QuestionController@index');
-Route::get('/about', 'AboutController@index');
+
 Route::get('/contact', 'ContactController@index');
-Route::get('/joinUs', 'AboutController@teacherJoinUs');
+
+// Routes for all About Us things
+Route::get('/about', 'AboutController@index');
+Route::get('/joinUs', 'AboutController@teacherJoinUs')->name('about-teacher');
 Route::get('/disclaimer', 'AboutController@disclaimer');
+
+//For add phone number in about.teacher
+Route::get('/about/submit/phone-number', 'AboutController@phone_number');
+
+// End About Us
 
 /* Routes to add question */
 Route::get('/teacher/question', 'AddQuestion\AddController@index');

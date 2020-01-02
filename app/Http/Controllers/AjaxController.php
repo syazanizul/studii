@@ -68,15 +68,13 @@ class AjaxController extends Controller
         echo $count;
     }
 
+//    ---------------------------------------------------------------------------------------------------
+//    Function used in Dashboard.Teacher
     public function hide_modal()    {
-        $id = Auth::user() -> id;
-
         DB::table('teacher_notification') -> updateOrInsert(
-            ['user_teacher_id' => $id],
+            ['user_teacher_id' => Auth::user() -> id],
             ['welcome' => 1]
         );
-
-        return 1;
     }
 
     public function subject_based_on_exam() {
@@ -98,12 +96,51 @@ class AjaxController extends Controller
         return 1;
     }
 
-//    public function school_name()   {
-////        $str = request() -> get('str');
-////
-////        $school =
-////    }
+    public function noti2() {
+//        DB::table('teacher_notification') -> updateOrInsert(
+//            ['user_teacher_id' => Auth::user() -> id],
+//            ['noti_two' => 1]
+//        );
 
+        $check = DB::table('teacher_notification') -> where('user_teacher_id', Auth::user() -> id)->get();
+
+        //Insert or Update in TEACHERS noti table
+        if (!$check-> isEmpty())   {
+            DB::table('teacher_notification') -> where('user_teacher_id', Auth::user() -> id)
+                ->update(
+                    ['noti_two' => 1]
+                );
+        }   else    {
+            DB::table('teacher_notification')
+                ->insert(
+                    ['user_teacher_id' => Auth::user()->id, 'noti_two' => 1]
+                );
+        }
+    }
+
+    public function noti3() {
+//        DB::table('teacher_notification') -> updateOrInsert(
+//            ['user_teacher_id' => Auth::user() -> id],
+//            ['noti_three' => 1]
+//        );
+
+        $check = DB::table('teacher_notification') -> where('user_teacher_id', Auth::user() -> id)->get();
+
+        //Insert or Update in TEACHERS noti table
+        if (!$check-> isEmpty())   {
+            DB::table('teacher_notification') -> where('user_teacher_id', Auth::user() -> id)
+                ->update(
+                    ['noti_three' => 1]
+                );
+        }   else    {
+            DB::table('teacher_notification')
+                ->insert(
+                    ['user_teacher_id' => Auth::user()->id, 'noti_three' => 1]
+                );
+        }
+    }
+
+//--------------------------------------------------------------------------------------------------------------
     //Function used in Practice Page
     public function count_attempt() {
         $question_id = request() -> get('question_id');

@@ -116,6 +116,8 @@ Route::get('/ajax/feedback', 'AjaxController@feedback');
 
 // AJAX for teacher dashboard
 Route::get('/ajax/dashboard/hide-modal', 'AjaxController@hide_modal');
+Route::get('/ajax/dashboard/noti2', 'AjaxController@noti2');
+Route::get('/ajax/dashboard/noti3', 'AjaxController@noti3');
 Route::get('/ajax/dashboard/teacher/details/subject_based_on_exam', 'AjaxController@subject_based_on_exam');
 // End AJAX for teacher dashboard
 

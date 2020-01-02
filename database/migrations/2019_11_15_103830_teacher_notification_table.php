@@ -16,7 +16,9 @@ class TeacherNotificationTable extends Migration
         Schema::create('teacher_notification', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_teacher_id');
-            $table->boolean('welcome');
+            $table->boolean('noti_two')->nullable();
+            $table->boolean('noti_three')->nullable();
+            $table->boolean('welcome')->nullable();
         });
     }
 

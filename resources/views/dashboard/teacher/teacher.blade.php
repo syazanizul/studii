@@ -12,8 +12,8 @@
 @endsection
 
 @section('side-nav')
-    <ul class="nav" data-step="7" data-intro="And here is the navigation area. Feel free to explore around :)">
-        <li class="active">
+    <ul class="nav">
+        <li class="active" data-step="7" data-intro="And here is the navigation area. Feel free to explore around :)">
             <a href="/teacher">
                 <p>Dashboard</p>
             </a>
@@ -37,16 +37,56 @@
 @endsection
 
 @section('content')
-<div data-step="1" data-intro="This is your dashboard, where you can find all the information that is important.">
-    <div class="row">
+<div data-step="1" data-intro="This is your dashboard, where you can find all the relevant information.">
+    <div class="row mb-3">
         <div class="col-sm-12">
             <a href="javascript:void(0);" onclick="introJs().setOption('showProgress', true).start();" class="btn btn-primary btn-lg float-right m-2">I need help</a>
             <a href="#" id="btn-role-teachers" class="btn btn-primary btn-lg float-right m-2">Role of teachers in Studii</a>
         </div>
     </div>
-    <br>
+
+    <div class="row my-2">
+        @if($noti[0] == 1)
+        <div class="col-md-12">
+            <div class="alert alert-warning alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>We still don't know your complete profile yet. Can you please fill them first by clicking <a href="/teacher/details">here</a>.</strong>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="alert alert-info alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>You need to complete your profile first before you can contribute your own questions.</strong>
+            </div>
+        </div>
+        @else
+        <div class="col-md-12">
+            <div class="alert alert-info alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>You have set up your profile. Our team will contact you soon to help you get around. Thank you.</strong>
+            </div>
+        </div>
+        @endif
+        @if($noti[2] == 1)
+        <div class="col-md-7">
+            <div class="alert alert-info alert-block">
+                <a type="button" class="close" data-dismiss="alert" onclick="disable_help('/ajax/dashboard/noti2')">×</a>
+                <strong>Do note that this Dashboard is best viewed on a computer (not a mobile phone)</strong>
+            </div>
+        </div>
+        @endif
+{{--        @if($noti[3] == 1)--}}
+{{--        <div class="col-md-5">--}}
+{{--            <div class="alert alert-info alert-block">--}}
+{{--                <a type="button" class="close" data-dismiss="alert" onclick="disable_help('/ajax/dashboard/noti3')">×</a>--}}
+{{--                <strong>This page can use your ideas! Tell us what you want to see on this page <a href="#" style="color:#b8732a">here</a>.</strong>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        @endif--}}
+    </div>
+
     <div class="row" data-step="2" data-intro="These cards show you the statistics of the questions that you contribute.">
-        <div class="col-lg-2 col-md-5 col-sm-5"  data-step="3" data-intro="Firstly, you have the total number of questions you contribute.">
+        <div class="col-lg-2 col-md-5 col-sm-5"  data-step="3" data-intro="Firstly, you have the total number of questions.">
             <div class="card card-stats">
                 <div class="card-body ">
                     <div class="row">
@@ -200,12 +240,12 @@
         {{-- Big Ones  --}}
     </div>
 {{--    <div class="row">--}}
-{{--        <div class="col-md-12" data-step="6" data-intro="Here you can see how many students attempt we have in Studii in monthly basis. God we hope the graph is increasing.">--}}
+{{--        <div class="col-md-12" data-step="6" data-intro="Here you can see how many students attempt we have in Studii in daily basis. God we hope the graph is increasing.">--}}
 {{--            <div class="card ">--}}
 {{--                <div class="card-header ">--}}
-{{--                    <h5 class="card-title">Number of students who visit the site ()</h5>--}}
+{{--                    <h5 class="card-title">Number of attempts / day for the month of <b>{{date('F')}}</b></h5>--}}
 {{--                </div>--}}
-{{--                <div class="card-body ">--}}
+{{--                <div class="card-body">--}}
 {{--                    <canvas id=chart1 width="400" height="100"></canvas>--}}
 {{--                </div>--}}
 {{--                <div class="card-footer ">--}}
@@ -271,7 +311,7 @@
 
 @section('modal')
 
-    @if($noti['first'] == 0)
+    @if($noti[1] == 1)
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
         <div class="modal-dialog modal-lg" role="document">
@@ -286,8 +326,8 @@
                     This is your very own dashboard, where everything you need is ready at your fingertips. Do you need help with the navigation?
                 </div>
                 <div class="modal-footer">
-                    <a  href="javascript:void(0);" onclick="show_instruction(); disable_help()" class="btn btn-primary" data-dismiss="modal">Yes help me please</a>
-                    <button type="button" onclick="disable_help()" class="btn btn-secondary" data-dismiss="modal">Its okay</button>
+                    <a  href="javascript:void(0);" onclick="show_instruction(); disable_help('/ajax/dashboard/hide-modal')" class="btn btn-primary" data-dismiss="modal">Yes help me please</a>
+                    <button type="button" onclick="disable_help('/ajax/dashboard/hide-modal')" class="btn btn-secondary" data-dismiss="modal">Its okay</button>
                 </div>
             </div>
         </div>
@@ -298,9 +338,52 @@
 
 <script>
 @section('script')
+    //-------------------------------------------------------------------------------
+    //Charts
+var ctx = document.getElementById('chart1').getContext('2d');
+var lineChart = new Chart(ctx, {
+    type: 'line',
+    hover: false,
+    data:  {
+        labels: ["1  ", "4", "7", "10", "13", "16", "19", "22", "25", "28", "30"],
+        datasets: [
+            {
+                data: [1, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0],
+                fill: false,
+                borderColor: '#fbc658',
+                backgroundColor: 'transparent',
+                pointBorderColor: '#fbc658',
+                pointRadius: 4,
+                pointHoverRadius: 4,
+                pointBorderWidth: 8,
+            }
+        ]
+    },
+    options: {
+        legend: {
+            display: false,
+            position: 'top'
+        },
+        scales: {
+            xAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }],
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+    //End Charts
+    //--------------------------------------------------------------------------------
 
     //modal-notification
-    @if($noti['first']==0)
+    @if($noti[1]==1)
     $(window).on('load',function(){
         $('#myModal').modal('show');
     });
@@ -313,11 +396,11 @@
 
     }
 
-    function disable_help() {
+    function disable_help(url) {
         //Ajax to update to database to not show the modal anymore
         $.ajax({
             type: 'get',
-            url: '/ajax/dashboard/hide-modal',
+            url: url,
             success: function (response) {
                 return 1;
             },

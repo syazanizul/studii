@@ -11,12 +11,12 @@
                 <p>Dashboard</p>
             </a>
         </li>
-        <li class="active">
+        <li>
             <a href="/teacher/details">
                 <p>User details</p>
             </a>
         </li>
-        <li>
+        <li class="active">
             <a href="/teacher/question">
                 <p>Add Question</p>
             </a>

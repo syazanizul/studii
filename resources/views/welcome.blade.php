@@ -308,7 +308,7 @@
                                                             <label class="tags-property">Level :</label>
                                                         </div>
                                                         <div class="d-inline-block" style="width:70%;">
-                                                            <select name="s_level" id="s_level" class="form-control form-control-lg" style="width:100%;" onchange="fetch(this.value , 's_chapter' , 'chapters_list' , 'level'); count()">
+                                                            <select name="s_level" id="s_level" class="form-control form-control-lg" style="width:100%;" onchange="fetch2(); count()">
                                                                 <option value="0">All Level</option>
                                                                 @foreach ($property['levels'] as $level)
                                                                     <option value="{{$level -> id}}">{{  $level -> name }}</option>

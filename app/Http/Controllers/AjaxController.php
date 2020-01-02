@@ -27,6 +27,19 @@ class AjaxController extends Controller
         }
     }
 
+    public function fetch2()
+    {
+        $subject = request()->get('subject');
+        $level = request()->get('level');
+
+        $results = DB::table('chapters_list')->where('subject', $subject) -> where('level', $level)->get();
+
+        echo '<option value="0">All</option>';
+        foreach ($results as $result) {
+            echo '<option value="', $result->id, '">', $result->name, '</option>';
+        }
+    }
+
     //Function 2 used in Welcome Page
     public function count()
     {

@@ -323,9 +323,6 @@
                                                         <div class="d-inline-block" style="width:70%;">
                                                             <select name="s_chapter" id="s_chapter" class="form-control form-control-lg" style="width:100%;" onchange="count()">
                                                                 <option value="0">All Chapters</option>
-                                                                @foreach ($property['chapters'] as $chapter)
-                                                                    <option value="{{$chapter -> id}}">{{  $chapter -> name }}</option>
-                                                                @endforeach
                                                             </select>
                                                         </div>
                                                     </div>
@@ -424,7 +421,7 @@
         //First Ajax
         $.ajax({
             type: 'get',
-            url: 'ajax',
+            url: 'ajax/fetch',
             data: {
                 input: input,
                 table: table,
@@ -436,6 +433,26 @@
                     //console.log(response);
                 }   else {
                     //console.log('yes');
+                    document.getElementById(output).innerHTML = '<option value="0">No Data</option>';
+                }
+            }
+        });
+    }
+
+    function fetch2()
+    {
+        //First Ajax
+        $.ajax({
+            type: 'get',
+            url: 'ajax/fetch2',
+            data: {
+                subject: document.getElementById('s_subject').value,
+                level: document.getElementById('s_level').value
+            },
+            success: function (response) {
+                if (response !== '<option value="0">All</option>') {
+                    document.getElementById('s_chapter').innerHTML = response;
+                }   else {
                     document.getElementById(output).innerHTML = '<option value="0">No Data</option>';
                 }
             }

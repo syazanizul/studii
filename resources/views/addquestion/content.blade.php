@@ -9,6 +9,14 @@
     .margin {
         margin:0.6em auto;
     }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+    }
 </style>
 
 
@@ -119,7 +127,7 @@
 
     function text_change(x, text) {
         let id = 'display_' + x;
-        document.getElementById(id).innerText = text;
+        document.getElementById(id).innerHTML = text;
         newTypeset();
     }
 

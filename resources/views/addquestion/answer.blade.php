@@ -15,6 +15,14 @@
         padding:1em;
         border-radius: 1em;
     }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+    }
 </style>
 
 

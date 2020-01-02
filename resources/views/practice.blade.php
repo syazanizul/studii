@@ -248,6 +248,16 @@
         cursor: pointer;
     }
 
+    /*End rating form under content*/
+
+    table {
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+    }
+
     @endsection
 </style>
 

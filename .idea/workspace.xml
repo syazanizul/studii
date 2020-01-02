@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/addquestion/answer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/addquestion/answer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/addquestion/content.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/addquestion/content.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/practice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/practice.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -367,7 +368,7 @@
       <workItem from="1577897301691" duration="4716000" />
       <workItem from="1577918932575" duration="2534000" />
       <workItem from="1577956294710" duration="309000" />
-      <workItem from="1577957328288" duration="705000" />
+      <workItem from="1577957328288" duration="1340000" />
     </task>
     <servers />
   </component>
@@ -439,9 +440,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1577901282823" />
-    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup" timestamp="1577611433574">
+    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup" timestamp="1577958203154">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1577611433574" />
+    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1577958203154" />
   </component>
 </project>

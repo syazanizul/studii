@@ -37,7 +37,7 @@
                     <div style="background-color: #d4d9d6; padding: 1.5em">
                         <p id="display_1">
                             @if (isset($contents[0]))
-                                {{$contents[0]-> content}}
+                                {!! $contents[0]-> content !!}
                             @endif
                         </p>
                         <br>
@@ -47,7 +47,7 @@
                         <br><br>
                         <p id="display_2">
                             @if (isset($contents[1]))
-                                {{$contents[1]-> content}}
+                                {!! $contents[1]-> content !!}
                             @endif
                         </p>
                         <div style="padding-left:20px;">
@@ -56,7 +56,7 @@
                                 <div>
                                     @if (isset($contents[$k]))
                                         <p style="width:5%; display: inline-block">{{$symbol_finished[$k]}}</p>
-                                        <p id="display_{{$k+1}}" style="display: inline-block">{{$contents[$k]-> content}}</p>
+                                        <p id="display_{{$k+1}}" style="display: inline-block">{!! $contents[$k]-> content !!}</p>
                                     @endif
                                 </div>
                             @endfor

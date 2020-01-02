@@ -34,7 +34,7 @@
                     <div style="position: sticky; top:30px; min-height: 500px; background-color: #d4d9d6; padding:1em;">
                         <p id="display_1">
                             @if (isset($contents[0]))
-                                {{$contents[0]-> content}}
+                                {!! $contents[0]-> content !!}
                             @endif
                         </p>
                         <br>
@@ -44,15 +44,15 @@
                         <br><br>
                         <p id="display_2">
                             @if (isset($contents[1]))
-                                {{$contents[1]-> content}}
+                                {!! $contents[1]-> content !!}
                             @endif
                         </p>
                         <div style="padding-left:20px;">
 
                             @for($k=2; $k<7; $k++)
                                 <div>
-                                    <p id="symbol_{{$k+1}}" style="width:5%; display: inline-block">@if (isset($contents[$k])) {{$symbol_finished[$k]}} @endif</p>
-                                    <p id="display_{{$k+1}}" style="display: inline-block">@if (isset($contents[$k])) {{$contents[$k]-> content}} @endif</p>
+                                    <p id="symbol_{{$k+1}}" style="width:5%; display: inline-block">@if (isset($contents[$k])) {!! $symbol_finished[$k] !!} @endif</p>
+                                    <p id="display_{{$k+1}}" style="display: inline-block">@if (isset($contents[$k])) {!! $contents[$k]-> content !!} @endif</p>
                                 </div>
                             @endfor
                         </div>

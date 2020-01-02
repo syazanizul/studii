@@ -314,6 +314,8 @@
                                 <br>
                                 <img src="/images/question_images/id-{{$data['id']}}.jpg?<?php rand(1, 15)?>" alt="question_image" style="width:100%">
                                 <br><br>
+                            @else
+                                <br>
                             @endif
                             <p id="display_2">
                                 @if (isset($contents[1]))

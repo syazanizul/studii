@@ -3,9 +3,18 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+        @if($category == 'teacher')
+        <div class="col-md-8">
+            <div class="alert alert-success alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <p>As a start, we are focusing on <b>PT3</b> and <b>SPM</b> subjects first. However, if you are teaching for <b>UPSR</b>, <b>STAM</b> or <b>STPM</b>, but you
+                would like to join us, you can still register. </p>
+            </div>
+        </div>
+        @endif
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header" style="text-transform: capitalize">{{ __('Register') }} As A <b>{{$category}}</b></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">

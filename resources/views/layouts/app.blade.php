@@ -107,6 +107,16 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/">Practice</a>
                         </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Roles
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/joinUs">Studii For Teachers</a>
+                            </div>
+                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="/contact">Contact Us</a>
                         </li>
@@ -123,11 +133,6 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('register') }}">Sign Up</a>
                             </li>
-{{--                            @if (Route::has('register'))--}}
-{{--                                <li class="nav-item">--}}
-{{--                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>--}}
-{{--                                </li>--}}
-{{--                            @endif--}}
                         @else
 
                             <li class="nav-item dropdown">

@@ -51,7 +51,7 @@ class RegisterController extends Controller
                 break;
         }
 
-        return view('auth.register') -> with('role', $role);
+        return view('auth.register', compact('role','category'));
     }
 
     /**

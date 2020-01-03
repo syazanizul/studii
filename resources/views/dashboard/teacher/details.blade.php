@@ -29,10 +29,12 @@
     </ul>
 @endsection
 
-@section('contents')
-    <div class="row">
-        <h1 class="m-4">Coming real soon</h1>
-    </div>
+@section('link-in-head')
+<style>
+    .p-bigger {
+        font-size:1.2em;
+    }
+</style>
 @endsection
 
 @section('content')
@@ -104,19 +106,6 @@
             @endif
         </div>
         <hr>
-        @if($i==0)
-            <div class="col-md-12">
-                <div class="card mb-1">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h3><b>Display of your profile is coming soon</b></h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        @endif
         <div class="row">
 {{--            <div class="col-md-4">--}}
 {{--                <div class="card">--}}
@@ -370,17 +359,18 @@
                                         <label>Name of School</label>
                                         <select name="schoolname1" class="form-control" id="hidediv" required>
                                             <option value="0">Choose School</option>
-                                            @foreach($data['school_name'] as $n)
+                                            @foreach($data['school_list'] as $n)
                                                 <option value="{{$n->id}}">{{$n->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <a class="btn-primary btn m-0" onclick="not_in_list()">If your school is not in the list, click here</a>
+                                    <a class="btn-primary btn m-0" onclick="not_in_list(); this.style.display = 'none'">If your school is not in the list, click here</a>
                                 </div>
-                                <div class="col-md-6" id="revealdiv" style="visibility: hidden;">
+                                <div class="col-md-12" id="revealdiv" style="visibility: hidden;">
                                     <input id="schoolname2" class="form-control" type="text" name="schoolname2" placeholder="School Name">
+                                    <p class="mt-2"><b>Please put school name together with the location:</b> Eg : Mahad Attarbiyah Al-Islamiyah, Beseri, Perlis.</p>
                                 </div>
                             </div>
                             <hr>
@@ -461,6 +451,204 @@
             </div>
             @endif
         </div>
+        <hr>
+{{--        If done...--}}
+
+    <div class="row">
+
+        @if($completed['add_image'] == 1)
+            <div class="col-md-4">
+                <div class="card card-user">
+                    <div class="image">
+                        <img src="{{asset('images/user_images/background.jpg')}}" alt="Background" style="object-fit: stretch;">
+                    </div>
+                    <div class="card-boy">
+                        <div class="author">
+                            <a href="#">
+                                <img class="avatar border-gray" src="{{asset('images/user_images/id-'.\Illuminate\Support\Facades\Auth::user()->id.'.jpg?n='.rand(1,10))}}" alt="User Image" style="object-fit: cover;">
+                                <h5 class="title">{{Auth::user() -> firstname }} {{Auth::user() -> lastname }}</h5>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        @endif
+
+        @if($completed['edit_profile'] == 1)
+            <div class="col-md-7">
+                <div class="card card-user">
+                    <div class="card-header">
+                        <h5 class="card-title">Your Profile</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row my-1">
+                            <div class="col-md-12">
+                                <h4>
+                                    {{$data['profile_title']}} {{\Illuminate\Support\Facades\Auth::user()-> firstname}} {{\Illuminate\Support\Facades\Auth::user()-> lastname}}
+                                </h4>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="p-bigger">Gender: @if($data['profile']-> gender == 1) Male @elseif(($data['profile']-> gender == 2)) Female   @endif</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="p-bigger">IC number: {{$data['profile']->ic}}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="p-bigger">Phone number: {{$data['profile']->phone}}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="p-bigger">You prefer: {{$data['profile_mode_comm']}}</p>
+                            </div>
+                            @if($completed['teaching_details'] == 1)
+                                <div class="col-md-12">
+                                    <p class="p-bigger" style="text-transform: capitalize">School: {{\App\User::school_name(\Illuminate\Support\Facades\Auth::user()->id)}}</p>
+                                </div>
+                            @endif
+                        </div>
+                        <hr>
+                        <a href="" class="btn btn-primary btn-lg m-2 float-right" disabled>Edit</a>
+                    </div>
+                </div>
+            </div>
+        @endif
+
+        @if($completed['teaching_details'] == 1)
+            <div class="col-md-8">
+                <div class="card card-user">
+                    <div class="card-header">
+                        <h5 class="card-title">Teaching Details</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-8 p-2">
+                                @if($data['exam_chosen']->isNotEmpty())
+                                    @foreach($data['exam_chosen'] as $n)
+                                        <table class="p-5 my-3" style="border:2px solid #d4d4d4; border-radius:10px; width: 100%">
+                                            <tr>
+                                                <th class="p-2"><b>{{\App\Exam::exam_name($n->exam_id)}}</b></th>
+                                            </tr>
+                                            @foreach($data['subject_chosen'] as $m)
+                                                @if($m->exam_id == $n->exam_id)
+                                                    <tr>
+                                                        <td class="px-2">{{\App\Subject::subject_name($m->subject_id)}}</td>
+                                                        <td class="px-2"><button class="btn btn-primary m-1" disabled>Remove</button></td>
+                                                    </tr>
+                                                @endif
+                                            @endforeach
+                                        </table>
+                                    @endforeach
+                                @endif
+                            </div>
+                        </div>
+                        <hr>
+                        <a onclick="" class="btn btn-primary btn-lg m-2 float-right" disabled>Edit</a>
+
+                    </div>
+                </div>
+            </div>
+        @endif
+    </div>
+
+
+{{--        @if($completed['edit_profile'] == 1)--}}
+{{--            <div class="col-md-11">--}}
+{{--                <div class="card card-user">--}}
+{{--                    <div class="card-header">--}}
+{{--                        <h5 class="card-title">Edit Profile</h5>--}}
+{{--                    </div>--}}
+{{--                    <div class="card-body">--}}
+{{--                        <form method="post" action="/teacher/details/edit-profile">--}}
+{{--                            @csrf--}}
+{{--                            <div class="row my-1">--}}
+{{--                                <div class="col-md-2">--}}
+{{--                                    <div class="form-group">--}}
+{{--                                        <label>Title</label>--}}
+{{--                                        <select name="title" class="form-control pb-2" required>--}}
+{{--                                            <option value="0">Select</option>--}}
+{{--                                            <option value="1" @if($data['profile']->title == 1) selected @endif>Cikgu</option>--}}
+{{--                                            <option value="2" @if($data['profile']->title == 2) selected @endif>Tuan</option>--}}
+{{--                                            <option value="3" @if($data['profile']->title == 3) selected @endif>Puan</option>--}}
+{{--                                            <option value="4" @if($data['profile']->title == 4) selected @endif>Mr</option>--}}
+{{--                                            <option value="5" @if($data['profile']->title == 5) selected @endif>Miss</option>--}}
+{{--                                            <option value="6" @if($data['profile']->title == 6) selected @endif>Bro</option>--}}
+{{--                                            <option value="7" @if($data['profile']->title == 7) selected @endif>Sis</option>--}}
+{{--                                        </select>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-4">--}}
+{{--                                    <div class="form-group">--}}
+{{--                                        <label>First Name</label>--}}
+{{--                                        <input type="text" class="form-control" name="firstname" placeholder="First Name" value="{{\Illuminate\Support\Facades\Auth::user()->firstname}}" required>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-5">--}}
+{{--                                    <div class="form-group">--}}
+{{--                                        <label>Last Name</label>--}}
+{{--                                        <input type="text" class="form-control" name="lastname" placeholder="Last Name" value="{{\Illuminate\Support\Facades\Auth::user()->lastname}}" required>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+
+
+{{--                            <div class="row my-1">--}}
+{{--                                <div class="col-md-4">--}}
+{{--                                    <div class="form-group">--}}
+{{--                                        <label>Gender</label>--}}
+{{--                                        <select name="gender" class="form-control" required>--}}
+{{--                                            <option value="">Select</option>--}}
+{{--                                            <option value="1" @if($data['profile']->gender == 1) selected @endif>Male</option>--}}
+{{--                                            <option value="2" @if($data['profile']->gender == 2) selected @endif>Female</option>--}}
+{{--                                        </select>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-4">--}}
+{{--                                    <div class="form-group">--}}
+{{--                                        <label>IC Number</label>--}}
+{{--                                        <input type="number" class="form-control" name="ic" placeholder="{{$data['profile']->ic}}" min="0" required>--}}
+{{--                                        <p class="ml-1 mt-1">Without minus sign. Eg: 880314095197</p>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+
+
+
+{{--                            <div class="row my-1">--}}
+{{--                                --}}{{--                                <div class="col-md-5">--}}
+{{--                                --}}{{--                                    <div class="form-group">--}}
+{{--                                --}}{{--                                        <label>Email address</label>--}}
+{{--                                --}}{{--                                        <input name="email" type="email" class="form-control" placeholder="Email">--}}
+{{--                                --}}{{--                                    </div>--}}
+{{--                                --}}{{--                                </div>--}}
+{{--                                <div class="col-md-4">--}}
+{{--                                    <div class="form-group">--}}
+{{--                                        <label for="">Phone Number</label>--}}
+{{--                                        <input name="phone" type="number" class="form-control" placeholder="{{$data['profile']->phone}}" min="0" required>--}}
+{{--                                        <p class="ml-1 mt-1">Also without minus sign. Eg: 01920333215</p>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-3">--}}
+{{--                                    <div class="form-group">--}}
+{{--                                        <label for="">How should we reach you?</label>--}}
+{{--                                        <select name="preferred_communication" class="form-control pb-2" required>--}}
+{{--                                            <option value="1" @if($data['profile']->preferred_mode_communication == 1) selected @endif>Whatsapp (Best)</option>--}}
+{{--                                            <option value="2" @if($data['profile']->preferred_mode_communication == 2) selected @endif>Call & SMS</option>--}}
+{{--                                            <option value="3" @if($data['profile']->preferred_mode_communication == 3) selected @endif>Email</option>--}}
+{{--                                        </select>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <hr>--}}
+{{--                            <input type="submit" class="btn btn-primary btn-lg m-2 float-right" value="Submit">--}}
+
+{{--                        </form>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        @endif--}}
     </div>
 @endsection
 

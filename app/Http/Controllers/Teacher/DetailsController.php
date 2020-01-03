@@ -19,15 +19,55 @@ class DetailsController extends Controller
         //To see how many requirements havent settled yet
         $i = 3;
 
+//        ------------------------------------------------------------------------------
         //Check for edit profile
         $edit_profile = DB::table('teacher_profile_tracker')->where('user_teacher_id', Auth::user()->id)
             ->where('edit_profile',1)
             ->get();
 
-        if (!$edit_profile->isEmpty())  {
+        if ($edit_profile->isNotEmpty())  {
+            $data['profile'] = DB::table('teacher_details')->where('user_teacher_id', Auth::user()-> id)->first();
+
+            switch($data['profile']->title)    {
+                case 1:
+                    $data['profile_title'] = 'Cikgu';
+                    break;
+                case 2:
+                    $data['profile_title'] = 'Tuan';
+                    break;
+                case 3:
+                    $data['profile_title'] = 'Puan';
+                    break;
+                case 4:
+                    $data['profile_title'] = 'Mr';
+                    break;
+                case 5:
+                    $data['profile_title'] = 'Miss';
+                    break;
+                case 6:
+                    $data['profile_title'] = 'Bro';
+                    break;
+                case 7:
+                    $data['profile_title'] = 'Sis';
+                    break;
+            }
+
+            switch($data['profile']->preferred_mode_communication)    {
+                case 1:
+                    $data['profile_mode_comm'] = 'Whatsapp';
+                    break;
+                case 2:
+                    $data['profile_mode_comm'] = 'Call & SMS';
+                    break;
+                case 3:
+                    $data['profile_mode_comm'] = 'Email';
+                    break;
+            }
+
             $completed['edit_profile'] = 1 ;
             $i--;
         }   else    {
+
             $completed['edit_profile'] = 0 ;
         }
 
@@ -38,22 +78,23 @@ class DetailsController extends Controller
             ->where('teaching_details',1)
             ->get();
 
-        if (!$teaching_details->isEmpty())  {
+        if ($teaching_details->isNotEmpty())  {
             //Settle the counter
             $completed['teaching_details'] = 1 ;
             $i--;
         }   else    {
             $completed['teaching_details'] = 0 ;
 
-            //Other things
-            $data['exam_chosen'] = DB::table('teacher_teaching_details_exam')->where('user_teacher_id', Auth::user()->id)->get();
-            $data['subject_chosen'] = DB::table('teacher_teaching_details_subject')->where('user_teacher_id', Auth::user()->id)->get();
-
-            $data['exam'] = DB::table('exams_list')->get();
-            $data['subject'] = DB::table('subjects_list')->get();
-
-            $data['school_name'] = DB::table('schools_list')->get();
         }
+
+        //Other things
+        $data['exam_chosen'] = DB::table('teacher_teaching_details_exam')->where('user_teacher_id', Auth::user()->id)->get();
+        $data['subject_chosen'] = DB::table('teacher_teaching_details_subject')->where('user_teacher_id', Auth::user()->id)->get();
+
+        $data['exam'] = DB::table('exams_list')->get();
+        $data['subject'] = DB::table('subjects_list')->get();
+
+        $data['school_list'] = DB::table('schools_list')->get();
 
         //---------------------------------------------------------------------
         //        --------------------------------------- for add image
@@ -61,7 +102,7 @@ class DetailsController extends Controller
             ->where('add_image',1)
             ->get();
 
-        if (!$add_image->isEmpty())  {
+        if ($add_image->isNotEmpty())  {
             $completed['add_image'] = 1 ;
             $i--;
         }   else    {

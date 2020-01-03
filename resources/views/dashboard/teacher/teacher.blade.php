@@ -340,44 +340,44 @@
 @section('script')
     //-------------------------------------------------------------------------------
     //Charts
-var ctx = document.getElementById('chart1').getContext('2d');
-var lineChart = new Chart(ctx, {
-    type: 'line',
-    hover: false,
-    data:  {
-        labels: ["1  ", "4", "7", "10", "13", "16", "19", "22", "25", "28", "30"],
-        datasets: [
-            {
-                data: [1, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0],
-                fill: false,
-                borderColor: '#fbc658',
-                backgroundColor: 'transparent',
-                pointBorderColor: '#fbc658',
-                pointRadius: 4,
-                pointHoverRadius: 4,
-                pointBorderWidth: 8,
-            }
-        ]
-    },
-    options: {
-        legend: {
-            display: false,
-            position: 'top'
-        },
-        scales: {
-            xAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }],
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
-});
+// var ctx = document.getElementById('chart1').getContext('2d');
+// var lineChart = new Chart(ctx, {
+//     type: 'line',
+//     hover: false,
+//     data:  {
+//         labels: ["1  ", "4", "7", "10", "13", "16", "19", "22", "25", "28", "30"],
+//         datasets: [
+//             {
+//                 data: [1, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0],
+//                 fill: false,
+//                 borderColor: '#fbc658',
+//                 backgroundColor: 'transparent',
+//                 pointBorderColor: '#fbc658',
+//                 pointRadius: 4,
+//                 pointHoverRadius: 4,
+//                 pointBorderWidth: 8,
+//             }
+//         ]
+//     },
+//     options: {
+//         legend: {
+//             display: false,
+//             position: 'top'
+//         },
+//         scales: {
+//             xAxes: [{
+//                 ticks: {
+//                     beginAtZero: true
+//                 }
+//             }],
+//             yAxes: [{
+//                 ticks: {
+//                     beginAtZero: true
+//                 }
+//             }]
+//         }
+//     }
+// });
 
     //End Charts
     //--------------------------------------------------------------------------------

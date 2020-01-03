@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Http\Controllers\Auth;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -35,6 +36,15 @@ class User extends Authenticatable
     public function getId()
     {
         return $this->id;
+    }
+
+    public static function school_name($id)
+    {
+        $school_id = DB::table('user_school_role')->where('user_id', $id)->first()-> school_id;
+
+        $school_name = DB::table('schools_list')->find($school_id)->name;
+
+        return $school_name;
     }
 
     /**

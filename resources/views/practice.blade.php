@@ -357,7 +357,7 @@
 
                         @foreach($answers as $n)
                         <div style="margin-bottom:1em;">
-                            <a class="" data-toggle="collapse" href="#answer{{($loop->iteration)}}" role="button" aria-expanded="false"><p style="margin-bottom: 0.5em">Answer {{$symbol_finished[($loop->iteration)+1]}}</p></a>
+                            <a class="" data-toggle="collapse" href="#answer{{($loop->iteration)}}" role="button" aria-expanded="false"><p style="margin-bottom: 0.5em">Answer @if (isset($symbol_finished[($loop->iteration)+1)) {{$symbol_finished[($loop->iteration)+1]}} @endif</p></a>
                             <div id="answer{{($loop->iteration)}}" class="collapse show">
                                 <div class="control-group" style="width:90%">
                                     <div>

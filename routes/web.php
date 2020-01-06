@@ -142,4 +142,3 @@ Route::get('/mail/newsletter','MailController@newsletter');
 
 //End for Mail
 //----------------------------------------------------------------------------------
-

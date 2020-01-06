@@ -31,7 +31,7 @@ class AjaxController extends Controller
     {
         $subject = request()->get('subject');
 
-        $results = DB::table('chapters_list')->where('subject', $subject)->orderBy('order', 'asc')->get();
+        $results = DB::table('chapters_list')->where('subject', $subject)->get();
 
         echo '<option value="0">All</option>';
         foreach ($results as $result) {

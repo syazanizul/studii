@@ -30,9 +30,8 @@ class AjaxController extends Controller
     public function fetch1()
     {
         $subject = request()->get('subject');
-        $level = request()->get('level');
 
-        $results = DB::table('chapters_list')->where('subject', $subject) -> where('level', $level)->get();
+        $results = DB::table('chapters_list')->where('subject', $subject)->orderBy('order')->get();
 
         echo '<option value="0">All</option>';
         foreach ($results as $result) {
@@ -45,7 +44,7 @@ class AjaxController extends Controller
         $subject = request()->get('subject');
         $level = request()->get('level');
 
-        $results = DB::table('chapters_list')->where('subject', $subject) -> where('level', $level)->get();
+        $results = DB::table('chapters_list')->where('subject', $subject) -> where('level', $level)->orderBy('order')->get();
 
         echo '<option value="0">All</option>';
         foreach ($results as $result) {

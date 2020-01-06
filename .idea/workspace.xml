@@ -4,7 +4,6 @@
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_07_15_050859_chapter_list_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_07_15_050859_chapter_list_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -378,7 +377,7 @@
       <workItem from="1578129833101" duration="1000" />
       <workItem from="1578154345649" duration="15000" />
       <workItem from="1578266077620" duration="177000" />
-      <workItem from="1578285575375" duration="1003000" />
+      <workItem from="1578285575375" duration="1149000" />
     </task>
     <servers />
   </component>

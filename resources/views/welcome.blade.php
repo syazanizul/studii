@@ -295,7 +295,7 @@
                                                             <label class="tags-property">Subject :</label>
                                                         </div>
                                                         <div class="d-inline-block" style="width:70%;">
-                                                            <select name="s_subject" id="s_subject" class="form-control form-control-lg" style="width:100%;" onchange="fetch(this.value , 's_chapter' , 'chapters_list' , 'subject'); count()">
+                                                            <select name="s_subject" id="s_subject" class="form-control form-control-lg" style="width:100%;" onchange="fetch1(); count()">
                                                                 <option value="-">Select Subject</option>
                                                                 @foreach ($property['subjects'] as $subject)
                                                                     <option value="{{$subject -> id}}">{{  $subject -> name }}</option>
@@ -445,9 +445,7 @@
         $.ajax({
             type: 'get',
             data: {
-                input: input,
-                table: table,
-                column: column
+                subject: document.getElementById('s_subject').value,
             },
             success: function (response) {
                 if (response !== '<option value="0">All</option>') {

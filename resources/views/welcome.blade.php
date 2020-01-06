@@ -439,6 +439,28 @@
         });
     }
 
+    function fetch1()
+    {
+        //First Ajax
+        $.ajax({
+            type: 'get',
+            data: {
+                input: input,
+                table: table,
+                column: column
+            },
+            success: function (response) {
+                if (response !== '<option value="0">All</option>') {
+                    document.getElementById('s_chapter').innerHTML = response;
+                    //console.log(response);
+                }   else {
+                    //console.log('yes');
+                    document.getElementById('s_chapter').innerHTML = '<option value="0">No Data</option>';
+                }
+            }
+        });
+    }
+
     function fetch2()
     {
         //First Ajax
@@ -453,7 +475,7 @@
                 if (response !== '<option value="0">All</option>') {
                     document.getElementById('s_chapter').innerHTML = response;
                 }   else {
-                    document.getElementById(output).innerHTML = '<option value="0">No Data</option>';
+                    document.getElementById('s_chapter').innerHTML = '<option value="0">No Data</option>';
                 }
             }
         });

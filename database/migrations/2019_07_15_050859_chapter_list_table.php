@@ -18,6 +18,7 @@ class ChapterListTable extends Migration
             $table->string('name', 35);
             $table->unsignedBigInteger('subject');
             $table->unsignedBigInteger('level');
+            $table->integer('order')->nullable();
             $table->timestamps();
 
             $table->foreign('subject')->references('id')->on('subjects_list');

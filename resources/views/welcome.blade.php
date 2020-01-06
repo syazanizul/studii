@@ -444,6 +444,7 @@
         //First Ajax
         $.ajax({
             type: 'get',
+            url: 'ajax/fetch1',
             data: {
                 subject: document.getElementById('s_subject').value,
             },

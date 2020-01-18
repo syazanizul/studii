@@ -42,27 +42,29 @@
                 <div class="column">
                     <div style="position: sticky; top:30px; min-height: 500px; background-color: #d4d9d6; padding:1em;">
                         <p id="display_1">
-                            @if (isset($contents[0]))
-                                {!! $contents[0]-> content !!}
+                            @if (isset($question->contents[0]))
+                                {!!$question->contents[0]->content!!}
                             @endif
                         </p>
                         <br>
-                        @if ($image == 1)
-                            <img src="/images/question_images/id-{{$id}}.jpg?n={{rand(1,10)}}" alt="question_image">
+                        @if ($question->question_image == 1)
+                            <img src="/images/question_images/id-{{$question->id}}.jpg?n={{rand(1,10)}}" alt="question_image">
                         @endif
                         <br><br>
                         <p id="display_2">
-                            @if (isset($contents[1]))
-                                {!! $contents[1]-> content !!}
+                            @if (isset($question->contents[1]))
+                                {!!$question->contents[1]-> content!!}
                             @endif
                         </p>
                         <div style="padding-left:20px;">
 
                             @for($k=2; $k<7; $k++)
-                                <div>
-                                    <p id="symbol_{{$k+1}}" style="width:5%; display: inline-block">@if (isset($contents[$k])) {!! $symbol_finished[$k] !!} @endif</p>
-                                    <p id="display_{{$k+1}}" style="display: inline-block">@if (isset($contents[$k])) {!! $contents[$k]-> content !!} @endif</p>
-                                </div>
+                                @if(isset($question->contents[$k]))
+                                    <div style="width:100%; margin:8px auto">
+                                        <p id="symbol_{{$k+1}}" style="width:7%; display: inline-block; float:left">@if (isset($question->contents[$k])) {!! $question->contents[$k]->symbol() !!} @endif</p>
+                                        <p id="display_{{$k+1}}" style="width:90%;display: inline-block">@if (isset($question->contents[$k])) {!! $question->contents[$k]-> content !!} @endif</p>
+                                    </div>
+                                @endif
                             @endfor
                         </div>
                     </div>
@@ -75,16 +77,16 @@
                         @csrf
                         <div class="margin">
                             <label for="text_main_1">Content 1</label>
-                            <textarea id="text_main_1" name="text_main_1" class="textarea" rows="2" onkeyup="text_change(1, this.value)">@if (isset($contents[0])) {{$contents[0]-> content}} @endif</textarea>
+                            <textarea id="text_main_1" name="text_main_1" class="textarea" rows="2" onkeyup="text_change(1, this.value)">@if (isset($question->contents[0])) {{$question->contents[0]-> content}} @endif</textarea>
                         </div>
                         <div>
                             <label for="question_image"></label>
                             <input type="file" name="question_image" onchange="form.submit()">
-                            <a href="/question/add/save/content/{{$id}}/remove" class="button is-pulled-right">Remove Image</a>
+                            <a href="/question/add/save/content/{{$question->id}}/remove" class="button is-pulled-right">Remove Image</a>
                         </div>
                         <div class="margin">
                             <label for="text_sub_1">Content 2</label>
-                            <textarea id="text_sub_1" name="text_sub_1" class="textarea" rows="1"onkeyup="text_change(2, this.value)">@if (isset($contents[1])) {{$contents[1]-> content}} @endif</textarea>
+                            <textarea id="text_sub_1" name="text_sub_1" class="textarea" rows="1"onkeyup="text_change(2, this.value)">@if (isset($question->contents[1])) {{$question->contents[1]-> content}} @endif</textarea>
                         </div>
                         <br>
                         <div style="margin-left: 5em;">
@@ -93,8 +95,8 @@
                                 <div class="margin">
                                     <label for="text_sub_{{$i+2}}">Sub {{$i+1}}</label>
                                     <select name="select{{$i+1}}" class="select" onchange="sym_change({{$i+3}}, this.options[this.selectedIndex].text)">
-                                        @if (isset($contents[$i+2]) && $contents[$i+2] -> numbering != '0')
-                                            <option value="{{$contents[$i+2] -> numbering}}">{{$symbol_finished[$i+2]}}</option>
+                                        @if (isset($question->contents[$i+2]) && $question->contents[$i+2] -> numbering != '0')
+                                            <option value="{{$question->contents[$i+2] -> numbering}}">{{$question->contents[$i+2]->symbol()}}</option>
                                         @endif
                                             <option value="0"> - </option>
                                             <option value="1">a)</option>
@@ -103,10 +105,10 @@
                                             <option value="4">d)</option>
                                             <option value="5">e)</option>
                                     </select>
-                                    @if (isset($contents[$i+2]) && empty($contents[$i+3]))
-                                        <a href="/question/add/save/content/{{$id}}/remove/{{$i+2}}">DELETE</a>
+                                    @if (isset($question->contents[$i+2]) && empty($question->contents[$i+3]))
+                                        <a href="/question/add/save/content/{{$question->id}}/remove/{{$i+2}}">DELETE</a>
                                     @endif
-                                    <textarea id="text_sub_{{$i+2}}" name="text_sub_{{$i+2}}" class="textarea" rows="1" onkeyup="text_change({{$i+3}}, this.value)">@if (isset($contents[$i+2])) {{$contents[$i+2]-> content}} @endif</textarea>
+                                    <textarea id="text_sub_{{$i+2}}" name="text_sub_{{$i+2}}" class="textarea" rows="1" onkeyup="text_change({{$i+3}}, this.value)">@if (isset($question->contents[$i+2])) {{$question->contents[$i+2]-> content}} @endif</textarea>
                                 </div>
                             @endfor
                         </div>
@@ -116,7 +118,7 @@
             </div>
         </div>
     </div>
-    <a href="/question/update/answer/{{$id}}" class="button is-large is-pulled-right" style="margin:2em">Go Add Answer</a>
+    <a href="/question/update/answer/{{$question->id}}" class="button is-large is-pulled-right" style="margin:2em">Go Add Answer</a>
 </div>
 
 

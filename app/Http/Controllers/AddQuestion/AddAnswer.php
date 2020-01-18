@@ -3,49 +3,38 @@
 namespace App\Http\Controllers\AddQuestion;
 
 use App\Answer;
+use App\AnswerElement;
+use App\AnswerParent;
 use App\Question;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 
 class AddAnswer extends Controller
 {
     //  ---------------------NINTH METHOD
     public function answer($id) {
 
-        $data = AddController::show_update($id);
+        $question = Question::query()->findOrFail($id);
 
-//        dd($data);
-
-        $contents = $data['contents'];
-        $image = $data['image'];
-        $symbol_finished = $data['symbol_finished'];
-
-//        dd($contents);
-
-        for($i=0; $i<7; $i++) {
-            if (isset($contents[$i]))   {
-                if (Answer::where('content_id', $contents[$i] -> id) -> first() != null)   {
-                    $answers[$i] = Answer::where('content_id', $contents[$i]-> id) -> get();
-                }
-            }
-        }
-
-//        dd($answers);
-//        dd($contents);
-
-        if ($contents -> isEmpty()) {
-            return view('/addquestion/answer', compact('image', 'id'));
-        }
-
-        return view('/addquestion/answer', compact('contents', 'image', 'id', 'symbol_finished','answers'));
+        return view('/addquestion/answer', compact('question'));
     }
 
-    //  ----------------------TENTH METHOD
+    public function index($id, Request $request) {
+
+        $question = Question::query()->findOrFail($id);
+
+        return view('/addquestion/answer2', compact('question', 'data'));
+    }
+
+//    //  ----------------------TENTH METHOD
     public function check_answer($id, Request $request)  {
         $content_id = request('contentid');
 
-        $content = DB::table('answers')->where('content_id', $content_id) -> get();
+//        $content = DB::table('answers')->where('content_id', $content_id) -> get();
+        $content = AnswerElement::where('content_id', $content_id)->get();
+//        dd($content);
 
         if ($content -> isEmpty())    {
             $exist = 0;
@@ -79,6 +68,74 @@ class AddAnswer extends Controller
 
         $request->flash();
         return redirect('/question/update/answer/'.$id)-> with('exist', $exist) -> with($data);
+    }
+
+    public function set_up_update($id,Request $request) {
+
+        $answer_parent = AnswerParent::query()->findOrFail($request->answer_parent_id);
+
+        return back()->with(compact('answer_parent'));
+    }
+
+    public function store_insert(Request $request) {
+//        dd($request->all());
+
+        $order = AnswerParent::where('content_id', $request->contentid)->count();
+
+        $n = new AnswerParent;
+        $n->content_id =  $request->contentid;
+        $n->order =  $order+1;
+        $n->type =  1;
+        $n->created_at =  now();
+        $n->updated_at =  now();
+        $n->save();
+
+        $i=1;
+//        dd($request->answer);
+        foreach($request->answer as $m)   {
+            $k = new AnswerElement;
+            $k->answer_parent_id = $n->id;
+            $k->answer = $m;
+            if ($request->correct == $i)    {
+                $k->correct = 1;
+            }   else    {
+                $k->correct = 0;
+            }
+            $k->created_at =  now();
+            $k->updated_at =  now();
+            $k->save();
+
+            $i++;
+        }
+
+        return redirect()->back();
+    }
+
+    public function store_update(Request $request) {
+//        dd($request->get('answer')[0]);
+
+        $n = AnswerParent::query()->find($request->get('answer_parent_id'));
+
+        $answer_elements = AnswerElement::query()->where('answer_parent_id', $n->id)->orderBy('order')->get();
+
+
+        $i=0;
+
+        foreach($answer_elements as $m)   {
+
+            $m->answer = $request->get('answer')[$i];
+            if ($request->correct == $i+1)    {
+                $m->correct = 1;
+            }   else    {
+                $m->correct = 0;
+            }
+            $m->updated_at =  now();
+            $m->save();
+
+            $i++;
+        }
+
+        return redirect()->back();
     }
 
     public function store3($id, Request $request)    {

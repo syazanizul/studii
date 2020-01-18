@@ -83,56 +83,9 @@ class QuestionController extends Controller
 
     }
 
-    public function show_update($id)    {
-        $symbol = array();
-        $symbol_finished = array();
-        $question = Question::findOrFail($id);
-        $contents = DB::table('contents') -> where('question_id', $id) ->orderBy('order')-> get();
-        $image = $question -> question_image;
-
-        $j=2;
-
-//        $symbol_finished = Content::find($id) -> symbol($id);
-        //dd($symbol_finished);
-
-        foreach ($contents as $n) {
-            $symbol[$j] = $n -> numbering;
-
-            switch ($symbol[$j])    {
-                case 0:
-                    $symbol_finished[$j-2] = ' ';
-                    break;
-                case 1:
-                    $symbol_finished[$j-2] = 'a)';
-                    break;
-                case 2:
-                    $symbol_finished[$j-2] = 'b)';
-                    break;
-                case 3:
-                    $symbol_finished[$j-2] = 'c)';
-                    break;
-                case 4:
-                    $symbol_finished[$j-2] = 'd)';
-                    break;
-                case 5:
-                    $symbol_finished[$j-2] = 'e)';
-                    break;
-            }
-            $j++;
-        }
-
-        $data['contents'] = $contents;
-        $data['image'] = $image;
-        $data['id'] = $id;
-        $data['symbol_finished'] = $symbol_finished;
-
-        return $data;
-    }
-
     public function index(Request $request)
     {
         //----------------------------------------------------------------------------
-        //FOR GENERIC STUFF BERKAITAN SOALAN -----------------------------------------
         //Get num from GET of url
         $num = request() -> get('num');
 
@@ -143,65 +96,31 @@ class QuestionController extends Controller
             $qid = -1;
         }
 
-        //Get difficulty from other table
-        $difficulty = "";
         $question = Question::query()->findOrFail($qid);
 
-        switch ($question -> difficulty) {
-            case 1:
-                $difficulty = 'Easy (1)';
-                break;
-            case 2:
-                $difficulty = 'Fair (2)';
-                break;
-            case 3:
-                $difficulty = 'Moderate (3)';
-                break;
-            case 4:
-                $difficulty = 'Hard (4)';
-                break;
-            case 5:
-                $difficulty = 'Harder (5)';
-                break;
-        }
-
-        $data = $this->show_update($qid);
-
-        $contents = $data['contents'];
-        $image = $data['image'];
-        $symbol_finished = $data['symbol_finished'];
         $answer_size = 0;
-        $answer_correct = [0];
-        $i=1;
         $j=0;
 
-        for($i=0; $i<7; $i++) {
-            if (isset($contents[$i]))   {
-                if (Answer::where('content_id', $contents[$i] -> id) -> first() != null)   {
-                    $answers[] = Answer::where('content_id', $contents[$i]-> id) -> get();
+        foreach($question->contents as $n)
+        {
+            if($n->answer_parent != null)
+            {
+                foreach($n->answer_parent as $o)   {
+                    $i=1;
+                    foreach($o->answer_element as $m)
+                    {
+                        if ($m -> correct == 1) {
+                            $answer_correct[$j] = $i;
+                        }
+
+                        $i++;
+                    }
                     $answer_size++;
-
+                    $j++;
                 }
             }
         }
-
-//        dd($answers);
-        foreach ($answers as $n)     {
-//            dd($);
-            $i=1;
-            foreach ($n as $m)  {
-                if ($m -> correct == 1) {
-                    $answer_correct[$j] = $i;
-                }
-
-//                echo $m->correct, '<br>';
-                $i++;
-            }
-            $j++;
-        }
-
 //        dd($answer_correct);
-
 
         //-------------------------------------------------------------------------
         //FOR NOTIFICATIONS OR MODAL ----------------------------------------------
@@ -244,11 +163,9 @@ class QuestionController extends Controller
         // Gather all the shits together
         $noti['need_instruction'] = $need_instruction;
 
-            $data['difficulty'] = $difficulty;
-            $data['num'] = $num;
-            $data['id'] = $qid;
-            $data['answer_size'] = $answer_size;
-            $data['answer_correct'] = $answer_correct;
+        $data['num'] = $num;
+        $data['answer_size'] = $answer_size;
+        $data['answer_correct'] = $answer_correct;
 
         return view('practice' , compact('question','contents', 'image', 'symbol_finished' , 'answers', 'data', 'noti' ));
 

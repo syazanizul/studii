@@ -16,7 +16,42 @@ class Content extends Model
         return $this->hasMany(Answer::class) ;
     }
 
-    public function symbol($id)
+    public function answer_parent()
+    {
+        return $this->hasMany(AnswerParent::class);
+    }
+
+    public function symbol()
+    {
+
+        switch ($this->numbering)   {
+            case 0:
+                $symbol = ' ';
+                break;
+            case 1:
+                $symbol = 'a)';
+                break;
+            case 2:
+                $symbol = 'b)';
+                break;
+            case 3:
+                $symbol = 'c)';
+                break;
+            case 4:
+                $symbol = 'd)';
+                break;
+            case 5:
+                $symbol = 'e)';
+                break;
+            default:
+                $symbol = " ";
+                break;
+        }
+
+        return $symbol;
+    }
+
+    public function symbol2($id)
     {
         $numbering = Content::select('numbering')->where('question_id', $id) ->orderBy('order')->get();
         $symbol = array();

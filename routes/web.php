@@ -82,21 +82,26 @@ Route::get('/teacher/question', 'AddQuestion\AddController@index');
 Route::get('/teacher/question/go-practicelink/{id}', 'AddQuestion\AddController@go_to_practicelink');
 
     //Save 1
-    Route::get('/question/add', 'AddQuestion\AddProperty@property');     //Show Add Property Page
+    Route::get('/question/add', 'AddQuestion\AddProperty@index');     //Show Add Property Page
+    Route::get('/question/addnew', 'AddQuestion\AddProperty@index2');     //Show Add Property Page
     Route::post('/question/add/newproperty/1','AddQuestion\AddProperty@newsubject');      //Add new property
     Route::post('/question/add/newproperty/2','AddQuestion\AddProperty@newchapter');      //Add new property
     Route::post('/question/add/save/property', 'AddQuestion\AddProperty@store1');     //Save Property
 
     //Save 2
-    Route::get('/question/update/{id}', 'AddQuestion\AddContent@update');        //Show Update Content Page
+    Route::get('/question/update/{id}', 'AddQuestion\AddContent@index');        //Show Update Content Page
     Route::post('/question/add/save/content/{id}', 'AddQuestion\AddContent@store2');     //Save update
     Route::get('/question/add/save/content/{id}/remove', 'AddQuestion\AddContent@removeimage');
     Route::get('/question/add/save/content/{id}/remove/{order}', 'AddQuestion\AddContent@removecontent');
 
     //Save 3
-    Route::get('/question/update/answer/{id}', 'AddQuestion\AddAnswer@answer'); //view answer page
+//    Route::get('/question/update/answer/{id}', 'AddQuestion\AddAnswer@answer'); //view answer page
+    Route::get('/question/update/answer/{id}', 'AddQuestion\AddAnswer@index'); //view answer page
     Route::get('/question/add/check/answer/{id}','AddQuestion\AddAnswer@check_answer');
-    Route::get('/question/add/save/answer/{id}','AddQuestion\AddAnswer@store3');
+//    Route::get('/question/add/save/answer/{id}','AddQuestion\AddAnswer@store3');
+    Route::get('/question/add/save/answer/setup/update/{id}','AddQuestion\AddAnswer@set_up_update');
+    Route::get('/question/add/save/answer/insert','AddQuestion\AddAnswer@store_insert');
+    Route::get('/question/add/save/answer/update','AddQuestion\AddAnswer@store_update');
     Route::get('/question/publish/{id}','AddQuestion\AddAnswer@publish');
     /* End Routes to add question */
 /* End Routes to add question */

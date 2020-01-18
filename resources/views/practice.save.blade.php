@@ -292,8 +292,8 @@
                                     <ul>
                                         <li>Question ID : {{$question ->  id}}</li>
                                         <li>Source : {{$question -> source_name -> name}}</li>
-{{--                                        <li>Question No : {{$question -> question_number}}</li>--}}
-                                        <li>Difficulty : {{$question -> difficulty_name()}}</li>
+                                        {{--                                        <li>Question No : {{$question -> question_number}}</li>--}}
+                                        <li>Difficulty : {{$data['difficulty']}}</li>
                                         <li style="text-transform: capitalize">Submitted By (1) : {{$question -> submitter1 -> firstname}} {{$question -> submitter1 -> lastname}}</li>
                                         <li style="text-transform: capitalize">Submitted By (2) : @if(isset($question -> submitter2)){{$question -> submitter2 -> firstname}} {{$question -> submitter2 -> lastname}} @else    - @endif</li>
                                     </ul>
@@ -302,34 +302,34 @@
                         </div>
                     </div>
 
-{{--                2. Content for question    --}}
+                    {{--                2. Content for question    --}}
                     <div id="row-content" data-step="3" data-intro="This is the question.">
                         <div>
                             <p>
-                                @if (isset($question->contents[0]))
-                                    {!!$question->contents[0]->content!!}
+                                @if (isset($contents[0]))
+                                    {!!$contents[0]-> content!!}
                                 @endif
                             </p>
-                            @if ($question->question_image == 1)
+                            @if ($image == 1)
                                 <br>
-                                <img src="/images/question_images/id-{{$question->id}}.jpg?<?php rand(1, 15)?>" alt="question_image" style="width:100%">
+                                <img src="/images/question_images/id-{{$data['id']}}.jpg?<?php rand(1, 15)?>" alt="question_image" style="width:100%">
                                 <br><br>
                             @else
                                 <br>
                             @endif
                             <p id="display_2">
-                                @if (isset($question->contents[1]))
-                                    {!!$question->contents[1]-> content!!}
+                                @if (isset($contents[1]))
+                                    {!!$contents[1]-> content!!}
                                 @endif
                             </p>
                             <div style="padding-left:20px;">
 
                                 @for($k=2; $k<7; $k++)
-                                    @if(isset($question->contents[$k]))
-                                    <div style="width:100%; margin:8px auto">
-                                        <p id="symbol_{{$k+1}}" style="width:7%; display: inline-block; float:left">@if (isset($question->contents[$k])) {!! $question->contents[$k]->symbol() !!} @endif</p>
-                                        <p id="display_{{$k+1}}" style="width:90%;display: inline-block">@if (isset($question->contents[$k])) {!! $question->contents[$k]-> content !!} @endif</p>
-                                    </div>
+                                    @if(isset($contents[$k]))
+                                        <div style="width:100%; margin:8px auto">
+                                            <p id="symbol_{{$k+1}}" style="width:7%; display: inline-block; float:left">@if (isset($contents[$k])) {!! $symbol_finished[$k] !!} @endif</p>
+                                            <p id="display_{{$k+1}}" style="width:90%;display: inline-block">@if (isset($contents[$k])) {!! $contents[$k]-> content !!} @endif</p>
+                                        </div>
                                     @endif
                                 @endfor
                             </div>
@@ -341,9 +341,9 @@
                             <p class="d-inline-block mr-2">Easy (1)</p>
                             @for($i=1; $i<= 5; $i++)
                                 @if($i<= $question -> difficulty)
-                                <span id="s{{$i}}" class="fa fa-star rating_star checked" onclick="rating_click({{$i}})"></span>
+                                    <span id="s{{$i}}" class="fa fa-star rating_star checked" onclick="rating_click({{$i}})"></span>
                                 @else
-                                <span id="s{{$i}}" class="fa fa-star rating_star" onclick="rating_click({{$i}})"></span>
+                                    <span id="s{{$i}}" class="fa fa-star rating_star" onclick="rating_click({{$i}})"></span>
                                 @endif
                             @endfor
                             <p class="d-inline-block ml-2">Hardest (5)</p>
@@ -351,101 +351,63 @@
                         <p>&nbsp</p>
                     </div>
 
-{{--                3. Content for answers    --}}
+                    {{--                3. Content for answers    --}}
                     <div id="row-answer" data-step="5"
                          data-intro="And this area is where you will input your answers. Before you click the submit button, make sure you are absolutely certain of your answer first.">
 
-{{--                        <!----}}
-                        <div>
-                            <?php $i=1?>
-                            <?php $j=1?>
-                            @foreach($question->contents as $n)
-                                @if($n->answer_parent != null)
-                                    @foreach($n->answer_parent as $o)
-                                            <div style="margin-bottom:1em;">
-                                                <a class="" data-toggle="collapse" href="#answer{{($i)}}" role="button" aria-expanded="false"><p style="margin-bottom: 0.5em">Answer {{$n->symbol()}}</p></a>
-                                                <div id="answer{{($i)}}" class="collapse show">
-                                                    <div class="control-group" style="width:90%">
-
-
-                                                        @foreach($o->answer_element as $m)
-                                                            <div style="display:flex;">
-                                                                <div>
-                                                                    <img class="image_{{($i)}}" src="" style="width:1.6em; padding-bottom: 0.3em; margin:0.1em; visibility: hidden;" alt="tick">
-                                                                </div>
-                                                                <label class="control control--radio d-inline-block">{!!$m -> answer!!}
-                                                                    <input name="input_{{$i}}" type="radio" value="{{$loop->iteration}}"/>
-                                                                    <div class="control__indicator"></div>
-                                                                </label>
-                                                            </div>
-                                                        @endforeach
-                                                        <button id="check_question_{{$j}}" onclick="check_answer({{$j}})" style="float:right; cursor: pointer">Check Answer</button>
-                                                    </div>
+                        @foreach($answers as $n)
+                            <div style="margin-bottom:1em;">
+                                <a class="" data-toggle="collapse" href="#answer{{($loop->iteration)}}" role="button" aria-expanded="false"><p style="margin-bottom: 0.5em">Answer @if (isset($symbol_finished[($loop->iteration)+1])) {{$symbol_finished[($loop->iteration)+1]}} @endif</p></a>
+                                <div id="answer{{($loop->iteration)}}" class="collapse show">
+                                    <div class="control-group" style="width:90%">
+                                        <div>
+                                            <div style="display:flex;">
+                                                <div>
+                                                    <img class="image_{{($loop->iteration)}}" src="" style="width:1.6em; padding-bottom: 0.3em; margin:0.1em; visibility: hidden;" alt="tick">
                                                 </div>
+                                                <label class="control control--radio d-inline-block">{!!$n[0] -> answer!!}
+                                                    <input name="input_{{$loop->iteration}}" type="radio" value="1"/>
+                                                    <div class="control__indicator"></div>
+                                                </label>
                                             </div>
-                                            <?php $i++?>
-                                            <?php $j++?>
-                                    @endforeach
-                                @endif
-                            @endforeach
-                        </div>
-{{--                        -->--}}
+                                            <div style="display:flex;">
+                                                <div>
+                                                    <img class="image_{{($loop->iteration)}}" src="" style="width:1.6em; padding-bottom: 0.3em; margin:0.1em; visibility: hidden;" alt="tick">
+                                                </div>
+                                                <label class="d-inline-block control control--radio">{!!$n[1] -> answer!!}
+                                                    <input name="input_{{$loop->iteration}}" class="input_answer" type="radio" value="2"/>
+                                                    <div class="control__indicator"></div>
+                                                </label>
+                                            </div>
+                                            @if(isset($n[2]))
+                                                <div style="display:flex;">
+                                                    <div>
+                                                        <img class="image_{{($loop->iteration)}}" src="" style="width:1.6em; padding-bottom: 0.3em; margin:0.1em; visibility: hidden;" alt="tick">
+                                                    </div>
+                                                    <label class="d-inline-block control control--radio">{!!$n[2] -> answer!!}
+                                                        <input name="input_{{$loop->iteration}}" class="input_answer" type="radio" value="3"/>
+                                                        <div class="control__indicator"></div>
+                                                    </label>
+                                                </div>
+                                            @endif
+                                            @if(isset($n[3]))
+                                                <div style="display:flex;">
+                                                    <div>
+                                                        <img class="image_{{($loop->iteration)}}" src="" style="width:1.6em; padding-bottom: 0.3em; margin:0.1em; visibility: hidden;" alt="tick">
+                                                    </div>
+                                                    <label class="d-inline-block control control--radio">{!!$n[3] -> answer!!}
+                                                        <input name="input_{{$loop->iteration}}" class="input_answer" type="radio" value="4"/>
+                                                        <div class="control__indicator"></div>
+                                                    </label>
+                                                </div>
+                                            @endif
+                                            <button id="check_question_{{$loop->iteration}}" onclick="check_answer({{$loop->iteration}})" style="float:right; cursor: pointer">Check Answer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-
-{{--                            @foreach($answers as $n)--}}
-{{--                                <div style="margin-bottom:1em;">--}}
-{{--                                    <a class="" data-toggle="collapse" href="#answer{{($loop->iteration)}}" role="button" aria-expanded="false"><p style="margin-bottom: 0.5em">Answer @if (isset($symbol_finished[($loop->iteration)+1])) {{$symbol_finished[($loop->iteration)+1]}} @endif</p></a>--}}
-{{--                                    <div id="answer{{($loop->iteration)}}" class="collapse show">--}}
-{{--                                        <div class="control-group" style="width:90%">--}}
-{{--                                            <div>--}}
-{{--                                                <div style="display:flex;">--}}
-{{--                                                    <div>--}}
-{{--                                                        <img class="image_{{($loop->iteration)}}" src="" style="width:1.6em; padding-bottom: 0.3em; margin:0.1em; visibility: hidden;" alt="tick">--}}
-{{--                                                    </div>--}}
-{{--                                                    <label class="control control--radio d-inline-block">{!!$n[0] -> answer!!}--}}
-{{--                                                        <input name="input_{{$loop->iteration}}" type="radio" value="1"/>--}}
-{{--                                                        <div class="control__indicator"></div>--}}
-{{--                                                    </label>--}}
-{{--                                                </div>--}}
-{{--                                                <div style="display:flex;">--}}
-{{--                                                    <div>--}}
-{{--                                                        <img class="image_{{($loop->iteration)}}" src="" style="width:1.6em; padding-bottom: 0.3em; margin:0.1em; visibility: hidden;" alt="tick">--}}
-{{--                                                    </div>--}}
-{{--                                                    <label class="d-inline-block control control--radio">{!!$n[1] -> answer!!}--}}
-{{--                                                        <input name="input_{{$loop->iteration}}" type="radio" value="2"/>--}}
-{{--                                                        <div class="control__indicator"></div>--}}
-{{--                                                    </label>--}}
-{{--                                                </div>--}}
-{{--                                                @if(isset($n[2]))--}}
-{{--                                                    <div style="display:flex;">--}}
-{{--                                                        <div>--}}
-{{--                                                            <img class="image_{{($loop->iteration)}}" src="" style="width:1.6em; padding-bottom: 0.3em; margin:0.1em; visibility: hidden;" alt="tick">--}}
-{{--                                                        </div>--}}
-{{--                                                        <label class="d-inline-block control control--radio">{!!$n[2] -> answer!!}--}}
-{{--                                                            <input name="input_{{$loop->iteration}}" class="input_answer" type="radio" value="3"/>--}}
-{{--                                                            <div class="control__indicator"></div>--}}
-{{--                                                        </label>--}}
-{{--                                                    </div>--}}
-{{--                                                @endif--}}
-{{--                                                @if(isset($n[3]))--}}
-{{--                                                    <div style="display:flex;">--}}
-{{--                                                        <div>--}}
-{{--                                                            <img class="image_{{($loop->iteration)}}" src="" style="width:1.6em; padding-bottom: 0.3em; margin:0.1em; visibility: hidden;" alt="tick">--}}
-{{--                                                        </div>--}}
-{{--                                                        <label class="d-inline-block control control--radio">{!!$n[3] -> answer!!}--}}
-{{--                                                            <input name="input_{{$loop->iteration}}" class="input_answer" type="radio" value="4"/>--}}
-{{--                                                            <div class="control__indicator"></div>--}}
-{{--                                                        </label>--}}
-{{--                                                    </div>--}}
-{{--                                                @endif--}}
-{{--                                                <button id="check_question_{{$loop->iteration}}" onclick="check_answer({{$loop->iteration}})" style="float:right; cursor: pointer">Check Answer</button>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-
-{{--                            @endforeach--}}
-
+                        @endforeach
                     </div>
 
                     <div style="height:100px"></div>
@@ -471,29 +433,31 @@
                         </div>
                         <br>
                         @if($question -> source_name -> id != 2)
-                        <div id="div-submitter" style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">
-                            <p class="text-center">Submitted By:</p>
-                            <div id="img-submitter">
-                                @if($question->submitter1->profile_image() == 1)
-                                    <img src="{{asset('/images/user_images/id-'.$question->submitted_by1.'.jpg')}}" class="ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey; width: 50%;">
-                                @else
-                                    <img src="{{asset('/images/user_images/unknown.png')}}" class="w-50 ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey">
-                                @endif
-                            </div>
+                            <div id="div-submitter" style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">
+                                <p class="text-center">Submitted By:</p>
+                                <div id="img-submitter">
+                                    @if($data['profile_pic'] == 1)
+                                        <img src="{{asset('/images/user_images/id-'.$question->submitted_by1.'.jpg')}}" class="ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey; width: 50%;">
+                                    @elseif($data['profile_pic'] == 2)
+                                        <img src="{{asset('/images/user_images/unknown.png')}}" class="w-50 ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey">
+                                    @else
+                                        <img src="{{asset('/images/user_images/unknown.png')}}" class="w-50 ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey">
+                                    @endif
+                                </div>
                                 <p class="mt-1 text-center mb-0"><b>{{ucfirst($question->submitter1->firstname)}} {{ucfirst($question->submitter1->lastname)}}</b></p>
                                 <p class="text-center">{{\App\School::school_name($question->submitted_by1)}}</p>
-                        </div>
+                            </div>
                         @else
-                        <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">
-                            <p class="text-center"><b>Question Owned By:</b></p>
-                            <img src="{{asset('images/cat.png')}}" class="w-50 ml-auto mr-auto d-block">
-                            <p class="text-center mt-1">Studii</p>
-                        </div>
+                            <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">
+                                <p class="text-center"><b>Question Owned By:</b></p>
+                                <img src="{{asset('images/cat.png')}}" class="w-50 ml-auto mr-auto d-block">
+                                <p class="text-center mt-1">Studii</p>
+                            </div>
                         @endif
-                    </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -502,26 +466,26 @@
 @section('modal')
 
     @if($noti['need_instruction'] == 1)
-    <!-- Modal to ask if users need instructions -->
-    <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modal1" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modal1">Is this your first time?</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    If you need some instructions on how this page works, we're really happy to show things around.
-                </div>
-                <div class="modal-footer">
-                    <button onclick="show_instruction(); disable_help()" type="button" class="btn btn-primary" data-dismiss="modal">Yes I want help</button>
-                    <button type="button" onclick="disable_help()" class="btn btn-secondary" data-dismiss="modal">No I'm good</button>
+        <!-- Modal to ask if users need instructions -->
+        <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modal1" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal1">Is this your first time?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        If you need some instructions on how this page works, we're really happy to show things around.
+                    </div>
+                    <div class="modal-footer">
+                        <button onclick="show_instruction(); disable_help()" type="button" class="btn btn-primary" data-dismiss="modal">Yes I want help</button>
+                        <button type="button" onclick="disable_help()" class="btn btn-secondary" data-dismiss="modal">No I'm good</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     @endif
 
     @if(isset($noti['feedback_form']) && $noti['feedback_form'] == 1)
@@ -680,33 +644,31 @@
         "We're getting better",
         ":)",
         "Ah just one little fall",
-        'Even the Avengers got beaten the first round',
-        "At least you're improving",
-        "Better to make mistakes now rather than during the exam"
+        'Even the Avengers got beaten the first round'
     ];
 
-    let answer = [];
-
+    let answer = [0];
     @foreach($data['answer_correct'] as $n)
-        answer['{{$loop->iteration-1}}'] = '{{$n}}';
+        answer['{{$loop->iteration}}'] = '{{$n}}';
     @endforeach()
-        console.log(answer);
+    console.log(answer);
 
-{{--    let answer='{{$data['answer_correct']}}';--}}
-{{--    {{dd($answers[0][0]->correct)}}--}}
-{{--    @foreach($answers as $n)--}}
-{{--        @if($n[0] -> correct == 1)--}}
-{{--        answer[{{$loop->iteration}}] = '1';--}}
-{{--    @else--}}
-{{--        answer[{{$loop->iteration}}] = '2';--}}
-{{--        @endif--}}
-{{--        @endforeach--}}
-{{--    console.log(answer);--}}
+        {{--    let answer='{{$data['answer_correct']}}';--}}
+        {{--    {{dd($answers[0][0]->correct)}}--}}
+        {{--    @foreach($answers as $n)--}}
+        {{--        @if($n[0] -> correct == 1)--}}
+        {{--        answer[{{$loop->iteration}}] = '1';--}}
+        {{--    @else--}}
+        {{--        answer[{{$loop->iteration}}] = '2';--}}
+        {{--        @endif--}}
+        {{--        @endforeach--}}
+        {{--    console.log(answer);--}}
 
     let count_attempt = 0;
     let answer_size = '{{$data['answer_size']}}';
-    let question_id = '{{$question -> id}}';
+    let question_id = '{{$data['id']}}';
     let teacher_id = '{{$question -> submitted_by1}}';
+    console.log(answer);
 
     function check_answer(x) {
 
@@ -714,11 +676,11 @@
         let selector = 'input[name="'+ id +'"]:checked';
 
         let y = document.querySelector(selector).value;
-        console.log(y);
+
         let image_class = 'image_' + x;
         let z = document.getElementsByClassName(image_class);
 
-        if (answer[x-1] === y)    {
+        if (answer[x] === y)    {
 
             z[y-1].src = '/images/tick.png';
             z[y-1].style.visibility = 'visible';
@@ -925,7 +887,7 @@
 
         if(submitted_rating === 0) {
 
-            let question_id = '{{$question->id}}';
+            let question_id = '{{$data['id']}}';
             alertify.warning("<span style='font-size:1.3em'>thank you for rating this question</span>");
 
             $.ajax({

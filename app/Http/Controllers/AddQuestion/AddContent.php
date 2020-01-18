@@ -17,19 +17,11 @@ class AddContent extends Controller
 //        $this->middleware('owner:'.$question_id);
 //    }
 
-    public function update($id)
+    public function index($id)
     {
-        $data = AddController::show_update($id);
+        $question = Question::query()->findOrFail($id);
 
-        $contents = $data['contents'];
-        $image = $data['image'];
-        $symbol_finished = $data['symbol_finished'];
-
-        if ($contents -> isEmpty()) {
-            return view('/addquestion/content', compact('image', 'id', 'exist'));
-        }
-
-        return view('/addquestion/content', compact('contents', 'image', 'id', 'symbol_finished'));
+        return view('/addquestion/content', compact('question'));
     }
 
     //   ----------------- SIXTHS METHOD

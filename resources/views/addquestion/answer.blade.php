@@ -45,27 +45,27 @@
                 <div class="column">
                     <div style="background-color: #d4d9d6; padding: 1.5em">
                         <p id="display_1">
-                            @if (isset($contents[0]))
-                                {!! $contents[0]-> content !!}
+                            @if (isset($question->contents[0]))
+                                {!!$question->contents[0]->content!!}
                             @endif
                         </p>
                         <br>
-                        @if ($image == 1)
-                            <img src="/images/question_images/id-{{$id}}.jpg" alt="question_image">
+                        @if ($question->question_image == 1)
+                            <img src="/images/question_images/id-{{$question->id}}.jpg" alt="question_image">
                         @endif
                         <br><br>
                         <p id="display_2">
-                            @if (isset($contents[1]))
-                                {!! $contents[1]-> content !!}
+                            @if (isset($question->contents[1]))
+                                {!!$question->contents[1]-> content!!}
                             @endif
                         </p>
                         <div style="padding-left:20px;">
 
                             @for($k=2; $k<7; $k++)
                                 <div>
-                                    @if (isset($contents[$k]))
-                                        <p style="width:5%; display: inline-block">{{$symbol_finished[$k]}}</p>
-                                        <p id="display_{{$k+1}}" style="display: inline-block">{!! $contents[$k]-> content !!}</p>
+                                    @if (isset($question->contents[$k]))
+                                        <p style="width:5%; display: inline-block">{{$question->contents[$k]->symbol()}}</p>
+                                        <p id="display_{{$k+1}}" style="display: inline-block">{!! $question->contents[$k]-> content !!}</p>
                                     @endif
                                 </div>
                             @endfor
@@ -74,34 +74,56 @@
                 </div>
                 <div class="column" style="background-color: #2aa1c0; padding: 2em;">
 
-                    @for($i=0; $i<7; $i++)
-                        @if(isset($answers[$i]))
-                            <div class="box">
-                                <p><b>Answer {{$symbol_finished[$i]}}</b></p>
-                                <div style="margin:0.5em auto auto 2em">
-                                    <p id="answer_{{$i+1}}_1" style="
-                                    @if($answers[$i][0] -> correct == 1) color:green; @else color:indianred @endif
-                                    ">{{$answers[$i][0] -> answer}}</p>
+{{--                    @for($i=0; $i<7; $i++)--}}
+{{--                        @if(isset($answers[$i]))--}}
+{{--                            <div class="box">--}}
+{{--                                <p><b>Answer {{$symbol_finished[$i]}}</b></p>--}}
+{{--                                <div style="margin:0.5em auto auto 2em">--}}
+{{--                                    <p id="answer_{{$i+1}}_1" style="--}}
+{{--                                    @if($answers[$i][0] -> correct == 1) color:green; @else color:indianred @endif--}}
+{{--                                    ">{{$answers[$i][0] -> answer}}</p>--}}
 
-                                    <p id="answer_{{$i+1}}_2" style="
-                                    @if($answers[$i][1] -> correct == 1) color:green; @else color:indianred @endif
-                                    ">{{$answers[$i][1] -> answer}}</p>
+{{--                                    <p id="answer_{{$i+1}}_2" style="--}}
+{{--                                    @if($answers[$i][1] -> correct == 1) color:green; @else color:indianred @endif--}}
+{{--                                    ">{{$answers[$i][1] -> answer}}</p>--}}
 
-                                    @if(isset($answers[$i][2]))
-                                        <p id="answer_{{$i+1}}_3" style="
-                                        @if($answers[$i][2] -> correct == 1) color:green; @else color:indianred @endif
-                                            ">{{$answers[$i][2] -> answer}}</p>
-                                    @endif
+{{--                                    @if(isset($answers[$i][2]))--}}
+{{--                                        <p id="answer_{{$i+1}}_3" style="--}}
+{{--                                        @if($answers[$i][2] -> correct == 1) color:green; @else color:indianred @endif--}}
+{{--                                            ">{{$answers[$i][2] -> answer}}</p>--}}
+{{--                                    @endif--}}
 
-                                    @if(isset($answers[$i][3]))
-                                        <p id="answer_{{$i+1}}_4" style="
-                                        @if($answers[$i][3] -> correct == 1) color:green; @else color:indianred @endif
-                                            ">{{$answers[$i][3] -> answer}}</p>
-                                    @endif
-                                </div>
-                            </div>
+{{--                                    @if(isset($answers[$i][3]))--}}
+{{--                                        <p id="answer_{{$i+1}}_4" style="--}}
+{{--                                        @if($answers[$i][3] -> correct == 1) color:green; @else color:indianred @endif--}}
+{{--                                            ">{{$answers[$i][3] -> answer}}</p>--}}
+{{--                                    @endif--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        @endif--}}
+{{--                    @endfor--}}
+
+                    <?php $i=0; ?>
+                    @foreach($question->contents as $n)
+                        @if($n->answer_parent != null)
+                            @foreach($n->answer_parent as $o)
+                                    <div class="box">
+                                        <p><b>Answer {{$n->symbol()}}</b></p>
+                                        <div style="margin:0.5em auto auto 2em">
+
+                                        @foreach($o->answer_element as $m)
+                                            <p id="answer_{{$i+1}}_1"
+                                               style="@if($m -> correct == 1) color:green; @else color:indianred @endif">
+                                                {{$m -> answer}}
+                                            </p>
+                                                <?php $i++; ?>
+                                        @endforeach
+
+                                        </div>
+                                    </div>
+                            @endforeach
                         @endif
-                    @endfor
+                    @endforeach
 
                 </div>
             </div>
@@ -123,17 +145,18 @@
                 @elseif (Session::has('exist') && Session('exist') == 0)
                     <p style="color:#fcba03; display: inline-block">&nbsp&nbsp New</p>
                 @endif
-                <form action="/question/add/check/answer/{{$id}}">
+                <form action="/question/add/check/answer/{{$question->id}}">
                     <select name="contentid" id="contentid" class="input" onchange="this.form.submit()">
+{{--                    <select name="contentid" id="contentid" class="input">--}}
                         <option value="0"> - </option>
 
                         @for($i=2; $i<7; $i++)
-                            @if(isset($contents[$i]))
-                                <option value="{{$contents[$i] -> id}}" {{ (old('contentid')) == $contents[$i] -> id ? 'selected' : '' }}>{{$symbol_finished[$i]}}</option>
+                            @if(isset($question->contents[$i]))
+                                <option value="{{$question->contents[$i] -> id}}" {{ (old('contentid')) == $question->contents[$i] -> id ? 'selected' : '' }}>{{$question->contents[$i]->symbol()}}</option>
                             @endif
                         @endfor
-                        @if(!isset($contents[2]))
-                            <option selected value="{{$contents[0] -> id}}">One Answer</option>
+                        @if(!isset($question->contents[2]))
+                            <option selected value="{{$question->contents[0] -> id}}">One Answer</option>
                         @endif
                     </select>
                 </form>
@@ -148,7 +171,7 @@
                 </select>
             </div>
         </div>
-        <form class="column margin is-four-fifths" action="/question/add/save/answer/{{$id}}">
+        <form class="column margin is-four-fifths" action="/question/add/save/answer/insert">
             <div class="columns">
                 <div class="column">
                     <div>
@@ -165,21 +188,21 @@
                 <div class="column is-two-fifths">
                     <div>
                         <p style="margin:0.5em; color:white;">Answer 1</p>
-                        <textarea id="textarea_answer_1" name="answer1" class="input" onkeyup="change(1, this.value)" disabled>@if(Session::has('content1')) {{session('content1')}} @endif</textarea>
+                        <textarea id="textarea_answer_1" name="answer[0]" class="input" onkeyup="change(1, this.value)" disabled>@if(Session::has('content1')) {{session('content1')}} @endif</textarea>
                     </div>
                     <div>
                         <p style="margin:0.5em; color:white;">Answer 2</p>
-                        <textarea id="textarea_answer_2" name="answer2" class="input" onkeyup="change(2, this.value)" disabled>@if(Session::has('content2')) {{session('content2')}} @endif</textarea>
+                        <textarea id="textarea_answer_2" name="answer[1]" class="input" onkeyup="change(2, this.value)" disabled>@if(Session::has('content2')) {{session('content2')}} @endif</textarea>
                     </div>
                 </div>
                 <div class="column is-two-fifths">
                     <div>
                         <p style="margin:0.5em; color:white;">Answer 3</p>
-                        <textarea id="textarea_answer_3" name="answer3" class="input" onkeyup="change(3, this.value)" disabled>@if(Session::has('content3')) {{session('content3')}} @endif</textarea>
+                        <textarea id="textarea_answer_3" name="answer[2]" class="input" onkeyup="change(3, this.value)" disabled>@if(Session::has('content3')) {{session('content3')}} @endif</textarea>
                     </div>
                     <div>
                         <p style="margin:0.5em; color:white;">Answer 4</p>
-                        <textarea id="textarea_answer_4" name="answer4" class="input" onkeyup="change(4, this.value)" disabled>@if(Session::has('content4')) {{session('content4')}} @endif</textarea>
+                        <textarea id="textarea_answer_4" name="answer[3]" class="input" onkeyup="change(4, this.value)" disabled>@if(Session::has('content4')) {{session('content4')}} @endif</textarea>
                     </div>
                 </div>
 
@@ -187,24 +210,24 @@
                 <input type="hidden" name="new" value="@if(Session::has('new')) {{session('new') }} @endif">
 
                 <div class="column" style=" margin-right:1em;">
-{{--                    @if(!isset($contents[2]))       <!--If contents has no a), b), c) etc-->--}}
-{{--                        <input type="hidden" name="contentid" value="{{$contents[0] -> id}}">--}}
-{{--                    @endif--}}
+                    @if(!isset($question->contents[2]))       <!--If contents has no a), b), c) etc-->
+                        <input type="hidden" name="contentid" value="{{$contents[0] -> id}}">
+                    @endif
 
 {{--                    NI SPECIAL CASE KALAU FIRST KEY IN (NEW) DAN BUKAN A) B) C)--}}
-                    @if(!isset($answers[0]) && !isset($contents[2]))
+                    @if(!isset($question->contents[0]->answer_parent) && !isset($question->contents[2]))
                         <input type="hidden" name="contentid" value="{{$contents[0] -> id}}">
                         <input type="hidden" name="new" value="1">
                     @endif
 
-                    @if(isset($answers[0]) && !isset($contents[2]))
-                        <input type="hidden" name="contentid" value="{{$contents[0] -> id}}">
+                    @if(isset($question->contents[0]->answer_parent) && !isset($question->contents[2]))
+                        <input type="hidden" name="contentid" value="{{$question->contents[0] -> id}}">
                         <input type="hidden" name="new" value="0">
                     @endif
 
                     <input type="submit" class="button is-large" style="margin:0.5em 0.5em 0.2em 0.5em" value="save">
-                    <a href="/question/publish/{{$id}}" class="button" style="margin:0.2em 0.5em 0.5em 0.5em">Publish!</a>
-                    <a class="button" href="/question/update/{{$id}}" style="margin:0.1em">Back to edit</a>
+                    <a href="/question/publish/{{$question->id}}" class="button" style="margin:0.2em 0.5em 0.5em 0.5em">Publish!</a>
+                    <a class="button" href="/question/update/{{$question->id}}" style="margin:0.1em">Back to edit</a>
                 </div>
             </div>
         </form>

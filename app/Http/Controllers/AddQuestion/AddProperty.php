@@ -5,17 +5,18 @@ namespace App\Http\Controllers\AddQuestion;
 use App\Http\Controllers\Controller;
 use App\Chapter;
 use App\Subject;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class AddProperty extends Controller
 {
     //   ----------------- FIRST METHOD
-    public function property()
+    public function index()
     {
         $subjects = DB::table('subjects_list')->get();
         $levels = DB::table('levels_list')->get();
-        $chapters = DB::table('chapters_list')->get();
         $sources = DB::table('sources_list')->get();
 
         return view('addquestion/property', compact('subjects' , 'levels' , 'chapters', 'sources'));
@@ -33,7 +34,7 @@ class AddProperty extends Controller
         $subject -> save();
         //dd($subject);
 
-        return redirect('question/add');
+        return redirect()->back();
     }
 
 //   ----------------- THIRD METHOD
@@ -51,19 +52,30 @@ class AddProperty extends Controller
         $chapter -> save();
         //dd($chapter);
 
-        return redirect('question/add');
+        return redirect()->back();
     }
 
 //   ----------------- FOURTH METHOD
     public function store1()    {
-        //dd(request()-> all());
+
         $subject = request() -> get('s_subject');
         $level = request() -> get('s_level');
         $chapter = request() -> get('s_chapter');
-//        $source = request() -> get('s_source');
         $paper = request() -> get('s_paper');
-//        $year = request() -> get('s_year');
         $difficulty = request() -> get('s_difficulty');
+        $source = request() -> get('s_source');
+
+        if (request() -> get('submitter1') == null)   {
+            $submitter1 = Auth::user()->id;
+            $submitter2 = 0;
+        }   else    {
+            $submitter1 = request() -> get('submitter1');
+            $submitter2 = Auth::user()->id;
+        }
+
+//        $year = request() -> get('s_year');
+
+
         $question = new \App\Question;
         $question -> exam = 1;
         $question -> level = $level;
@@ -71,13 +83,13 @@ class AddProperty extends Controller
         $question -> chapter = $chapter;
         $question -> year = 2019;
         $question -> paper = $paper;
-        $question -> source = 2;
+        $question -> source = $source;
         $question -> question_number = 0;
         $question -> difficulty = $difficulty;
         $question -> finished = false;
         $question -> verified = false;
-        $question -> submitted_by1 = auth()->user()->id;
-        $question -> submitted_by2 = 0;
+        $question -> submitted_by1 = $submitter1;
+        $question -> submitted_by2 = $submitter2;
         $question -> question_image = 0;
         $question -> created_at = now();
         $question -> updated_at = now();

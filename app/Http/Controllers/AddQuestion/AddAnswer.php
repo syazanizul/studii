@@ -112,7 +112,7 @@ class AddAnswer extends Controller
     }
 
     public function store_update(Request $request) {
-//        dd($request->get('answer')[0]);
+        dd($request->all());
 
         $n = AnswerParent::query()->find($request->get('answer_parent_id'));
 

@@ -47,7 +47,7 @@ class AddProperty extends Controller
 
         $chapter = new chapter;
         $chapter -> name = $request;
-        $chapter -> subject = 1;
+        $chapter -> subject = $subject;
         $chapter -> level = $level;
         $chapter -> save();
         //dd($chapter);

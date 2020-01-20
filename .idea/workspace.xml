@@ -2,32 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/AnswerElement.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/AnswerParent.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/ExamFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/SourceFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_14_051359_create_answer_elements.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_14_051537_create_answer_parent.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/LevelTableSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/addquestion/answer2.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/practice.save.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Content.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AddQuestion/AddAnswer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AddQuestion/AddAnswer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AddQuestion/AddContent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AddQuestion/AddContent.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AddQuestion/AddProperty.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AddQuestion/AddProperty.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Question.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Question.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/AnswerFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/AnswerFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/QuestionFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/QuestionFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/question_images/id-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/question_images/id-1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/addquestion/answer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/addquestion/answer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/addquestion/content.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/addquestion/content.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/addquestion/property.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/addquestion/property.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/practice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/practice.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -418,6 +394,7 @@
       <workItem from="1579322957232" duration="3851000" />
       <workItem from="1579345623296" duration="2800000" />
       <workItem from="1579357304443" duration="11144000" />
+      <workItem from="1579552623556" duration="36000" />
     </task>
     <servers />
   </component>
@@ -477,11 +454,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="279" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1575662530868" />
-    <state x="596" y="302" width="582" height="326" key="com.intellij.ide.util.TipDialog" timestamp="1579374193269">
+    <state x="596" y="302" width="582" height="326" key="com.intellij.ide.util.TipDialog" timestamp="1579552644740">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="477" y="239" width="582" height="326" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1579345668080" />
-    <state x="596" y="302" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579374193269" />
+    <state x="596" y="302" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579552644740" />
     <state x="474" y="173" width="588" height="478" key="find.popup" timestamp="1576784693540">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

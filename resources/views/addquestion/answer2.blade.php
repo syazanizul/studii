@@ -179,7 +179,11 @@
                                             <div class="w-25 p-1">
                                                 <p>Which Question</p>
                                                 <select name="contentid" class="form-control">
-                                                    <option>{{session('answer_parent')->content->symbol()}}</option>
+                                                    @if(session('answer_parent')->content->numbering != 0)
+                                                        <option>{{session('answer_parent')->content->symbol()}}</option>
+                                                    @else
+                                                        <option>One Answer</option>
+                                                    @endif
                                                 </select>
                                             </div>
                                             <div class="w-25 p-1">

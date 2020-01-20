@@ -116,7 +116,7 @@ class AddAnswer extends Controller
 
         $n = AnswerParent::query()->find($request->get('answer_parent_id'));
 
-        $answer_elements = AnswerElement::query()->where('answer_parent_id', $n->id)->orderBy('order')->get();
+        $answer_elements = AnswerElement::query()->where('answer_parent_id', $n->id)->get();
 
 
         $i=0;

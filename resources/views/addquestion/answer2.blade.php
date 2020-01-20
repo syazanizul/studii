@@ -93,7 +93,7 @@
                                             @foreach($o->answer_element as $m)
                                                 <p id="answer_{{$i+1}}_1"
                                                    style="@if($m -> correct == 1) color:green; @else color:indianred @endif">
-                                                    {{$m -> answer}}
+                                                    {!! $m -> answer !!}
                                                 </p>
                                                 <?php $i++; ?>
                                             @endforeach

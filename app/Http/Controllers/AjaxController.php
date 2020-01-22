@@ -194,13 +194,15 @@ class AjaxController extends Controller
         }
     }
 
-    public function feedback()  {
+    public function feedback(Request $request)  {
         $like = request() -> get('like');
         $suggestion = request() -> get('suggestion');
 
         $db = DB::table('feedback_form') -> insert(
             ['like' => $like, 'suggestion' => $suggestion, 'created_at' => now(), 'updated_at' => now()]
         );
+
+        $request->session()->put('feedback_form', 1);
 
         Mail::to('syazanizul@gmail.com')->send(new event('Feedback'));
 

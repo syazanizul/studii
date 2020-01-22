@@ -17,6 +17,21 @@
             padding: 10px;
             text-align: left;
         }
+
+        #div_recent {
+            box-shadow:
+            -12px -12px 12px 0 rgba(255, 255, 255, 1),
+            12px 12px 12px 0 rgba(200, 200, 200, 1);
+        }
+
+        #table_recent th {
+            padding: 0;
+        }
+
+        #table_recent td {
+            padding: 0;
+        }
+
     </style>
 
 </head>
@@ -111,6 +126,77 @@
 
                     <input class="btn btn-lg float-right" type="submit" value="Save Property!">
                 </form>
+            </div>
+            <div class="col-md-4" style="font-size: 0.8em;">
+                @if(session('recent_add_property') != null)
+                    <form  method="post" action="/question/add/save/property">
+                        <div id="div_recent" class="card m-5">
+                            @csrf
+                            <div class="card-body">
+                                <h3 class="mb-3">Recent Property</h3>
+                                <table id="table_recent">
+                                    <tr>
+                                        <td>
+                                            <p>Subject :</p>
+                                        </td>
+                                        <td style="text-align: right">
+                                            <p>{{App\Subject::find(session('recent_add_property')["s_subject"])->name}}</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Level :</p>
+                                        </td>
+                                        <td style="text-align: right">
+                                            <p>{{App\Level::find(session('recent_add_property')["s_level"])->name}}</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Chapter :</p>
+                                        </td>
+                                        <td style="text-align: right">
+                                            <p>{{App\Chapter::find(session('recent_add_property')["s_chapter"])->name}}</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Paper :</p>
+                                        </td>
+                                        <td style="text-align: right">
+                                            <p>Paper {{session('recent_add_property')["s_paper"]}}</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Difficulty :</p>
+                                        </td>
+                                        <td style="text-align: right">
+                                            <p>{{session('recent_add_property')["s_difficulty"]}}</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Source :</p>
+                                        </td>
+                                        <td style="text-align: right">
+                                            <p>{{App\Source::find(session('recent_add_property')["s_source"])->name}}</p>
+                                        </td>
+                                    </tr>
+
+                                </table>
+                            </div>
+                            <input type="hidden" name="s_subject" value="{{session('recent_add_property')["s_subject"]}}">
+                            <input type="hidden" name="s_level" value="{{session('recent_add_property')["s_level"]}}">
+                            <input type="hidden" name="s_chapter" value="{{session('recent_add_property')["s_chapter"]}}">
+                            <input type="hidden" name="s_paper" value="{{session('recent_add_property')["s_paper"]}}">
+                            <input type="hidden" name="s_difficulty" value="{{session('recent_add_property')["s_difficulty"]}}">
+                            <input type="hidden" name="s_source" value="{{session('recent_add_property')["s_source"]}}">
+                            <input type="hidden" name="submitter1" value="{{session('recent_add_property')["submitter1"]}}">
+                            <input type="submit" value="Submit">
+                        </div>
+                    </form>
+                @endif
             </div>
         </div>
         <br>

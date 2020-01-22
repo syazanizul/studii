@@ -56,7 +56,8 @@ class AddProperty extends Controller
     }
 
 //   ----------------- FOURTH METHOD
-    public function store1()    {
+    public function store1(Request $request)    {
+        $request->session()->put('recent_add_property', request()->all());
 
         $subject = request() -> get('s_subject');
         $level = request() -> get('s_level');

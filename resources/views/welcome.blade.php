@@ -255,7 +255,7 @@
                                              <option value="{{$subject->id}}">{{$subject->name}}</option>
                                             @endforeach
                                         </select>
-                                        <button class="btn btn-lg btn-primary d-inline-block float-right m-2" >Search</button>
+                                        <button class="btn btn-lg btn-primary d-inline-block float-right m-2" >Browse</button>
                                     </div>
                                 </div>
                             </form>

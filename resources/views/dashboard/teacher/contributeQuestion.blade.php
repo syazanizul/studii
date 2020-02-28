@@ -68,7 +68,9 @@
 {{--                <div class="table-responsive">--}}
                 <div class="">
                     <h4 class="text-primary">Questions in draft</h4>
-                    @if(!$data['list_draft_question'] -> isEmpty())
+
+                @if(\App\Question::where('submitted_by1', Auth::user()->id)->where('finished',0)->get()-> isNotEmpty())
+{{--                    @if(!$data['list_draft_question'] -> isEmpty())--}}
                     <table class="table">
                         <thead class=" text-primary">
                             <th>
@@ -89,20 +91,22 @@
                         </thead>
                         <tbody>
 
-                        @for($i=0; $i< $data['list_draft_question']->count(); $i++)
+                        @foreach(\App\Question::where('submitted_by1', Auth::user()->id)->where('finished',0)->get() as $m)
+{{--                            {{dd($m->chapter)}}--}}
                             <tr>
-                                <td>{{$i+1}}</td>
-                                <td>{{\App\Question::give_subject_name($data['list_draft_question'][$i]->subject)}}</td>
-                                <td>{{\App\Question::give_chapter_name($data['list_draft_question'][$i]->chapter)}}</td>
-                                <td>{{$data['list_draft_question'][$i]->id}}</td>
-                                <td class="text-right"><a href="/question/update/{{$data['list_draft_question'][$i]->id}}" class="btn btn-primary" disabled>Continue</a></td>
+                                <td>{{$loop->iteration}}</td>
+                                <td>{{\App\Question::give_subject_name($m->subject)}}</td>
+                                <td>{{\App\Question::give_chapter_name($m->subject)}}</td>
+                                <td>{{$m->id}}</td>
+                                <td class="text-right"><a href="/question/update/{{$m->id}}" class="btn btn-primary" disabled>Continue</a></td>
                             </tr>
-                        @endfor
+                        @endforeach
+
                         </tbody>
                     </table>
-                        @else
+                    @else
                     <p>None</p>
-                        @endif
+                    @endif
                 </div>
 
             </div>
@@ -137,16 +141,19 @@
                     </thead>
                     <tbody>
 
-                    @for($i=0; $i< $data['list_finished_question']->count(); $i++)
+
+
+                    @foreach(\App\Question::where('submitted_by1', Auth::user()->id)->where('submitted_by1', Auth::id())-> where('finished',1)->get() as $n)
                         <tr>
-                            <td>{{$i+1}}</td>
-                            <td>{{\App\Question::give_subject_name($data['list_finished_question'][$i]->subject)}}</td>
-                            <td>{{\App\Question::give_chapter_name($data['list_finished_question'][$i]->chapter)}}</td>
-                            <td>{{$data['list_finished_question'][$i]->id}}</td>
-                            <td class="text-right"><a href="/teacher/question/go-practicelink/{{$data['list_finished_question'][$i]->id}}" class="btn btn-primary">Show</a></td>
-                            <td class="text-right"><a href="/question/update/{{$data['list_finished_question'][$i]->id}}" class="btn btn-primary" disabled>Edit</a></td>
+                            <td>{{$loop->iteration}}</td>
+                            <td>{{\App\Question::give_subject_name($n->subject)}}</td>
+                            <td>{{\App\Question::give_chapter_name($n->chapter)}}</td>
+                            <td>{{$n->id}}</td>
+                            <td class="text-right"><a href="/teacher/question/go-practicelink/{{$n->id}}" class="btn btn-primary">Show</a></td>
+                            <td class="text-right"><a href="/question/update/{{$n->id}}" class="btn btn-primary" disabled>Edit</a></td>
                         </tr>
-                    @endfor
+                    @endforeach
+
                     </tbody>
                 </table>
             </div>
@@ -159,7 +166,7 @@
                     <div class="col-12 col-md-12">
                         <div class="numbers">
                             <p class="card-category">Total Questions Submitted</p>
-                            <p class="card-title">{{$data['total_question']}}
+                            <p class="card-title">{{\App\Question::where('submitted_by1', Auth::user()->id)->count()}}
                             <p>
                         </div>
                     </div>

@@ -32,24 +32,7 @@ class AddController extends Controller
 //    ---------------- INDEX
     public function index() {
 
-//        First -> Get TOTAL how many questions submitted by this teacher
-        $x1 = DB::table('questions')->where('submitted_by1', Auth::id())->count();
-
-        //Second -> Get ARRAYS of the unfinished questions submitted by this teacher
-        $x2 = DB::table('questions')->where('submitted_by1', Auth::id())-> where('finished',0)->get();
-
-        //Third -> Get ARRAYS of the finished questions
-        $x3 = DB::table('questions')->where('submitted_by1', Auth::id())-> where('finished',1)->get();
-
-
-        //---------------------------------------------------------------------------------
-        //GATHER all data
-
-        $data['total_question'] = $x1;
-        $data['list_draft_question'] = $x2;
-        $data['list_finished_question'] = $x3;
-
-        return view('dashboard.teacher.contributeQuestion', compact('data'));
+        return view('dashboard.teacher.contributeQuestion');
     }
 
     //   ----------------- GENERAL METHOD USED BY ADD_CONTENT AND ADD_ANSWER

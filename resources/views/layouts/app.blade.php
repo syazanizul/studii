@@ -155,6 +155,9 @@
                                         @case(4)
                                             <a class="dropdown-item" href="/volunteer">Dashboard</a>
                                             @break
+                                        @case(5)
+                                        <a class="dropdown-item" href="/admin">Dashboard</a>
+                                        @break
                                     @endswitch
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

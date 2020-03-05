@@ -478,7 +478,7 @@
                             <p class="text-center">Submitted By:</p>
                             <div id="img-submitter">
                                 @if($question->creator_info->profile_image() == 1)
-                                    <img src="{{asset('/images/user_images/id-'.$question->question_allocation->creator.'.jpg')}}" class="ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey; width: 50%;">
+                                    <img src="{{asset('/images/user_images/id-'.$question->creator.'.jpg')}}" class="ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey; width: 50%;">
                                 @else
                                     <img src="{{asset('/images/user_images/unknown.png')}}" class="w-50 ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey">
                                 @endif

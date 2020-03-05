@@ -66,8 +66,8 @@ class TeacherController extends Controller
 
         //Count all the statistics ---------------------------------------------
         //Count total questions submitted
-        $question_submitted = DB::table('count_attempt')->where('creator', Auth::user()->id) -> where('finished', 1)-> get();
-        $data_question_submitted = $question_submitted->count();
+//        $question_submitted = DB::table('count_attempt')->where('creator', Auth::user()->id) -> where('finished', 1)-> get();
+//        $data_question_submitted = $question_submitted->count();
         //End count total questions submitted
 
         //Attempt today and this month
@@ -89,11 +89,13 @@ class TeacherController extends Controller
         if(DB::table('count_attempt')->where('creator', Auth::user()->id)->whereDate('created_at', Carbon::today())->get() -> isNotEmpty())    {
             $data_attempt_today = DB::table('count_attempt')->where('creator', Auth::user()->id)->whereDate('created_at', Carbon::today())->count();
             $data_attempt_month = DB::table('count_attempt')->where('creator', Auth::user()->id)->whereMonth('created_at', Carbon::now()->month)->count();
-
+//            $data_question_submitted = DB::table('count_attempt')->where('creator', Auth::user()->id);
         }   else    {
             $data_attempt_today = 0;
             $data_attempt_month = 0;
         }
+
+        $data_question_submitted = -;
 
 
         //Gather all the data in one variable

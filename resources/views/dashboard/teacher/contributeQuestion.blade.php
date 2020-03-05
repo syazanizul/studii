@@ -91,15 +91,13 @@
                         <tbody>
 
                         @foreach($draft->get() as $m)
-                            @if($m == 0)
-                                <tr>
-                                    <td>{{$loop->iteration}}</td>
-                                    <td>{{\App\Question::give_subject_name($m->subject)}}</td>
-                                    <td>{{\App\Question::give_chapter_name($m->subject)}}</td>
-                                    <td>{{$m->question->id}}</td>
-                                    <td class="text-right"><a href="/question/update/{{$m->id}}" class="btn btn-primary" disabled>Continue</a></td>
-                                </tr>
-                            @endif
+                            <tr>
+                                <td>{{$loop->iteration}}</td>
+                                <td>{{\App\Question::give_subject_name($m->subject)}}</td>
+                                <td>{{\App\Question::give_chapter_name($m->chapter)}}</td>
+                                <td>{{$m->id}}</td>
+                                <td class="text-right"><a href="/question/update/{{$m->id}}" class="btn btn-primary" disabled>Continue</a></td>
+                            </tr>
                         @endforeach
 
                         </tbody>
@@ -166,7 +164,7 @@
                     <div class="col-12 col-md-12">
                         <div class="numbers">
                             <p class="card-category">Total Questions Submitted</p>
-                            <p class="card-title">{{$draft->count()}}
+                            <p class="card-title">{{$question_done}}
                             <p>
                         </div>
                     </div>

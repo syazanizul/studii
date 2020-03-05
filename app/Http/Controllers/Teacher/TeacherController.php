@@ -96,9 +96,6 @@ class TeacherController extends Controller
             $data_question_submitted = 0;
         }
 
-        $data_question_submitted = '-';
-
-
         //Gather all the data in one variable
         $data['question_submitted'] = $data_question_submitted;
         $data['attempt_today'] = $data_attempt_today;

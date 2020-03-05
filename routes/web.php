@@ -111,27 +111,27 @@ Route::get('/redirect/detailed','QuestionController@detailed');
 
 // ALL AJAX ----------
 // AJAX for Welcome page
-Route::get('/ajax/fetch', 'AjaxController@fetch');
-Route::get('/ajax/fetch1', 'AjaxController@fetch1');
-Route::get('/ajax/fetch2', 'AjaxController@fetch2');
-Route::get('/ajax/count', 'AjaxController@count');
+Route::get('/ajax/fetch', 'Ajax\WelcomeController@fetch');
+Route::get('/ajax/fetch1', 'Ajax\WelcomeController@fetch1');
+Route::get('/ajax/fetch2', 'Ajax\WelcomeController@fetch2');
+Route::get('/ajax/count', 'Ajax\WelcomeController@count');
 // End AJAX for Welcome page
 
 //AJAX for general
-Route::get('/ajax/feedback', 'AjaxController@feedback');
+Route::get('/ajax/feedback', 'Ajax\AjaxController@feedback');
 //End Ajax for general
 
 // AJAX for teacher dashboard
-Route::get('/ajax/dashboard/hide-modal', 'AjaxController@hide_modal');
-Route::get('/ajax/dashboard/noti2', 'AjaxController@noti2');
-Route::get('/ajax/dashboard/noti3', 'AjaxController@noti3');
-Route::get('/ajax/dashboard/teacher/details/subject_based_on_exam', 'AjaxController@subject_based_on_exam');
+Route::get('/ajax/dashboard/hide-modal', 'Ajax\Dashboard\TeacherController@hide_modal');
+Route::get('/ajax/dashboard/noti2', 'Ajax\Dashboard\TeacherController@noti2');
+Route::get('/ajax/dashboard/noti3', 'Ajax\Dashboard\TeacherController@noti3');
+Route::get('/ajax/dashboard/teacher/details/subject_based_on_exam', 'Ajax\Dashboard\TeacherController@subject_based_on_exam');
 // End AJAX for teacher dashboard
 
 //Ajax for practicelink
-Route::get('/ajax/practice/session-for-new', 'AjaxController@session_for_new');
-Route::get('/ajax/practice/count-attempt', 'AjaxController@count_attempt');
-Route::get('/ajax/practice/rating', 'AjaxController@rating');
+Route::get('/ajax/practice/session-for-new', 'Ajax\PracticeController@session_for_new');
+Route::get('/ajax/practice/count-attempt', 'Ajax\PracticeController@count_attempt');
+Route::get('/ajax/practice/rating', 'Ajax\PracticeController@rating');
 
 //End ALL AJAX ----------
 

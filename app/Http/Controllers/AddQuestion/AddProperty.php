@@ -66,6 +66,7 @@ class AddProperty extends Controller
         $difficulty = request() -> get('s_difficulty');
         $source = request() -> get('s_source');
 
+        //This is supposed to be redundant from now on
         if (request() -> get('submitter1') == null)   {
             $submitter1 = Auth::user()->id;
             $submitter2 = 0;
@@ -98,6 +99,12 @@ class AddProperty extends Controller
         $question -> save();
 
         $id = $question -> id;
+
+        if (request() -> get('submitter1') == null)   {
+            DB::table('question_allocation')->insert(['question_id' => $id, 'creator' =>  Auth::user()->id, 'uploader' => 0]);
+        }   else    {
+            DB::table('question_allocation')->insert(['question_id' => $id, 'creator' =>  request() -> get('submitter1'), 'uploader' => Auth::user()->id]);
+        }
 
         return redirect('question/update/'.$id);
 

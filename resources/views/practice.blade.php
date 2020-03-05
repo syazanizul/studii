@@ -278,6 +278,7 @@
                         <div class="collapse multi-collapse" id="accordion1">
                             <div class="card-body">
                                 <p>Question Properties:</p>
+
                                 <div>
                                     <ul>
                                         <li>Exam : SPM</li>
@@ -294,8 +295,9 @@
                                         <li>Source : {{$question -> source_name -> name}}</li>
 {{--                                        <li>Question No : {{$question -> question_number}}</li>--}}
                                         <li>Difficulty : {{$question -> difficulty_name()}}</li>
-                                        <li style="text-transform: capitalize">Submitted By (1) : {{$question -> submitter1 -> firstname}} {{$question -> submitter1 -> lastname}}</li>
-                                        <li style="text-transform: capitalize">Submitted By (2) : @if(isset($question -> submitter2)){{$question -> submitter2 -> firstname}} {{$question -> submitter2 -> lastname}} @else    - @endif</li>
+                                        <li style="text-transform: capitalize">Creator : {{$question->question_allocation->creator_user->firstname}} {{$question->question_allocation->creator_user->lastname}}</li>
+{{--                                        <li style="text-transform: capitalize">Submitted By (2) : @if(isset($question -> submitter2)){{$question->question_allocation->uploader_user->firstname}} {{$question->question_allocation->uploader_user->lastname}} @else    - @endif</li>--}}
+                                        <li style="text-transform: capitalize">Uploader : {{$question->question_allocation->creator_user->firstname}} {{$question->question_allocation->creator_user->lastname}}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -474,14 +476,14 @@
                         <div id="div-submitter" style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">
                             <p class="text-center">Submitted By:</p>
                             <div id="img-submitter">
-                                @if($question->submitter1->profile_image() == 1)
-                                    <img src="{{asset('/images/user_images/id-'.$question->submitted_by1.'.jpg')}}" class="ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey; width: 50%;">
+                                @if($question->question_allocation->creator_user->profile_image() == 1)
+                                    <img src="{{asset('/images/user_images/id-'.$question->question_allocation->creator.'.jpg')}}" class="ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey; width: 50%;">
                                 @else
                                     <img src="{{asset('/images/user_images/unknown.png')}}" class="w-50 ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey">
                                 @endif
                             </div>
-                                <p class="mt-1 text-center mb-0"><b>{{ucfirst($question->submitter1->firstname)}} {{ucfirst($question->submitter1->lastname)}}</b></p>
-                                <p class="text-center">{{\App\School::school_name($question->submitted_by1)}}</p>
+                                <p class="mt-1 text-center mb-0"><b>{{ucfirst($question->question_allocation->creator_user->firstname)}} {{ucfirst($question->question_allocation->creator_user->lastname)}}</b></p>
+                                <p class="text-center">{{\App\School::school_name($question->question_allocation->creator)}}</p>
                         </div>
                         @else
                         <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">

@@ -166,7 +166,7 @@ class QuestionController extends Controller
         $data['answer_size'] = $answer_size;
         $data['answer_correct'] = $answer_correct;
 
-        return view('practice' , compact('question','contents', 'image', 'symbol_finished' , 'answers', 'data', 'noti' ));
+        return view('practice' , compact('question','data', 'noti' ));
 
     }
 }

@@ -69,7 +69,7 @@ class AddProperty extends Controller
         //This is supposed to be redundant from now on
         if (request() -> get('submitter1') == null)   {
             $submitter1 = Auth::user()->id;
-            $submitter2 = 0;
+            $submitter2 = Auth::user()->id;
         }   else    {
             $submitter1 = request() -> get('submitter1');
             $submitter2 = Auth::user()->id;
@@ -90,8 +90,8 @@ class AddProperty extends Controller
         $question -> difficulty = $difficulty;
         $question -> finished = false;
         $question -> verified = false;
-        $question -> submitted_by1 = $submitter1;
-        $question -> submitted_by2 = $submitter2;
+        $question -> creator = $submitter1;
+        $question -> uploader = $submitter2;
         $question -> question_image = 0;
         $question -> created_at = now();
         $question -> updated_at = now();
@@ -100,11 +100,11 @@ class AddProperty extends Controller
 
         $id = $question -> id;
 
-        if (request() -> get('submitter1') == null)   {
-            DB::table('question_allocation')->insert(['question_id' => $id, 'creator' =>  Auth::user()->id, 'uploader' => 0]);
-        }   else    {
-            DB::table('question_allocation')->insert(['question_id' => $id, 'creator' =>  request() -> get('submitter1'), 'uploader' => Auth::user()->id]);
-        }
+//        if (request() -> get('submitter1') == null)   {
+//            DB::table('question_allocation')->insert(['question_id' => $id, 'creator' =>  Auth::user()->id, 'uploader' => 0]);
+//        }   else    {
+//            DB::table('question_allocation')->insert(['question_id' => $id, 'creator' =>  request() -> get('submitter1'), 'uploader' => Auth::user()->id]);
+//        }
 
         return redirect('question/update/'.$id);
 

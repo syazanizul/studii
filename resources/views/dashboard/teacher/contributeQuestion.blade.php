@@ -69,8 +69,7 @@
                 <div class="">
                     <h4 class="text-primary">Questions in draft</h4>
 
-                @if(\App\Question::where('submitted_by1', Auth::user()->id)->where('finished',0)->get()-> isNotEmpty())
-{{--                    @if(!$data['list_draft_question'] -> isEmpty())--}}
+                @if($draft->get()-> isNotEmpty())
                     <table class="table">
                         <thead class=" text-primary">
                             <th>
@@ -91,22 +90,23 @@
                         </thead>
                         <tbody>
 
-                        @foreach(\App\Question::where('submitted_by1', Auth::user()->id)->where('finished',0)->get() as $m)
-{{--                            {{dd($m->chapter)}}--}}
-                            <tr>
-                                <td>{{$loop->iteration}}</td>
-                                <td>{{\App\Question::give_subject_name($m->subject)}}</td>
-                                <td>{{\App\Question::give_chapter_name($m->subject)}}</td>
-                                <td>{{$m->id}}</td>
-                                <td class="text-right"><a href="/question/update/{{$m->id}}" class="btn btn-primary" disabled>Continue</a></td>
-                            </tr>
+                        @foreach($draft->get() as $m)
+                            @if($m == 0)
+                                <tr>
+                                    <td>{{$loop->iteration}}</td>
+                                    <td>{{\App\Question::give_subject_name($m->subject)}}</td>
+                                    <td>{{\App\Question::give_chapter_name($m->subject)}}</td>
+                                    <td>{{$m->question->id}}</td>
+                                    <td class="text-right"><a href="/question/update/{{$m->id}}" class="btn btn-primary" disabled>Continue</a></td>
+                                </tr>
+                            @endif
                         @endforeach
 
                         </tbody>
                     </table>
-                    @else
+                @else
                     <p>None</p>
-                    @endif
+                @endif
                 </div>
 
             </div>
@@ -115,50 +115,50 @@
 </div>
 
 <div class="row">
-    <div class="col-lg-7">
-        <div class="card card-stats">
-            <div class="card-header">
-                <h4 class="my-1">Finished Questions</h4>
-            </div>
-            <div class="card-body ">
-                <table class="table">
-                    <thead class=" text-primary">
-                    <th>
-                        No
-                    </th>
-                    <th>
-                        Subject
-                    </th>
-                    <th>
-                        Chapter
-                    </th>
-                    <th>
-                        Question ID
-                    </th>
-                    <th class="text-right">
-                        Action
-                    </th>
-                    </thead>
-                    <tbody>
+{{--    <div class="col-lg-7">--}}
+{{--        <div class="card card-stats">--}}
+{{--            <div class="card-header">--}}
+{{--                <h4 class="my-1">Finished Questions</h4>--}}
+{{--            </div>--}}
+{{--            <div class="card-body ">--}}
+{{--                <table class="table">--}}
+{{--                    <thead class=" text-primary">--}}
+{{--                    <th>--}}
+{{--                        No--}}
+{{--                    </th>--}}
+{{--                    <th>--}}
+{{--                        Subject--}}
+{{--                    </th>--}}
+{{--                    <th>--}}
+{{--                        Chapter--}}
+{{--                    </th>--}}
+{{--                    <th>--}}
+{{--                        Question ID--}}
+{{--                    </th>--}}
+{{--                    <th class="text-right">--}}
+{{--                        Action--}}
+{{--                    </th>--}}
+{{--                    </thead>--}}
+{{--                    <tbody>--}}
 
 
 
-                    @foreach(\App\Question::where('submitted_by1', Auth::user()->id)->where('submitted_by1', Auth::id())-> where('finished',1)->get() as $n)
-                        <tr>
-                            <td>{{$loop->iteration}}</td>
-                            <td>{{\App\Question::give_subject_name($n->subject)}}</td>
-                            <td>{{\App\Question::give_chapter_name($n->chapter)}}</td>
-                            <td>{{$n->id}}</td>
-                            <td class="text-right"><a href="/teacher/question/go-practicelink/{{$n->id}}" class="btn btn-primary">Show</a></td>
-                            <td class="text-right"><a href="/question/update/{{$n->id}}" class="btn btn-primary" disabled>Edit</a></td>
-                        </tr>
-                    @endforeach
+{{--                    @foreach(\App\Question::where('submitted_by1', Auth::user()->id)->where('submitted_by1', Auth::id())-> where('finished',1)->get() as $n)--}}
+{{--                        <tr>--}}
+{{--                            <td>{{$loop->iteration}}</td>--}}
+{{--                            <td>{{\App\Question::give_subject_name($n->subject)}}</td>--}}
+{{--                            <td>{{\App\Question::give_chapter_name($n->chapter)}}</td>--}}
+{{--                            <td>{{$n->id}}</td>--}}
+{{--                            <td class="text-right"><a href="/teacher/question/go-practicelink/{{$n->id}}" class="btn btn-primary">Show</a></td>--}}
+{{--                            <td class="text-right"><a href="/question/update/{{$n->id}}" class="btn btn-primary" disabled>Edit</a></td>--}}
+{{--                        </tr>--}}
+{{--                    @endforeach--}}
 
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+{{--                    </tbody>--}}
+{{--                </table>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
     <div class="col-lg-4">
         <div class="card card-stats">
             <div class="card-body ">
@@ -166,7 +166,7 @@
                     <div class="col-12 col-md-12">
                         <div class="numbers">
                             <p class="card-category">Total Questions Submitted</p>
-                            <p class="card-title">{{\App\Question::where('submitted_by1', Auth::user()->id)->count()}}
+                            <p class="card-title">{{$draft->count()}}
                             <p>
                         </div>
                     </div>

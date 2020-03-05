@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Ajax;
 
 use App\Http\Controllers\Controller;
 use App\Mail\event;
+use App\Question;
 use App\QuestionAllocation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -17,7 +18,6 @@ class PracticeController extends Controller
 //--------------------------------------------------------------------------------------------------------------
     public function count_attempt() {
         $question_id = request() -> get('question_id');
-        $teacher_id = request() -> get('teacher_id');
 
 //        //Increment or insert in count_total_attempt table
 //        $check_if_exist = DB::table('count_total_attempt') -> where('question_id', $question_id)->whereDate('created_at', Carbon::today()) -> get();
@@ -45,7 +45,7 @@ class PracticeController extends Controller
 //        ---------------------------------------------------------
 //        BASED ON NEW STRUCTURE (3.1.2020)
 
-        $x = QuestionAllocation::where('question_id', $question_id)->first();
+        $x = Question::find($question_id);
 
         if($x->verified_by_1 == null)   {
             $x->verified_by_1 = 0;
@@ -60,7 +60,7 @@ class PracticeController extends Controller
                     'verified_by_1' => $x->verified_by_1, 'verified_by_2' => $x->verified_by_2, 'created_at' => now() , 'updated_at' => now()]
             );
 
-        dd($x);
+//        dd($x);
 
     }
 

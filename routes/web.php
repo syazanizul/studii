@@ -74,7 +74,6 @@ Route::get('/disclaimer', 'AboutController@disclaimer');
 
 //For add phone number in about.teacher
 Route::get('/about/submit/phone-number', 'AboutController@phone_number');
-
 // End About Us
 
 /* Routes to add question */

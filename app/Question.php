@@ -51,13 +51,13 @@ class Question extends Model
         return $difficulty;
     }
 
-//    public function submitter1() {
-//        return $this->belongsTo(User::class , 'submitted_by1','id');
-//    }
-//
-//    public function submitter2() {
-//        return $this->belongsTo(User::class , 'submitted_by2','id');
-//    }
+    public function creator_info() {
+        return $this->belongsTo(User::class , 'creator','id');
+    }
+
+    public function uploader_info() {
+        return $this->belongsTo(User::class , 'uploader','id');
+    }
 
     public function question_allocation()   {
         return $this->HasOne(QuestionAllocation::class);

@@ -26,9 +26,18 @@ class CreateQuestionsTable extends Migration
             $table->integer('difficulty');
             $table->boolean('finished');
             $table->boolean('verified');
-            $table->integer('submitted_by1');
-            $table->integer('submitted_by2');
+//            $table->integer('submitted_by1');
+//            $table->integer('submitted_by2');
             $table->boolean('question_image');
+            $table->unsignedBigInteger('creator');
+            $table->unsignedBigInteger('uploader');
+            $table->unsignedBigInteger('working')->nullable();
+            $table->unsignedBigInteger('verified_by_1')->nullable();
+            $table->unsignedBigInteger('verified_by_2')->nullable();
+            $table->unsignedBigInteger('language_primary')->nullable();
+            $table->unsignedBigInteger('language_secondary')->nullable();
+            $table->unsignedBigInteger('language_tertiary')->nullable();
+            $table->float('price')->nullable();
             $table->timestamps();
         });
     }

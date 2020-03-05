@@ -22,6 +22,7 @@ class CountAttempt extends Migration
             $table->unsignedBigInteger('verified_by_1');
             $table->unsignedBigInteger('verified_by_2');
             $table->unsignedBigInteger('language')->nullable();
+            $table->integer('correct');
             $table->timestamps();
         });
     }

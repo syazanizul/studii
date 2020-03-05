@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\AddQuestion;
 
 use App\Question;
+use App\QuestionAllocation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -32,7 +33,8 @@ class AddController extends Controller
 //    ---------------- INDEX
     public function index() {
 
-        return view('dashboard.teacher.contributeQuestion');
+        $draft = Question::where('creator', Auth::user()->id)->where('finished', 0);
+        return view('dashboard.teacher.contributeQuestion', compact('draft','submitted_question'));
     }
 
     //   ----------------- GENERAL METHOD USED BY ADD_CONTENT AND ADD_ANSWER

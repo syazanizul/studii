@@ -25,7 +25,7 @@ class AddAnswer extends Controller
 
         $question = Question::query()->findOrFail($id);
 
-        return view('/addquestion/answer2', compact('question', 'data'));
+        return view('/addquestion/answer2', compact('question'));
     }
 
 //    //  ----------------------TENTH METHOD

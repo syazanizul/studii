@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SetPriceQuestionController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/admin/set_price.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AddQuestion/AddProperty.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AddQuestion/AddProperty.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/admin/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/admin/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboardApp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboardApp.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AddQuestion/AddAnswer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AddQuestion/AddAnswer.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -429,7 +421,7 @@
       <workItem from="1583413261779" duration="8661000" />
       <workItem from="1583459464474" duration="3794000" />
       <workItem from="1583467584501" duration="1113000" />
-      <workItem from="1583476098070" duration="872000" />
+      <workItem from="1583476098070" duration="1247000" />
     </task>
     <servers />
   </component>

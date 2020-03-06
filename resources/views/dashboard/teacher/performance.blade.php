@@ -35,7 +35,7 @@
             <div class="card">
                 <div class="card-header">
                     <h3 class="">Performance of Submitted Questions</h3>
-                    <p style="font-size:1.2em"><b>Note:</b> This is a total performance report. To see your current earnings, go to Earning Page (click here).</p>
+{{--                    <p style="font-size:1.2em"><b>Note:</b> This is a total performance report. To see your current earnings, go to Earning Page (click here).</p>--}}
                 </div>
                 <div class="card-body">
                     <table class="table">

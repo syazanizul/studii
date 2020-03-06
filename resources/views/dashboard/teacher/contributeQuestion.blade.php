@@ -93,8 +93,8 @@
                         @foreach($draft->get() as $m)
                             <tr>
                                 <td>{{$loop->iteration}}</td>
-                                <td>{{\App\Question::give_subject_name($m->subject)}}</td>
-                                <td>{{\App\Question::give_chapter_name($m->chapter)}}</td>
+                                <td>{{$m->subject_name->name}}</td>
+                                <td>{{$m->chapter_name->name}}</td>
                                 <td>{{$m->id}}</td>
                                 <td class="text-right"><a href="/question/update/{{$m->id}}" class="btn btn-primary" disabled>Continue</a></td>
                             </tr>

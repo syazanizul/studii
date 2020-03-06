@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Attempt.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AddQuestion/AddController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AddQuestion/AddController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/contributeQuestion.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/contributeQuestion.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Ajax/PracticeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Ajax/PracticeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Teacher/SubmissionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Teacher/PerformanceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Teacher/TeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Teacher/TeacherController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Question.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Question.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Teacher.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Teacher.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/performance.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/performance.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/practice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/practice.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -420,7 +427,8 @@
       <workItem from="1583048682567" duration="9106000" />
       <workItem from="1583174443421" duration="223000" />
       <workItem from="1583387680534" duration="7164000" />
-      <workItem from="1583413261779" duration="4547000" />
+      <workItem from="1583413261779" duration="8661000" />
+      <workItem from="1583459464474" duration="3225000" />
     </task>
     <servers />
   </component>
@@ -452,10 +460,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="449" y="143" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1582888446566" />
-    <state x="941" y="158" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1583057054670">
+    <state x="941" y="158" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1583462245118">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="941" y="158" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1583057054670" />
+    <state x="941" y="158" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1583462245118" />
     <state x="549" y="171" key="FileChooserDialogImpl" timestamp="1577899795250">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -480,11 +488,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="279" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1575662530868" />
-    <state x="477" y="239" width="582" height="326" key="com.intellij.ide.util.TipDialog" timestamp="1583413289083">
+    <state x="477" y="239" width="582" height="326" key="com.intellij.ide.util.TipDialog" timestamp="1583459476857">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="477" y="239" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1579556316762" />
-    <state x="477" y="239" width="582" height="326" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1583413289083" />
+    <state x="477" y="239" width="582" height="326" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1583459476857" />
     <state x="596" y="302" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579552644740" />
     <state x="474" y="173" width="588" height="478" key="find.popup" timestamp="1576784693540">
       <screen x="0" y="0" width="1536" height="824" />
@@ -494,9 +502,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1579719941794" />
-    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup" timestamp="1582408471902">
+    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup" timestamp="1583462033774">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1582408471902" />
+    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1583462033774" />
   </component>
 </project>

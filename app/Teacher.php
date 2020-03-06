@@ -3,21 +3,23 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use phpDocumentor\Reflection\Types\Integer;
 
 class Teacher extends Model
 {
-    public static function get_total_attempt($teacher_id) {
-       $i = 0;
+    public static function total_earning(int $type) {
+        if($type==1)    {
+            $question = Question::where('creator', Auth::user()->id)->get();
+            $accumulated_earning = 0;
 
-       $attempt_table = DB::table('count_teacher_attempt')->where('user_teacher_id', $teacher_id)->get();
+            foreach($question as $m)   {
+                $accumulated_earning += $m->earning_per_question();
+            }
 
-       foreach($attempt_table as $m)    {
-            $total_attempt_one_day= $m->total_attempt;
-            $i+=$total_attempt_one_day;
-       }
-       
-        return $i;
+            return $accumulated_earning;
+        }
+        return 1;
     }
 }

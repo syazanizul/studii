@@ -18,6 +18,7 @@ class PracticeController extends Controller
 //--------------------------------------------------------------------------------------------------------------
     public function count_attempt() {
         $question_id = request() -> get('question_id');
+        $correct = request() -> get('correct');
 
 //        //Increment or insert in count_total_attempt table
 //        $check_if_exist = DB::table('count_total_attempt') -> where('question_id', $question_id)->whereDate('created_at', Carbon::today()) -> get();
@@ -57,7 +58,8 @@ class PracticeController extends Controller
 
         DB::table('count_attempt')-> insert(
                 ['question_id' => $question_id, 'creator' => $x->creator , 'uploader' => $x->uploader, 'working' => $x->working ,
-                    'verified_by_1' => $x->verified_by_1, 'verified_by_2' => $x->verified_by_2, 'created_at' => now() , 'updated_at' => now()]
+                    'verified_by_1' => $x->verified_by_1, 'verified_by_2' => $x->verified_by_2, 'correct' => $correct,
+                    'created_at' => now() , 'updated_at' => now()]
             );
 
 //        dd($x);

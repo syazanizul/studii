@@ -392,62 +392,6 @@
                                 @endif
                             @endforeach
                         </div>
-{{--                        -->--}}
-
-
-{{--                            @foreach($answers as $n)--}}
-{{--                                <div style="margin-bottom:1em;">--}}
-{{--                                    <a class="" data-toggle="collapse" href="#answer{{($loop->iteration)}}" role="button" aria-expanded="false"><p style="margin-bottom: 0.5em">Answer @if (isset($symbol_finished[($loop->iteration)+1])) {{$symbol_finished[($loop->iteration)+1]}} @endif</p></a>--}}
-{{--                                    <div id="answer{{($loop->iteration)}}" class="collapse show">--}}
-{{--                                        <div class="control-group" style="width:90%">--}}
-{{--                                            <div>--}}
-{{--                                                <div style="display:flex;">--}}
-{{--                                                    <div>--}}
-{{--                                                        <img class="image_{{($loop->iteration)}}" src="" style="width:1.6em; padding-bottom: 0.3em; margin:0.1em; visibility: hidden;" alt="tick">--}}
-{{--                                                    </div>--}}
-{{--                                                    <label class="control control--radio d-inline-block">{!!$n[0] -> answer!!}--}}
-{{--                                                        <input name="input_{{$loop->iteration}}" type="radio" value="1"/>--}}
-{{--                                                        <div class="control__indicator"></div>--}}
-{{--                                                    </label>--}}
-{{--                                                </div>--}}
-{{--                                                <div style="display:flex;">--}}
-{{--                                                    <div>--}}
-{{--                                                        <img class="image_{{($loop->iteration)}}" src="" style="width:1.6em; padding-bottom: 0.3em; margin:0.1em; visibility: hidden;" alt="tick">--}}
-{{--                                                    </div>--}}
-{{--                                                    <label class="d-inline-block control control--radio">{!!$n[1] -> answer!!}--}}
-{{--                                                        <input name="input_{{$loop->iteration}}" type="radio" value="2"/>--}}
-{{--                                                        <div class="control__indicator"></div>--}}
-{{--                                                    </label>--}}
-{{--                                                </div>--}}
-{{--                                                @if(isset($n[2]))--}}
-{{--                                                    <div style="display:flex;">--}}
-{{--                                                        <div>--}}
-{{--                                                            <img class="image_{{($loop->iteration)}}" src="" style="width:1.6em; padding-bottom: 0.3em; margin:0.1em; visibility: hidden;" alt="tick">--}}
-{{--                                                        </div>--}}
-{{--                                                        <label class="d-inline-block control control--radio">{!!$n[2] -> answer!!}--}}
-{{--                                                            <input name="input_{{$loop->iteration}}" class="input_answer" type="radio" value="3"/>--}}
-{{--                                                            <div class="control__indicator"></div>--}}
-{{--                                                        </label>--}}
-{{--                                                    </div>--}}
-{{--                                                @endif--}}
-{{--                                                @if(isset($n[3]))--}}
-{{--                                                    <div style="display:flex;">--}}
-{{--                                                        <div>--}}
-{{--                                                            <img class="image_{{($loop->iteration)}}" src="" style="width:1.6em; padding-bottom: 0.3em; margin:0.1em; visibility: hidden;" alt="tick">--}}
-{{--                                                        </div>--}}
-{{--                                                        <label class="d-inline-block control control--radio">{!!$n[3] -> answer!!}--}}
-{{--                                                            <input name="input_{{$loop->iteration}}" class="input_answer" type="radio" value="4"/>--}}
-{{--                                                            <div class="control__indicator"></div>--}}
-{{--                                                        </label>--}}
-{{--                                                    </div>--}}
-{{--                                                @endif--}}
-{{--                                                <button id="check_question_{{$loop->iteration}}" onclick="check_answer({{$loop->iteration}})" style="float:right; cursor: pointer">Check Answer</button>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-
-{{--                            @endforeach--}}
 
                     </div>
 
@@ -709,7 +653,7 @@
     let count_attempt = 0;
     let answer_size = '{{$data['answer_size']}}';
     let question_id = '{{$question -> id}}';
-    let teacher_id = '{{$question -> submitted_by1}}';
+    let correct = 1;
 
     function check_answer(x) {
 
@@ -736,6 +680,7 @@
 
             let sentence = alertify_wrong[Math.floor(Math.random() * alertify_wrong.length)];
             alertify.error('<span style="font-size: 1.5em;">'+ sentence +'</span>');
+            correct = 0;
 
         }
 
@@ -744,7 +689,7 @@
 
 
         if (count_attempt.toString() === answer_size)   {
-            function_count_attempt(question_id);
+            function_count_attempt(question_id, correct);
         }
 
     }
@@ -883,7 +828,7 @@
             url: '/ajax/practice/count-attempt',
             data: {
                 question_id : question_id,
-                teacher_id : teacher_id
+                correct : correct
             },
         });
     }

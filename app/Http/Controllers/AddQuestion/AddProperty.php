@@ -16,6 +16,7 @@ class AddProperty extends Controller
     public function index()
     {
         $subjects = DB::table('subjects_list')->get();
+        $chapters = DB::table('chapters_list')->get();
         $levels = DB::table('levels_list')->get();
         $sources = DB::table('sources_list')->get();
 

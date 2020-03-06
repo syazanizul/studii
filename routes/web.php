@@ -59,7 +59,11 @@ Route::post('/teacher/details/teaching-details/subject', 'Teacher\DetailsControl
 
 Route::get('/parent', 'ParentsController@index')->name('parents')->middleware('parents');
 Route::get('/volunteer', 'VolunteerController@index')->name('volunteer')->middleware('volunteer');
-Route::get('/admin', 'AdminController@index')->name('admin')->middleware('admin');
+
+// For Admin
+Route::get('/admin', 'Admin\AdminController@index')->name('admin')->middleware('admin');
+Route::get('/admin/set-price', 'Admin\SetPriceQuestionController@index')->middleware('admin');
+// End for Admin
 
 // Basics
 //Route::get('/home', 'HomeController@index')->name('home');

@@ -1,7 +1,7 @@
 @extends('layouts.dashboardApp')
 
 @section('dashboard-name')
-    admin's dashboard
+    Set Price
 @endsection
 
 @section('link-in-head')
@@ -13,12 +13,12 @@
 
 @section('side-nav')
     <ul class="nav">
-        <li class="active">
+        <li>
             <a href="/admin">
                 <p>Dashboard</p>
             </a>
         </li>
-        <li>
+        <li class="active">
             <a href="/admin/set-price">
                 <p>Set Price</p>
             </a>
@@ -39,29 +39,29 @@
                         <div class="row">
                             <table class="table mx-4">
                                 <thead class=" text-primary">
-                                    <th>
-                                        No
-                                    </th>
-                                    <th>
-                                        Teacher
-                                    </th>
-                                    <th>
-                                        User ID
-                                    </th>
-                                    <th>
-                                        Total Attempts
-                                    </th>
+                                <th>
+                                    No
+                                </th>
+                                <th>
+                                    Teacher
+                                </th>
+                                <th>
+                                    User ID
+                                </th>
+                                <th>
+                                    Total Attempts
+                                </th>
                                 </thead>
                                 <tbody>
 
-                                    @foreach(\App\User::where('role', 2)->get() as $m)
-                                        <tr>
-                                            <td>{{$loop->iteration}}</td>
-                                            <td>{{$m->firstname}} {{$m->lastname}}</td>
-                                            <td>{{$m->id}}</td>
-                                            <td>{{\App\Teacher::get_total_attempt($m->id)}}</td>
-                                        </tr>
-                                    @endforeach
+                                @foreach(\App\User::where('role', 2)->get() as $m)
+                                    <tr>
+                                        <td>{{$loop->iteration}}</td>
+                                        <td>{{$m->firstname}} {{$m->lastname}}</td>
+                                        <td>{{$m->id}}</td>
+                                        <td>{{\App\Teacher::get_total_attempt($m->id)}}</td>
+                                    </tr>
+                                @endforeach
 
                                 </tbody>
                             </table>
@@ -80,9 +80,9 @@
 
 @section('modal')
 
-{{--    @if($noti[1] == 1)--}}
+    {{--    @if($noti[1] == 1)--}}
 
-{{--     @endif--}}
+    {{--     @endif--}}
 
 @endsection
 

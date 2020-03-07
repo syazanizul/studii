@@ -115,8 +115,8 @@ Route::get('/redirect/detailed','QuestionController@detailed');
 // ALL AJAX ----------
 // AJAX for Welcome page
 Route::get('/ajax/fetch', 'Ajax\WelcomeController@fetch');
-Route::get('/ajax/fetch1', 'Ajax\WelcomeController@fetch1');
-Route::get('/ajax/fetch2', 'Ajax\WelcomeController@fetch2');
+Route::get('/ajax/fetch_subject_change_chapter', 'Ajax\WelcomeController@fetch_subject_change_chapter');
+Route::get('/ajax/fetch_subject_level_change_chapter', 'Ajax\WelcomeController@fetch_subject_level_change_chapter');
 Route::get('/ajax/count', 'Ajax\WelcomeController@count');
 // End AJAX for Welcome page
 

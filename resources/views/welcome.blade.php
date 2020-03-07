@@ -295,7 +295,7 @@
                                                             <label class="tags-property">Subject :</label>
                                                         </div>
                                                         <div class="d-inline-block" style="width:70%;">
-                                                            <select name="s_subject" id="s_subject" class="form-control form-control-lg" style="width:100%;" onchange="fetch1(); count()">
+                                                            <select name="s_subject" id="s_subject" class="form-control form-control-lg" style="width:100%;" onchange="fetch_subject_change_chapter(); count()">
                                                                 <option value="-">Select Subject</option>
                                                                 @foreach ($property['subjects'] as $subject)
                                                                     <option value="{{$subject -> id}}">{{  $subject -> name }}</option>
@@ -308,7 +308,7 @@
                                                             <label class="tags-property">Level :</label>
                                                         </div>
                                                         <div class="d-inline-block" style="width:70%;">
-                                                            <select name="s_level" id="s_level" class="form-control form-control-lg" style="width:100%;" onchange="fetch2(); count()">
+                                                            <select name="s_level" id="s_level" class="form-control form-control-lg" style="width:100%;" onchange="fetch_subject_level_change_chapter(); count()">
                                                                 <option value="0">All Level</option>
                                                                 @foreach ($property['levels'] as $level)
                                                                     <option value="{{$level -> id}}">{{  $level -> name }}</option>
@@ -359,7 +359,7 @@
                                                     </select>
                                                 </div>
                                                 <button class="btn btn-lg btn-primary mt-4 m-2 float-right" id="button_detail" data-step="5" data-intro="Click here when you are ready
-                                                to practice. That's it. We hope you like it :)">Browse</button>
+                                                to practice. That's it. We hope you like it :)" disabled>Browse</button>
                                             </div>
                                         </form>
                                     </div>
@@ -439,12 +439,12 @@
         });
     }
 
-    function fetch1()
+    function fetch_subject_change_chapter()
     {
         //First Ajax
         $.ajax({
             type: 'get',
-            url: 'ajax/fetch1',
+            url: 'ajax/fetch_subject_change_chapter',
             data: {
                 subject: document.getElementById('s_subject').value,
             },
@@ -460,12 +460,12 @@
         });
     }
 
-    function fetch2()
+    function fetch_subject_level_change_chapter()
     {
         //First Ajax
         $.ajax({
             type: 'get',
-            url: 'ajax/fetch2',
+            url: 'ajax/fetch_subject_level_change_chapter',
             data: {
                 subject: document.getElementById('s_subject').value,
                 level: document.getElementById('s_level').value

@@ -23,7 +23,7 @@ class WelcomeController extends Controller
         }
     }
 
-    public function fetch1()
+    public function fetch_subject_change_chapter()
     {
         $subject = request()->get('subject');
 
@@ -35,7 +35,7 @@ class WelcomeController extends Controller
         }
     }
 
-    public function fetch2()
+    public function fetch_subject_level_change_chapter()
     {
         $subject = request()->get('subject');
         $level = request()->get('level');

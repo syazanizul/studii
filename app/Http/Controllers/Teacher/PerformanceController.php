@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 class PerformanceController extends Controller
 {
     public function index() {
-        $question = Question::where('creator', Auth::user()->id);
+        $question = Question::where('creator', Auth::user()->id)->where('finished', 1);
 
         $attempts = Attempt::where('creator', Auth::user()->id);
 

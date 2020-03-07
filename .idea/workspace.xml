@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Teacher/TeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Teacher/TeacherController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -424,7 +423,7 @@
       <workItem from="1583467584501" duration="1113000" />
       <workItem from="1583476098070" duration="1636000" />
       <workItem from="1583482669581" duration="910000" />
-      <workItem from="1583617800461" duration="1996000" />
+      <workItem from="1583617800461" duration="2039000" />
     </task>
     <servers />
   </component>

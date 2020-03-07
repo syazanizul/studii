@@ -85,7 +85,7 @@ class TeacherController extends Controller
 //            $data_attempt_today = 0;
 //            $total_monthly = 0;
 //        }
-
+        dd(DB::table('count_attempt')->where('creator', Auth::user()->id)->whereDate('created_at', Carbon::now()->month)->get());
         if(DB::table('count_attempt')->where('creator', Auth::user()->id)->whereDate('created_at', Carbon::now()->month)->get() -> isNotEmpty())    {
             $data_attempt_today = DB::table('count_attempt')->where('creator', Auth::user()->id)->whereDate('created_at', Carbon::today())->count();
             $data_attempt_month = DB::table('count_attempt')->where('creator', Auth::user()->id)->whereMonth('created_at', Carbon::now()->month)->count();

@@ -50,7 +50,7 @@
                         <tr>
                             <th>Subject</th>
                             <td>
-                                <select name="s_subject" id="s_subject" class="form-control" onchange="fetch1()">
+                                <select name="s_subject" id="s_subject" class="form-control" onchange="fetch_subject_change_chapter()">
                                     <option value="0">Select</option>
                                     @foreach ($subjects as $subject)
                                         <option value="{{$subject -> id}}">{{$subject -> name}}</option>
@@ -61,7 +61,7 @@
                         <tr>
                             <th>Level</th>
                             <td>
-                                <select name="s_level" id="s_level" class="form-control" onchange="fetch1()">
+                                <select name="s_level" id="s_level" class="form-control" onchange="fetch_subject_change_chapter()">
                                     <option value="0">Select</option>
                                     @foreach ($levels as $level)
                                         <option value="{{$level -> id}}">{{$level -> name}}</option>
@@ -245,12 +245,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  <!--?-->
 
 <script>
-    function fetch1()
+    function fetch_subject_change_chapter()
     {
         //First Ajax
         $.ajax({
             type: 'get',
-            url: '../ajax/fetch1',
+            url: '../ajax/fetch_subject_change_chapter',
             data: {
                 subject: document.getElementById('s_subject').value,
             },
@@ -266,12 +266,12 @@
         });
     }
 
-    function fetch2()
+    function fetch_subject_level_change_chapter()
     {
         //First Ajax
         $.ajax({
             type: 'get',
-            url: '../ajax/fetch2',
+            url: '../ajax/fetch_subject_level_change_chapter',
             data: {
                 subject: document.getElementById('s_subject').value,
                 level: document.getElementById('s_level').value

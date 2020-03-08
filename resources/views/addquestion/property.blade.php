@@ -61,7 +61,7 @@
                         <tr>
                             <th>Level</th>
                             <td>
-                                <select name="s_level" id="s_level" class="form-control" onchange="fetch_subject_change_chapter()">
+                                <select name="s_level" id="s_level" class="form-control" onchange="fetch_subject_level_change_chapter()">
                                     <option value="0">Select</option>
                                     @foreach ($levels as $level)
                                         <option value="{{$level -> id}}">{{$level -> name}}</option>

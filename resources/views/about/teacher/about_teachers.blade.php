@@ -115,6 +115,20 @@
         </div>
     </section>
 
+    <section style="background-color: white;">
+        <div class="container">
+            <div class="row py-3">
+                <div class="col-lg-8 my-2 mb-4">
+                    <h1 class="headline mb-4" style="color;">Every question is pieces of people's contribution</h1>
+                </div>
+                <div class="col-lg-4">
+                    <h4 class="mt-2">Click here to read more about this</h4>
+                        <a href="/about/teacher/compensation-for-contributors" class="btn btn-info btn-block mt-4"><h3 class="m-3">Read More</h3></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="" style="background-color: #c3d8e8;">
         <div class="container">
             <div class="row py-5">

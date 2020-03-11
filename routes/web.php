@@ -73,8 +73,11 @@ Route::get('/contact', 'ContactController@index');
 
 // Routes for all About Us things
 Route::get('/about', 'AboutController@index');
-Route::get('/joinUs', 'AboutController@teacherJoinUs')->name('about-teacher');
 Route::get('/disclaimer', 'AboutController@disclaimer');
+
+// About Us - Teachers
+Route::get('about/teacher/join-us', 'About\TeacherController@JoinUs');
+Route::get('about/teacher/compensation-for-contributors', 'About\TeacherController@compensation');
 
 //For add phone number in about.teacher
 Route::get('/about/submit/phone-number', 'AboutController@phone_number');

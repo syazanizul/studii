@@ -122,10 +122,14 @@
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Roles
+                                About
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/joinUs">Studii For Teachers</a>
+{{--                                <a class="dropdown-item" href="/about/teacher/join-us">About Studii</a>--}}
+{{--                                <div class="dropdown-divider"></div>--}}
+                                <a class="dropdown-item" href="/about/teacher/join-us">Studii For Teachers</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/about/teacher/compensation-for-contributors">Compensation for Contributors</a>
                             </div>
                         </li>
 

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\About;
 
+use App\Http\Controllers\Controller;
 use App\Mail\event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -11,11 +12,6 @@ class AboutController extends Controller
     public function index()
     {
         return view('about.about');
-    }
-
-    public function teacherJoinUs()
-    {
-        return view('about.about_teachers');
     }
 
     public function disclaimer()

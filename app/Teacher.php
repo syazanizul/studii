@@ -9,9 +9,9 @@ use phpDocumentor\Reflection\Types\Integer;
 
 class Teacher extends Model
 {
-    public static function total_earning(int $type) {
+    public static function total_earning(int $type, $teacher_id) {
         if($type==1)    {
-            $question = Question::where('creator', Auth::user()->id)->get();
+            $question = Question::where('creator', $teacher_id)->get();
             $accumulated_earning = 0;
 
             foreach($question as $m)   {

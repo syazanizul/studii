@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/About/TeacherController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/compensation.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/about/teacher/compensation.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AboutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/About/AboutController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/about/about_teachers.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/about/teacher/about_teachers.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SetPriceQuestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SetPriceQuestionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/admin/set_price.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/admin/set_price.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/practice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/practice.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -436,7 +433,8 @@
       <workItem from="1583886835533" duration="1261000" />
       <workItem from="1583894329261" duration="1485000" />
       <workItem from="1583911703180" duration="2154000" />
-      <workItem from="1583919879157" duration="5176000" />
+      <workItem from="1583919879157" duration="5295000" />
+      <workItem from="1583941025894" duration="5765000" />
     </task>
     <servers />
   </component>
@@ -496,11 +494,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="279" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1575662530868" />
-    <state x="477" y="239" width="582" height="326" key="com.intellij.ide.util.TipDialog" timestamp="1583919892192">
+    <state x="477" y="239" width="582" height="326" key="com.intellij.ide.util.TipDialog" timestamp="1583941026311">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="477" y="239" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1579556316762" />
-    <state x="477" y="239" width="582" height="326" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1583919892192" />
+    <state x="477" y="239" width="582" height="326" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1583941026311" />
     <state x="596" y="302" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579552644740" />
     <state x="580" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583618863049">
       <screen x="0" y="0" width="1536" height="824" />
@@ -510,13 +508,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="474" y="173" width="588" height="488" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1583618859456" />
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1579719941794">
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1583944384547">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1579719941794" />
-    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup" timestamp="1583619510408">
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1583944384547" />
+    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup" timestamp="1583947047407">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1583619510408" />
+    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1583947047407" />
   </component>
 </project>

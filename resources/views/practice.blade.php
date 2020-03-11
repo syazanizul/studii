@@ -313,12 +313,10 @@
                                     {!!$question->contents[0]->content!!}
                                 @endif
                             </p>
+                            <br>
                             @if ($question->question_image == 1)
-                                <br>
                                 <img src="/images/question_images/id-{{$question->id}}.jpg?<?php rand(1, 15)?>" alt="question_image" style="width:100%">
                                 <br><br>
-                            @else
-                                <br>
                             @endif
                             <p id="display_2">
                                 @if (isset($question->contents[1]))

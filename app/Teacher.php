@@ -13,7 +13,7 @@ class Teacher extends Model
         if($type==1)    {
             $question = Question::where('creator', $teacher_id)->get();
             $accumulated_earning = 0;
-
+            dd($question);
             foreach($question as $m)   {
                 $accumulated_earning += $m->earning_per_question();
             }

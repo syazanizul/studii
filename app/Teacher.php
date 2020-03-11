@@ -11,14 +11,14 @@ class Teacher extends Model
 {
     public static function total_earning(int $type, $teacher_id) {
         if($type==1)    {
-            $question = Question::where('creator', $teacher_id)->get();
-            $accumulated_earning = 0;
-            dd($question);
-            foreach($question as $m)   {
-                $accumulated_earning += $m->earning_per_question();
-            }
+            $question_count = Question::where('creator', $teacher_id)->count();
+//            $accumulated_earning = 0;
+//            dd($question);
+//            foreach($question as $m)   {
+//                $accumulated_earning += $m->earning_per_question();
+//            }
 
-            return $accumulated_earning;
+            return $question_count;
         }
         return 1;
     }

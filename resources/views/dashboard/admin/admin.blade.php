@@ -59,7 +59,7 @@
                                             <td>{{$loop->iteration}}</td>
                                             <td>{{$m->firstname}} {{$m->lastname}}</td>
                                             <td>{{$m->id}}</td>
-                                            <td>{{\App\Teacher::get_total_attempt($m->id)}}</td>
+                                            <td>{{\App\Teacher::total_earning(1)}}</td>
                                         </tr>
                                     @endforeach
 

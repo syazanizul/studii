@@ -35,6 +35,7 @@ class SetPriceQuestionController extends Controller
         $question-> price = $price;
         $question -> save();
 
-        return redirect('/admin/set-price?a'. $id++);
+        $id_new = $id+1;
+        return redirect('/admin/set-price?a='. $id_new);
     }
 }

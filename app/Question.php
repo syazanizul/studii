@@ -74,23 +74,33 @@ class Question extends Model
     public function total_attempt() {
         $id = $this->id;
 
-        $total_attempt = DB::table('count_attempt')->where('question_id', $id)->count();
+        $total_attempt = Attempt::where('question_id', $id)->count();
 
         return $total_attempt;
     }
 
     public function earning_per_question() {
+
+        $rate = 0;
+
+        //Check Ownership of this question
+//        if ()   {
+//
+//        }
+//
+//        //
+
         $id = $this->id;
 
         $total_attempt = Attempt::where('question_id', $id)->count();
 
         if(Question::find($id)->price != null)  {
-            $question_price = Question::find($id)->price*0.01;
+            $question_price = Question::find($id)->price * 0.01 *11/15;
         }   else    {
             $question_price = 0;
         }
 
-        return $total_attempt*$question_price;
+        return round($total_attempt*$question_price,3);
     }
 
 }

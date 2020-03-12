@@ -21,7 +21,7 @@ class Teacher extends Model
                 $accumulated_earning += $m->earning_per_question();
             }
 //
-            return $accumulated_earning;
+            return round($accumulated_earning,3);
         }
         return 1;
     }

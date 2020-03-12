@@ -71,14 +71,6 @@ class Question extends Model
         }
     }
 
-//    public static function give_subject_name($subject_id) {
-//        return DB::table('subjects_list')->where('id', $subject_id)->pluck('name')[0];
-//    }
-//
-//    public static function give_chapter_name($chapter_id) {
-//        return DB::table('chapters_list')->where('id', $chapter_id)->pluck('name')[0];
-//    }
-
     public function total_attempt() {
         $id = $this->id;
 
@@ -90,7 +82,7 @@ class Question extends Model
     public function earning_per_question() {
         $id = $this->id;
 
-        $total_attempt = DB::table('count_attempt')->where('question_id', $id)->count();
+        $total_attempt = Attempt::where('question_id', $id)->count();
 
         if(Question::find($id)->price != null)  {
             $question_price = Question::find($id)->price*0.01;
@@ -98,9 +90,7 @@ class Question extends Model
             $question_price = 0;
         }
 
-        $total_earning = $total_attempt*$question_price;
-
-        return $total_earning;
+        return $total_attempt*$question_price;
     }
 
 }

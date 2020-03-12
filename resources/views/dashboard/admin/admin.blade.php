@@ -49,7 +49,7 @@
                                         User ID
                                     </th>
                                     <th>
-                                        Total Attempts
+                                        Total Earnings
                                     </th>
                                 </thead>
                                 <tbody>

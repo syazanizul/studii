@@ -62,7 +62,7 @@ Route::get('/volunteer', 'VolunteerController@index')->name('volunteer')->middle
 
 // For Admin
 Route::get('/admin', 'Admin\AdminController@index')->name('admin')->middleware('admin');
-Route::get('/admin/set-price', 'Admin\SetPriceQuestionController@index')->middleware('admin');
+Route::get('a', 'Admin\SetPriceQuestionController@index')->middleware('admin');
 Route::get('/admin/set-price/show', 'Admin\SetPriceQuestionController@show_question')->middleware('admin');
 Route::post('/admin/set-price/save', 'Admin\SetPriceQuestionController@save')->middleware('admin');
 // End for Admin

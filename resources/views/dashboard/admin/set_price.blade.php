@@ -96,6 +96,26 @@
                     <div class="card card-stats">
                         <div class="card-body ">
 
+                            <div>
+                                <p>Creator : <b>{{$question->creator_info()->firstname}} {{$question->creator_info()->lastname}}</b></p>
+                                <p>Subject : <b>{{$question->subject_name()->name}}</b></p>
+                                <p>Chapter : <b>{{$question->chapter_name()->name}}</b></p>
+                                <p>Q ID : <b>{{$question->id}}</b></p>
+                            </div>
+
+                        </div>
+                        <div class="card-footer ">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-10" style="font-size: 1.3em">
+                    <div class="card card-stats">
+                        <div class="card-body ">
+
                                 <div>
                                     <p>
                                         @if (isset($question->contents[0]))

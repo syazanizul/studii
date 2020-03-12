@@ -141,7 +141,7 @@
                         <div class="card card-stats">
                             <div class="card-body ">
                                 <p>Price:</p>
-                                <input class="form-control" type="number" name="price" style="height: 40px" min="0" max="1" step="0.01">
+                                <input class="form-control" type="number" name="price" style="height: 40px" min="0" max="2" step="0.01">
                                 {{--                            <input class="form-control-range" type="range" id="points" name="points" min="0" max="10" style="height: 40px">--}}
                             </div>
                             <div class="card-footer ">

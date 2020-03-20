@@ -70,6 +70,7 @@ Route::post('/admin/set-price/save', 'Admin\SetPriceQuestionController@save')->m
 // Basics
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/practice', 'QuestionController@index');
+Route::get('/practice/report', 'QuestionController@report');
 
 Route::get('/contact', 'ContactController@index');
 

@@ -267,7 +267,7 @@
     <section style="margin-top:2em;">
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-lg-8">
                     <div id="row-property" data-step="1" data-intro="This is the basic information of this question.">
                         {{--1. Properties Question --}}
                         <p class="p-info d-inline-block">{{$question -> subject_name -> name}},  {{$question -> chapter_name -> name}},   Paper {{$question -> paper}}, {{$question -> year}}</p>
@@ -400,6 +400,7 @@
                 <div class="col-lg-3 offset-1" id="right-panel"
                      data-step="6" data-intro="Finally, you have a control panel right here. Everything that you may need can be find here. That's it, goodluck!">
                     <div style="padding:35px;">
+
                         <div>
                             @if (isset(session('qid')[$data['num']+1]))
                                 <a href="/practice?num={{$data['num']+1}}" class="btn btn-lg btn-block btn-primary">Next Question</a>
@@ -407,34 +408,46 @@
                                 <p style="padding:0.6em 1em; border:1.5px solid grey; text-align: center; font-size:1.1em; cursor:default; border-radius: 10px;">No More Question</p>
                             @endif
                         </div>
-                        <br>
+                            <br>
+                        <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">
+                            <button type="button" class="btn btn-lg btn-block btn-warning" data-toggle="modal" data-target="#report_modal">
+                               Report
+                            </button>
+                            @if($report = Session::get('report'))
+                                <p class="m-2"><b>{{$report}}</b></p>
+                            @endif
+                        </div>
+                            <br>
+
+                        @if($question -> source_name -> id != 2)
+                            <div id="div-submitter" style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">
+                                <p class="text-center">Submitted By:</p>
+                                <div id="img-submitter">
+                                    @if($question->creator_info->profile_image() == 1)
+                                        <img src="{{asset('/images/user_images/id-'.$question->creator.'.jpg')}}" class="ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey; width: 50%;">
+                                    @else
+                                        <img src="{{asset('/images/user_images/unknown.png')}}" class="w-50 ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey">
+                                    @endif
+                                </div>
+                                <p class="mt-1 text-center mb-0"><b>{{ucfirst($question->creator_info->firstname)}} {{ucfirst($question->creator_info->lastname)}}</b></p>
+                                <p class="text-center">{{\App\School::school_name($question->creator)}}</p>
+                            </div>
+                        @else
+                            <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">
+                                <p class="text-center"><b>Question Owned By:</b></p>
+                                <img src="{{asset('images/cat.png')}}" class="w-50 ml-auto mr-auto d-block">
+                                <p class="text-center mt-1">Studii</p>
+                            </div>
+                        @endif
+
+                            <br>
                         <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">
                             <p>tutorial & explanation:</p>
                             <a class="btn btn-secondary btn-block" onclick="introJs().setOption('showProgress', true).start();" style="color:white">How to use <br>this page?</a>
                             <a class="btn btn-secondary btn-block" id="btn_computer_or_mobile" style="color:white">Computer or<br>mobile phone?</a>
                             <a class="btn btn-secondary btn-block" id="btn_tutorial_difficulty_rating" style="color:white">Difficulty rating</a>
                         </div>
-                        <br>
-                        @if($question -> source_name -> id != 2)
-                        <div id="div-submitter" style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">
-                            <p class="text-center">Submitted By:</p>
-                            <div id="img-submitter">
-                                @if($question->creator_info->profile_image() == 1)
-                                    <img src="{{asset('/images/user_images/id-'.$question->creator.'.jpg')}}" class="ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey; width: 50%;">
-                                @else
-                                    <img src="{{asset('/images/user_images/unknown.png')}}" class="w-50 ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey">
-                                @endif
-                            </div>
-                                <p class="mt-1 text-center mb-0"><b>{{ucfirst($question->creator_info->firstname)}} {{ucfirst($question->creator_info->lastname)}}</b></p>
-                                <p class="text-center">{{\App\School::school_name($question->creator)}}</p>
-                        </div>
-                        @else
-                        <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">
-                            <p class="text-center"><b>Question Owned By:</b></p>
-                            <img src="{{asset('images/cat.png')}}" class="w-50 ml-auto mr-auto d-block">
-                            <p class="text-center mt-1">Studii</p>
-                        </div>
-                        @endif
+                            <br>
                     </div>
                     </div>
                 </div>
@@ -598,7 +611,39 @@
                 </div>
             </div>
         </div>
+
     @endif
+
+    <!-- Modal -->
+    <div class="modal fade" id="report_modal" tabindex="-1" role="dialog"  aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Report Question</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="get" action="/practice/report">
+                    <div class="modal-body">
+                        <div>
+                            <p>If this question has any <b>error or mistakes</b>, you can report them here. </p>
+                            <p>Every report will help to improve Studii's contents.</p>
+                            <textarea name="report" class="form-control" style="width:100%" rows="3" placeholder="Submit your report here..."></textarea>
+                            <p class="float-right m-1"><b>Question ID : {{$question->id}}</b></p>
+                            &nbsp
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                        <input type="hidden" name="qid" value="{{$question->id}}">
+                        <button type="submit" class="btn btn-primary">Submit Report</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 @endsection
 
@@ -675,6 +720,8 @@
 
             z[y-1].src = '/images/wrong.png';
             z[y-1].style.visibility = 'visible';
+            z[answer[x-1]-1].src = '/images/tick.png';
+            z[answer[x-1]-1].style.visibility = 'visible';
 
             let sentence = alertify_wrong[Math.floor(Math.random() * alertify_wrong.length)];
             alertify.error('<span style="font-size: 1.5em;">'+ sentence +'</span>');

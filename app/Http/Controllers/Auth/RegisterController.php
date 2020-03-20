@@ -127,7 +127,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        Mail::to('syazanizul@gmail.com')->send(new event('register'));
+        Mail::to('syazanizul@gmail.com')->send(new event('register by'. $data['firstname']));
 
         return User::create([
             'firstname' => $data['firstname'],

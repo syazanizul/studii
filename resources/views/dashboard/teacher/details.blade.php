@@ -373,6 +373,7 @@
                                     <p class="mt-2"><b>Please put school name together with the location:</b> Eg : Mahad Attarbiyah Al-Islamiyah, Beseri, Perlis.</p>
                                 </div>
                             </div>
+                            <p>If you need help filling in your teaching details, you can contact us by emailing <b>studii.malaysia@gmail.com</b> or contact <b>019-2099853</b>.</p>
                             <hr>
                             <a onclick="submit_form()" class="btn btn-primary btn-lg m-2 float-right">Submit</a>
                         </form>

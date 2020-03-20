@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Answer;
 use App\Content;
+use App\Mail\event;
 use App\Question;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
@@ -167,6 +169,18 @@ class QuestionController extends Controller
         $data['answer_correct'] = $answer_correct;
 
         return view('practice' , compact('question','data', 'noti' ));
+    }
 
+    public function report()    {
+        $report = request()->get('report');
+        $qid = request()->get('qid');
+
+        DB::table('practice_report')->insert(
+            ['question_id' => $qid, 'report' => $report, 'created_at' => now(), 'updated_at' => now()]
+        );
+
+        Mail::to('syazanizul@gmail.com')->send(new event('report to question id : '. $qid . ' --- report : '. $report));
+
+        return back()->with('report','report is submitted');
     }
 }

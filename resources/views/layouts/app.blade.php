@@ -208,7 +208,8 @@
                             <h4>Easy Navigate</h4>
                             <ul id="footer-links" style="list-style: none; padding-left: 0; color:white;">
                                 <a href="/"><li>Practice</li></a>
-                                <a href="/joinUs"><li>Join us as a Teacher</li></a>
+                                <a href="/about/teacher/join-us"><li>Join us as a Teacher</li></a>
+                                <a href="/about/teacher/compensation-for-contributors"><li>Compensation for Contributors</li></a>
                                 <a href="/contact"><li>Contact Us</li></a>
                                 <a href="/disclaimer"><li>Disclaimer</li></a>
 {{--                                @guest--}}

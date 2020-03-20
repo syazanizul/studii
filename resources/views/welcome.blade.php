@@ -295,7 +295,7 @@
                                                             <label class="tags-property">Subject :</label>
                                                         </div>
                                                         <div class="d-inline-block" style="width:70%;">
-                                                            <select name="s_subject" id="s_subject" class="form-control form-control-lg" style="width:100%;" onchange="fetch_subject_change_chapter(); count()">
+                                                            <select name="s_subject" id="s_subject" class="form-control form-control-lg" style="width:100%;" onchange="count()">
                                                                 <option value="-">Select Subject</option>
                                                                 @foreach ($property['subjects'] as $subject)
                                                                     <option value="{{$subject -> id}}">{{  $subject -> name }}</option>
@@ -323,6 +323,7 @@
                                                         <div class="d-inline-block" style="width:70%;">
                                                             <select name="s_chapter" id="s_chapter" class="form-control form-control-lg" style="width:100%;" onchange="count()">
                                                                 <option value="0">All Chapters</option>
+                                                                <option value="0">Pick Subject and Level first</option>
                                                             </select>
                                                         </div>
                                                     </div>

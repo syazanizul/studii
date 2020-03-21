@@ -382,7 +382,7 @@
                     <p style="font-size:1.5em">We work with teachers to gather the best exercise questions for our users. If you are a teacher, we want to collaborate with you</p>
                 </div>
                 <div class="col-lg-4">
-                    <a href="\joinUs" class="btn btn-lg btn-primary btn-block mt-5">Teachers, Click Here</a>
+                    <a href="\about\teacher\join-us" class="btn btn-lg btn-primary btn-block mt-5">Teachers, Click Here</a>
                 </div>
             </div>
         </div>

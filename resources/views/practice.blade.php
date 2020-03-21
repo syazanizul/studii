@@ -410,7 +410,7 @@
                         </div>
                             <br>
                         <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">
-                            <button type="button" class="btn btn-lg btn-block btn-warning" data-toggle="modal" data-target="#report_modal">
+                            <button type="button" class="btn btn-lg btn-block btn-danger" data-toggle="modal" data-target="#report_modal">
                                Report
                             </button>
                             @if($report = Session::get('report'))

@@ -206,6 +206,8 @@
                             </div>
                         </div>
                     </form>
+                    <br>
+                    <p class="text-center"><b>If this takes longer than 5 seconds to go, click here.</b></p>
                 </div>
             </div>
 

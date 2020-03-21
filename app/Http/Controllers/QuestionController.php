@@ -134,7 +134,7 @@ class QuestionController extends Controller
         }
 
         //For feedback form modal - to make feedback form only pop out once
-        if (true)  {
+        if ($num==3 && $request->session()->has('feedback_form') == 0)  {
             $noti['feedback_form'] = 1;
         }
 

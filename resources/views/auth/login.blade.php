@@ -194,7 +194,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" onclick="document.getElementById('text-noti').style.visibility='visible'">
                                     {{ __('Login') }}
                                 </button>
 
@@ -207,7 +207,7 @@
                         </div>
                     </form>
                     <br>
-                    <p class="text-center"><b>If this takes longer than 5 seconds to go, click here.</b></p>
+                    <p id="text-noti" class="text-center" style="visibility: hidden"><b>If this takes longer than 5 seconds to redirect, click <a href="/home">here</a>.</b></p>
                 </div>
             </div>
 

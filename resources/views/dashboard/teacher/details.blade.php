@@ -263,6 +263,7 @@
                                 </div>
                             </div>
                             <hr>
+                            <p>Please fill in this section first</p>
                             <input type="submit" class="btn btn-primary btn-lg m-2 float-right" value="Submit">
 
                         </form>
@@ -353,7 +354,7 @@
                         </div>
                         <form id="school_name_form" action="/teacher/details/teaching-details" method="post">
                             @csrf
-                            <div class="row mb-4">
+                            <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Name of School</label>
@@ -375,7 +376,8 @@
                             </div>
                             <p>If you need help filling in your teaching details, you can contact us by emailing <b>studii.malaysia@gmail.com</b> or contact <b>019-2099853</b>.</p>
                             <hr>
-                            <a onclick="submit_form()" class="btn btn-primary btn-lg m-2 float-right">Submit</a>
+                            <a onclick="submit_form()" class="btn btn-primary btn-lg m-2 float-right" @if($completed['edit_profile'] == 0) disabled @endif>Submit</a>
+                            @if($completed['edit_profile'] == 0) <p>Please fill in edit profile section first</p> @endif
                         </form>
                     </div>
                 </div>
@@ -408,7 +410,7 @@
                                            id="avatar" name="avatar"
 {{--                                           accept="image/png, image/jpeg"--}}
                                     >
-                                    <input class="btn btn-primary" type="submit" value="Add Image">
+                                    <input class="btn btn-primary" type="submit" value="Add Image" @if($completed['edit_profile'] == 0) disabled @endif>
                                 </form>
                                 <a href="#" onclick="document.getElementById('text-dont-have').innerText = 'Are you sure you dont want to add any?'; document.getElementById('btn-dont-have').style.visibility = 'visible'" class="my-4 btn btn-primary btn-block">I don't want any image</a>
 
@@ -424,7 +426,8 @@
                     <div class="card-footer">
                         <hr>
                         <p class="text-center" id="text-dont-have">We don't have your image yet</p>
-                        <a href="/teacher/details/add-image/no-image" id="btn-dont-have" class="mb-3 btn btn-primary btn-block" style="visibility: hidden;">Yes I'm sure</a>
+                        <a href="/teacher/details/add-image/no-image" id="btn-dont-have" class="mb-3 btn btn-primary btn-block" style="visibility: hidden;"  @if($completed['edit_profile'] == 0) disabled @endif>Yes I'm sure</a>
+                        @if($completed['edit_profile'] == 0) <p class="text-center">Please fill in edit profile section first</p> @endif
 {{--                        <div class="button-container">--}}
 {{--                            <div class="row">--}}
 {{--                                <div class="col-lg-3 col-md-6 col-6 ml-auto">--}}

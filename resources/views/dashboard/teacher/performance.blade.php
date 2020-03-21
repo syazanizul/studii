@@ -70,6 +70,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row">
         <div class="col-sm-3">
             <div class="card card-stats">
                 <div class="card-body ">
@@ -113,6 +115,24 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="card card-stats">
+                <div class="card-body ">
+                    <div class="row">
+                        <div class="col-12 col-md-12">
+                            <p>The value for <b>Price Per Attempt</b> will be determined by the Studii Team, depending on the characteristic (length, complexity, etc) of the question.
+                            Please give it a few days for us to set the price.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer ">
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+
 @endsection
 
 @section('modal')

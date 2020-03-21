@@ -499,15 +499,15 @@
                             <div class="feedback">
                                 <p id="text-pick-star">just pick your star</p>
                                 <div class="rating">
-                                    <input type="radio" name="feedback_rating" onclick="document.getElementById('text-submit-1').style.visibility = 'visible'; submit_feedback_form_quick_rating()" id="rating-5" value="5   ">
+                                    <input type="radio" name="feedback_rating" onclick="submit_feedback_form_quick_rating()" id="rating-5" value="5   ">
                                     <label for="rating-5"></label>
-                                    <input type="radio" name="feedback_rating" onclick="document.getElementById('text-submit-1').style.visibility = 'visible'; submit_feedback_form_quick_rating() " id="rating-4" value="4">
+                                    <input type="radio" name="feedback_rating" onclick="submit_feedback_form_quick_rating() " id="rating-4" value="4">
                                     <label for="rating-4"></label>
-                                    <input type="radio" name="feedback_rating" onclick="document.getElementById('text-submit-1').style.visibility = 'visible'; submit_feedback_form_quick_rating() " id="rating-3" value="3">
+                                    <input type="radio" name="feedback_rating" onclick="submit_feedback_form_quick_rating() " id="rating-3" value="3">
                                     <label for="rating-3"></label>
-                                    <input type="radio" name="feedback_rating" onclick="document.getElementById('text-submit-1').style.visibility = 'visible'; submit_feedback_form_quick_rating() " id="rating-2" value="2">
+                                    <input type="radio" name="feedback_rating" onclick="submit_feedback_form_quick_rating() " id="rating-2" value="2">
                                     <label for="rating-2"></label>
-                                    <input type="radio" name="feedback_rating" onclick="document.getElementById('text-submit-1').style.visibility = 'visible'; submit_feedback_form_quick_rating() " id="rating-1" value="1">
+                                    <input type="radio" name="feedback_rating" onclick="submit_feedback_form_quick_rating() " id="rating-1" value="1">
                                     <label for="rating-1"></label>
                                     <div class="emoji-wrapper">
                                         <div class="emoji">
@@ -897,9 +897,11 @@
             type: 'get',
             url: '/ajax/feedback/rating',
             data: {
-                like : like
+                like : rating
             },
         });
+
+        document.getElementById('text-submit-1').style.visibility = 'visible';
 
         return 1;
     }

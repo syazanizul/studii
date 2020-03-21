@@ -499,15 +499,15 @@
                             <div class="feedback">
                                 <p id="text-pick-star">just pick your star</p>
                                 <div class="rating">
-                                    <input type="radio" name="feedback_rating" onclick="document.getElementById('text-submit-1').style.visibility = 'visible'" id="rating-5" value="5   ">
+                                    <input type="radio" name="feedback_rating" onclick="document.getElementById('text-submit-1').style.visibility = 'visible'; submit_feedback_form_quick_rating()" id="rating-5" value="5   ">
                                     <label for="rating-5"></label>
-                                    <input type="radio" name="feedback_rating" onclick="document.getElementById('text-submit-1').style.visibility = 'visible'" id="rating-4" value="4">
+                                    <input type="radio" name="feedback_rating" onclick="document.getElementById('text-submit-1').style.visibility = 'visible', submit_feedback_form_quick_rating() " id="rating-4" value="4">
                                     <label for="rating-4"></label>
-                                    <input type="radio" name="feedback_rating" onclick="document.getElementById('text-submit-1').style.visibility = 'visible'" id="rating-3" value="3">
+                                    <input type="radio" name="feedback_rating" onclick="document.getElementById('text-submit-1').style.visibility = 'visible', submit_feedback_form_quick_rating() " id="rating-3" value="3">
                                     <label for="rating-3"></label>
-                                    <input type="radio" name="feedback_rating" onclick="document.getElementById('text-submit-1').style.visibility = 'visible'" id="rating-2" value="2">
+                                    <input type="radio" name="feedback_rating" onclick="document.getElementById('text-submit-1').style.visibility = 'visible', submit_feedback_form_quick_rating() " id="rating-2" value="2">
                                     <label for="rating-2"></label>
-                                    <input type="radio" name="feedback_rating" onclick="document.getElementById('text-submit-1').style.visibility = 'visible'" id="rating-1" value="1">
+                                    <input type="radio" name="feedback_rating" onclick="document.getElementById('text-submit-1').style.visibility = 'visible', submit_feedback_form_quick_rating() " id="rating-1" value="1">
                                     <label for="rating-1"></label>
                                     <div class="emoji-wrapper">
                                         <div class="emoji">
@@ -597,7 +597,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p id="text-submit-1" style="visibility: hidden">Submitted</p>
+                                <p id="text-submit-1" style="visibility: hidden">Thank You!</p>
                             </div>
                         </div>
                         <br>
@@ -606,7 +606,7 @@
                     </div>
                     <div class="modal-footer">
                         <h5 class="mr-3" id="text_feedback_success"></h5>
-                        <button id="btn_feedback" onclick="submit_feedback()" type="button" class="btn btn-primary btn-lg" disabled>Submit feedback</button>
+                        <button id="btn_feedback" onclick="submit_feedback_form_quick_improvement()" type="button" class="btn btn-primary btn-lg" disabled>Submit feedback</button>
                     </div>
                 </div>
             </div>
@@ -890,26 +890,57 @@
         document.getElementById('btn_feedback').disabled = false;
     }
 
-    function submit_feedback()  {
-        //Ajax to save feedback from users
-
-        let like = document.querySelector('input[name="feedback_rating"]:checked').value;
-        let suggestion = document.getElementById('feedback_suggestion').value;
-
-        console.log(suggestion);
+    function submit_feedback_form_quick_rating()  {
+        let rating = document.querySelector('input[name="feedback_rating"]:checked').value;
 
         $.ajax({
             type: 'get',
-            url: '/ajax/feedback',
+            url: '/ajax/feedback/rating',
             data: {
-                like : like,
+                like : like
+            },
+        });
+
+        return 1;
+    }
+
+    function submit_feedback_form_quick_improvement()  {
+        let suggestion = document.getElementById('feedback_suggestion').value;
+
+        $.ajax({
+            type: 'get',
+            url: '/ajax/feedback/improvement',
+            data: {
                 suggestion : suggestion
             },
         });
 
-        document.getElementById('text_feedback_success').innerHTML = "<span style='color:#26d153'>Thank you for your feedback</span>";
+        document.getElementById('text_feedback_success').innerHTML = "<span style='color:#26d153'>Thank you for your feedback!</span>";
         document.getElementById('btn_feedback').disabled = true;
+
+        return 1;
     }
+
+    // function submit_feedback()  {
+    //     //Ajax to save feedback from users
+    //
+    //     let like = document.querySelector('input[name="feedback_rating"]:checked').value;
+    //     let suggestion = document.getElementById('feedback_suggestion').value;
+    //
+    //     console.log(suggestion);
+    //
+    //     $.ajax({
+    //         type: 'get',
+    //         url: '/ajax/feedback',
+    //         data: {
+    //             like : like,
+    //             suggestion : suggestion
+    //         },
+    //     });
+    //
+    //     document.getElementById('text_feedback_success').innerHTML = "<span style='color:#26d153'>Thank you for your feedback</span>";
+    //     document.getElementById('btn_feedback').disabled = true;
+    // }
 
     //For rating difficulty form under content
 

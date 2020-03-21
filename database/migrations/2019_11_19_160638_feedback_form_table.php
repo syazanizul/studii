@@ -13,12 +13,12 @@ class FeedbackFormTable extends Migration
      */
     public function up()
     {
-        Schema::create('feedback_form', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('like');
-            $table->string('suggestion');
-            $table->timestamps();
-        });
+//        Schema::create('feedback_form', function (Blueprint $table) {
+//            $table->bigIncrements('id');
+//            $table->integer('like');
+//            $table->string('suggestion');
+//            $table->timestamps();
+//        });
     }
 
     /**

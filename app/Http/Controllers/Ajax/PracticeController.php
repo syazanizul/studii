@@ -66,7 +66,7 @@ class PracticeController extends Controller
 
     }
 
-    public function rating()    {
+    public function difficulty_rating()    {
         $question_id = request() -> get('question_id');
         $rating = request() -> get('rating');
 
@@ -92,4 +92,45 @@ class PracticeController extends Controller
 
         return 1;
     }
+
+    public function feedback_form_quick_rating(Request $request)   {
+        $like = request() -> get('like');
+
+        $db = DB::table('feedback_form_quick_rating') -> insert(
+            ['like' => $like, 'created_at' => now(), 'updated_at' => now()]
+        );
+
+        $request->session()->put('feedback_form', 1);
+
+        return 1;
+    }
+
+    public function feedback_form_quick_improvement(Request $request)   {
+        $suggestion = request() -> get('suggestion');
+
+        $db = DB::table('feedback_form_quick_improvement') -> insert(
+            ['suggestion' => $suggestion, 'created_at' => now(), 'updated_at' => now()]
+        );
+
+        $request->session()->put('feedback_form', 1);
+
+        Mail::to('syazanizul@gmail.com')->send(new event('Feedback'));
+
+        return 1;
+    }
+
+//    public function feedback(Request $request)  {
+//        $like = request() -> get('like');
+//        $suggestion = request() -> get('suggestion');
+//
+//        $db = DB::table('feedback_form') -> insert(
+//            ['like' => $like, 'suggestion' => $suggestion, 'created_at' => now(), 'updated_at' => now()]
+//        );
+//
+//        $request->session()->put('feedback_form', 1);
+//
+//        Mail::to('syazanizul@gmail.com')->send(new event('Feedback'));
+//
+//        return 1;
+//    }
 }

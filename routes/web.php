@@ -127,7 +127,9 @@ Route::get('/ajax/count', 'Ajax\WelcomeController@count');
 // End AJAX for Welcome page
 
 //AJAX for general
-Route::get('/ajax/feedback', 'Ajax\AjaxController@feedback');
+//Route::get('/ajax/feedback', 'Ajax\AjaxController@feedback');
+Route::get('/ajax/feedback/rating', 'Ajax\PracticeController@feedback_form_quick_rating');
+Route::get('/ajax/feedback/improvement', 'Ajax\PracticeController@feedback_form_quick_improvement');
 //End Ajax for general
 
 // AJAX for teacher dashboard
@@ -140,7 +142,7 @@ Route::get('/ajax/dashboard/teacher/details/subject_based_on_exam', 'Ajax\Dashbo
 //Ajax for practicelink
 Route::get('/ajax/practice/session-for-new', 'Ajax\PracticeController@session_for_new');
 Route::get('/ajax/practice/count-attempt', 'Ajax\PracticeController@count_attempt');
-Route::get('/ajax/practice/rating', 'Ajax\PracticeController@rating');
+Route::get('/ajax/practice/rating', 'Ajax\PracticeController@difficulty_rating');
 
 //End ALL AJAX ----------
 

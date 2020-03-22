@@ -78,8 +78,8 @@ Route::get('/practice/report', 'QuestionController@report');
 Route::get('/contact', 'ContactController@index');
 
 // Routes for all About Us things
-Route::get('/about', 'AboutController@index');
-Route::get('/disclaimer', 'AboutController@disclaimer');
+Route::get('/about', 'About\AboutController@index');
+Route::get('/disclaimer', 'About\AboutController@disclaimer');
 
 // About Us - Teachers
 Route::get('about/teacher/join-us', 'About\TeacherController@JoinUs');

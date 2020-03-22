@@ -109,8 +109,6 @@
         <p><b>Add Working (Optional)</b></p>
         <p>A <a href="/about/teacher/compensation-for-contributors#working" target="_blank">working uploader</a> will add a working to solve the question in this question. This uploader can be of the creator from <b>step 1</b>, the uploader from <b>step 2</b>,
         or another new uploader (unrelated from previous steps).</p>
-        <p>This process is optional because we do not want to limit all questions must have a working. This way, creators does not necessary must do their working (more work)
-            in order to add questions into Studii. In order words, this is optional so that we can have lots of questions in our library.</p>
         <p style="color:#b52a21"><b>Right now, we still have not introduced 'Add Working' in Studii. Stay tuned for this feature.</b></p>
     </div>
 </div>
@@ -126,8 +124,7 @@
     <div class="col-11 col-md-11">
         <p><b>Verification</b></p>
         <p>All questions must be verified by at least <b>2</b> different teachers (<a href="/about/teacher/compensation-for-contributors#verifier">'verifier'</a>) before the question is ready for students. When the teacher verify the question,
-        they will own a part of the question and they will also have responsibility towards the validity of that question. If the question is not valid, then it is a bit
-        their fault too.</p>
+        they will own a part of the question and they will also have responsibility towards the validity of that question. </p>
         <p>In this process, the 'verifier' will recheck the question to ensure it is correct. They will attempt the question and see if they can get the answer. If can, then
             there is no problem. They proceed to click the <b>verify button</b>.</p>
         <p>If there are already 2 different teachers who have verified the question, then the question is ready for students. The process is finished :).</p>

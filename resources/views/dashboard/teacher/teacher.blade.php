@@ -412,9 +412,9 @@
         });
     }
 
-    let text1 = "Teachers can submit their own work of exercise questions (self-made, not taken from anywhere) to us and it will be given to students." +
-        "<br><br>For every attempt made by students, the teacher who contribute that question will be compensated." +
-        "<br><br>If you contribute now, you will be valid to our promotional attempt rate of <b>1 Attempt = 1 Cent</b>!" +
+    let text1 = "Teachers can submit their own work of exercise questions (self-made, not taken from anywhere) to us and it will be made available to students." +
+        "<br><br>For every attempt made by students, teachers who contributed the question(s) will be compensated." +
+        "<br><br>If you contribute now, you are valid to our promotional attempt rate of <b>1 Attempt = 1 Cent</b>!" +
         "<br><br>If you want to know more, you can read here." +
         "<br><br><a class='btn btn-primary' href='about/teacher/join-us'>Read More</a>";
 

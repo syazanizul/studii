@@ -69,7 +69,7 @@
             </div>
             <div class="row">
                 <div class="col-md-9">
-                    <p class="big-p my-1">Every question in Studii is pieces of people's contribution.</p>
+                    <p class="big-p my-1">Every question in Studii is pieces of peoples' contribution.</p>
                     <p class="big-p my-4"><b>When a question is attempted, all of the contributors will get their fair compensation.</b></p>
                 </div>
                 <div class="col-md-1"></div>
@@ -112,7 +112,7 @@
                 <div class="col-lg-10">
                     <h1 class="headline">Uploader</h1>
                     <p class="big-p ml-2">This person uploads the question made by the creator into <b>Studii</b>. The job is to write again whatever is written
-                    by the creator to a format acceptable by <b>Studii</b>.</p>
+                    by the creator to an acceptable format by <b>Studii</b>.</p>
                     <p class="big-p ml-2"><b>Note:</b> If the question contains mathematical equation, then the uploader must know about Mathjax (a tool to write
                         mathematical equations). But don't worry, we will explain how to use it to you.</p>
                     <p class="big-p ml-2"><b>From Microsoft Word or Google Docs -> to Studii</b></p>

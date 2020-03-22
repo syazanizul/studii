@@ -51,28 +51,60 @@
     </div>
 </div>
 
+
+<div class="row">
+    <div class="col-lg-10">
+        <div class="card card-stats">
+            <div class="card-body ">
+                <div class="row">
+                    <div class="col-12 col-md-12 mb-3">
+                        <h5>You can read about the process to add questions into Studii <a href="/teacher/instruction/process-upload-questions">here</a>.</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-5">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="">Upload Manually</h3>
+                <div style="font-size: 1.1em">
+                    <p>Created by : <b>You</b></p>
+                    <p>Uploaded by : <b>You</b></p>
+                    <p>You maximise <b>earning</b>, but you have to <b>upload it yourself</b>.</p>
+                    <a href="/question/add" class="btn btn-primary btn-lg btn-block" disabled>Upload New</a>
+                    <p class="text-center">Right now, this method is not allowed</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-sm-5">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="">Upload With Help</h3>
+                <div style="font-size: 1.1em">
+                    <p>Created by : <b>You</b></p>
+                    <p>Uploaded by : <b>Someone else</b></p>
+                    <p>You <b>don't have to upload yourself</b>, but you have to <b>share a portion of the earning</b> with someone else.</p>
+                    <a href="/question/add" class="btn btn-primary btn-lg btn-block" disabled>Upload New</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="row">
     <div class="col-sm-10">
         <div class="card">
             <div class="card-header">
-                <h3 class="">Contribute Question</h3>
+                <h3 class="">Questions in draft</h3>
             </div>
             <div class="card-body">
-                <div class="row justify-content-center pt-3">
-                    <div class="col-md-10">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <a href="/question/add" class="btn btn-primary btn-lg btn-block" disabled>Add New</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <br><br>
-
-{{--                <div class="table-responsive">--}}
-                <div class="">
-                    <h4 class="text-primary">Questions in draft</h4>
+                <div class="table-responsive">
 
                 @if($draft->get()-> isNotEmpty())
                     <table class="table">

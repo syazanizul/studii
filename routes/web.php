@@ -54,6 +54,9 @@ Route::get('/teacher/details/add-image/no-image', 'Teacher\DetailsController@no_
 
 Route::post('/teacher/details/teaching-details/exam', 'Teacher\DetailsController@teaching_details_exam');
 Route::post('/teacher/details/teaching-details/subject', 'Teacher\DetailsController@teaching_details_subject');
+
+Route::get('/teacher/instruction', 'Teacher\InstructionController@index')->middleware('teacher');
+Route::get('/teacher/instruction/process-upload-questions', 'Teacher\InstructionController@process_upload_questions')->middleware('teacher');
 // End for teachers
 
 

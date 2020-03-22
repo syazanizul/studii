@@ -33,6 +33,11 @@
                 <p>Performance</p>
             </a>
         </li>
+        <li>
+            <a href="/teacher/instruction">
+                <p>Instruction</p>
+            </a>
+        </li>
     </ul>
 @endsection
 

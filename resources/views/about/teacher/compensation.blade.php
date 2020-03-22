@@ -90,7 +90,7 @@
                     <h1 class="headline">Understanding each role</h1>
                 </div>
             </div>
-            <div class="my-4 row">
+            <div class="my-4 row" id="creator">
                 <div class="col-lg-2 justify-content-center">
                     <div style="background-color: #449fc9; width:50px; border-radius: 30px; height:50px; border:3px solid black">
                         <h1 style="text-align: center">1</h1>
@@ -103,7 +103,7 @@
                     <p class="big-p ml-2"><b>From brain &#129504; -> to a written question (Microsoft Word, Google Docs, etc)</b></p>
                 </div>
             </div>
-            <div class="my-4 row">
+            <div class="my-4 row" id="uploader">
                 <div class="col-lg-2 justify-content-center">
                     <div style="background-color: #296b75; width:50px; border-radius: 30px; height:50px; border:3px solid black">
                         <h1 style="text-align: center">2</h1>
@@ -118,7 +118,7 @@
                     <p class="big-p ml-2"><b>From Microsoft Word or Google Docs -> to Studii</b></p>
                 </div>
             </div>
-            <div class="my-4 row">
+            <div class="my-4 row" id="working-uploader">
                 <div class="col-lg-2 justify-content-center">
                     <div style="background-color: #43a370; width:50px; border-radius: 30px; height:50px; border:3px solid black">
                         <h1 style="text-align: center">3</h1>
@@ -131,7 +131,7 @@
                     <p class="big-p ml-2"><b>From brain &#129504; -> to Google Docs or to Studii</b></p>
                 </div>
             </div>
-            <div class="my-4 row">
+            <div class="my-4 row" id="verifier">
                 <div class="col-lg-2 justify-content-center">
                     <div style="background-color: #d6bb5a; width:50px; border-radius: 30px; height:50px; border:3px solid black">
                         <h1 style="text-align: center">4</h1>
@@ -142,7 +142,7 @@
                     <p class="big-p ml-2">Every question submitted must be verified by another 2 teachers. This is to ensure all questions submitted to <b>Studii</b> is correct and reliable.</p>
                 </div>
             </div>
-            <div class="my-4 row">
+            <div class="my-4 row" id="translator">
                 <div class="col-lg-2 justify-content-center">
                     <div style="background-color: #ba2d2d; width:50px; border-radius: 30px; height:50px; border:3px solid black">
                         <h1 style="text-align: center">5</h1>

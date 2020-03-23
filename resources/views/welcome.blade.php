@@ -295,7 +295,7 @@
                                                             <label class="tags-property">Subject :</label>
                                                         </div>
                                                         <div class="d-inline-block" style="width:70%;">
-                                                            <select name="s_subject" id="s_subject" class="form-control form-control-lg" style="width:100%;" onchange="count()">
+                                                            <select name="s_subject" id="s_subject" class="form-control form-control-lg" style="width:100%;" onchange="fetch_subject_level_change_chapter(); count()">
                                                                 <option value="-">Select Subject</option>
                                                                 @foreach ($property['subjects'] as $subject)
                                                                     <option value="{{$subject -> id}}">{{  $subject -> name }}</option>
@@ -321,9 +321,20 @@
                                                             <label class="tags-property">Chapter :</label>
                                                         </div>
                                                         <div class="d-inline-block" style="width:70%;">
-                                                            <select name="s_chapter" id="s_chapter" class="form-control form-control-lg" style="width:100%;" onchange="count()">
+                                                            <select name="s_chapter" id="s_chapter" class="form-control form-control-lg" style="width:100%;" onchange="fetch_chapter_change_subtopic(); count()">
                                                                 <option value="0">All Chapters</option>
                                                                 <option value="0">Pick Subject and Level first</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <div class="d-inline-block" style="width:25%;">
+                                                            <label class="tags-property">Subtopic :</label>
+                                                        </div>
+                                                        <div class="d-inline-block" style="width:70%;">
+                                                            <select name="s_subtopic" id="s_subtopic" class="form-control form-control-lg" style="width:100%;" onchange="count()">
+                                                                <option value="0">All Subtopics</option>
+                                                                <option value="0">Pick Chapters</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -481,6 +492,24 @@
         });
     }
 
+    function fetch_chapter_change_subtopic()
+    {
+        $.ajax({
+            type: 'get',
+            url: '../ajax/fetch_chapter_change_subtopic',
+            data: {
+                chapter: document.getElementById('s_chapter').value,
+            },
+            success: function (response) {
+                if (response !== '<option value="0">All</option>') {
+                    document.getElementById('s_subtopic').innerHTML = response;
+                }   else {
+                    document.getElementById('s_subtopic').innerHTML = '<option value="0">No Subtopic</option>';
+                }
+            }
+        });
+    }
+
     function count() {
         //Second Ajax
         $.ajax({
@@ -490,6 +519,7 @@
                 subject: document.getElementById('s_subject').value,
                 level: document.getElementById('s_level').value,
                 chapter: document.getElementById('s_chapter').value,
+                subtopic: document.getElementById('s_subtopic').value,
                 source: document.getElementById('s_source').value,
                 paper: document.getElementById('s_paper').value,
                 year: document.getElementById('s_year').value,

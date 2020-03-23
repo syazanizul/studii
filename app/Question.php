@@ -25,6 +25,10 @@ class Question extends Model
         return $this->belongsTo(Chapter::class , 'chapter','id');
     }
 
+    public function subtopic_name() {
+        return $this->belongsTo(Subtopic::class , 'subtopic','id');
+    }
+
     public function source_name() {
         return $this->belongsTo(Source::class , 'source','id');
     }

@@ -68,6 +68,7 @@ class WelcomeController extends Controller
         $subject = request() -> get('subject');
         $level = request() -> get('level');
         $chapter = request() -> get('chapter');
+        $subtopic = request() -> get('subtopic');
         $source = request() -> get('source');
         $paper = request() -> get('paper');
         $year = request() -> get('year');
@@ -77,6 +78,10 @@ class WelcomeController extends Controller
 
         if ($chapter != 0) {
             $count = $count -> where('chapter', $chapter);
+        }
+
+        if ($subtopic != 0) {
+            $count = $count -> where('subtopic', $subtopic);
         }
 
         if ($level != 0) {

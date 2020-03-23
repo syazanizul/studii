@@ -79,7 +79,7 @@ class AddProperty extends Controller
         $subject = request() -> get('s_subject');
         $level = request() -> get('s_level');
         $chapter = request() -> get('s_chapter');
-        $chapter = request() -> get('s_subtopic');
+        $subtopic = request() -> get('s_subtopic');
         $paper = request() -> get('s_paper');
         $difficulty = request() -> get('s_difficulty');
         $source = request() -> get('s_source');
@@ -101,6 +101,7 @@ class AddProperty extends Controller
         $question -> level = $level;
         $question -> subject = $subject;
         $question -> chapter = $chapter;
+        $question -> subtopic = $subtopic;
         $question -> year = 2019;
         $question -> paper = $paper;
         $question -> source = $source;

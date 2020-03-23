@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Ajax;
 
+use App\Chapter;
 use App\Http\Controllers\Controller;
+use App\Subtopic;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -27,7 +29,7 @@ class WelcomeController extends Controller
     {
         $subject = request()->get('subject');
 
-        $results = DB::table('chapters_list')->where('subject', $subject)->orderBy('order','asc')->get();
+        $results = Chapter::where('subject', $subject)->orderBy('order','asc')->get();
 
         echo '<option value="0">All</option>';
         foreach ($results as $result) {
@@ -40,7 +42,19 @@ class WelcomeController extends Controller
         $subject = request()->get('subject');
         $level = request()->get('level');
 
-        $results = DB::table('chapters_list')->where('subject', $subject) -> where('level', $level)->orderBy('order','asc')->get();
+        $results = Chapter::where('subject', $subject) -> where('level', $level)->orderBy('order','asc')->get();
+
+        echo '<option value="0">All</option>';
+        foreach ($results as $result) {
+            echo '<option value="', $result->id, '">', $result->name, '</option>';
+        }
+    }
+
+    public function fetch_chapter_change_subtopic()
+    {
+        $chapter = request()->get('chapter');
+
+        $results = Subtopic::where('chapter_id', $chapter)->orderBy('order','asc')->get();
 
         echo '<option value="0">All</option>';
         foreach ($results as $result) {

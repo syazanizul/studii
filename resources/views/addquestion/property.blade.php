@@ -50,7 +50,8 @@
                         <tr>
                             <th>Subject</th>
                             <td>
-                                <select name="s_subject" id="s_subject" class="form-control" onchange="fetch_subject_change_chapter()">
+                                <select name="s_subject" id="s_subject" class="form-control" onchange="fetch_subject_level_change_chapter()">
+{{--                                <select name="s_subject" id="s_subject" class="form-control" onchange="fetch_subject_change_chapter()">--}}
                                     <option value="0">Select</option>
                                     @foreach ($subjects as $subject)
                                         <option value="{{$subject -> id}}">{{$subject -> name}}</option>
@@ -72,7 +73,15 @@
                         <tr>
                             <th>Chapter</th>
                             <td>
-                                <select name="s_chapter" id="s_chapter" class="form-control">
+                                <select name="s_chapter" id="s_chapter" class="form-control" onchange="fetch_chapter_change_subtopic()">
+                                    <option>Select</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Subtopic</th>
+                            <td>
+                                <select name="s_subtopic" id="s_subtopic" class="form-control">
                                     <option>Select</option>
                                 </select>
                             </td>
@@ -216,7 +225,7 @@
                 </div>
                 <div class="card m-3" style="background-color: #493548; color:white">
                     <div class="card-body">
-                        <h4>Add New Into Subject</h4>
+                        <h4>Add New Into Chapter</h4>
                         <form method="post" action="/question/add/newproperty/2">
                             @csrf
                             <p>Chapter Name</p>
@@ -234,6 +243,31 @@
                         </form>
                     </div>
                 </div>
+                <div class="card m-3" style="background-color: #493548; color:white">
+                    <div class="card-body">
+                        <h4>Add New Into Subtopic</h4>
+                        <form method="post" action="/question/add/newproperty/3">
+                            @csrf
+                            <p>Chapter Name</p>
+                            <select name="subject" id="s_subject_2" class="form-control m-2 w-25 d-inline-block" onchange="fetch_subject_level_change_chapter_2()">
+                                <option value="0">Select</option>
+                                @foreach ($subjects as $subject)
+                                    <option value="{{$subject -> id}}">{{$subject -> name}}</option>
+                                @endforeach
+                            </select>
+                            <select name="level" id="s_level_2" class="form-control m-2 w-25 d-inline-block" onchange="fetch_subject_level_change_chapter_2()">
+                                <option value="0">Select</option>
+                                <option value="1">Form 4</option>
+                                <option value="2">Form 5</option>
+                            </select>
+                            <select name="chapter" id="s_chapter_2" class="form-control m-2 w-25 d-inline-block">
+                                <option>Select Chapter</option>
+                            </select>
+                            <input  class="form-control m-2 w-50 d-inline-block" type="text" name="thing" placeholder="Subtopic Name">
+                            <input class="btn m-3 float-right" type="submit">
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
         <div style="min-height:200px">
@@ -247,7 +281,6 @@
 <script>
     function fetch_subject_change_chapter()
     {
-        //First Ajax
         $.ajax({
             type: 'get',
             url: '../ajax/fetch_subject_change_chapter',
@@ -268,7 +301,6 @@
 
     function fetch_subject_level_change_chapter()
     {
-        //First Ajax
         $.ajax({
             type: 'get',
             url: '../ajax/fetch_subject_level_change_chapter',
@@ -281,6 +313,43 @@
                     document.getElementById('s_chapter').innerHTML = response;
                 }   else {
                     document.getElementById('s_chapter').innerHTML = '<option value="0">No Data</option>';
+                }
+            }
+        });
+    }
+
+    function fetch_chapter_change_subtopic()
+    {
+        $.ajax({
+            type: 'get',
+            url: '../ajax/fetch_chapter_change_subtopic',
+            data: {
+                chapter: document.getElementById('s_chapter').value,
+            },
+            success: function (response) {
+                if (response !== '<option value="0">All</option>') {
+                    document.getElementById('s_subtopic').innerHTML = response;
+                }   else {
+                    document.getElementById('s_subtopic').innerHTML = '<option value="0">No Subtopic</option>';
+                }
+            }
+        });
+    }
+
+    function fetch_subject_level_change_chapter_2()
+    {
+        $.ajax({
+            type: 'get',
+            url: '../ajax/fetch_subject_level_change_chapter',
+            data: {
+                subject: document.getElementById('s_subject_2').value,
+                level: document.getElementById('s_level_2').value
+            },
+            success: function (response) {
+                if (response !== '<option value="0">All</option>') {
+                    document.getElementById('s_chapter_2').innerHTML = response;
+                }   else {
+                    document.getElementById('s_chapter_2').innerHTML = '<option value="0">No Data</option>';
                 }
             }
         });

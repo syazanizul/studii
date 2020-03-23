@@ -5,6 +5,7 @@ namespace App\Http\Controllers\AddQuestion;
 use App\Http\Controllers\Controller;
 use App\Chapter;
 use App\Subject;
+use App\Subtopic;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -56,6 +57,21 @@ class AddProperty extends Controller
         return redirect()->back();
     }
 
+//    ---------------- 3.5 METHOD
+    public function newsubtopic()   {
+        $chapter = request() -> get('chapter');
+        $subtopic_name = request() -> get('thing');
+
+        $subtopic = new subtopic;
+        $subtopic -> name = $subtopic_name;
+        $subtopic -> chapter_id = $chapter;
+        $subtopic -> order = $chapter;
+        $subtopic -> save();
+
+        return redirect() -> back();
+
+    }
+
 //   ----------------- FOURTH METHOD
     public function store1(Request $request)    {
         $request->session()->put('recent_add_property', request()->all());
@@ -63,6 +79,7 @@ class AddProperty extends Controller
         $subject = request() -> get('s_subject');
         $level = request() -> get('s_level');
         $chapter = request() -> get('s_chapter');
+        $chapter = request() -> get('s_subtopic');
         $paper = request() -> get('s_paper');
         $difficulty = request() -> get('s_difficulty');
         $source = request() -> get('s_source');

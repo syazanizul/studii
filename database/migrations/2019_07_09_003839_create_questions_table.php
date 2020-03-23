@@ -19,6 +19,7 @@ class CreateQuestionsTable extends Migration
             $table->integer('level');
             $table->integer('subject');
             $table->integer('chapter');
+            $table->integer('subtopic');
             $table->integer('year');
             $table->integer('paper');
             $table->integer('source');

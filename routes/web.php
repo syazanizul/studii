@@ -98,6 +98,8 @@ Route::get('/teacher/question/go-practicelink/{id}', 'AddQuestion\AddController@
     Route::get('/question/addnew', 'AddQuestion\AddProperty@index2');     //Show Add Property Page
     Route::post('/question/add/newproperty/1','AddQuestion\AddProperty@newsubject');      //Add new property
     Route::post('/question/add/newproperty/2','AddQuestion\AddProperty@newchapter');      //Add new property
+    Route::post('/question/add/newproperty/3','AddQuestion\AddProperty@newsubtopic');      //Add new property
+
     Route::post('/question/add/save/property', 'AddQuestion\AddProperty@store1');     //Save Property
 
     //Save 2
@@ -126,6 +128,7 @@ Route::get('/redirect/detailed','QuestionController@detailed');
 Route::get('/ajax/fetch', 'Ajax\WelcomeController@fetch');
 Route::get('/ajax/fetch_subject_change_chapter', 'Ajax\WelcomeController@fetch_subject_change_chapter');
 Route::get('/ajax/fetch_subject_level_change_chapter', 'Ajax\WelcomeController@fetch_subject_level_change_chapter');
+Route::get('/ajax/fetch_chapter_change_subtopic', 'Ajax\WelcomeController@fetch_chapter_change_subtopic');
 Route::get('/ajax/count', 'Ajax\WelcomeController@count');
 // End AJAX for Welcome page
 

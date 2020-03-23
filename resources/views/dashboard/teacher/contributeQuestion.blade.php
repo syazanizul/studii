@@ -89,7 +89,7 @@
                 <div style="font-size: 1.1em">
                     <p>Created by : <b>You</b></p>
                     <p>Uploaded by : <b>Someone else</b></p>
-                    <p>You <b>don't have to upload yourself</b>, but you have to <b>share a portion of the earning</b> with someone else.</p>
+                    <p>You <b>don't have to upload yourself</b>, but you have to <b>share a portion of the earning</b>.</p>
                     <a href="/question/add" class="btn btn-primary btn-lg btn-block" disabled>Upload New</a>
                 </div>
             </div>

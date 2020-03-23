@@ -26,7 +26,7 @@ class AboutController extends Controller
 
         Mail::to('syazanizul@gmail.com')->send(new event('Teacher want to talk more - through phone: <br>The name is : '.$name.'<br> and phone number is :'.$phone));
 
-        return redirect()->route('about-teacher', ['#submitted'])
+        return redirect()->route('about-teacher-join-us', ['#submitted'])
             ->with('success','Yes');
     }
 }

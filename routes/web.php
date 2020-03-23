@@ -82,11 +82,11 @@ Route::get('/about', 'About\AboutController@index');
 Route::get('/disclaimer', 'About\AboutController@disclaimer');
 
 // About Us - Teachers
-Route::get('about/teacher/join-us', 'About\TeacherController@JoinUs');
+Route::get('about/teacher/join-us', 'About\TeacherController@JoinUs')->name('about-teacher-join-us');
 Route::get('about/teacher/compensation-for-contributors', 'About\TeacherController@compensation');
 
 //For add phone number in about.teacher
-Route::get('/about/submit/phone-number', 'AboutController@phone_number');
+Route::get('/about/submit/phone-number', 'About\AboutController@phone_number');
 // End About Us
 
 /* Routes to add question */

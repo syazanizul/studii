@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AddQuestion/AddProperty.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AddQuestion/AddProperty.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Ajax/WelcomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Ajax/WelcomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Question.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Question.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/addquestion/property.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/addquestion/property.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -449,7 +447,8 @@
       <workItem from="1584849528580" duration="12893000" />
       <workItem from="1584885847456" duration="4181000" />
       <workItem from="1584917406986" duration="1008000" />
-      <workItem from="1584932841317" duration="6308000" />
+      <workItem from="1584932841317" duration="6704000" />
+      <workItem from="1584958696082" duration="994000" />
     </task>
     <servers />
   </component>
@@ -489,11 +488,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="171" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1577899795250" />
-    <state x="477" y="239" width="582" height="326" key="com.intellij.ide.util.TipDialog" timestamp="1584932898532">
+    <state x="477" y="239" width="582" height="326" key="com.intellij.ide.util.TipDialog" timestamp="1584958839701">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="477" y="239" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1579556316762" />
-    <state x="477" y="239" width="582" height="326" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1584932898532" />
+    <state x="477" y="239" width="582" height="326" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1584958839701" />
     <state x="596" y="302" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579552644740" />
     <state x="580" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583618863049">
       <screen x="0" y="0" width="1536" height="824" />

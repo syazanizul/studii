@@ -248,7 +248,7 @@
                         <h4>Add New Into Subtopic</h4>
                         <form method="post" action="/question/add/newproperty/3">
                             @csrf
-                            <p>Chapter Name</p>
+                            <p>Subtopic Name</p>
                             <select name="subject" id="s_subject_2" class="form-control m-2 w-25 d-inline-block" onchange="fetch_subject_level_change_chapter_2()">
                                 <option value="0">Select</option>
                                 @foreach ($subjects as $subject)

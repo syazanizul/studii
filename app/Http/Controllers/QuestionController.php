@@ -41,6 +41,7 @@ class QuestionController extends Controller
         $input_subject = request() -> get('s_subject');
         $input_level = request() -> get('s_level');
         $input_chapter = request() -> get('s_chapter');
+        $input_subtopic = request() -> get('s_subtopic');
         $input_source = request() -> get('s_source');
         $input_paper = request() -> get('s_paper');
         $input_year = request() -> get('s_year');
@@ -54,6 +55,14 @@ class QuestionController extends Controller
 
         if ($input_chapter != 0) {
             $questions = $questions -> where('chapter', $input_chapter);
+        }
+
+        if ($input_chapter != 0) {
+            $questions = $questions -> where('chapter', $input_chapter);
+        }
+
+        if ($input_subtopic != 0) {
+            $questions = $questions -> where('subtopic', $input_subtopic);
         }
 
         if ($input_source != 0) {

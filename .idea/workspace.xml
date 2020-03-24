@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/public/storage/question_set/phpCC72.tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pictocat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pictocat.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Teacher/AddquestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Teacher/AddquestionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/contributeQuestion.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/practice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/practice.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,19 +150,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\syazani\Documents\GitHub\studii\resources\views\dashboard\teacher\add-question" />
-      <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images\assets\teacher\instruction" />
-      <recent name="C:\Users\syazani\Documents\GitHub\studii\app\Http\Controllers\About" />
-      <recent name="C:\Users\syazani\Documents\GitHub\studii\resources\views\about\teacher" />
-      <recent name="C:\Users\syazani\Documents\GitHub\studii\app\Http\Controllers\Admin" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images\assets\teacher\instruction" />
       <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images\assets" />
       <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images" />
       <recent name="C:\Users\syazani\website\pictocat\public\css\introjs" />
       <recent name="C:\Users\syazani\website\pictocat\public\js\introjs" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\resources\views\dashboard\teacher\add-question" />
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images\assets\teacher\instruction" />
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\app\Http\Controllers\About" />
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\resources\views\about\teacher" />
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\app\Http\Controllers\Admin" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.practice.blade.php">
@@ -463,7 +455,7 @@
       <workItem from="1585037820551" duration="2866000" />
       <workItem from="1585047694917" duration="199000" />
       <workItem from="1585064877582" duration="1477000" />
-      <workItem from="1585069676978" duration="2272000" />
+      <workItem from="1585069676978" duration="3139000" />
     </task>
     <servers />
   </component>

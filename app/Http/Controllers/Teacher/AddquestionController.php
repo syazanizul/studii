@@ -18,7 +18,7 @@ class AddquestionController extends Controller
 
         $file = $request->file('question_set');
 
-        echo $request->file('question_set')->move('storage\question_set', $file->getClientOriginalName());
+        echo $request->file('question_set')->move('storage/question_set', $file->getClientOriginalName());
     }
 
     // ------- End Upload With Help

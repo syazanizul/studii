@@ -194,7 +194,38 @@ class QuestionController extends Controller
     }
 
     public function go_to_practicelink($id)    {
-        session(['qid' => [$id, -1]]);
-        return redirect('/practice?num=0');
+
+        $question = Question::query()->findOrFail($id);
+        $answer_size=0;
+        $i=0;
+        $j=0;
+
+        foreach($question->contents as $n)
+        {
+            if($n->answer_parent != null)
+            {
+                foreach($n->answer_parent as $o)   {
+                    $i=1;
+                    foreach($o->answer_element as $m)
+                    {
+                        if ($m -> correct == 1) {
+                            $answer_correct[$j] = $i;
+                        }
+
+                        $i++;
+                    }
+                    $answer_size++;
+                    $j++;
+                }
+            }
+        }
+
+        $noti['need_instruction'] = 0;
+
+        $data['num'] = 0;
+        $data['answer_size'] = $answer_size;
+        $data['answer_correct'] = $answer_correct;
+
+        return view('practice' , compact('question','data', 'noti' ));
     }
 }

@@ -402,11 +402,15 @@
                     <div style="padding:35px;">
 
                         <div>
-                            @if (isset(session('qid')[$data['num']+1]))
-                                <a href="/practice?num={{$data['num']+1}}" class="btn btn-lg btn-block btn-primary">Next Question</a>
+                            @isset(session('qid')[$data['num']+1])
+                                @if(session('qid')[$data['num']+1] != -1)
+                                    <a href="/practice?num={{$data['num']+1}}" class="btn btn-lg btn-block btn-primary">Next Question</a>
+                                @else
+                                    <p style="padding:0.6em 1em; border:1.5px solid grey; text-align: center; font-size:1.1em; cursor:default; border-radius: 10px;">No More Question</p>
+                                @endif
                             @else
                                 <p style="padding:0.6em 1em; border:1.5px solid grey; text-align: center; font-size:1.1em; cursor:default; border-radius: 10px;">No More Question</p>
-                            @endif
+                            @endisset
                         </div>
                             <br>
                         <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">

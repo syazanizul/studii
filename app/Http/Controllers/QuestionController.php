@@ -192,4 +192,9 @@ class QuestionController extends Controller
 
         return back()->with('report','report is submitted');
     }
+
+    public function go_to_practicelink($id)    {
+        session(['qid' => [$id, -1]]);
+        return redirect('/practice?num=0');
+    }
 }

@@ -36,7 +36,7 @@ class AddController extends Controller
         $draft = Question::where('creator', Auth::user()->id)->where('finished', 0);
         $question_done = Question::where('creator', Auth::user()->id)->where('finished', 1)->count();
 //        dd($draft->get());
-        return view('dashboard.teacher.contributeQuestion', compact('draft', 'question_done'));
+        return view('dashboard.teacher.add-question.contributeQuestion', compact('draft', 'question_done'));
     }
 
     //   ----------------- GENERAL METHOD USED BY ADD_CONTENT AND ADD_ANSWER
@@ -92,9 +92,9 @@ class AddController extends Controller
         return $data;
     }
 
-    public function go_to_practicelink($id)    {
-        session(['qid' => [$id, -1]]);
-        return redirect('/practice?num=0');
-    }
+//    public function go_to_practicelink($id)    {
+//        session(['qid' => [$id, -1]]);
+//        return redirect('/practice?num=0');
+//    }
 
 }

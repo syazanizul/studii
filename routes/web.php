@@ -74,6 +74,7 @@ Route::post('/admin/set-price/save', 'Admin\SetPriceQuestionController@save')->m
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/practice', 'QuestionController@index');
 Route::get('/practice/report', 'QuestionController@report');
+Route::get('/practice/question-id/{id}', 'QuestionController@go_to_practicelink');
 
 Route::get('/contact', 'ContactController@index');
 
@@ -91,7 +92,8 @@ Route::get('/about/submit/phone-number', 'About\AboutController@phone_number');
 
 /* Routes to add question */
 Route::get('/teacher/question', 'AddQuestion\AddController@index');
-Route::get('/teacher/question/go-practicelink/{id}', 'AddQuestion\AddController@go_to_practicelink');
+
+Route::get('/teacher/upload/with-help','Teacher\AddquestionController@index_with_help');
 
     //Save 1
     Route::get('/question/add', 'AddQuestion\AddProperty@index');     //Show Add Property Page

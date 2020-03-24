@@ -9,7 +9,7 @@
 @endsection
 
 @section('dashboard-name')
-    Instruction
+    Teacher's Dashboard
 @endsection
 
 @section('side-nav')

@@ -17,7 +17,7 @@
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
 
-    <script src="js/alertify/alertify.min.js"></script>
+    <script src="{{asset('js/alertify/alertify.min.js')}}"></script>
 
     {{--End links--}}
 @endsection

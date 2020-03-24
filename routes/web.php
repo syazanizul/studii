@@ -57,6 +57,9 @@ Route::post('/teacher/details/teaching-details/subject', 'Teacher\DetailsControl
 
 Route::get('/teacher/instruction', 'Teacher\InstructionController@index')->middleware('teacher');
 Route::get('/teacher/instruction/process-upload-questions', 'Teacher\InstructionController@process_upload_questions')->middleware('teacher');
+
+Route::get('/teacher/upload/with-help','Teacher\AddquestionController@index_with_help');
+Route::post('/teacher/upload/with-help/upload-file', 'Teacher\AddquestionController@upload_question_set');
 // End for teachers
 
 
@@ -92,8 +95,6 @@ Route::get('/about/submit/phone-number', 'About\AboutController@phone_number');
 
 /* Routes to add question */
 Route::get('/teacher/question', 'AddQuestion\AddController@index');
-
-Route::get('/teacher/upload/with-help','Teacher\AddquestionController@index_with_help');
 
     //Save 1
     Route::get('/question/add', 'AddQuestion\AddProperty@index');     //Show Add Property Page

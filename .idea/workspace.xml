@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/public/storage/question_set/phpCC72.tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pictocat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pictocat.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Teacher/AddquestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Teacher/AddquestionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/contributeQuestion.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/practice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/practice.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,6 +133,8 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
       <path value="$PROJECT_DIR$/vendor/nicolaslopezj/searchable" />
       <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
+      <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
     </include_path>
   </component>
   <component name="ProjectId" id="1QPxiNHZ9TXWhNLEgYPm6ykKyUL" />
@@ -451,7 +460,10 @@
       <workItem from="1584958696082" duration="1593000" />
       <workItem from="1585014730287" duration="3202000" />
       <workItem from="1585026780836" duration="1565000" />
-      <workItem from="1585037820551" duration="2256000" />
+      <workItem from="1585037820551" duration="2866000" />
+      <workItem from="1585047694917" duration="199000" />
+      <workItem from="1585064877582" duration="1477000" />
+      <workItem from="1585069676978" duration="2272000" />
     </task>
     <servers />
   </component>
@@ -475,10 +487,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="535" y="222" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584933407577">
+    <state x="535" y="222" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585071603466">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="535" y="222" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1584933407577" />
+    <state x="535" y="222" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1585071603466" />
     <state x="449" y="143" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1582888446566">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -491,11 +503,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="171" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1577899795250" />
-    <state x="477" y="239" width="582" height="326" key="com.intellij.ide.util.TipDialog" timestamp="1585038107815">
+    <state x="477" y="239" width="582" height="326" key="com.intellij.ide.util.TipDialog" timestamp="1585069677411">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="477" y="239" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1579556316762" />
-    <state x="477" y="239" width="582" height="326" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1585038107815" />
+    <state x="477" y="239" width="582" height="326" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1585069677411" />
     <state x="596" y="302" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579552644740" />
     <state x="580" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583618863049">
       <screen x="0" y="0" width="1536" height="824" />
@@ -509,9 +521,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1585038535352" />
-    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup" timestamp="1585027138402">
+    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup" timestamp="1585072017254">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1585027138402" />
+    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1585072017254" />
   </component>
 </project>

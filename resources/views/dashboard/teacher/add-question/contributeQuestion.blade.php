@@ -1,5 +1,13 @@
 @extends('layouts.dashboardApp')
 
+@section('link-in-head')
+    <style>
+        .div-link:hover {
+            border:2px solid #42b3f5;
+        }
+    </style>
+@endsection
+
 @section('dashboard-name')
     teacher's dashboard
 @endsection
@@ -35,37 +43,53 @@
 @endsection
 
 @section('content')
-<div class="row">
-    <div class="col-lg-10">
-        <div class="card card-stats">
-            <div class="card-body ">
-                <div class="row">
-                    <div class="col-12 col-md-12">
-                        <h5><b>Note :</b> Right now, the process to input questions into the database is still manual. This is because we still need to check for bugs and errors.<br><br>
-                            So, for you, we will upload your exercise questions ourselves. You just need to submit your exercise questions to us through email and the rest will be taken care by us.</h5>
-                        <h4 class="text-center"><b>syazanizul@gmail.com</b><br>Syazani Zulkhairi</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+{{--<div class="row">--}}
+{{--    <div class="col-lg-10">--}}
+{{--        <div class="card card-stats">--}}
+{{--            <div class="card-body ">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-12 col-md-12">--}}
+{{--                        <h5><b>Note :</b> Right now, the process to input questions into the database is still manual. This is because we still need to check for bugs and errors.<br><br>--}}
+{{--                            So, for you, we will upload your exercise questions ourselves. You just need to submit your exercise questions to us through email and the rest will be taken care by us.</h5>--}}
+{{--                        <h4 class="text-center"><b>syazanizul@gmail.com</b><br>Syazani Zulkhairi</h4>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
 
 
 <div class="row">
-    <div class="col-lg-10">
-        <div class="card card-stats">
-            <div class="card-body ">
-                <div class="row">
-                    <div class="col-12 col-md-12 mb-3">
-                        <h5>You can read about the process to add questions into Studii <a href="/teacher/instruction/process-upload-questions">here</a>.</h5>
+    <div class="col-lg-5">
+        <a href="/teacher/instruction/process-upload-questions">
+            <div class="card card-stats div-link">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-lg-12 mb-3">
+                                <h5>You can read about the process to add questions into Studii here.</h5>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-6">
+        <a href="#under-development">
+            <div class="card card-stats div-link">
+                <div class="card-body ">
+                    <div class="row">
+                        <div class="col-lg-12 mb-3">
+                            <h5>You are valid for Studii's <i>Early Involvement Offer</i> ! Click here to know more about it.</h5>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
     </div>
 </div>
-
+<br><br>
+<h2>Upload Question</h2>
 <div class="row">
     <div class="col-sm-5">
         <div class="card">
@@ -75,8 +99,8 @@
                     <p>Created by : <b>You</b></p>
                     <p>Uploaded by : <b>You</b></p>
                     <p>You maximise <b>earning</b>, but you have to <b>upload it yourself</b>.</p>
-                    <a href="/question/add" class="btn btn-primary btn-lg btn-block" disabled>Upload New</a>
-                    <p class="text-center">Right now, this method is not allowed</p>
+                    <a href="/question/add" class="btn btn-primary btn-lg btn-block" disabled>Upload</a>
+                    <p class="text-center">As of the <i>Early Involvement Offer</i>, this method is not recommended.</p>
                 </div>
             </div>
 
@@ -90,7 +114,7 @@
                     <p>Created by : <b>You</b></p>
                     <p>Uploaded by : <b>Someone else</b></p>
                     <p>You <b>don't have to upload yourself</b>, but you have to <b>share a portion of the earning</b>.</p>
-                    <a href="/question/add" class="btn btn-primary btn-lg btn-block" disabled>Upload New</a>
+                    <a href="/teacher/upload/with-help" class="btn btn-primary btn-lg btn-block">Upload</a>
                 </div>
             </div>
         </div>

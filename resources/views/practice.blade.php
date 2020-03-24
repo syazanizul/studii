@@ -423,6 +423,7 @@
                         </div>
                             <br>
 
+
                         @if($question -> source_name -> id != 2)
                             <div id="div-submitter" style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">
                                 <p class="text-center">Submitted By:</p>

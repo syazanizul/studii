@@ -59,6 +59,8 @@ Route::get('/teacher/instruction', 'Teacher\InstructionController@index')->middl
 Route::get('/teacher/instruction/process-upload-questions', 'Teacher\InstructionController@process_upload_questions')->middleware('teacher');
 
 Route::get('/teacher/upload/with-help','Teacher\AddquestionController@index_with_help');
+Route::get('/teacher/upload/with-help-2','Teacher\AddquestionController@index_with_help_2');
+Route::get('/teacher/upload/with-help-3','Teacher\AddquestionController@index_with_help_3');
 Route::post('/teacher/upload/with-help/upload-file', 'Teacher\AddquestionController@upload_question_set');
 // End for teachers
 

@@ -1,11 +1,11 @@
 @extends('layouts.dashboardApp')
 
 @section('link-in-head')
-<style>
-.list  {
-    padding: 10px;
-}
-</style>
+    <style>
+        .list  {
+            padding: 10px;
+        }
+    </style>
 @endsection
 
 @section('dashboard-name')
@@ -43,7 +43,6 @@
 @endsection
 
 @section('content')
-
     <div class="row">
         <div class="col-sm-11">
             <div class="card">
@@ -63,19 +62,18 @@
             </div>
         </div>
     </div>
-    <br><br>
+    <br>
     <div class="row">
         <div class="col-sm-8">
             <div class="card">
                 <div class="card-header">
                     <h3 class="">Before we get started ...</h3>
                     <p style="font-size:1.3em">Please check the following before proceeding to upload your question:</p>
-                    <ol style="font-size: 1.3em">
+                    <ul style="font-size: 1.3em">
                         <li class="list">This set of questions must be of the same characteristic. If it is of subtopic <b>Intro</b>, it must all be of subtopic <b>Intro</b> (cannot mix).</li>
                         <li class="list">It is of Microsoft Words (.docs) file format.</li>
                         <li class="list">This set of questions must be original, of your own working, and must not be copied from any other sources.</li>
-                        <li class="list">Syaz, ingat. nanti tambah checkbox untuk macam 'I hereby confirm that this submission question is of my own working gitu'</li>
-                    </ol>
+                    </ul>
                 </div>
 
             </div>
@@ -94,28 +92,12 @@
             </div>
         </div>
     </div>
-    <br><hr><br>
-    <h2>Upload Question</h2>
-    <div class="row">
-        <div class="col-sm-8">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="">Upload your submission here</h3>
-                    <p>We only accept Microsoft Word (.docs) file</p>
-                    <form action="/teacher/upload/with-help/upload-file" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <input type="file" name="question_set">
-                        <input type="submit" value="Upload File">
-                    </form>
-                    &nbsp
-                    <hr>
-                    <label style="display: inline-block">
-                        <input style="vertical-align: middle" type="checkbox" />
-                        <span style="vertical-align: middle">I hereby confirm that this submission is original, of my own working, and are not copied from any other sources. (made and owned by myself).</span>
-                    </label>
-                </div>
-            </div>
-        </div>
-    </div>
+    <a HREF="/teacher/upload/with-help-2" class="btn btn-lg btn-primary float-right btn-block">PROCEED TO NEXT PAGE</a>
+    <br><br>
 
 @endsection
+
+<script>
+    @section('script')
+    @endsection
+</script>

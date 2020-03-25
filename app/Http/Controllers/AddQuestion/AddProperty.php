@@ -16,7 +16,7 @@ class AddProperty extends Controller
     //   ----------------- FIRST METHOD
     public function index()
     {
-        $subjects = DB::table('subjects_list')->get();
+        $subjects = DB::table('subjects_list')->where('exam', 1)->get();
         $chapters = DB::table('chapters_list')->get();
         $levels = DB::table('levels_list')->get();
         $sources = DB::table('sources_list')->get();

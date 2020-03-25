@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/add-question/addWithHelp/index2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/add-question/addWithHelp/index2.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Teacher/AddquestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Teacher/AddquestionController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -459,7 +459,7 @@
       <workItem from="1585111624030" duration="1312000" />
       <workItem from="1585113789678" duration="1206000" />
       <workItem from="1585124596347" duration="5040000" />
-      <workItem from="1585130618925" duration="4971000" />
+      <workItem from="1585130618925" duration="5047000" />
     </task>
     <servers />
   </component>

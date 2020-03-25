@@ -24,7 +24,7 @@ class AddquestionController extends Controller
         $levels = DB::table('levels_list')->get();
 
 
-        return view('dashboard.teacher.add-question.addWithHelp.index2', compact('subjects' , 'levels' , 'sources'));
+        return view('dashboard.teacher.add-question.addWithHelp.index2', compact('subjects' , 'levels'));
     }
 
     public function index_with_help_3()   {

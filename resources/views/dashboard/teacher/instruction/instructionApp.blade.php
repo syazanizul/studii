@@ -30,6 +30,11 @@
             </a>
         </li>
         <li>
+            <a href="/teacher/submission-status">
+                <p>Submission Status</p>
+            </a>
+        </li>
+        <li>
             <a href="/teacher/performance">
                 <p>Performance</p>
             </a>

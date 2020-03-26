@@ -21,6 +21,11 @@
                 <p>Add Question</p>
             </a>
         </li>
+        <li>
+            <a href="/teacher/submission-status">
+                <p>Submission Status</p>
+            </a>
+        </li>
         <li class="active">
             <a href="/teacher/performance">
                 <p>Performance</p>

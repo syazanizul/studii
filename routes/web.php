@@ -46,6 +46,7 @@ Route::get('/student', 'StudentController@index')->name('student')->middleware('
 Route::get('/teacher', 'Teacher\TeacherController@index')->name('teacher')->middleware('teacher');
 Route::get('/teacher/details', 'Teacher\DetailsController@index')->middleware('teacher');
 Route::get('/teacher/performance', 'Teacher\PerformanceController@index')->middleware('teacher');
+Route::get('/teacher/submission-status', 'Teacher\SubmissionController@index')->middleware('teacher');
 
 Route::post('/teacher/details/edit-profile', 'Teacher\DetailsController@edit_profile');
 Route::post('/teacher/details/teaching-details', 'Teacher\DetailsController@teaching_details');

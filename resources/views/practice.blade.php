@@ -19,10 +19,6 @@
 
     <script src="{{asset('js/alertify/alertify.min.js')}}"></script>
 
-{{--    ADSENSE --}}
-    <script data-ad-client="ca-pub-7446857168486939" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-{{--    END ADSENSE --}}
-    
     {{--End links--}}
 @endsection
 

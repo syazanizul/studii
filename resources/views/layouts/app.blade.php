@@ -26,6 +26,10 @@
     <!--Intro.js-->
     <link href="{{asset('css/introjs/introjs.css')}}" rel="stylesheet" />
 
+    {{--    ADSENSE --}}
+    <script data-ad-client="ca-pub-7446857168486939" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    {{--    END ADSENSE --}}
+
     @yield('link-in-head')
 
     <style>

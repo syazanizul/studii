@@ -54,7 +54,7 @@
                 <div class="card-header">
                     <h3 class="">Understanding the purpose of this page</h3>
                     <div style="font-size:1.35em">
-                        <p>This page is for you to upload you Microsoft Word (.docs) file that contains sets of questions that you want to
+                        <p>This page is for you to upload you Microsoft Word (.docx) file that contains sets of questions that you want to
                             submit to Studii.</p>
                         <p>If you write your questions using Google Docs, you must download that file as Microsoft Words, and then upload that Microsoft Words
                             file here. (Go to <b>File</b> -> <b>Download</b> -> <b>Microsoft Docs</b> )</p>
@@ -76,7 +76,7 @@
                     <p style="font-size:1.3em">Please check the following before proceeding to upload your question:</p>
                     <ul style="font-size: 1.3em">
                         <li class="list">This set of questions must be of the same characteristic. If it is of subtopic <b>Intro</b>, it must all be of subtopic <b>Intro</b> (cannot mix).</li>
-                        <li class="list">It is of Microsoft Words (.docs) file format.</li>
+                        <li class="list">It is of Microsoft Words (.docx) file format.</li>
                         <li class="list">This set of questions must be original, of your own working, and must not be copied from any other sources.</li>
                     </ul>
                 </div>

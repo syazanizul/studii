@@ -59,7 +59,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="">Upload your submission here</h3>
-                        <p>We only accept Microsoft Word (.docs) file</p>
+                        <p>We only accept Microsoft Word (.docx) file</p>
                             <input type="file" name="question_set" accept=".docx, .doc" onchange="document.getElementById('textpopup').style.visibility = 'visible'">
 {{--                            <input type="file" name="question_set" onchange="document.getElementById('textpopup').style.visibility = 'visible'">--}}
                         &nbsp

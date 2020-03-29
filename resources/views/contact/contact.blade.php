@@ -18,6 +18,30 @@
         font-size:24px;
     }
 
+    #register-form li  {
+        background-color:#141414;
+        border-top:2px solid #323232;
+        border-bottom:2px solid #323232;
+    }
+
+    #register-form li:hover  {
+        border-top:2px solid #323232;
+        border-bottom:2px solid #323232;
+    }
+
+    #btn-submit {
+        color:#FFAC41;
+        border:2px solid #FFAC41;
+        background-color: #454545;
+    }
+
+    #btn-submit:hover {
+        color:#141414;
+        border:2px solid #FFAC41;
+        background-color: #f7b865;
+        cursor:pointer;
+    }
+
     @media only screen and (max-width: 780px) {
         .headline {
             font-size: 45px;
@@ -34,13 +58,12 @@
 </style>
 
 @section('content')
-    <section class="mt-5">
-        <div class="container" style="margin-bottom: 70px">
+    <section class="mt-3">
+        <div class="container" style="margin-bottom: 50px">
             <div class="my-1 row">
                 <div class="col-lg-7">
                     <h1 class="headline">Contact Us</h1>
-                    <p class="big-p my-1">In order to improve, we want to know what do you think of the platform and the ideas. We appreciate all kinds of responses.</p>
-                    <p class="big-p my-4"><b>You have a direct impact in our direction, so feel free</b></p>
+                    <p class="big-p my-1">We would love to help you with anything you need. Whether it is a question, a suggestion, or anything else. <br>Feel free :)</p>
                 </div>
                 <div class="col-lg-1"></div>
                 <div class="col-lg-4" style="text-align: center">
@@ -48,38 +71,59 @@
                         <h4>Email :</h4>
                         <h2><b>studii.malaysia@gmail.com</b></h2>
                     </div>
-                    <div class="mt-5">
+                    <div class="mt-4">
                         <h4>Telephone, Whatsapp :</h4>
                         <h3><b>019-209 9853 <br>(Syazani Zulkhairi)</b></h3>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
 
 
-    <section id="register-form" style="background-color: #c3d8e8;">
+    <section id="register-form" style="background-image:url('images/assets/kuala.jpg');  background-repeat: no-repeat; background-size: 100%;">
         <div class="container">
             <div class="row py-5">
-                <div class="col">
-                    <h1 class="headline mb-4" style="color;">You can also reach us using this simple form <below></below></h1>
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdVCuNBiShsipWec0PtR4YE8UHm1rmuD-6t0uRsxq2MTzSXRg/viewform?embedded=true" width="100%" height="650" frameborder="" marginheight="0" marginwidth="0">Loading…</iframe>
-                    <div style="height:40px"></div>
-                </div>
-            </div>
-        </div>
-    </section>
+                <div class="col-lg-6 offset-lg-3">
+                    <form method="get" action="/contact/submit">
+                        <div class="card mb-1" style="font-size: 1.2em; background-color: #141414; color:#FFAC41; border: 6px solid #FFAC41">
+                            <div class="card-body">
+                                <h1 class="headline text-center" style="font-size:2.9em; color:#FFAC41">How can we help?</h1>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="my-2">
+                                        <label for="name" class="d-inline-block mx-2">Your Name</label>
+                                        <input type="text" name="name" class="form-control d-inline-block w-75" placeholder="What is your name?">
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="my-2">
+                                        <label for="email" class="d-inline-block mx-2">Your Email</label>
+                                        <input type="email" name="email" class="form-control d-inline-block w-75" placeholder="So that we can reply to you later">
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <label for="message">Your Message</label>
+                                    <textarea name="message" class="form-control" style="width: 100%" rows="6" placeholder="What is your message?"></textarea>
+                                    <br>
+                                    <br>
+                                    <input id="btn-submit" type="submit" value="Send Message" class="btn-lg float-right">
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
 
-    <section id="register-form" style="background-color: ;">
-        <div class="container">
-            <div class="row py-5">
-                <div class="col">
-                    <h1 class="headline mb-4" style="color;">Feedback Form</h1>
-                    <p class="big-p mt-4">Your contribution will mean so much for our improvement, thank you</p>
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeC75Mey4ZfUA2NiLZK0o8aVLo5ChmvtSMmybuLCR1LjTeOww/viewform?embedded=true" width="100%" height="650" frameborder="" marginheight="0" marginwidth="0">Loading…</iframe>
-                    <p class="big-p mt-5">If you cannot fill in the form here, you can do it at Google's page too. Just click <a href="https://docs.google.com/forms/d/e/1FAIpQLSeC75Mey4ZfUA2NiLZK0o8aVLo5ChmvtSMmybuLCR1LjTeOww/viewform?usp=sf_link">here</a>.</p>
+                    @if(Session('update_status'))
+                    <div style="font-size: 1.2em; background-color: #141414; color:#FFAC41; border: 6px solid #FFAC41; border-radius: 30px">
+                        @if(Session('update_status') == 1)
+                            <p style="font-size:1.3em; text-align: center; margin:1em; ">Message sent! We will reply to your soon.</p>
+                        @else
+                            <p style="font-size:1.3em; text-align: center; margin:1em; ">There is an error. Your message is not sent.</p>
+                        @endif
+                    </div>
+                    @endif
                 </div>
             </div>
         </div>

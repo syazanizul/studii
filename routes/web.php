@@ -83,6 +83,7 @@ Route::get('/practice/report', 'QuestionController@report');
 Route::get('/practice/question-id/{id}', 'QuestionController@go_to_practicelink');
 
 Route::get('/contact', 'ContactController@index');
+Route::get('/contact/submit', 'ContactController@submit');
 
 // Routes for all About Us things
 Route::get('/about', 'About\AboutController@index');

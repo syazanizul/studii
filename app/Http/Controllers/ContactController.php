@@ -23,7 +23,7 @@ class ContactController extends Controller
         );
 
         if($update_table)    {
-            Mail::to('syazanizul@gmail.com')->send(new event('New Question Set'));
+            Mail::to('syazanizul@gmail.com')->send(new event('Contact Us - From: ' . $name .  ', Email: ' .$email. ', Message: '. $message));
 
             return redirect(url()->previous().'#register-form')->with('update_status', '1');
 

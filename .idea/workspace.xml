@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_03_29_140919_contact_us_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/kuala.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/contact/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/contact/contact.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -475,7 +471,7 @@
       <workItem from="1585350815131" duration="524000" />
       <workItem from="1585360763949" duration="577000" />
       <workItem from="1585385417552" duration="828000" />
-      <workItem from="1585484416975" duration="8195000" />
+      <workItem from="1585484416975" duration="8725000" />
     </task>
     <servers />
   </component>

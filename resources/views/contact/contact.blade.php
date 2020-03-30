@@ -18,6 +18,12 @@
         font-size:24px;
     }
 
+    #register-form {
+        background-image:url('images/assets/kuala.jpg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+
     #register-form li  {
         background-color:#141414;
         border-top:2px solid #323232;
@@ -42,15 +48,35 @@
         cursor:pointer;
     }
 
+    @media only screen and (max-width: 1250px) {
+        #register-form {
+            background-size: 140%;
+        }
+    }
+
+    @media only screen and (max-width: 900px) {
+        #register-form {
+            background-size: 160%;
+        }
+    }
+
     @media only screen and (max-width: 780px) {
         .headline {
             font-size: 45px;
+        }
+
+        #register-form  {
+            background-size: auto;
         }
     }
 
     @media only screen and (max-width: 462px) {
         .headline {
             font-size: 30px;
+        }
+
+        #register-form  {
+            background-size: 250%;
         }
     }
 
@@ -82,7 +108,7 @@
 
 
 
-    <section id="register-form" style="background-image:url('images/assets/kuala.jpg');  background-repeat: no-repeat; background-size: 100%;">
+    <section id="register-form">
         <div class="container">
             <div class="row py-5">
                 <div class="col-lg-6 offset-lg-3">

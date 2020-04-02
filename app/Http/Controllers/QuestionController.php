@@ -38,6 +38,8 @@ class QuestionController extends Controller
     public function detailed()
     {
          // Second type !!!
+        $random_order = request() -> get('random-order');
+
         $input_subject = request() -> get('s_subject');
         $input_level = request() -> get('s_level');
         $input_chapter = request() -> get('s_chapter');
@@ -81,7 +83,11 @@ class QuestionController extends Controller
             $questions = $questions -> where('difficulty', $input_difficulty);
         }
 
-        $questions = $questions->inRandomOrder()->get();
+        if($random_order != null)    {
+            $questions = $questions->inRandomOrder()->get();
+        }   else    {
+            $questions = $questions->get();
+        }
 
         session() -> pull('qid');
         foreach ($questions as $question) {

@@ -1,4 +1,4 @@
-@extends('layouts.dashboardApp')
+@extends('dashboard.teacher.teacherApp')
 
 @section('link-in-head')
     <style>
@@ -12,39 +12,8 @@
     teacher's dashboard
 @endsection
 
-@section('side-nav')
-    <ul class="nav">
-        <li>
-            <a href="/teacher">
-                <p>Dashboard</p>
-            </a>
-        </li>
-        <li>
-            <a href="/teacher/details">
-                <p>User details</p>
-            </a>
-        </li>
-        <li class="active">
-            <a href="/teacher/question">
-                <p>Add Question</p>
-            </a>
-        </li>
-        <li>
-            <a href="/teacher/submission-status">
-                <p>Submission Status</p>
-            </a>
-        </li>
-        <li>
-            <a href="/teacher/performance">
-                <p>Performance</p>
-            </a>
-        </li>
-        <li>
-            <a href="/teacher/instruction">
-                <p>Instruction</p>
-            </a>
-        </li>
-    </ul>
+@section('nav-submit-question')
+    class="active"
 @endsection
 
 @section('content')
@@ -94,17 +63,17 @@
     </div>
 </div>
 <br><br>
-<h2>Upload Question</h2>
+<h2>Submit Question into Studii</h2>
 <div class="row">
     <div class="col-sm-5">
         <div class="card">
             <div class="card-header">
-                <h3 class="">Upload Manually</h3>
+                <h3 class="">Submit and Upload Manually</h3>
                 <div style="font-size: 1.1em">
                     <p>Created by : <b>You</b></p>
                     <p>Uploaded by : <b>You</b></p>
                     <p>You maximise <b>earning</b>, but you have to <b>upload it yourself</b>.</p>
-                    <a href="/question/add" class="btn btn-primary btn-lg btn-block" disabled>Upload</a>
+                    <a href="/question/add" class="btn btn-primary btn-lg btn-block">Upload</a>
                     <p class="text-center">As of the <i>Early Involvement Offer</i>, this method is not recommended.</p>
                 </div>
             </div>
@@ -120,6 +89,7 @@
                     <p>Uploaded by : <b>Someone else</b></p>
                     <p>You <b>don't have to upload yourself</b>, but you have to <b>share a portion of the earning</b>.</p>
                     <a href="/teacher/upload/with-help" class="btn btn-primary btn-lg btn-block">Upload</a>
+                    <p class="text-center">As of the <i>Early Involvement Offer</i>, you will own the other portion also.</p>
                 </div>
             </div>
         </div>

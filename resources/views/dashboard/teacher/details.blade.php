@@ -1,42 +1,11 @@
-@extends('layouts.dashboardApp')
+@extends('dashboard.teacher.teacherApp')
 
 @section('dashboard-name')
     teacher's dashboard
 @endsection
 
-@section('side-nav')
-    <ul class="nav" data-step="7" data-intro="And here is the navigation area. Feel free to explore around :)">
-        <li>
-            <a href="/teacher">
-                <p>Dashboard</p>
-            </a>
-        </li>
-        <li class="active">
-            <a href="/teacher/details">
-                <p>User details</p>
-            </a>
-        </li>
-        <li>
-            <a href="/teacher/question">
-                <p>Add Question</p>
-            </a>
-        </li>
-        <li>
-            <a href="/teacher/submission-status">
-                <p>Submission Status</p>
-            </a>
-        </li>
-        <li>
-            <a href="/teacher/performance">
-                <p>Performance</p>
-            </a>
-        </li>
-        <li>
-            <a href="/teacher/instruction">
-                <p>Instruction</p>
-            </a>
-        </li>
-    </ul>
+@section('nav-user-details')
+    class="active"
 @endsection
 
 @section('link-in-head')

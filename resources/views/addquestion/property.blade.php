@@ -40,6 +40,14 @@
 <div class="row w-100" style="background-color: #2F4858; color:white">
     <h2 class="m-4 ml-5">Add Question (1)</h2>
 </div>
+
+<div class="w-100" style="">
+    <div class="float-right">
+        <a href="/" class="d-inline-block mx-4">Home</a>
+        <a href="/teacher" class="d-inline-block mx-4">Dashboard</a>
+    </div>
+</div>
+
 <div class="container">
     <div class="mt-4">
         <div class="row" style="font-size:1.5em">
@@ -168,6 +176,16 @@
                                             <p>{{App\Chapter::find(session('recent_add_property')["s_chapter"])->name}}</p>
                                         </td>
                                     </tr>
+                                    @if(session('recent_add_property')["s_subtopic"] != "0")
+                                    <tr>
+                                        <td>
+                                            <p>Subtopic :</p>
+                                        </td>
+                                        <td style="text-align: right">
+                                            <p>{{App\Subtopic::find(session('recent_add_property')["s_subtopic"])->name}}</p>
+                                        </td>
+                                    </tr>
+                                    @endif
                                     <tr>
                                         <td>
                                             <p>Paper :</p>
@@ -198,6 +216,7 @@
                             <input type="hidden" name="s_subject" value="{{session('recent_add_property')["s_subject"]}}">
                             <input type="hidden" name="s_level" value="{{session('recent_add_property')["s_level"]}}">
                             <input type="hidden" name="s_chapter" value="{{session('recent_add_property')["s_chapter"]}}">
+                            <input type="hidden" name="s_subtopic" value="{{session('recent_add_property')["s_subtopic"]}}">
                             <input type="hidden" name="s_paper" value="{{session('recent_add_property')["s_paper"]}}">
                             <input type="hidden" name="s_difficulty" value="{{session('recent_add_property')["s_difficulty"]}}">
                             <input type="hidden" name="s_source" value="{{session('recent_add_property')["s_source"]}}">

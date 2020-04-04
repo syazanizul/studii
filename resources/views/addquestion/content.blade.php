@@ -30,6 +30,12 @@
         </div>
     </div>
 </section>
+<div class="" style="width: 100%">
+    <div style="float:right">
+        <a href="/" class="" style="margin:auto 15px; display: inline-block">Home</a>
+        <a href="/teacher" class="" style="margin:auto 15px; display: inline-block">Dashboard</a>
+    </div>
+</div>
 
 <div class="section">
     <div class="container">

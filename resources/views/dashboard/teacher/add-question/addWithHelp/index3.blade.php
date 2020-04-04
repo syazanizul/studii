@@ -1,4 +1,4 @@
-@extends('layouts.dashboardApp')
+@extends('dashboard.teacher.teacherApp')
 
 @section('link-in-head')
     <style>
@@ -12,34 +12,8 @@
     teacher's dashboard
 @endsection
 
-@section('side-nav')
-    <ul class="nav">
-        <li>
-            <a href="/teacher">
-                <p>Dashboard</p>
-            </a>
-        </li>
-        <li>
-            <a href="/teacher/details">
-                <p>User details</p>
-            </a>
-        </li>
-        <li class="active">
-            <a href="/teacher/question">
-                <p>Add Question</p>
-            </a>
-        </li>
-        <li>
-            <a href="/teacher/performance">
-                <p>Performance</p>
-            </a>
-        </li>
-        <li>
-            <a href="/teacher/instruction">
-                <p>Instruction</p>
-            </a>
-        </li>
-    </ul>
+@section('nav-submit-question')
+    class="active"
 @endsection
 
 @section('content')

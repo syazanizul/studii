@@ -1,4 +1,4 @@
-@extends('layouts.dashboardApp')
+@extends('dashboard.teacher.teacherApp')
 
 @section('link-in-head')
     <style>
@@ -12,39 +12,8 @@
     teacher's dashboard
 @endsection
 
-@section('side-nav')
-    <ul class="nav">
-        <li>
-            <a href="/teacher">
-                <p>Dashboard</p>
-            </a>
-        </li>
-        <li>
-            <a href="/teacher/details">
-                <p>User details</p>
-            </a>
-        </li>
-        <li class="active">
-            <a href="/teacher/question">
-                <p>Add Question</p>
-            </a>
-        </li>
-        <li>
-            <a href="/teacher/submission-status">
-                <p>Submission Status</p>
-            </a>
-        </li>
-        <li>
-            <a href="/teacher/performance">
-                <p>Performance</p>
-            </a>
-        </li>
-        <li>
-            <a href="/teacher/instruction">
-                <p>Instruction</p>
-            </a>
-        </li>
-    </ul>
+@section('nav-submit-question')
+    class="active"
 @endsection
 
 @section('content')
@@ -54,9 +23,9 @@
                 <div class="card-header">
                     <h3 class="">Understanding the purpose of this page</h3>
                     <div style="font-size:1.35em">
-                        <p>This page is for you to upload you Microsoft Word (.docx) file that contains sets of questions that you want to
+                        <p>This page is for you to submit you Microsoft Word (.docx) file that contains sets of questions that you want to
                             submit to Studii.</p>
-                        <p>If you write your questions using Google Docs, you must download that file as Microsoft Words, and then upload that Microsoft Words
+                        <p>If you write your questions using Google Docs, you must download that file as Microsoft Words, and then submit that Microsoft Words
                             file here. (Go to <b>File</b> -> <b>Download</b> -> <b>Microsoft Docs</b> )</p>
                         <p>Here you can see a sample.</p>
                         <img class="ml-auto mr-auto d-block" src="{{asset('images/assets/teacher/instruction/sample-question-2.PNG')}}" width="50%" style="border:2px solid grey">
@@ -73,7 +42,7 @@
             <div class="card">
                 <div class="card-header">
                     <h3 class="">Before we get started ...</h3>
-                    <p style="font-size:1.3em">Please check the following before proceeding to upload your question:</p>
+                    <p style="font-size:1.3em">Please check the following before proceeding to submit your question:</p>
                     <ul style="font-size: 1.3em">
                         <li class="list">This set of questions must be of the same characteristic. If it is of subtopic <b>Intro</b>, it must all be of subtopic <b>Intro</b> (cannot mix).</li>
                         <li class="list">It is of Microsoft Words (.docx) file format.</li>
@@ -88,7 +57,7 @@
                 <div class="card-header">
                     <h3 class="">Steps</h3>
                     <ol style="font-size: 1.3em">
-                        <li class="list">Upload the questions in a Microsoft Word file.</li>
+                        <li class="list">submit the questions in a Microsoft Word file.</li>
                         <li class="list">Fill in the information of this questions.</li>
                         <li class="list">Wait a few days for us to upload your questions into Studii.</li>
                     </ol>

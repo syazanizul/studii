@@ -1,4 +1,4 @@
-@extends('layouts.dashboardApp')
+@extends('dashboard.teacher.teacherApp')
 
 @section('link-in-head')
     <style>
@@ -12,41 +12,15 @@
     teacher's dashboard
 @endsection
 
-@section('side-nav')
-    <ul class="nav">
-        <li>
-            <a href="/teacher">
-                <p>Dashboard</p>
-            </a>
-        </li>
-        <li>
-            <a href="/teacher/details">
-                <p>User details</p>
-            </a>
-        </li>
-        <li class="active">
-            <a href="/teacher/question">
-                <p>Add Question</p>
-            </a>
-        </li>
-        <li>
-            <a href="/teacher/performance">
-                <p>Performance</p>
-            </a>
-        </li>
-        <li>
-            <a href="/teacher/instruction">
-                <p>Instruction</p>
-            </a>
-        </li>
-    </ul>
+@section('nav-submit-question')
+    class="active"
 @endsection
 
 @section('content')
 
     <div class="row">
         <div class="col-lg-9">
-            <h1>Upload Question</h1>
+            <h1>Submit Question</h1>
         </div>
         <div class="col-lg-2">
             <a class="btn btn-primary float-right" href="/teacher/upload/with-help">Back</a>
@@ -58,7 +32,7 @@
             <div class="col-sm-5" id="upload">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="">Upload your submission here</h3>
+                        <h3 class="">Submit your submission here</h3>
                         <p>We only accept Microsoft Word (.docx) file</p>
                             <input type="file" name="question_set" accept=".docx, .doc" onchange="document.getElementById('textpopup').style.visibility = 'visible'">
 {{--                            <input type="file" name="question_set" onchange="document.getElementById('textpopup').style.visibility = 'visible'">--}}

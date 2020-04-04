@@ -1,4 +1,4 @@
-@extends('layouts.dashboardApp')
+@extends('dashboard.teacher.teacherApp')
 
 @section('dashboard-name')
     teacher's dashboard
@@ -11,39 +11,8 @@
     <script src="js/alertify/alertify.min.js"></script>
 @endsection
 
-@section('side-nav')
-    <ul class="nav">
-        <li class="active" data-step="7" data-intro="And here is the navigation area. Feel free to explore around :)">
-            <a href="/teacher">
-                <p>Dashboard</p>
-            </a>
-        </li>
-        <li>
-            <a href="/teacher/details">
-                <p>User details</p>
-            </a>
-        </li>
-        <li>
-            <a href="/teacher/question">
-                <p>Add Question</p>
-            </a>
-        </li>
-        <li>
-            <a href="/teacher/submission-status">
-                <p>Submission Status</p>
-            </a>
-        </li>
-        <li>
-            <a href="/teacher/performance">
-                <p>Performance</p>
-            </a>
-        </li>
-        <li>
-            <a href="/teacher/instruction">
-                <p>Instruction</p>
-            </a>
-        </li>
-    </ul>
+@section('nav-dashboard')
+    class="active" data-step="7" data-intro="And here is the navigation area. Feel free to explore around :)"
 @endsection
 
 @section('content')

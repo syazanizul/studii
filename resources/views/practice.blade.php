@@ -423,6 +423,10 @@
                             @else
                                 <p style="padding:0.6em 1em; border:1.5px solid grey; text-align: center; font-size:1.1em; cursor:default; border-radius: 10px;">No More Question</p>
                             @endisset
+
+                            @if(Session('adding_question') == 1)
+                                <a href="/question/add" class="btn btn-lg btn-secondary">Add Another Question</a>
+                            @endif
                         </div>
                             <br>
                         <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">

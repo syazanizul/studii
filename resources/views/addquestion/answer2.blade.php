@@ -12,6 +12,11 @@
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <link href="{{asset('css/paper-dashboard/bootstrap.min.css')}}" rel="stylesheet" />
 
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <style>
         th, td {
             padding: 10px;
@@ -298,6 +303,10 @@
             c3.style.display = 'block';
             c4.style.display = 'block';
         }
+    }
+
+    function newTypeset(){
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
     }
 </script>
 

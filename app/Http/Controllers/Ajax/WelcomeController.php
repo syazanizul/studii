@@ -41,10 +41,14 @@ class WelcomeController extends Controller
     {
         $subject = request()->get('subject');
         $level = request()->get('level');
+        $type = request() -> get('type');
 
         $results = Chapter::where('subject', $subject) -> where('level', $level)->orderBy('order','asc')->get();
 
-        echo '<option value="0">All</option>';
+        if($type == '1')    {
+            echo '<option value="0">All</option>';
+        }
+
         foreach ($results as $result) {
             echo '<option value="', $result->id, '">', $result->name, '</option>';
         }
@@ -53,10 +57,14 @@ class WelcomeController extends Controller
     public function fetch_chapter_change_subtopic()
     {
         $chapter = request()->get('chapter');
+        $type = request() -> get('type');
 
         $results = Subtopic::where('chapter_id', $chapter)->orderBy('order','asc')->get();
 
-        echo '<option value="0">All</option>';
+        if($type == '1')    {
+            echo '<option value="0">All</option>';
+        }
+
         foreach ($results as $result) {
             echo '<option value="', $result->id, '">', $result->name, '</option>';
         }

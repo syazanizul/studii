@@ -66,7 +66,7 @@
                                 <label for="s_exam" style="font-size: 1.2em">Exam</label>
                             </div>
                             <div class="col-lg-10">
-                                <select name="s_exam" id="s_exam" class="form-control">
+                                <select name="s_exam" id="s_exam" class="form-control" required>
                                     <option value="1">SPM</option>
                                 </select>
                             </div>
@@ -78,7 +78,7 @@
                                 <label for="s_subject" style="font-size: 1.2em">Subject</label>
                             </div>
                             <div class="col-lg-10">
-                                <select name="s_subject" id="s_subject" class="form-control" onchange="fetch_subject_level_change_chapter()">
+                                <select name="s_subject" id="s_subject" class="form-control" onchange="fetch_subject_level_change_chapter()" required>
                                     <option value="0">Select Subject</option>
                                     @foreach ($subjects as $subject)
                                         <option value="{{$subject -> id}}">{{$subject -> name}}</option>
@@ -93,7 +93,7 @@
                                 <label for="s_level" style="font-size: 1.2em">Level</label>
                             </div>
                             <div class="col-lg-10">
-                                <select name="s_level" id="s_level" class="form-control" onchange="fetch_subject_level_change_chapter()">
+                                <select name="s_level" id="s_level" class="form-control" onchange="fetch_subject_level_change_chapter()" required>
                                     <option value="0">Select Level</option>
                                     @foreach ($levels as $level)
                                         <option value="{{$level -> id}}">{{$level -> name}}</option>
@@ -108,7 +108,7 @@
                                 <label for="s_subject" style="font-size: 1.2em">Chapter</label>
                             </div>
                             <div class="col-lg-10">
-                                <select name="s_chapter" id="s_chapter" class="form-control" onchange="fetch_chapter_change_subtopic()">
+                                <select name="s_chapter" id="s_chapter" class="form-control" onchange="fetch_chapter_change_subtopic()" required>
                                     <option>Select Chapter</option>
                                 </select>
                             </div>
@@ -132,7 +132,7 @@
                                 <label for="s_paper" style="font-size: 1.2em">Paper</label>
                             </div>
                             <div class="col-lg-10">
-                                <select name="s_paper" id="s_paper" class="form-control">
+                                <select name="s_paper" id="s_paper" class="form-control" required>
                                     <option value="1">Paper 1</option>
                                     <option value="2">Paper 2</option>
                                     <option value="3">Paper 3</option>
@@ -231,12 +231,13 @@
             type: 'get',
             url: '/ajax/fetch_subject_level_change_chapter',
             data: {
+                type:0,
                 subject: document.getElementById('s_subject').value,
                 level: document.getElementById('s_level').value
             },
             success: function (response) {
-                if (response !== '<option value="0">All</option>') {
-                    document.getElementById('s_chapter').innerHTML = response;
+                if (response !== '') {
+                    document.getElementById('s_chapter').innerHTML = '<option value="0" selected disabled>Select</option>' + response;
                 }   else {
                     document.getElementById('s_chapter').innerHTML = '<option value="0">No Data</option>';
                 }
@@ -251,10 +252,11 @@
             type: 'get',
             url: '/ajax/fetch_chapter_change_subtopic',
             data: {
+                type:0,
                 chapter: document.getElementById('s_chapter').value,
             },
             success: function (response) {
-                if (response !== '<option value="0">All</option>') {
+                if (response !== '') {
                     document.getElementById('s_subtopic').innerHTML = response;
                 }   else {
                     document.getElementById('s_subtopic').innerHTML = '<option value="0">No Subtopic (This option is valid)</option>';
@@ -269,11 +271,12 @@
             type: 'get',
             url: '/ajax/fetch_subject_level_change_chapter',
             data: {
+                type:0,
                 subject: document.getElementById('s_subject_2').value,
                 level: document.getElementById('s_level_2').value
             },
             success: function (response) {
-                if (response !== '<option value="0">All</option>') {
+                if (response !== '') {
                     document.getElementById('s_chapter_2').innerHTML = response;
                 }   else {
                     document.getElementById('s_chapter_2').innerHTML = '<option value="0">No Data</option>';

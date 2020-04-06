@@ -204,11 +204,11 @@
             <section class="section-footer">
                 <div class="container" style="padding:0;">
                     <div class="pt-5 pb-2 px-4 row">
-                        <div class="col-md-4 my-3">
+                        <div class="col-lg-4 my-3">
                             <h4>Why Studii exists?</h4>
                             <p>The only goal is to make exercise questions free for students. Literally that's it. </p>
                         </div>
-                        <div id="div-right" class="col-md-3 my-3">
+                        <div id="div-right" class="col-lg-3 my-3">
                             <h4>Easy Navigate</h4>
                             <ul id="footer-links" style="list-style: none; padding-left: 0; color:white;">
                                 <a href="/"><li>Practice</li></a>
@@ -221,7 +221,7 @@
 {{--                                @endguest--}}
                             </ul>
                         </div>
-                        <div class="col-md-1"></div>
+                        <div class="col-lg-1"></div>
                         <div class="col-md-4 my-3">
                             <h4>Subscribe to our newsletter</h4>
                             <form action="/mail/newsletter">
@@ -237,7 +237,11 @@
                         </div>
                     </div>
                     <div class="py-2 px-4 pb-5 row">
-                        <div class="col-lg-7"></div>
+                        <div class="col-lg-4 my-3">
+                            <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.facebook.com%2Fstudii.malaysia%2F&layout=button_count&size=large&width=102&height=28&appId"
+                                    width="102" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                        </div>
+                        <div class="col-lg-3"></div>
                         <div class="col-lg-5" style="text-align: right">
                             <h5>Do note that we will have our own <span style="font-weight: bold">mobile app</span> later on, that will allow you to practice
                                 exercise questions easier. Stay tuned.</h5>

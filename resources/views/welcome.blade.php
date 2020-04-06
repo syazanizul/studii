@@ -557,11 +557,12 @@
             type: 'get',
             url: 'ajax/fetch_subject_level_change_chapter',
             data: {
+                type:1,
                 subject: document.getElementById('s_subject').value,
                 level: document.getElementById('s_level').value
             },
             success: function (response) {
-                if (response !== '<option value="0">All</option>') {
+                if (response !== '') {
                     document.getElementById('s_chapter').innerHTML = response;
                 }   else {
                     document.getElementById('s_chapter').innerHTML = '<option value="0">No Data</option>';
@@ -576,10 +577,11 @@
             type: 'get',
             url: '../ajax/fetch_chapter_change_subtopic',
             data: {
+                type:1,
                 chapter: document.getElementById('s_chapter').value,
             },
             success: function (response) {
-                if (response !== '<option value="0">All</option>') {
+                if (response !== '') {
                     document.getElementById('s_subtopic').innerHTML = response;
                 }   else {
                     document.getElementById('s_subtopic').innerHTML = '<option value="0">No Subtopic</option>';

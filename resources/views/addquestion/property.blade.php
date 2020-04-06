@@ -58,9 +58,9 @@
                         <tr>
                             <th>Subject</th>
                             <td>
-                                <select name="s_subject" id="s_subject" class="form-control" onchange="fetch_subject_level_change_chapter()">
+                                <select name="s_subject" id="s_subject" class="form-control" onchange="fetch_subject_level_change_chapter()" required>
 {{--                                <select name="s_subject" id="s_subject" class="form-control" onchange="fetch_subject_change_chapter()">--}}
-                                    <option value="0">Select</option>
+                                    <option value="0" disabled selected>Select</option>
                                     @foreach ($subjects as $subject)
                                         <option value="{{$subject -> id}}">{{$subject -> name}}</option>
                                     @endforeach
@@ -70,8 +70,8 @@
                         <tr>
                             <th>Level</th>
                             <td>
-                                <select name="s_level" id="s_level" class="form-control" onchange="fetch_subject_level_change_chapter()">
-                                    <option value="0">Select</option>
+                                <select name="s_level" id="s_level" class="form-control" onchange="fetch_subject_level_change_chapter()" required>
+                                    <option value="0" disabled selected>Select</option>
                                     @foreach ($levels as $level)
                                         <option value="{{$level -> id}}">{{$level -> name}}</option>
                                     @endforeach
@@ -81,23 +81,23 @@
                         <tr>
                             <th>Chapter</th>
                             <td>
-                                <select name="s_chapter" id="s_chapter" class="form-control" onchange="fetch_chapter_change_subtopic()">
-                                    <option>Select</option>
+                                <select name="s_chapter" id="s_chapter" class="form-control" onchange="fetch_chapter_change_subtopic()" required>
+                                    <option value="0" disabled selected>Select</option>
                                 </select>
                             </td>
                         </tr>
                         <tr>
                             <th>Subtopic</th>
                             <td>
-                                <select name="s_subtopic" id="s_subtopic" class="form-control">
-                                    <option>Select</option>
+                                <select name="s_subtopic" id="s_subtopic" class="form-control" required>
+                                    <option value="0" selected>Select</option>
                                 </select>
                             </td>
                         </tr>
                         <tr>
                             <th>Paper</th>
                             <td>
-                                <select name="s_paper" id="s_paper" class="form-control">
+                                <select name="s_paper" id="s_paper" class="form-control" required>
                                     <option value="1">Paper 1</option>
                                     <option value="2">Paper 2</option>
                                     <option value="3">Paper 3</option>
@@ -107,7 +107,7 @@
                         <tr>
                             <th>Difficulty</th>
                             <td>
-                                <select name="s_difficulty" id="s_difficulty" class="form-control">
+                                <select name="s_difficulty" id="s_difficulty" class="form-control" required>
                                     <option value="1">1 Ez</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -119,7 +119,7 @@
                         <tr>
                             <th>Source</th>
                             <td>
-                                <select name="s_source" id="s_source" class="form-control">
+                                <select name="s_source" id="s_source" class="form-control" required>
                                     @foreach ($sources as $source)
                                         <option value="{{$source -> id}}">{{$source -> name}}</option>
                                     @endforeach
@@ -326,18 +326,22 @@
             type: 'get',
             url: '../ajax/fetch_subject_level_change_chapter',
             data: {
+                type:0,
                 subject: document.getElementById('s_subject').value,
                 level: document.getElementById('s_level').value
             },
             success: function (response) {
-                if (response !== '<option value="0">All</option>') {
-                    document.getElementById('s_chapter').innerHTML = response;
+                if (response !== '') {
+                    document.getElementById('s_chapter').innerHTML = '<option value="0" selected disabled>Select</option>' + response;
                 }   else {
-                    document.getElementById('s_chapter').innerHTML = '<option value="0">No Data</option>';
+                    document.getElementById('s_chapter').innerHTML = '<option value="0">No Data (Please select level or add new chapter)</option>';
                 }
             }
         });
+
     }
+
+    $.when(fetch_subject_change_chapter()).done(fetch_chapter_change_subtopic());
 
     function fetch_chapter_change_subtopic()
     {
@@ -345,13 +349,14 @@
             type: 'get',
             url: '../ajax/fetch_chapter_change_subtopic',
             data: {
+                type:0,
                 chapter: document.getElementById('s_chapter').value,
             },
             success: function (response) {
-                if (response !== '<option value="0">All</option>') {
-                    document.getElementById('s_subtopic').innerHTML = response;
+                if (response !== '') {
+                    document.getElementById('s_subtopic').innerHTML = response + '<option value="0">No Subtopic (this is a valid option)</option>';
                 }   else {
-                    document.getElementById('s_subtopic').innerHTML = '<option value="0">No Subtopic</option>';
+                    document.getElementById('s_subtopic').innerHTML = '<option value="0">No Subtopic (this is a valid option)</option>';
                 }
             }
         });
@@ -363,14 +368,15 @@
             type: 'get',
             url: '../ajax/fetch_subject_level_change_chapter',
             data: {
+                type:0,
                 subject: document.getElementById('s_subject_2').value,
                 level: document.getElementById('s_level_2').value
             },
             success: function (response) {
-                if (response !== '<option value="0">All</option>') {
+                if (response !== '') {
                     document.getElementById('s_chapter_2').innerHTML = response;
                 }   else {
-                    document.getElementById('s_chapter_2').innerHTML = '<option value="0">No Data</option>';
+                    document.getElementById('s_chapter_2').innerHTML = '<option value="0" disabled selected>No Data (Add New Chapter First)</option>';
                 }
             }
         });

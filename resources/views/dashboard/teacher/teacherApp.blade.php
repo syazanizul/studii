@@ -27,7 +27,7 @@
         </li>
         <li @yield('nav-submission-status')>
             <a href="/teacher/submission-status">
-                <p>Upload With Help Status</p>
+                <p>Upload With Help - Status</p>
             </a>
         </li>
         <li @yield('nav-performance')>

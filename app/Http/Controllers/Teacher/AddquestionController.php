@@ -39,6 +39,7 @@ class AddquestionController extends Controller
         $chapter = $request->get('s_chapter');
         $subtopic = $request->get('s_subtopic');
         $paper = $request->get('s_paper');
+        $total_question = $request -> get('total_question');
 
 //        $name = Auth::user()->id .'-'. rand(10000, 99999).'.docx';
         $name = Auth::user()->id .'-'. rand(10000, 99999).'.'.$file->clientExtension();
@@ -52,8 +53,11 @@ class AddquestionController extends Controller
             $m -> chapter_id = $chapter;
             $m -> subtopic_id = $subtopic;
             $m -> paper = $paper;
+            $m -> total_question = $total_question;
             $m -> submitter_id = Auth::user()->id;
+            $m -> taken_by = 0;
             $m -> upload_status = false;
+            $m -> verified_by_submitter = 0;
             $m -> save();
 
             Mail::to('syazanizul@gmail.com')->send(new event('New Question Set'));

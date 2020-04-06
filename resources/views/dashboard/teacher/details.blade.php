@@ -168,7 +168,7 @@
                                     <div class="form-group">
                                         <label>Title</label>
                                         <select name="title" class="form-control pb-2" required>
-                                            <option value="0">Select</option>
+                                            <option value="0" disabled>Select</option>
                                             <option value="1">Cikgu</option>
                                             <option value="2">Tuan</option>
                                             <option value="3">Puan</option>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\AddQuestion;
 
 use App\Http\Controllers\Controller;
 use App\Chapter;
+use App\QuestionSetElement;
 use App\Subject;
 use App\Subtopic;
 use App\User;
@@ -74,8 +75,6 @@ class AddProperty extends Controller
 
 //   ----------------- FOURTH METHOD
     public function store1(Request $request)    {
-        $request->session()->put('recent_add_property', request()->all());
-
         $subject = request() -> get('s_subject');
         $level = request() -> get('s_level');
         $chapter = request() -> get('s_chapter');
@@ -93,6 +92,13 @@ class AddProperty extends Controller
             $submitter2 = Auth::user()->id;
         }
 
+
+//        if (request() -> get('subtopic') == null)   {
+//            $subtopic = 0;
+//        }   else    {
+//            $subtopic = request() -> get('subtopic');
+//        }
+
 //        $year = request() -> get('s_year');
 
 
@@ -102,7 +108,7 @@ class AddProperty extends Controller
         $question -> subject = $subject;
         $question -> chapter = $chapter;
         $question -> subtopic = $subtopic;
-        $question -> year = 2019;
+        $question -> year = 2020;
         $question -> paper = $paper;
         $question -> source = $source;
         $question -> question_number = 0;
@@ -118,6 +124,23 @@ class AddProperty extends Controller
         $question -> save();
 
         $id = $question -> id;
+
+//        ------------for add property -> no need to select again
+        $request->session()->put('recent_add_property', request()->all());
+//        -----------------------------------------------------------------
+
+//        ----------- for if upload for someone else
+        if (request() -> get('submitter1') != null)   {
+            $submitter1 = request() -> get('submitter1');
+
+            $m = new QuestionSetElement;
+            $m -> question_id = $id;
+            $m -> question_set_id = request() -> get('question_set');
+            $m -> upload_status = 0;
+            $m -> verified_by_submitter = 0;
+            $m->save();
+        }
+//        ----------------------------------------------------------
 
 //        if (request() -> get('submitter1') == null)   {
 //            DB::table('question_allocation')->insert(['question_id' => $id, 'creator' =>  Auth::user()->id, 'uploader' => 0]);

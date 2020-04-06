@@ -51,6 +51,17 @@
                     <div class="card-header">
                         <h3 class="">Tell us the information of your submission</h3>
                         <div class="row">
+                            <div class="col-lg-5">
+                                <label for="total_question" style="font-size: 1.2em">Total questions in this set?</label>
+                            </div>
+                            <div class="col-lg-7">
+                                <input type="number" id="total_question" class="form-control" name="total_question" min="0" max="50" placeholder="Eg: 10" required>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
                             <div class="col-lg-2">
                                 <label for="s_exam" style="font-size: 1.2em">Exam</label>
                             </div>

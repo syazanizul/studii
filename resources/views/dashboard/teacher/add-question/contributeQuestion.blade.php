@@ -132,7 +132,7 @@
                                 <td>{{$m->subject_name->name}}</td>
                                 <td>{{$m->chapter_name->name}}</td>
                                 <td>{{$m->id}}</td>
-                                <td class="text-right"><a href="/question/update/{{$m->id}}" class="btn btn-primary" disabled>Continue</a></td>
+                                <td class="text-right"><a href="/question/update/{{$m->id}}" class="btn btn-primary">Continue</a></td>
                             </tr>
                         @endforeach
 

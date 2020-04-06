@@ -133,7 +133,8 @@
                                     <label><input name="checkbox" id="checkbox" type="checkbox" value="" onclick="checkbox1()">Yes</label>
                                 </div>
                                 <div id="divnew" style="visibility: hidden">
-                                    <input name="submitter1" type="text" class="form-control" placeholder="His or Her ID?">
+                                    <input name="submitter1" type="text" class="form-control my-2" placeholder="His or Her ID?">
+                                    <input name="question_set" type="text" class="form-control my-2" placeholder="Question Set?">
                                 </div>
                             </td>
                         </tr>
@@ -221,6 +222,7 @@
                             <input type="hidden" name="s_difficulty" value="{{session('recent_add_property')["s_difficulty"]}}">
                             <input type="hidden" name="s_source" value="{{session('recent_add_property')["s_source"]}}">
                             <input type="hidden" name="submitter1" value="{{session('recent_add_property')["submitter1"]}}">
+                            <input type="hidden" name="question_set" value="{{session('recent_add_property')["question_set"]}}">
                             <input type="submit" value="Submit">
                         </div>
                     </form>

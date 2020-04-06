@@ -6,6 +6,7 @@ use App\Answer;
 use App\AnswerElement;
 use App\AnswerParent;
 use App\Question;
+use App\QuestionSetElement;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -237,12 +238,16 @@ class AddAnswer extends Controller
 //    }
 
     public function publish($id)   {
+        $m = QuestionSetElement::where('question_id', $id)->first();
+        $m->upload_status = 1;
+        $m -> save();
+
         $n = Question::find($id);
         $n -> finished = 1;
         $n -> save();
 //        dd($id);
 
         session(['qid' => [$id, -1]]);
-        return redirect('/practice?num=0');
+        return redirect('/practice?num=0')->with('adding_question',1);
     }
 }

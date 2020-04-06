@@ -22,8 +22,11 @@ class QuestionSetFileUploadTable extends Migration
             $table->integer('chapter_id');
             $table->integer('subtopic_id');
             $table->integer('paper');
+            $table->integer('total_question');
             $table->unsignedBigInteger('submitter_id');
+            $table->unsignedBigInteger('taken_by');
             $table->boolean('upload_status');
+            $table->boolean('verified_by_submitter');
             $table->timestamps();
 
 //            $table->foreign('ch_id')->references('id')->on('cha_list');

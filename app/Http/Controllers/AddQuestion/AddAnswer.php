@@ -239,9 +239,11 @@ class AddAnswer extends Controller
 
     public function publish($id)   {
         $m = QuestionSetElement::where('question_id', $id)->first();
-        $m->upload_status = 1;
-        $m -> save();
-
+        if ($m != null) {
+            $m->upload_status = 1;
+            $m -> save();
+        }
+        
         $n = Question::find($id);
         $n -> finished = 1;
         $n -> save();

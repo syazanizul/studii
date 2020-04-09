@@ -35,7 +35,14 @@ class SetPriceQuestionController extends Controller
         $question-> price = $price;
         $question -> save();
 
-        $id_new = $id+1;
-        return redirect('/admin/set-price?a='. $id_new);
+        $id_new = $question = Question::where('finished', 1)->where('price', null)->first();
+
+        if($id_new != null)    {
+            return redirect('/admin/set-price?a='. $id_new->id);
+        }   else    {
+            return redirect('/admin/set-price');
+        }
+
     }
+
 }

@@ -150,11 +150,11 @@
                         <div class="row my-2">
                             <div class="col-md-4 my-2">
                                 <label class="big-p">Name:</label>
-                                <input name="name" type="text" class="form-control w-100">
+                                <input name="name" type="text" class="form-control w-100" required>
                             </div>
                             <div class="col-md-6 my-2">
                                 <label class="big-p">Phone number:</label>
-                                <input name="phone" type="text" class="form-control w-100">
+                                <input name="phone" type="text" class="form-control w-100" required>
                             </div>
                             <div class="col-md-2 my-2">
                                 <label>&nbsp</label>

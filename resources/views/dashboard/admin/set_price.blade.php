@@ -84,7 +84,6 @@
                         </div>
                     </div>
                     <div class="card-footer ">
-
                     </div>
                 </div>
             </div>
@@ -154,6 +153,34 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row">
+                <?php $i=1?>
+                <?php $j=1?>
+                @foreach($question->contents as $n)
+                    @if($n->answer_parent != null)
+                        @foreach($n->answer_parent as $o)
+                            <div class="col-lg-4" style="font-size: 1.3em">
+                                <div class="card card-stats">
+                                    <div class="card-body ">
+                                        <p><b>Answer {{$n->symbol()}}</b></p>
+                                        <hr>
+                                        @foreach($o->answer_element as $m)
+                                            <p @if($m->correct == 1) style="color:green" @else style="color:red" @endif>{!!$m -> answer!!}</p>
+                                        @endforeach
+                                    </div>
+                                    <div class="card-footer">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <?php $i++?>
+                            <?php $j++?>
+                        @endforeach
+                    @endif
+                @endforeach
+            </div>
+
             <form action="/admin/set-price/save" method="post">
                 @csrf
                 <div class="row">

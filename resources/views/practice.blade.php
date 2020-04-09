@@ -750,7 +750,8 @@
 
         }
 
-        document.getElementById('check_question_' + x).disabled = true;
+        // document.getElementById('check_question_' + x).disabled = true;
+        document.getElementById('check_question_' + x).style.visibility = "hidden";
         count_attempt++;
 
 

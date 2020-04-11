@@ -402,14 +402,12 @@
                                     (adsbygoogle = window.adsbygoogle || []).push({});
                                 </script>
                         </div>
-
                     </div>
-
                 </div>
 
                 <div class="col-lg-3 offset-1" id="right-panel"
                      data-step="6" data-intro="Finally, you have a control panel right here. Everything that you may need can be find here. That's it, goodluck!">
-                    <div style="padding:35px;">
+                    <div>
 
                         <div>
                             @isset(session('qid')[$data['num']+1])

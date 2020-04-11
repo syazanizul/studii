@@ -267,7 +267,7 @@
     <section style="margin-top:2em;">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-md-8">
                     <div id="row-property" data-step="1" data-intro="This is the basic information of this question.">
                         {{--1. Properties Question --}}
                         <p class="p-info d-inline-block">{{$question -> subject_name -> name}},  {{$question -> chapter_name -> name}},   Paper {{$question -> paper}}, {{$question -> year}}</p>
@@ -405,7 +405,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 offset-1" id="right-panel"
+                <div class="col-md-3 offset-1" id="right-panel"
                      data-step="6" data-intro="Finally, you have a control panel right here. Everything that you may need can be find here. That's it, goodluck!">
                     <div>
 

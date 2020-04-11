@@ -405,8 +405,6 @@
 
                     </div>
 
-                    <div style="height:100px"></div>
-
                 </div>
 
                 <div class="col-lg-3 offset-1" id="right-panel"

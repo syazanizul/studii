@@ -46,7 +46,6 @@ Route::get('/student', 'StudentController@index')->name('student')->middleware('
 Route::get('/teacher', 'Teacher\TeacherController@index')->name('teacher')->middleware('teacher');
 Route::get('/teacher/details', 'Teacher\DetailsController@index')->middleware('teacher');
 Route::get('/teacher/performance', 'Teacher\PerformanceController@index')->middleware('teacher');
-Route::get('/teacher/submission-status', 'Teacher\SubmissionController@index')->middleware('teacher');
 
 Route::post('/teacher/details/edit-profile', 'Teacher\DetailsController@edit_profile');
 Route::post('/teacher/details/teaching-details', 'Teacher\DetailsController@teaching_details');
@@ -56,12 +55,16 @@ Route::get('/teacher/details/add-image/no-image', 'Teacher\DetailsController@no_
 Route::post('/teacher/details/teaching-details/exam', 'Teacher\DetailsController@teaching_details_exam');
 Route::post('/teacher/details/teaching-details/subject', 'Teacher\DetailsController@teaching_details_subject');
 
+Route::get('/teacher/submission-status', 'Teacher\SubmissionController@index')->middleware('teacher');
+Route::get('/teacher/submission-status/{set_id}', 'Teacher\SubmissionController@verify_index')->middleware('teacher');
+Route::get('/teacher/submission-status/verify/{id}', 'Teacher\SubmissionController@verify')->middleware('teacher');
+
 Route::get('/teacher/instruction', 'Teacher\InstructionController@index')->middleware('teacher');
 Route::get('/teacher/instruction/process-upload-questions', 'Teacher\InstructionController@process_upload_questions')->middleware('teacher');
 
-Route::get('/teacher/upload/with-help','Teacher\AddquestionController@index_with_help');
-Route::get('/teacher/upload/with-help-2','Teacher\AddquestionController@index_with_help_2');
-Route::get('/teacher/upload/with-help-3','Teacher\AddquestionController@index_with_help_3');
+Route::get('/teacher/upload/with-help','Teacher\AddquestionController@index_with_help')->middleware('teacher');;
+Route::get('/teacher/upload/with-help-2','Teacher\AddquestionController@index_with_help_2')->middleware('teacher');;
+Route::get('/teacher/upload/with-help-3','Teacher\AddquestionController@index_with_help_3')->middleware('teacher');;
 Route::post('/teacher/upload/with-help/upload-file', 'Teacher\AddquestionController@upload_question_set');
 // End for teachers
 

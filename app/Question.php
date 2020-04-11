@@ -63,8 +63,8 @@ class Question extends Model
         return $this->belongsTo(User::class , 'uploader','id');
     }
 
-    public function question_allocation()   {
-        return $this->HasOne(QuestionAllocation::class);
+    public function question_set_element()   {
+        return $this->HasOne(QuestionSetElement::class);
     }
 
     public function question_image() {

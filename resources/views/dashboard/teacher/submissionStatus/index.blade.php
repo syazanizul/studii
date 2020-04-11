@@ -22,7 +22,7 @@
             <div class="col-sm-8">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="">You haven't submitted any submission yet. Go to <b><a href="/teacher/question">Add Question Page</a></b> to contribute to
+                        <h5 class="">You haven't submitted any submission yet. Go to <b><a href="/teacher/question/with-help">Add Question Page</a></b> to contribute to
                             Studii's libary now.</h5>
                     </div>
                 </div>

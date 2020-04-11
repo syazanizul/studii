@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/submissionStatus/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/submissionStatus/verify.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Teacher/SubmissionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Teacher/SubmissionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Question.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Question.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/QuestionSet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/QuestionSet.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/QuestionSetElement.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/QuestionSetElement.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/submissionStatus.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/submissionStatus/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/submissionStatus/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -500,7 +493,7 @@
       <workItem from="1586456351586" duration="1852000" />
       <workItem from="1586459171188" duration="2897000" />
       <workItem from="1586564605517" duration="1880000" />
-      <workItem from="1586580149907" duration="4861000" />
+      <workItem from="1586580149907" duration="5586000" />
     </task>
     <servers />
   </component>

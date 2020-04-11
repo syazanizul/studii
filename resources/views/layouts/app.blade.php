@@ -10,11 +10,13 @@
 {{--    Meta--}}
     <title>Studii</title>
     <meta name="description" content="Practice exercise questions for free | SPM , PT3, UPSR | A Malaysian-made study platform">
+    <meta name="keywords" content="study, practice, exercise question, add math, additional mathematics, math, mathematics, free">
+
     <link rel="icon" type="image/png" sizes="96x96" href="{{asset('images/cat.png')}}">
 
 {{--    For whatsapp--}}
     <meta property="og:image" content="{{asset('images/cat.png')}}"/>
-    <meta property="og:title" content="Studii - Free exercise questions"/>
+    <meta property="og:title" content="Studii - Study Add Math for Free"/>
     <meta property="og:description" content="Practice exercise questions for free | SPM , PT3, UPSR |"/>
 
     <!-- Fonts -->

@@ -57,7 +57,8 @@ Route::post('/teacher/details/teaching-details/subject', 'Teacher\DetailsControl
 
 Route::get('/teacher/submission-status', 'Teacher\SubmissionController@index')->middleware('teacher');
 Route::get('/teacher/submission-status/{set_id}', 'Teacher\SubmissionController@verify_index')->middleware('teacher');
-Route::get('/teacher/submission-status/verify/{id}', 'Teacher\SubmissionController@verify')->middleware('teacher');
+Route::get('/teacher/submission-status/verify/set-element/{id}', 'Teacher\SubmissionController@verify_set_element')->middleware('teacher');
+Route::get('/teacher/submission-status/verify/set-parent/{id}', 'Teacher\SubmissionController@verify_set_parent')->middleware('teacher');
 
 Route::get('/teacher/instruction', 'Teacher\InstructionController@index')->middleware('teacher');
 Route::get('/teacher/instruction/process-upload-questions', 'Teacher\InstructionController@process_upload_questions')->middleware('teacher');

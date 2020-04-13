@@ -55,7 +55,8 @@
                                     @if($m -> verified_by_submitter == 1)
                                         <td>Uploaded & Verified</td>
                                     @else
-                                        <td>Uploaded & Not Verified</td>
+                                        <td>Uploaded & Not Verified <br><a href="/teacher/submission-status/verify/set-parent/{{$m->id}}" class="btn btn-primary m-1">Verify this set</a></td>
+
                                     @endif
                                 @else
                                     <td>Still in process</td>
@@ -81,7 +82,7 @@
     @endif
     <div class="row">
         @foreach($question_set->get() as $m)
-            @if($m->question_set_element->where('verified_by_submitter', 0)->isNotEmpty())
+            @if($m->question_set_element->where('upload_status', 1)->where('verified_by_submitter', 0)->isNotEmpty())
                 <div class="col-sm-5">
                     <a href="/teacher/submission-status/{{$m->id}}">
                         <div class="card card-stats div-link">
@@ -92,7 +93,7 @@
                                         <p>{{$m -> created_at}}</p>
                                     </div>
                                     <div class="col-lg-4">
-                                        <h2><b>{{$m->question_set_element->where('verified_by_submitter', 0)->count()}}</b></h2>
+                                        <h2><b>{{$m->question_set_element->where('upload_status', 1)->where('verified_by_submitter', 0)->count()}}</b></h2>
                                     </div>
                                 </div>
                             </div>

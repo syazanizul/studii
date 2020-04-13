@@ -36,8 +36,16 @@ class SubmissionController extends Controller
         }
     }
 
-    public function verify($id)  {
+    public function verify_set_element($id)  {
         $question_set_element = QuestionSetElement::find($id);
+        $question_set_element -> verified_by_submitter = 1;
+        $question_set_element -> save();
+
+        return redirect()->back();
+    }
+
+    public function verify_set_parent($id)  {
+        $question_set_element = QuestionSet::find($id);
         $question_set_element -> verified_by_submitter = 1;
         $question_set_element -> save();
 

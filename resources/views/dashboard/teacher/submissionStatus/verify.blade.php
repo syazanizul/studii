@@ -113,7 +113,7 @@
                 <div class="row">
                     <div class="col">
                         @if($question->question_set_element->verified_by_submitter == 0)
-                            <a href="/teacher/submission-status/verify/{{$question->question_set_element->id}}" class="btn btn-lg btn-primary btn-block my-5">VERIFY THIS QUESTION</a>
+                            <a href="/teacher/submission-status/verify/set-element/{{$question->question_set_element->id}}" class="btn btn-lg btn-primary btn-block my-5">VERIFY THIS QUESTION</a>
                         @else
                             <a class="btn btn-lg btn-primary btn-block my-5" disabled>VERIFIED</a>
                         @endif
@@ -132,7 +132,7 @@
                                 <th>Action</th>
                                 </thead>
                                 <tbody>
-                                @foreach($question_set_element->get() as $m)
+                                @foreach($question_set_element->where('upload_status', 1)->get() as $m)
                                     <tr>
                                         <td>{{\App\Question::find($m->question_id)->id}}</td>
                                         <td>

@@ -314,7 +314,7 @@
                             <form method="get" action="/redirect/quick">
                                 <div class="row">
                                     <div id="quick-browse">
-                                        <label name="subject" class="heading-text heading-text d-inline-block">Quick browse on subject : </label>
+                                        <label class="heading-text heading-text d-inline-block">Quick browse on subject : </label>
                                         <select name="subject" class="form-control d-inline-block form-control-lg">
                                             @foreach ($property['subjects'] as $subject)
                                              <option value="{{$subject->id}}">{{$subject->name}}</option>

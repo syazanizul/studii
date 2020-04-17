@@ -23,6 +23,6 @@ class AdminController extends Controller
 
         $feedback_average = $feedback_accumulate/$feedback->count();
 
-        return view('dashboard.admin.admin', compact($feedback_average));
+        return view('dashboard.admin.admin', compact('feedback_average'));
     }
 }

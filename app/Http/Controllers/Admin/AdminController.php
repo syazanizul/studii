@@ -17,7 +17,7 @@ class AdminController extends Controller
 
         $feedback_accumulate = 0;
 
-        foreach($feedback_average as $m)   {
+        foreach($feedback as $m)   {
             $feedback_accumulate += $m->like;
         }
 

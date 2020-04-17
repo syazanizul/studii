@@ -476,7 +476,7 @@
             </div>
         </div>
     </section>
-    <section style="background-color: #f8fafc">
+    <section style="">
         <div class="container py-5">
             <div class="row">
                 <div class="col-lg-2">

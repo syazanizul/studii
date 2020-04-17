@@ -76,9 +76,22 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
+
+
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="card card-stats">
+                    <div class="card-body ">
+                        <div class="row">
+                            Feedback = {{round($feedback_average)}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 @endsection
 

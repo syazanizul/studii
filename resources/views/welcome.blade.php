@@ -479,17 +479,22 @@
     <section style="background-color: #f8fafc">
         <div class="container py-5">
             <div class="row">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- front page -->
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-7446857168486939"
-                     data-ad-slot="4357036776"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+                <div class="col-lg-2">
+
+                </div>
+                <div class="col-lg-8">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- front page -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-7446857168486939"
+                         data-ad-slot="4357036776"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
             </div>
         </div>
     </section>

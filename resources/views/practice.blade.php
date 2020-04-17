@@ -390,6 +390,7 @@
                                 @endif
                             @endforeach
 
+                            <div class="p-2">
                                 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                                 <!-- below_answer -->
                                 <ins class="adsbygoogle"
@@ -401,6 +402,7 @@
                                 <script>
                                     (adsbygoogle = window.adsbygoogle || []).push({});
                                 </script>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -470,7 +472,7 @@
     </section>
 
     <section>
-        <div style="height:100px"></div>
+        <div style="height:100px    "></div>
     </section>
 
 @endsection

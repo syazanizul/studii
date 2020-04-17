@@ -25,4 +25,21 @@ class Teacher extends Model
         }
         return 1;
     }
+
+    public static function total_attempt(int $type, $teacher_id) {
+        if($type==1)    {
+
+            $question = Question::where('creator', $teacher_id)->get();
+
+            $accumulated_attempt = 0;
+
+            foreach($question as $m)   {
+//                dd($m->total_attempt());
+                $accumulated_attempt += $m->total_attempt();
+            }
+//
+                return round($accumulated_attempt,3);
+        }
+        return 1;
+    }
 }

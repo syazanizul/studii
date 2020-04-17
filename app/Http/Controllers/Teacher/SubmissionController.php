@@ -16,7 +16,7 @@ class SubmissionController extends Controller
         $statement1 = 0;
 
         foreach($question_set->get() as $m) {
-            if($m->question_set_element->where('verified_by_submitter', 0)->isNotEmpty())  {
+            if($m->question_set_element->where('upload_status', 1)->where('verified_by_submitter', 0)->isNotEmpty())  {
                 $statement1 = 1;
             }
         }

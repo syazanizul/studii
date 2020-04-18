@@ -413,69 +413,72 @@
                     </div>
                 </div>
 
-                <div class="col-md-3 offset-lg-1 p-4" id="right-panel"
+                <div class="col-md-3 offset-lg-1"
                      data-step="6" data-intro="Finally, you have a control panel right here. Everything that you may need can be find here. That's it, goodluck!">
+                    <div id="right-panel" class="p-4">
 
-                    <h3 class="mb-4 text-center" style="color: white"><b>Control Panel :</b></h3>
 
-                    <div class="m-1">
-                        @isset(session('qid')[$data['num']+1])
-                            @if(session('qid')[$data['num']+1] != -1)
-                                <a href="/practice?num={{$data['num']+1}}" class="btn btn-lg btn-block btn-primary">Next Question</a>
+                        <h3 class="mb-4 text-center" style="color: white"><b>Control Panel :</b></h3>
+
+                        <div class="m-1">
+                            @isset(session('qid')[$data['num']+1])
+                                @if(session('qid')[$data['num']+1] != -1)
+                                    <a href="/practice?num={{$data['num']+1}}" class="btn btn-lg btn-block btn-primary">Next Question</a>
+                                @else
+                                    <p style="padding:0.6em 1em; border:1.5px solid grey; text-align: center; font-size:1.1em; cursor:default; border-radius: 10px;">No More Question</p>
+                                @endif
                             @else
                                 <p style="padding:0.6em 1em; border:1.5px solid grey; text-align: center; font-size:1.1em; cursor:default; border-radius: 10px;">No More Question</p>
-                            @endif
-                        @else
-                            <p style="padding:0.6em 1em; border:1.5px solid grey; text-align: center; font-size:1.1em; cursor:default; border-radius: 10px;">No More Question</p>
-                        @endisset
+                            @endisset
 
-                    </div>
-                        <br>
-                    <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px; background-color: #eae7d9">
-                        @if(Session('adding_question') == 1)
-                            <a href="/question/add" class="btn btn-lg btn-secondary">Add Another Question</a>
-                        @endif
-
-                        <button type="button" class="btn btn-lg btn-block btn-danger" data-toggle="modal" data-target="#report_modal">
-                           Report
-                        </button>
-                        @if($report = Session::get('report'))
-                            <p class="m-2"><b>{{$report}}</b></p>
-                        @endif
-                    </div>
-                        <br>
-
-
-                    @if($question -> source_name -> id != 2)
-                        <div id="div-submitter" style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px; background-color: #eae7d9">
-                            <p class="text-center">Submitted By:</p>
-                            <div id="img-submitter">
-                                @if($question->creator_info->profile_image() == 1)
-                                    <img src="{{asset('/images/user_images/id-'.$question->creator.'.jpg')}}" class="ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey; width: 50%;">
-                                @else
-                                    <img src="{{asset('/images/user_images/unknown.png')}}" class="w-50 ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey">
-                                @endif
-                            </div>
-                            <p class="mt-1 text-center mb-0"><b>{{ucfirst($question->creator_info->firstname)}} {{ucfirst($question->creator_info->lastname)}}</b></p>
-                            <p class="text-center">{{\App\School::school_name($question->creator)}}</p>
                         </div>
-                    @else
+                            <br>
                         <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px; background-color: #eae7d9">
-                            <p class="text-center"><b>Question Owned By:</b></p>
-                            <img src="{{asset('images/cat.png')}}" class="w-50 ml-auto mr-auto d-block">
-                            <p class="text-center mt-1">Studii</p>
-                        </div>
-                    @endif
+                            @if(Session('adding_question') == 1)
+                                <a href="/question/add" class="btn btn-lg btn-secondary">Add Another Question</a>
+                            @endif
 
-                        <br>
-                    <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px; background-color: #eae7d9">
-                        <p>tutorial & explanation:</p>
-                        <a class="btn btn-secondary btn-block" onclick="introJs().setOption('showProgress', true).start();" style="color:white">How to use <br>this page?</a>
-                        <a class="btn btn-secondary btn-block" id="btn_computer_or_mobile" style="color:white">Computer or<br>mobile phone?</a>
-                        <a class="btn btn-secondary btn-block" id="btn_tutorial_difficulty_rating" style="color:white">Difficulty rating</a>
-                        <a class="btn btn-secondary btn-block" id="btn_ads" style="color:white">Why the ads?</a>
+                            <button type="button" class="btn btn-lg btn-block btn-danger" data-toggle="modal" data-target="#report_modal">
+                               Report
+                            </button>
+                            @if($report = Session::get('report'))
+                                <p class="m-2"><b>{{$report}}</b></p>
+                            @endif
+                        </div>
+                            <br>
+
+
+                        @if($question -> source_name -> id != 2)
+                            <div id="div-submitter" style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px; background-color: #eae7d9">
+                                <p class="text-center">Submitted By:</p>
+                                <div id="img-submitter">
+                                    @if($question->creator_info->profile_image() == 1)
+                                        <img src="{{asset('/images/user_images/id-'.$question->creator.'.jpg')}}" class="ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey; width: 50%;">
+                                    @else
+                                        <img src="{{asset('/images/user_images/unknown.png')}}" class="w-50 ml-auto mr-auto d-block rounded-circle" style="border: 1px solid grey">
+                                    @endif
+                                </div>
+                                <p class="mt-1 text-center mb-0"><b>{{ucfirst($question->creator_info->firstname)}} {{ucfirst($question->creator_info->lastname)}}</b></p>
+                                <p class="text-center">{{\App\School::school_name($question->creator)}}</p>
+                            </div>
+                        @else
+                            <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px; background-color: #eae7d9">
+                                <p class="text-center"><b>Question Owned By:</b></p>
+                                <img src="{{asset('images/cat.png')}}" class="w-50 ml-auto mr-auto d-block">
+                                <p class="text-center mt-1">Studii</p>
+                            </div>
+                        @endif
+
+                            <br>
+                        <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px; background-color: #eae7d9">
+                            <p>tutorial & explanation:</p>
+                            <a class="btn btn-secondary btn-block" onclick="introJs().setOption('showProgress', true).start();" style="color:white">How to use <br>this page?</a>
+                            <a class="btn btn-secondary btn-block" id="btn_computer_or_mobile" style="color:white">Computer or<br>mobile phone?</a>
+                            <a class="btn btn-secondary btn-block" id="btn_tutorial_difficulty_rating" style="color:white">Difficulty rating</a>
+                            <a class="btn btn-secondary btn-block" id="btn_ads" style="color:white">Why the ads?</a>
+                        </div>
+                            <br>
                     </div>
-                        <br>
                 </div>
             </div>
         </div>

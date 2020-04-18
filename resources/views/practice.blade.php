@@ -75,6 +75,11 @@
         display: inline-block;
     }
 
+    #right-panel {
+        background-color: #442727;
+        border-radius: 15px;
+    }
+
     #right-panel textarea {
         width:100%;
         overflow: auto;
@@ -408,10 +413,12 @@
                     </div>
                 </div>
 
-                <div class="col-md-3 offset-1" id="right-panel"
+                <div class="col-md-3 offset-lg-1 p-4" id="right-panel"
                      data-step="6" data-intro="Finally, you have a control panel right here. Everything that you may need can be find here. That's it, goodluck!">
 
-                    <div>
+                    <h3 class="mb-4 text-center" style="color: white"><b>Control Panel :</b></h3>
+
+                    <div class="m-1">
                         @isset(session('qid')[$data['num']+1])
                             @if(session('qid')[$data['num']+1] != -1)
                                 <a href="/practice?num={{$data['num']+1}}" class="btn btn-lg btn-block btn-primary">Next Question</a>
@@ -422,12 +429,13 @@
                             <p style="padding:0.6em 1em; border:1.5px solid grey; text-align: center; font-size:1.1em; cursor:default; border-radius: 10px;">No More Question</p>
                         @endisset
 
+                    </div>
+                        <br>
+                    <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px; background-color: #eae7d9">
                         @if(Session('adding_question') == 1)
                             <a href="/question/add" class="btn btn-lg btn-secondary">Add Another Question</a>
                         @endif
-                    </div>
-                        <br>
-                    <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">
+
                         <button type="button" class="btn btn-lg btn-block btn-danger" data-toggle="modal" data-target="#report_modal">
                            Report
                         </button>
@@ -439,7 +447,7 @@
 
 
                     @if($question -> source_name -> id != 2)
-                        <div id="div-submitter" style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">
+                        <div id="div-submitter" style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px; background-color: #eae7d9">
                             <p class="text-center">Submitted By:</p>
                             <div id="img-submitter">
                                 @if($question->creator_info->profile_image() == 1)
@@ -460,11 +468,12 @@
                     @endif
 
                         <br>
-                    <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">
+                    <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px; background-color: #eae7d9">
                         <p>tutorial & explanation:</p>
                         <a class="btn btn-secondary btn-block" onclick="introJs().setOption('showProgress', true).start();" style="color:white">How to use <br>this page?</a>
                         <a class="btn btn-secondary btn-block" id="btn_computer_or_mobile" style="color:white">Computer or<br>mobile phone?</a>
                         <a class="btn btn-secondary btn-block" id="btn_tutorial_difficulty_rating" style="color:white">Difficulty rating</a>
+                        <a class="btn btn-secondary btn-block" id="btn_ads" style="color:white">Why the ads?</a>
                     </div>
                         <br>
                 </div>
@@ -867,6 +876,18 @@
     $(document).ready(function() {
         $('#btn_computer_or_mobile').click(function(){
             alertify.alert('Better to practice on a computer or a mobile phone?',text_computer_mobile);
+        });
+    });
+
+    let text_ads = "As mentioned before, Studii is here just to achieve 2 goals - to make exercise questions abundant and <b>free</b>. " +
+        "<br><br>However exercise questions are not free. Everytime you answer a question, we have to pay to the contributors. But we still want to give you the" +
+        " practice for free. Hence the ads :) " +
+        "<br><br>This way you can focus on the practice, and let the advertisers pay for you. The ads are a small sacrifice for the free practice." +
+        "<br><br>However, if you really don't like the ads, we will introduce premium features really soon that will give you the option of practice without ads, stay tuned!";
+
+    $(document).ready(function() {
+        $('#btn_ads').click(function(){
+            alertify.alert('Why ads?',text_ads);
         });
     });
 

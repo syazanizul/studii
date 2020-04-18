@@ -460,7 +460,7 @@
                             <p class="text-center">{{\App\School::school_name($question->creator)}}</p>
                         </div>
                     @else
-                        <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px;">
+                        <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px; background-color: #eae7d9">
                             <p class="text-center"><b>Question Owned By:</b></p>
                             <img src="{{asset('images/cat.png')}}" class="w-50 ml-auto mr-auto d-block">
                             <p class="text-center mt-1">Studii</p>

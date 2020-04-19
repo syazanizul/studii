@@ -198,6 +198,11 @@
 
     /* Accordion */
 
+    #div-faq-headline   {
+        font-size:4em;
+        color:#AFD0D6
+    }
+
     .btn-link:hover  {
         cursor: pointer;
     }
@@ -213,7 +218,7 @@
     }
 
     .accordion .card-header p {
-        font-size: 1.6vmin;
+        font-size: 1.6em;
         line-height: normal;
         overflow-wrap: break-word;
     }
@@ -223,7 +228,7 @@
     }
 
     .card-body p    {
-        font-size:1.3vmin;
+        font-size:1.3em;
         line-height: normal;
     }
 
@@ -271,6 +276,14 @@
 
         #section-1 img  {
             width: 80%;
+        }
+
+        #div-faq-headline   {
+            font-size:3em;
+        }
+
+        .accordion .card-header p {
+            font-size: 1.2em;
         }
     }
 
@@ -550,7 +563,7 @@
         <div class="container my-5">
             <div class="row">
                 <div class="col-lg-12">
-                    <p style="font-size:4em;  color:#AFD0D6"><b>Frequently Asked Questions - FAQ</b></p>
+                    <p id="div-faq-headline"><b>Frequently Asked Questions - FAQ</b></p>
                     <div class="accordion" id="accordion">
                         <div class="card">
                             <div class="card-header" id="headingOne">

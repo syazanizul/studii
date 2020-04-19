@@ -331,9 +331,6 @@
             width: 95%;
         }
 
-        .accordion .card-header p {
-            font-size: 1em;
-        }
     }
 
     @media only screen and (max-width: 590px) {

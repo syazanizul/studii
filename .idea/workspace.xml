@@ -510,7 +510,7 @@
       <workItem from="1587263732309" duration="3659000" />
       <workItem from="1587274986951" duration="4376000" />
       <workItem from="1587279571945" duration="444000" />
-      <workItem from="1587293277059" duration="3860000" />
+      <workItem from="1587293277059" duration="3923000" />
     </task>
     <servers />
   </component>
@@ -584,7 +584,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/welcome.blade.php</url>
-          <line>565</line>
+          <line>562</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">

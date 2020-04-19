@@ -198,30 +198,30 @@
 
     /* Accordion */
 
-    .btn-link:hover  {
-        cursor: pointer;
-    }
+    /*.btn-link:hover  {*/
+    /*    cursor: pointer;*/
+    /*}*/
 
-    .accordion .card {
-        border-color: #1B998B;
-        background-color: #AFD0D6;
-    }
+    /*.accordion .card {*/
+    /*    border-color: #1B998B;*/
+    /*    background-color: #AFD0D6;*/
+    /*}*/
 
-    .accordion .card-header {
-        background-color: #1B998B;
-    }
+    /*.accordion .card-header {*/
+    /*    background-color: #1B998B;*/
+    /*}*/
 
-    .accordion .card-header p {
-        font-size: 1.7em;
-    }
+    /*.accordion .card-header p {*/
+    /*    font-size: 1.7em;*/
+    /*}*/
 
-    .accordion .collapse {
-        background-color: #AFD0D6;
-    }
+    /*.accordion .collapse {*/
+    /*    background-color: #AFD0D6;*/
+    /*}*/
 
-    .card-body p    {
-        font-size:1.5em;
-    }
+    /*.card-body p    {*/
+    /*    font-size:1.5em;*/
+    /*}*/
 
     /* End Accordion */
 

@@ -205,6 +205,7 @@
     .accordion .card {
         border-color: #1B998B;
         background-color: #AFD0D6;
+        height:100%;
     }
 
     .accordion .card-header {

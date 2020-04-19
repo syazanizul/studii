@@ -283,7 +283,7 @@
         }
 
         .accordion .card-header p {
-            font-size: 1.5em;
+            font-size: 1.45em;
         }
     }
 
@@ -331,6 +331,9 @@
             width: 95%;
         }
 
+        .accordion .card-header p {
+            font-size: 1.4em;
+        }
     }
 
     @media only screen and (max-width: 590px) {

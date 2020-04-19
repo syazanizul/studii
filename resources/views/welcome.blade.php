@@ -188,6 +188,39 @@
     }
     /*End Toggle Button*/
 
+    /* Section 1 */
+
+    #section-1 img  {
+        width: 60%;
+    }
+
+    /* End Section 1*/
+
+    /* Accordion */
+
+    .btn-link:hover  {
+        cursor: pointer;
+    }
+
+    .accordion .card {
+        border-color: #1B998B;
+        background-color: #AFD0D6;
+    }
+
+    .accordion .card-header {
+        background-color: #1B998B;
+    }
+
+    .accordion .collapse {
+        background-color: #AFD0D6;
+    }
+
+    .card-body p    {
+        font-size:1.5em;
+    }
+
+    /* End Accordion */
+
     /*Animation and media content*/
     @-webkit-keyframes anim
     {0%{background-position: top;}50%{background-position: bottom;}100%{background-position: top;}}
@@ -226,6 +259,10 @@
         .text-number-question {
             font-size:1.1em;
 
+        }
+
+        #section-1 img  {
+            width: 80%;
         }
     }
 
@@ -267,6 +304,10 @@
         .tags-property {
             font-size:1.3em;
             margin-left:-10px;
+        }
+
+        #section-1 img  {
+            width: 95%;
         }
     }
 
@@ -333,8 +374,7 @@
                                     <div class="col-sm-12">
                                         <p class="text-right text-number-question" id="text_count" data-step="4"
                                            data-intro="When you're making your selection, this text will tell you how many questions from your selection we have in our
-                                            library. For example, if you choose Add Math, chapter 10, year 2018, this text may show you 10. This means, there are
-                                            10 questions that meet the requirement of Add Math, chapter 10, year 2018 in our library."
+                                            library. The more questions there is, the more practice you can have."
                                         >Please choose your selection.</p>
                                     </div>
                                     <hr>
@@ -463,41 +503,141 @@
                 </div>
             </div>
     </section>
-    <section style="background-color: #f8fafc">
-        <div class="container py-5">
+
+    <section id="section-1" class="py-5" style="background-color: white">
+        <div class="container my-5">
             <div class="row">
                 <div class="col-lg-8">
-                    <h1 style="font-size:4em">Shout out to teachers!</h1>
-                    <p style="font-size:1.5em">We work with teachers to gather the best exercise questions for our users. If you are a teacher, we want to collaborate with you</p>
+                    <img src="{{asset('images/assets/logo.png')}}" style="display: block; margin: auto">
+                    <p style="font-size:1.7em; text-align:  center;">A platform made to achieve these 2 goals - <br/>
+                        To make exercise questions <b>abundant</b> and <b>free</b>.</p>
                 </div>
                 <div class="col-lg-4">
+                    <div style="vertical-align: middle; text-align: center">
+                        <p style="font-size:1.5em;">Read why practice should be this way:</p>
+{{--                        <a href="" class="btn btn-lg btn-primary btn-block m-3">Abundant Practice</a>--}}
+{{--                        <a href="" class="btn btn-lg btn-primary btn-block m-3">Free Practice</a>--}}
+                        <a class="btn btn-lg btn-primary btn-block m-3">Abundant Practice</a>
+                        <a class="btn btn-lg btn-primary btn-block m-3">Free Practice</a>
+                        <p>Links under development</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section-2" class="py-5" style="background-color: white">
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p style="font-size:4em; text-align:  center;"><b>How Studii Is Run?</b></p>
+                    <p style="font-size:1.7em; text-align:  center;">We are not an expensive startup. <b>Studii</b> is just a self-funded
+                    side project by a group of university students who work on this in our free time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-5" style="background-color: #2E294E; color: #2E294E">
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p style="font-size:4em;  color:#AFD0D6"><b>Frequently Asked Questions - FAQ</b></p>
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                            <a class="btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <b>Is this really free?</b>
+                                </h2>
+                            </div>
+                            </a>
+
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <p>We hate it when people lie to us too. So when we say Studii is free, its really free.
+                                        <br>In fact, it is part of our mission, which is to make practice abundant and free.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <a class="btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                <div class="card-header" id="headingTwo">
+                                    <h2 class="mb-0">
+                                        <b>How can Studii provides the question for free?</b>
+                                    </h2>
+                                </div>
+                            </a>
+
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <p>Everytime you attempt a question here, we will pay the contributors who own the question you just attempted. So how
+                                    do we pay them if we provide this service for free?</p><br>
+                                    <p>The quick answer is <b>advertising</b>. We don't like students to pay for your practice, so we let the advertisers to pay them for you.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <a class="btn-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                <div class="card-header" id="headingThree">
+                                    <h2 class="mb-0">
+                                        <b>Where do the questions come from?</b>
+                                    </h2>
+                                </div>
+                            </a>
+
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <p>The questions come from any school teachers who wish to contribute. The teachers can submit their questions, in which
+                                    then will be verified by us, before we serve them for students.</p><br>
+                                    <p>This way, more teachers can contribute to verified contents to the library.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section-2" class="py-5" style="background-color: white">
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1 style="font-size:4em">Shout out to teachers!</h1>
+                    <p style="font-size:1.5em">If you are a SPM teacher, you can help us to grow. Click the button on the right to know more.</p>
+                </div>
+                <div class="col-md-4">
                     <a href="\about\teacher\join-us" class="btn btn-lg btn-primary btn-block mt-5">Teachers, Click Here</a>
                 </div>
             </div>
         </div>
     </section>
-    <section style="">
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-lg-2">
 
-                </div>
-                <div class="col-lg-8">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- front page -->
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-client="ca-pub-7446857168486939"
-                         data-ad-slot="4357036776"
-                         data-ad-format="auto"
-                         data-full-width-responsive="true"></ins>
-                    <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--    <section style="">--}}
+{{--        <div class="container py-5">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-lg-2">--}}
+
+{{--                </div>--}}
+{{--                <div class="col-lg-8">--}}
+{{--                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>--}}
+{{--                    <!-- front page -->--}}
+{{--                    <ins class="adsbygoogle"--}}
+{{--                         style="display:block"--}}
+{{--                         data-ad-client="ca-pub-7446857168486939"--}}
+{{--                         data-ad-slot="4357036776"--}}
+{{--                         data-ad-format="auto"--}}
+{{--                         data-full-width-responsive="true"></ins>--}}
+{{--                    <script>--}}
+{{--                        (adsbygoogle = window.adsbygoogle || []).push({});--}}
+{{--                    </script>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
+
+
 {{--    <section style="background-color: white">--}}
 {{--        <div class="container py-5">--}}
 {{--            <div class="row">--}}

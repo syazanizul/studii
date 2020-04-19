@@ -84,7 +84,7 @@
                 <div class="card card-stats">
                     <div class="card-body ">
                         <div class="row">
-                            Feedback = {{round($feedback_average)}}
+                            Feedback = {{round($feedback_average, 3)}}
                         </div>
                     </div>
                 </div>

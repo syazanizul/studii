@@ -214,6 +214,7 @@
     .accordion .card-header p {
         font-size: 1.7em;
         line-height: normal;
+        overflow-wrap: break-word;
     }
 
     .accordion .collapse {

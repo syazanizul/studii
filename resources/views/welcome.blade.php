@@ -552,7 +552,7 @@
                     <div class="accordion" id="accordion">
                         <div class="card">
                             <div class="card-header" id="headingOne">
-                                <a class="btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <a class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                     <p class="mb-0">
                                         <b>Is this really free?</b>
                                     </p>
@@ -568,7 +568,7 @@
                         </div>
                         <div class="card">
                             <div class="card-header" id="headingTwo">
-                                <a class="btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                <a class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                                     <p class="mb-0">
                                         <b>How can Studii provides the question for free?</b>
                                     </p>
@@ -585,7 +585,7 @@
                         </div>
                         <div class="card">
                             <div class="card-header" id="headingThree">
-                                <a class="btn-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                <a class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                                     <p class="mb-0">
                                         <b>Where do the questions come from?</b>
                                     </p>

@@ -209,7 +209,7 @@
 
     .accordion .card-header {
         background-color: #1B998B;
-        width: 100%;
+        height: auto;
     }
 
     .accordion .card-header p {

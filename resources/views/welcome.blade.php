@@ -221,6 +221,7 @@
         font-size: 1.6em;
         line-height: normal;
         overflow-wrap: break-word;
+        white-space:normal;
     }
 
     .accordion .collapse {

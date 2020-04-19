@@ -21,7 +21,11 @@ class AdminController extends Controller
             $feedback_accumulate += $m->like;
         }
 
-        $feedback_average = $feedback_accumulate/$feedback->count();
+        if ($feedback->count() != 0)   {
+            $feedback_average = $feedback_accumulate/$feedback->count();
+        }   else    {
+            $feedback_average = 0;
+        }
 
         return view('dashboard.admin.admin', compact('feedback_average'));
     }

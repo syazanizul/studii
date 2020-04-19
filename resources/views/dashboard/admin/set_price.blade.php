@@ -1,4 +1,4 @@
-@extends('layouts.dashboardApp')
+@extends('dashboard.admin.adminApp')
 
 @section('dashboard-name')
     Set Price
@@ -18,19 +18,8 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
 @endsection
 
-@section('side-nav')
-    <ul class="nav">
-        <li>
-            <a href="/admin">
-                <p>Dashboard</p>
-            </a>
-        </li>
-        <li class="active">
-            <a href="/admin/set-price">
-                <p>Set Price</p>
-            </a>
-        </li>
-    </ul>
+@section('nav-set-price')
+    class="active"
 @endsection
 
 @section('content')

@@ -1,4 +1,4 @@
-@extends('layouts.dashboardApp')
+@extends('dashboard.admin.adminApp')
 
 @section('dashboard-name')
     admin's dashboard
@@ -11,23 +11,12 @@
     <script src="js/alertify/alertify.min.js"></script>
 @endsection
 
-@section('side-nav')
-    <ul class="nav">
-        <li class="active">
-            <a href="/admin">
-                <p>Dashboard</p>
-            </a>
-        </li>
-        <li>
-            <a href="/admin/set-price">
-                <p>Set Price</p>
-            </a>
-        </li>
-    </ul>
+@section('nav-dashboard')
+    class="active"
 @endsection
 
 @section('content')
-    <div data-step="1" data-intro="This is your dashboard, where you can find all the relevant information.">
+    <div>
 
         <div class="row my-2">
         </div>

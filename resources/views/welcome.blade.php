@@ -205,6 +205,7 @@
 
     .btn-link:hover  {
         cursor: pointer;
+        /*color: black;*/
     }
 
     .accordion .card {
@@ -617,7 +618,7 @@
                                 <div class="card-body">
                                     <p>The questions come from any school teachers who wish to contribute. The teachers can submit their questions, in which
                                     then will be verified by us, before we serve them for students.</p><br>
-                                    <p>This way, more teachers can contribute to verified contents to the library.</p>
+                                    <p>This way, more teachers can contribute verified contents to the library.</p>
                                 </div>
                             </div>
                         </div>

@@ -222,6 +222,7 @@
         line-height: normal;
         overflow-wrap: break-word;
         white-space:normal;
+        text-align: left;
     }
 
     .accordion .collapse {

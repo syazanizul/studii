@@ -530,7 +530,7 @@
         <div class="container my-5">
             <div class="row">
                 <div class="col-lg-12">
-                    <p style="font-size:4em; text-align:  center;"><b>How Studii Is Run?</b></p>
+                    <p style="font-size:4em; text-align:  center;"><b>How Stud<span style="color:green">ii</span> Is Run?</b></p>
                     <p style="font-size:1.7em; text-align:  center;">We are not an expensive startup. <b>Studii</b> is just a self-funded
                     side project by a group of university students who work on this in our free time.</p>
                 </div>
@@ -538,67 +538,121 @@
         </div>
     </section>
 
-{{--    <section id="faq" class="py-5" style="background-color: #2E294E; color: #2E294E">--}}
-{{--        <div class="container my-5">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-lg-12">--}}
-{{--                    <p style="font-size:4em;  color:#AFD0D6"><b>Frequently Asked Questions - FAQ</b></p>--}}
-{{--                    <div class="accordion" id="accordionExample">--}}
-{{--                        <div class="card">--}}
-{{--                            <a class="btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">--}}
-{{--                            <div class="card-header" id="headingOne">--}}
-{{--                                <h2 class="mb-0">--}}
-{{--                                    <b>Is this really free?</b>--}}
-{{--                                </h2>--}}
-{{--                            </div>--}}
-{{--                            </a>--}}
+    <section id="faq" class="py-5" style="background-color: #2E294E; color: #2E294E">
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p style="font-size:4em;  color:#AFD0D6"><b>Frequently Asked Questions - FAQ</b></p>
+                    <div class="accordion" id="accordion">
+                        <div class="card">
+                            <a class="btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <b>Is this really free?</b>
+                                </h2>
+                            </div>
+                            </a>
 
-{{--                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">--}}
-{{--                                <div class="card-body">--}}
-{{--                                    <p>We hate it when people lie to us too. So when we say Studii is free, its really free.--}}
-{{--                                        <br>In fact, it is part of our mission, which is to make practice abundant and free.</p>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="card">--}}
-{{--                            <a class="btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">--}}
-{{--                                <div class="card-header" id="headingTwo">--}}
-{{--                                    <h2 class="mb-0">--}}
-{{--                                        <b>How can Studii provides the question for free?</b>--}}
-{{--                                    </h2>--}}
-{{--                                </div>--}}
-{{--                            </a>--}}
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>We hate it when people lie to us too. So when we say Studii is free, its really free.
+                                        <br>In fact, it is part of our mission, which is to make practice abundant and free.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <a class="btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                <div class="card-header" id="headingTwo">
+                                    <h2 class="mb-0">
+                                        <b>How can Studii provides the question for free?</b>
+                                    </h2>
+                                </div>
+                            </a>
 
-{{--                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">--}}
-{{--                                <div class="card-body">--}}
-{{--                                    <p>Everytime you attempt a question here, we will pay the contributors who own the question you just attempted. So how--}}
-{{--                                    do we pay them if we provide this service for free?</p><br>--}}
-{{--                                    <p>The quick answer is <b>advertising</b>. We don't like students to pay for your practice, so we let the advertisers to pay them for you.</p>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="card">--}}
-{{--                            <a class="btn-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">--}}
-{{--                                <div class="card-header" id="headingThree">--}}
-{{--                                    <h2 class="mb-0">--}}
-{{--                                        <b>Where do the questions come from?</b>--}}
-{{--                                    </h2>--}}
-{{--                                </div>--}}
-{{--                            </a>--}}
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>Everytime you attempt a question here, we will pay the contributors who own the question you just attempted. So how
+                                    do we pay them if we provide this service for free?</p><br>
+                                    <p>The quick answer is <b>advertising</b>. We don't like students to pay for your practice, so we let the advertisers to pay them for you.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <a class="btn-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                <div class="card-header" id="headingThree">
+                                    <h2 class="mb-0">
+                                        <b>Where do the questions come from?</b>
+                                    </h2>
+                                </div>
+                            </a>
 
-{{--                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">--}}
-{{--                                <div class="card-body">--}}
-{{--                                    <p>The questions come from any school teachers who wish to contribute. The teachers can submit their questions, in which--}}
-{{--                                    then will be verified by us, before we serve them for students.</p><br>--}}
-{{--                                    <p>This way, more teachers can contribute to verified contents to the library.</p>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </section>--}}
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>The questions come from any school teachers who wish to contribute. The teachers can submit their questions, in which
+                                    then will be verified by us, before we serve them for students.</p><br>
+                                    <p>This way, more teachers can contribute to verified contents to the library.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section-2" class="py-5" style="background-color: white">
+        <div class="container my-5">
+            <div class="row">
+                <div class="col">
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Collapsible Group Item #1
+                                    </button>
+                                </h5>
+                            </div>
+
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Collapsible Group Item #2
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Collapsible Group Item #3
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="section-2" class="py-5" style="background-color: white">
         <div class="container my-5">

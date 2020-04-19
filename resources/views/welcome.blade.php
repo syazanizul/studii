@@ -538,67 +538,67 @@
         </div>
     </section>
 
-    <section id="faq" class="py-5" style="background-color: #2E294E; color: #2E294E">
-        <div class="container my-5">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p style="font-size:4em;  color:#AFD0D6"><b>Frequently Asked Questions - FAQ</b></p>
-                    <div class="accordion" id="accordionExample">
-                        <div class="card">
-                            <a class="btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            <div class="card-header" id="headingOne">
-                                <h2 class="mb-0">
-                                    <b>Is this really free?</b>
-                                </h2>
-                            </div>
-                            </a>
+{{--    <section id="faq" class="py-5" style="background-color: #2E294E; color: #2E294E">--}}
+{{--        <div class="container my-5">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-lg-12">--}}
+{{--                    <p style="font-size:4em;  color:#AFD0D6"><b>Frequently Asked Questions - FAQ</b></p>--}}
+{{--                    <div class="accordion" id="accordionExample">--}}
+{{--                        <div class="card">--}}
+{{--                            <a class="btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">--}}
+{{--                            <div class="card-header" id="headingOne">--}}
+{{--                                <h2 class="mb-0">--}}
+{{--                                    <b>Is this really free?</b>--}}
+{{--                                </h2>--}}
+{{--                            </div>--}}
+{{--                            </a>--}}
 
-                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    <p>We hate it when people lie to us too. So when we say Studii is free, its really free.
-                                        <br>In fact, it is part of our mission, which is to make practice abundant and free.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <a class="btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                <div class="card-header" id="headingTwo">
-                                    <h2 class="mb-0">
-                                        <b>How can Studii provides the question for free?</b>
-                                    </h2>
-                                </div>
-                            </a>
+{{--                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">--}}
+{{--                                <div class="card-body">--}}
+{{--                                    <p>We hate it when people lie to us too. So when we say Studii is free, its really free.--}}
+{{--                                        <br>In fact, it is part of our mission, which is to make practice abundant and free.</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="card">--}}
+{{--                            <a class="btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">--}}
+{{--                                <div class="card-header" id="headingTwo">--}}
+{{--                                    <h2 class="mb-0">--}}
+{{--                                        <b>How can Studii provides the question for free?</b>--}}
+{{--                                    </h2>--}}
+{{--                                </div>--}}
+{{--                            </a>--}}
 
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    <p>Everytime you attempt a question here, we will pay the contributors who own the question you just attempted. So how
-                                    do we pay them if we provide this service for free?</p><br>
-                                    <p>The quick answer is <b>advertising</b>. We don't like students to pay for your practice, so we let the advertisers to pay them for you.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <a class="btn-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                <div class="card-header" id="headingThree">
-                                    <h2 class="mb-0">
-                                        <b>Where do the questions come from?</b>
-                                    </h2>
-                                </div>
-                            </a>
+{{--                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">--}}
+{{--                                <div class="card-body">--}}
+{{--                                    <p>Everytime you attempt a question here, we will pay the contributors who own the question you just attempted. So how--}}
+{{--                                    do we pay them if we provide this service for free?</p><br>--}}
+{{--                                    <p>The quick answer is <b>advertising</b>. We don't like students to pay for your practice, so we let the advertisers to pay them for you.</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="card">--}}
+{{--                            <a class="btn-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">--}}
+{{--                                <div class="card-header" id="headingThree">--}}
+{{--                                    <h2 class="mb-0">--}}
+{{--                                        <b>Where do the questions come from?</b>--}}
+{{--                                    </h2>--}}
+{{--                                </div>--}}
+{{--                            </a>--}}
 
-                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    <p>The questions come from any school teachers who wish to contribute. The teachers can submit their questions, in which
-                                    then will be verified by us, before we serve them for students.</p><br>
-                                    <p>This way, more teachers can contribute to verified contents to the library.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">--}}
+{{--                                <div class="card-body">--}}
+{{--                                    <p>The questions come from any school teachers who wish to contribute. The teachers can submit their questions, in which--}}
+{{--                                    then will be verified by us, before we serve them for students.</p><br>--}}
+{{--                                    <p>This way, more teachers can contribute to verified contents to the library.</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
     <section id="section-2" class="py-5" style="background-color: white">
         <div class="container my-5">
@@ -614,28 +614,6 @@
         </div>
     </section>
 
-{{--    <section style="">--}}
-{{--        <div class="container py-5">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-lg-2">--}}
-
-{{--                </div>--}}
-{{--                <div class="col-lg-8">--}}
-{{--                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>--}}
-{{--                    <!-- front page -->--}}
-{{--                    <ins class="adsbygoogle"--}}
-{{--                         style="display:block"--}}
-{{--                         data-ad-client="ca-pub-7446857168486939"--}}
-{{--                         data-ad-slot="4357036776"--}}
-{{--                         data-ad-format="auto"--}}
-{{--                         data-full-width-responsive="true"></ins>--}}
-{{--                    <script>--}}
-{{--                        (adsbygoogle = window.adsbygoogle || []).push({});--}}
-{{--                    </script>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </section>--}}
 
 
 {{--    <section style="background-color: white">--}}

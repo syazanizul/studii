@@ -213,7 +213,7 @@
     }
 
     .accordion .card-header p {
-        font-size: 1.7em;
+        font-size: 1.6vw;
         line-height: normal;
         overflow-wrap: break-word;
     }
@@ -223,7 +223,7 @@
     }
 
     .card-body p    {
-        font-size:1.5em;
+        font-size:1.3vw;
         line-height: normal;
     }
 

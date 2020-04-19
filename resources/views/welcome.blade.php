@@ -281,7 +281,10 @@
         #div-faq-headline   {
             font-size:3em;
         }
-        
+
+        .accordion .card-header p {
+            font-size: 1.5em;
+        }
     }
 
     @media only screen and (max-width: 780px) {

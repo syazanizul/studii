@@ -294,6 +294,10 @@
             font-size:3em;
         }
 
+        .div-headline-2   {
+            font-size:1.8em;
+        }
+
         .accordion .card-header p {
             font-size: 1.45em;
         }
@@ -593,7 +597,8 @@
                             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                                 <div class="card-body">
                                     <p>We hate it when people lie to us too. So when we say Studii is free, its really free.
-                                        <br>In fact, it is part of our mission, which is to make practice abundant and free.</p>
+                                        <br>In fact, it is a part of our biggest mission, which is to make practice abundant and free, as we think
+                                        that could be so useful for students.</p>
                                 </div>
                             </div>
                         </div>
@@ -608,9 +613,9 @@
 
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                                 <div class="card-body">
-                                    <p>Everytime you attempt a question here, we will pay the contributors who own the question you just attempted. So how
-                                    do we pay them if we provide this service for free?</p><br>
-                                    <p>The quick answer is <b>advertising</b>. We don't like students to pay for your practice, so we let the advertisers to pay them for you.</p>
+                                    <p>Everytime you attempt a question here, we will pay the contributors of that question. So how
+                                    do we pay them if we provide this service for free?</p>
+                                    <p>The answer is <b>advertising</b>. We don't like students to pay for your practice, so we let the advertisers to pay them for you.</p>
                                 </div>
                             </div>
                         </div>
@@ -626,8 +631,24 @@
                             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                                 <div class="card-body">
                                     <p>The questions come from any school teachers who wish to contribute. The teachers can submit their questions, in which
-                                    then will be verified by us, before we serve them for students.</p><br>
+                                    then will be verified by us, before we serve them for students.</p>
                                     <p>This way, more teachers can contribute verified contents to the library.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingFour">
+                                <a class="btn btn-link" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                    <p class="mb-0">
+                                        <b>What do teachers get from contributing?</b>
+                                    </p>
+                                </a>
+                            </div>
+
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>Besides the opportunity to help countless students in their study, teachers will get compensated for every attempt. </p>
+                                    <p>This royalty compensation is to honour the contributor's contribution towards the library.</p>
                                 </div>
                             </div>
                         </div>
@@ -657,10 +678,11 @@
                 </div>
             </div>
             <div class="row mt-4">
-                <div class="col-lg-12 p-3" style="text-align: center">
+                <div class="offset-lg-1 col-lg-10 p-3" style="text-align: center">
                     <p class="section-4-headline my-2"><b>If you are with a <u>company</u></b></p>
                     <p style="font-size:1.4em">We need your help as sponsors. With just RM1000 per month, you can help hundreds of students to access
                     free exercise questions for their study.</p>
+{{--                    <a href="#" class="btn btn-lg btn-primary btn-block mt-1">Sponsors, Click Here To Know More</a>--}}
                 </div>
             </div>
         </div>
@@ -671,17 +693,17 @@
             <div class="row my-3">
                 <div class="col-lg-12">
                     <p class="div-headline mb-0" style="text-align:  center;"><b>Special Appreciation &#10084;</b></p>
-                    <p class="div-headline-2 mt-0" style="text-align: center">for sharing our dream of free practice for students at Malaysia</p>
+                    <p class="div-headline-2 mt-0" style="text-align: center">for sharing our dream of abundant & free practice for students in Malaysia</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-6 p-3 px-5" style="text-align: center">
-                    <p class="section-4-headline my-2"><b>Company 1</b></p>
-                    <p style="font-size:1.4em">If you share with us this dream of free practice, we want you.</p>
+                    <p class="section-4-headline my-2" style="color:purple;"><b>Company 1</b></p>
+                    <p style="font-size:1.4em">this can be you</p>
                 </div>
                 <div class="col-lg-6 p-3 px-5" style="text-align: center">
-                    <p class="section-4-headline my-2"><b>Company 2</b></p>
-                    <p style="font-size:1.4em">If you share with us this dream of free practice, we want you.</p>
+                    <p class="section-4-headline my-2" style="color:#b5382f;"><b>Company 2</b></p>
+                    <p style="font-size:1.4em">this can be you</p>
                 </div>
             </div>
         </div>

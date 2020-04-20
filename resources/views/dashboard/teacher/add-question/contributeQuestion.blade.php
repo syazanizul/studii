@@ -34,6 +34,7 @@
 {{--</div>--}}
 
 
+<h2>Guidelines & Notice</h2>
 <div class="row">
     <div class="col-lg-5">
         <a href="/teacher/instruction/process-upload-questions">
@@ -61,8 +62,23 @@
             </div>
         </a>
     </div>
+    <div class="col-lg-6">
+        <a href="/teacher/instruction/disclaimer">
+            <div class="card card-stats div-link">
+                <div class="card-body m-3">
+                    <div class="row">
+                        <div class="col-lg-12 m-0">
+                            <h4 class="my-1"><b>Disclaimer - Add Question</b></h4>
+                            <h5>Read this before submit your questions</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
 </div>
 <br><br>
+
 <h2>Submit Question into Studii</h2>
 <div class="row">
     <div class="col-sm-5">
@@ -72,6 +88,7 @@
                 <div style="font-size: 1.1em">
                     <p>Created by : <b>You</b></p>
                     <p>Uploaded by : <b>You</b></p>
+                    <p>Complexity : <b>Complex</b> (require HTML and Mathjax skills)</p>
                     <p>You maximise <b>earning</b>, but you have to <b>upload it yourself</b>.</p>
                     <a href="/question/add" class="btn btn-primary btn-lg btn-block">Upload</a>
                     <p class="text-center">As of the <i>Early Involvement Offer</i>, this method is not recommended.</p>
@@ -87,6 +104,7 @@
                 <div style="font-size: 1.1em">
                     <p>Created by : <b>You</b></p>
                     <p>Uploaded by : <b>Someone else</b></p>
+                    <p>Complexity : Simple </p>
                     <p>You <b>don't have to upload yourself</b>, but you have to <b>share a portion of the earning</b>.</p>
                     <a href="/teacher/upload/with-help" class="btn btn-primary btn-lg btn-block">Upload</a>
                     <p class="text-center">As of the <i>Early Involvement Offer</i>, you will own the other portion also.</p>
@@ -95,6 +113,9 @@
         </div>
     </div>
 </div>
+
+<br><br>
+<h2>Submitted Questions</h2>
 
 <div class="row">
     <div class="col-sm-10">

@@ -18,6 +18,10 @@
         border:2px solid #E6C79C;
     }
 
+    #link-4:hover   {
+        border:2px solid #c2aeac;
+    }
+
 </style>
 @endsection
 
@@ -38,8 +42,9 @@
                     <div class="card-body ">
                         <div class="row">
                             <div class="col-12 col-md-12">
-                                <h3><b>Process to add questions into Studii</b></h3>
-                                <h5>Step-to-step guidelines to add questions into Studii.</h5>
+                                <h3><b>Process to add questions into Studii - Add Manually</b></h3>
+                                <h5>Step-to-step guidelines to add questions into Studii manually.</h5>
+                                <h5>Do note that this is not the guide to <b>Upload With Help</b></h5>
                             </div>
                         </div>
                     </div>
@@ -72,9 +77,30 @@
     </div>
 
     <div class="row">
+        <div class="col-lg-10 mb-3">
+            <a href="/teacher/instruction/disclaimer">
+                <div id="link-3"  class="card card-stats">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-12 col-md-12">
+                                <h3><b>Disclaimer - Add Question</b></h3>
+                                <h5>Read this before submit your questions.</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer ">
+                        <hr>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="row">
         <div class="col-lg-10">
             <a href="#under-development">
-                <div id="link-3" class="card card-stats">
+                <div id="link-4" class="card card-stats">
                     <div class="card-body ">
                         <div class="row">
                             <div class="col-12 col-md-12">

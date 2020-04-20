@@ -14,4 +14,8 @@ class InstructionController extends Controller
     public function process_upload_questions()  {
         return view('dashboard.teacher.instruction.uploadQuestion');
     }
+
+    public function disclaimer()  {
+        return view('dashboard.teacher.instruction.disclaimer');
+    }
 }

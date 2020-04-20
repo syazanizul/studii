@@ -198,9 +198,8 @@
 
     /* Accordion */
 
-    #div-faq-headline   {
-        font-size:4em;
-        color:#AFD0D6
+    .section-4-headline  {
+        font-size: 3em;
     }
 
     .btn-link:hover  {
@@ -236,6 +235,16 @@
     }
 
     /* End Accordion */
+
+    /* Random things */
+    .div-headline   {
+        font-size:4em;
+    }
+
+    .div-headline-2   {
+        font-size:2.4em;
+    }
+    /* End Random things */
 
     /*Animation and media content*/
     @-webkit-keyframes anim
@@ -281,7 +290,7 @@
             width: 80%;
         }
 
-        #div-faq-headline   {
+        .div-headline   {
             font-size:3em;
         }
 
@@ -558,8 +567,8 @@
         <div class="container my-5">
             <div class="row">
                 <div class="col-lg-12">
-                    <p style="font-size:4em; text-align:  center;"><b>How Stud<span style="color:green">ii</span> Is Run?</b></p>
-                    <p style="font-size:1.7em; text-align:  center;">We are not an expensive startup. <b>Studii</b> is just a self-funded
+                    <p class="div-headline" style="text-align:  center;"><b>How Stud<span style="color:green">ii</span> Is Run?</b></p>
+                    <p style="font-size:1.7em; text-align:  center;">We are not an expensive startup. <b>Studii</b> is a self-funded
                     side project by a group of university students who work on this in our free time.</p>
                 </div>
             </div>
@@ -570,7 +579,7 @@
         <div class="container my-5">
             <div class="row">
                 <div class="col-lg-12">
-                    <p id="div-faq-headline"><b>Frequently Asked Questions - FAQ</b></p>
+                    <p class="div-headline" style="color:#AFD0D6"><b>Frequently Asked Questions - FAQ</b></p>
                     <div class="accordion" id="accordion">
                         <div class="card">
                             <div class="card-header" id="headingOne">
@@ -628,19 +637,69 @@
         </div>
     </section>
 
-    <section id="section-2" class="py-5" style="background-color: white">
+    <section id="section-4" class="py-5" style="background-color: white">
         <div class="container my-5">
-            <div class="row">
-                <div class="col-md-8">
-                    <h1 style="font-size:4em">Shout out to teachers!</h1>
-                    <p style="font-size:1.5em">If you are a SPM teacher, you can help us to grow. Click the button on the right to know more.</p>
+            <div class="row my-3">
+                <div class="col-lg-12">
+                    <p class="div-headline" style="text-align:  center;"><b>How can <span style="color:green">you</span> help us to grow?</b></p>
                 </div>
-                <div class="col-md-4">
-                    <a href="\about\teacher\join-us" class="btn btn-lg btn-primary btn-block mt-5">Teachers, Click Here</a>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 p-3 px-5" style="text-align: center">
+                    <p class="section-4-headline my-2"><b>If you are a <u>student</u></b></p>
+                    <p style="font-size:1.4em">Simply use our questions to study. <br>In order to grow, we need traction. To show your support, you can help us by
+                    just practicing as much questions here as you need.</p>
+                </div>
+                <div class="col-lg-6 p-3 px-5" style="text-align: center">
+                    <p class="section-4-headline my-2"><b>If you are a <u>teacher</u></b></p>
+                    <p style="font-size:1.4em">We work with passionate teachers to grow our content. Click the button below to know more.</p>
+                    <a href="\about\teacher\join-us" class="btn btn-lg btn-primary btn-block mt-1">Teachers, Click Here</a>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-lg-12 p-3" style="text-align: center">
+                    <p class="section-4-headline my-2"><b>If you are with a <u>company</u></b></p>
+                    <p style="font-size:1.4em">We need your help as sponsors. With just RM1000 per month, you can help hundreds of students to access
+                    free exercise questions for their study.</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <section id="section-4" class="py-5" style="background-color: white">
+        <div class="container my-5">
+            <div class="row my-3">
+                <div class="col-lg-12">
+                    <p class="div-headline mb-0" style="text-align:  center;"><b>Special Appreciation &#10084;</b></p>
+                    <p class="div-headline-2 mt-0" style="text-align: center">for sharing our dream of free practice for students at Malaysia</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 p-3 px-5" style="text-align: center">
+                    <p class="section-4-headline my-2"><b>Company 1</b></p>
+                    <p style="font-size:1.4em">If you share with us this dream of free practice, we want you.</p>
+                </div>
+                <div class="col-lg-6 p-3 px-5" style="text-align: center">
+                    <p class="section-4-headline my-2"><b>Company 2</b></p>
+                    <p style="font-size:1.4em">If you share with us this dream of free practice, we want you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{{--    <section id="section-2" class="py-5" style="background-color: white">--}}
+{{--        <div class="container my-5">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-md-6">--}}
+{{--                    <h1 style="font-size:4em">Shout out to teachers!</h1>--}}
+{{--                    <p style="font-size:1.5em">If you are a SPM teacher, you can help us to grow. Click the button on the right to know more.</p>--}}
+{{--                    <a href="\about\teacher\join-us" class="btn btn-lg btn-primary btn-block mt-5">Teachers, Click Here</a>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-6">--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
 
 

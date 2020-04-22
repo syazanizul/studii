@@ -53,7 +53,7 @@
             <div class="row">
                 <div class="col-md-11">
                     <h1 class="headline" style="text-align: right; color: white">Studii</h1>
-                    <p class="big-p" style="text-align: right; color: white">Studii is a platform that provides exercise questions for SPM, PT3, & UPSR school students.
+                    <p class="big-p" style="text-align: right; color: white">Studii is a platform that provides exercise questions for SPM school students.
                         <br>Students can practice directly. No download or anything. Just practice!</p>
                 </div>
             </div>

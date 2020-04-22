@@ -208,7 +208,7 @@
                     <div class="pt-5 pb-2 px-4 row">
                         <div class="col-lg-4 my-3">
                             <h4>Why Studii exists?</h4>
-                            <p>The only goal is to make exercise questions free for students. Literally that's it. </p>
+                            <p>The only goal is to make exercise questions abundant & free for students. Literally that's it. </p>
                         </div>
                         <div id="div-right" class="col-lg-3 my-3">
                             <h4>Easy Navigate</h4>

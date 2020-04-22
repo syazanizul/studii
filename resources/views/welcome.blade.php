@@ -550,7 +550,7 @@
             <div class="row">
                 <div class="col-lg-8">
                     <img src="{{asset('images/assets/logo.png')}}" style="display: block; margin: auto">
-                    <p style="font-size:1.7em; text-align:  center;">A platform made to achieve these 2 goals - <br/>
+                    <p style="font-size:1.7em; text-align:  center;">A platform made with only 2 goals in mind - <br/>
                         To make exercise questions <b>abundant</b> and <b>free</b>.</p>
                 </div>
                 <div class="col-lg-4">
@@ -708,20 +708,6 @@
             </div>
         </div>
     </section>
-
-{{--    <section id="section-2" class="py-5" style="background-color: white">--}}
-{{--        <div class="container my-5">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-md-6">--}}
-{{--                    <h1 style="font-size:4em">Shout out to teachers!</h1>--}}
-{{--                    <p style="font-size:1.5em">If you are a SPM teacher, you can help us to grow. Click the button on the right to know more.</p>--}}
-{{--                    <a href="\about\teacher\join-us" class="btn btn-lg btn-primary btn-block mt-5">Teachers, Click Here</a>--}}
-{{--                </div>--}}
-{{--                <div class="col-md-6">--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </section>--}}
 
 
 

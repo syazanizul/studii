@@ -257,6 +257,7 @@
                 <div class="card card-user">
                     <div class="card-header">
                         <h5 class="card-title">Teaching Details</h5>
+                        <p><b>Note:</b> This part can be complicated to fill in - reach <i>Syazani</i> at 019-209 9853 or for assistance.</p>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -353,10 +354,8 @@
                                     <p class="mt-2"><b>Please put school name together with the location:</b> Eg : Mahad Attarbiyah Al-Islamiyah, Beseri, Perlis.</p>
                                 </div>
                             </div>
-                            <p>If you need help filling in your teaching details, you can contact us by emailing <b>studii.malaysia@gmail.com</b> or contact <b>019-2099853</b>.</p>
-                            <hr>
                             <a onclick="submit_form()" class="btn btn-primary btn-lg m-2 float-right" @if($completed['edit_profile'] == 0) disabled @endif>Submit</a>
-                            @if($completed['edit_profile'] == 0) <p>Please fill in edit profile section first</p> @endif
+                            @if($completed['edit_profile'] == 0) <p>Please fill in <b>Profile (top)</b> section first.</p> @endif
                         </form>
                     </div>
                 </div>
@@ -406,7 +405,7 @@
                         <hr>
                         <p class="text-center" id="text-dont-have">We don't have your image yet</p>
                         <a href="/teacher/details/add-image/no-image" id="btn-dont-have" class="mb-3 btn btn-primary btn-block" style="visibility: hidden;"  @if($completed['edit_profile'] == 0) disabled @endif>Yes I'm sure</a>
-                        @if($completed['edit_profile'] == 0) <p class="text-center">Please fill in edit profile section first</p> @endif
+                        @if($completed['edit_profile'] == 0) <p class="text-center">Please fill in <b>Profile (top)</b> section first.</p> @endif
 {{--                        <div class="button-container">--}}
 {{--                            <div class="row">--}}
 {{--                                <div class="col-lg-3 col-md-6 col-6 ml-auto">--}}

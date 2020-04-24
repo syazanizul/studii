@@ -198,10 +198,6 @@
 
     /* Accordion */
 
-    .section-4-headline  {
-        font-size: 3em;
-    }
-
     .btn-link:hover  {
         cursor: pointer;
         /*color: black;*/
@@ -243,6 +239,11 @@
 
     .div-headline-2   {
         font-size:2.4em;
+    }
+
+    .section-4-headline  {
+        font-size: 3em;
+        line-height: 1.2;
     }
     /* End Random things */
 
@@ -300,6 +301,10 @@
 
         .accordion .card-header p {
             font-size: 1.45em;
+        }
+
+        .section-4-headline  {
+            padding-bottom: 15px;
         }
     }
 

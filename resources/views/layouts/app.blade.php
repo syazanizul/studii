@@ -239,11 +239,14 @@
                         </div>
                     </div>
                     <div class="py-2 px-4 pb-5 row">
-                        <div class="col-lg-4 my-3">
+                        <div class="col-lg-3 my-3">
                             <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.facebook.com%2Fstudii.malaysia%2F&layout=button_count&size=large&width=102&height=28&appId"
                                     width="102" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                         </div>
-                        <div class="col-lg-3"></div>
+                        <div class="col-lg-4">
+                            <h5>Studii is the work of some university students who work on it in our free time. <br>Please give us some time to grow this platform.</h5>
+                            <hr style="border:1px solid grey; border-radius: 1px">
+                        </div>
                         <div class="col-lg-5" style="text-align: right">
                             <h5>Do note that we will have our own <span style="font-weight: bold">mobile app</span> later on, that will allow you to practice
                                 exercise questions easier. Stay tuned.</h5>

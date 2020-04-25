@@ -404,7 +404,7 @@
                                         <label class="heading-text heading-text d-inline-block">Quick browse on subject : </label>
                                         <select name="subject" class="form-control d-inline-block form-control-lg">
                                             @foreach ($property['subjects'] as $subject)
-                                             <option value="{{$subject->id}}">{{ucfirst($subject->name)}}</option>
+                                             <option value="{{$subject->id}}">{{  ucwords(strtolower($subject -> name)) }}</option>
                                             @endforeach
                                         </select>
                                         <button class="btn btn-lg btn-primary d-inline-block float-right m-2" >Browse</button>
@@ -449,7 +449,7 @@
                                                             <select name="s_subject" id="s_subject" class="form-control form-control-lg" style="width:100%;" onchange="fetch_subject_level_change_chapter(); count()">
                                                                 <option value="-">Select Subject</option>
                                                                 @foreach ($property['subjects'] as $subject)
-                                                                    <option value="{{$subject -> id}}">{{  $subject -> name }}</option>
+                                                                    <option value="{{$subject -> id}}">{{  ucwords(strtolower($subject -> name)) }}</option>
                                                                 @endforeach
                                                             </select>
                                                         </div>

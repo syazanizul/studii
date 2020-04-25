@@ -275,7 +275,7 @@
                 <div class="col-md-8">
                     <div id="row-property" data-step="1" data-intro="This is the basic information of this question.">
                         {{--1. Properties Question --}}
-                        <p class="p-info d-inline-block">{{$question -> subject_name -> name}},  {{$question -> chapter_name -> name}},   Paper {{$question -> paper}}, {{$question -> year}}</p>
+                        <p class="p-info d-inline-block">{{ucwords(strtolower($question -> subject_name -> name))}},  {{ucwords(strtolower($question -> chapter_name -> name))}}</p>
 
                         <a class="btn btn-info d-inline-block m-0" data-toggle="collapse" href="#accordion1" role="button" aria-expanded="false" data-step="2"
                            data-intro="To find more details of the question shown, you can just click this button.">More info</a>
@@ -287,23 +287,23 @@
                                 <div>
                                     <ul>
                                         <li>Exam : SPM</li>
-                                        <li>Level : {{$question -> level_name -> name}}</li>
-                                        <li>Subject : {{$question -> subject_name -> name}}</li>
-                                        <li>Chapter : {{$question -> chapter_name -> name}}</li>
-                                        <li>Year : {{$question -> year}}</li>
-                                        <li>Paper {{$question -> paper}}</li>
+                                        <li>Level : {{ucwords(strtolower($question -> level_name -> name))}}</li>
+                                        <li>Subject : {{ucwords(strtolower($question -> subject_name -> name))}}</li>
+                                        <li>Chapter : {{ucwords(strtolower($question -> chapter_name -> name))}}</li>
+                                        <li>Year : {{ucwords(strtolower($question -> year))}}</li>
+                                        <li>Paper {{ucwords(strtolower($question -> paper))}}</li>
                                     </ul>
                                 </div>
                                 <div>
                                     <ul>
                                         <li>Question ID : {{$question ->  id}}</li>
-                                        <li>Source : {{$question -> source_name -> name}}</li>
+                                        <li>Source : {{ucwords(strtolower($question -> source_name -> name))}}</li>
 {{--                                        <li>Question No : {{$question -> question_number}}</li>--}}
                                         <li>Difficulty : {{$question -> difficulty_name()}}</li>
 
-                                        <li style="text-transform: capitalize">Creator : {{$question->creator_info->firstname}} {{$question->creator_info->lastname}}</li>
+                                        <li style="text-transform: capitalize">Creator : {{ucwords(strtolower($question->creator_info->firstname))}} {{ucwords(strtolower($question->creator_info->lastname))}}</li>
 {{--                                        <li style="text-transform: capitalize">Submitted By (2) : @if(isset($question -> submitter2)){{$question->question_allocation->uploader_user->firstname}} {{$question->question_allocation->uploader_user->lastname}} @else    - @endif</li>--}}
-                                        <li style="text-transform: capitalize">Uploader : {{$question->uploader_info->firstname}} {{$question->uploader_info->lastname}}</li>
+                                        <li style="text-transform: capitalize">Uploader : {{ucwords(strtolower($question->uploader_info->firstname))}} {{ucwords(strtolower($question->uploader_info->lastname))}}</li>
                                     </ul>
                                 </div>
                             </div>

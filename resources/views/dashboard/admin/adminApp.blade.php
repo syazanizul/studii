@@ -25,6 +25,11 @@
                 <p>Feedback</p>
             </a>
         </li>
+        <li @yield('nav-question')>
+            <a href="/admin/question">
+                <p>Question</p>
+            </a>
+        </li>
     </ul>
 @endsection
 

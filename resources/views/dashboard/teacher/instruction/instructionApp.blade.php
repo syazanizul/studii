@@ -3,7 +3,15 @@
 @section('link-in-head')
 <style>
 .card-body p   {
-    font-size: 1.35em;
+    font-size: 1.25em;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px;
 }
 </style>
 @endsection

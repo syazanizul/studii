@@ -88,9 +88,11 @@ class PracticeController extends Controller
     }
 
     public function session_for_new(Request $request)  {
-        $request->session()->push('need_instructions', 1);
+//        $request->session()->push('need_instructions', 1);
 
-        return 1;
+        return response(1) ->cookie(
+            'need_instruction','0', 525600
+        );
     }
 
     public function feedback_form_quick_rating(Request $request)   {

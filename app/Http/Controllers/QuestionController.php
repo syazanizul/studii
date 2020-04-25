@@ -142,7 +142,7 @@ class QuestionController extends Controller
         //-------------------------------------------------------------------------
         //FOR NOTIFICATIONS OR MODAL ----------------------------------------------
         //Put session to track if student needs pop up modal for instructions
-        if ($request->session()->has('need_instructions')) {
+        if ($request->hasCookie('need_instruction')) {
             $need_instruction = 0;
         }   else    {
             $need_instruction = 1;

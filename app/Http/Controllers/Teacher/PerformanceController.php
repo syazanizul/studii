@@ -16,7 +16,7 @@ class PerformanceController extends Controller
 
         $attempts = Attempt::where('creator', Auth::user()->id);
 
-        $total_earning = Teacher::total_earning(1, Auth::user()->id);
+        $total_earning = Teacher::total_earning_cumulative(1, Auth::user()->id);
 
         return view('dashboard.teacher.performance', compact('question', 'attempts', 'total_earning'));
     }

@@ -12,7 +12,7 @@
 @endsection
 
 @section('nav-dashboard')
-    class="active" data-step="7" data-intro="And here is the navigation area. Feel free to explore around :)"
+    class="active"
 @endsection
 
 @section('content')

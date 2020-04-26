@@ -75,28 +75,45 @@ class Question extends Model
         }
     }
 
-    public function total_attempt() {
+    public function total_attempt($fromDate, $untilDate) {
         $id = $this->id;
 
-        $total_attempt = Attempt::where('question_id', $id)->count();
+        if ($fromDate != 0)   {
+
+            if($untilDate == 0)    {
+                $total_attempt = Attempt::where('question_id', $id)->whereDate('created_at','>=',$fromDate)->count();
+            }   else    {
+                return 'error';
+            }
+
+        }   else    {
+
+            $total_attempt = Attempt::where('question_id', $id)->count();
+
+        }
 
         return $total_attempt;
     }
 
-    public function earning_per_question() {
+    public function earning_per_question($fromDate, $untilDate) {
 
         $rate = 0;
 
-        //Check Ownership of this question
-//        if ()   {
-//
-//        }
-//
-//        //
-
         $id = $this->id;
 
-        $total_attempt = Attempt::where('question_id', $id)->count();
+        if ($fromDate != 0)   {
+
+            if($untilDate == 0)    {
+                $total_attempt = Attempt::where('question_id', $id)->whereDate('created_at','>=',$fromDate)->count();
+            }   else    {
+                return 'error';
+            }
+
+        }   else    {
+
+            $total_attempt = Attempt::where('question_id', $id)->count();
+
+        }
 
         if(Question::find($id)->price != null)  {
             $question_price = Question::find($id)->price * 0.01 *11/15;

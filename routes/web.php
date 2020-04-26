@@ -84,6 +84,8 @@ Route::post('/admin/set-price/save', 'Admin\SetPriceQuestionController@save')->m
 Route::get('/admin/feedback', 'Admin\FeedbackController@index')->middleware('admin');
 
 Route::get('/admin/question', 'Admin\QuestionController@index')->middleware('admin');
+
+Route::get('/admin/record-new-earning', 'Admin\RecordNewEarningController@index')->middleware('admin');
 // End for Admin
 
 // Basics

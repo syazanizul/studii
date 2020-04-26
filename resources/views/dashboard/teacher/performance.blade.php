@@ -14,6 +14,7 @@
             <div class="card">
                 <div class="card-header">
                     <h3 class="">Performance of Submitted Questions</h3>
+                    <p>Duration: lifetime</p>
 {{--                    <p style="font-size:1.2em"><b>Note:</b> This is a total performance report. To see your current earnings, go to Earning Page (click here).</p>--}}
                 </div>
                 <div class="card-body">
@@ -40,8 +41,8 @@
                                 @else
                                     <td>-</td>
                                 @endif
-                                <td>{{$m -> total_attempt()}}</td>
-                                <td>{{$m -> earning_per_question()}}</td>
+                                <td>{{$m -> total_attempt(0,0)}}</td>
+                                <td>{{$m -> earning_per_question(0,0)}}</td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -67,7 +68,7 @@
                 <div class="card-footer ">
                     <hr>
                     <div class="stats">
-                        <i class="fa fa-refresh"></i> Update Now
+                        <i class="fa fa-refresh"></i> Lifetime
                     </div>
                 </div>
             </div>
@@ -79,7 +80,8 @@
                         <div class="col-12 col-md-12">
                             <div class="numbers">
                                 <p class="card-category">Total Earnings</p>
-                                <p class="card-title">{{$total_earning}}
+{{--                                <p class="card-title">{{$total_earning}}--}}
+                                <p class="card-title">
                                 <p>
                             </div>
                         </div>

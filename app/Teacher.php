@@ -50,12 +50,6 @@ class Teacher extends Model
 
         $g = ContributionEarningTracker::where('user_id', $teacher_id)->orderBy('end_date', 'desc')->first();
 
-        if ($g != null)   {
-            $end_date = $g->end_date;
-        }   else    {
-            $end_date = 0;
-        }
-
         if($type==1)    {
 
             //Type 1 means earning for Creator
@@ -65,7 +59,7 @@ class Teacher extends Model
 
             foreach($question as $m)   {
 //                dd($m->total_attempt());
-                $accumulated_earning += $m->earning_per_question($end_date, 0);
+                $accumulated_earning += $m->earning_per_question(0, 0);
             }
 //
             return round($accumulated_earning,3);
@@ -113,6 +107,32 @@ class Teacher extends Model
             foreach($question as $m)   {
 //                dd($m->total_attempt());
                 $accumulated_attempt += $m->total_attempt();
+            }
+//
+            return round($accumulated_attempt,3);
+        }
+        return 1;
+    }
+
+    public static function total_attempt_fresh(int $type, $teacher_id) {
+
+        $g = ContributionEarningTracker::where('user_id', $teacher_id)->orderBy('end_date', 'desc')->first();
+
+        if ($g != null)   {
+            $end_date = $g->end_date;
+        }   else    {
+            $end_date = 0;
+        }
+
+        if($type==1)    {
+
+            $question = Question::where('creator', $teacher_id)->get();
+
+            $accumulated_attempt = 0;
+
+            foreach($question as $m)   {
+//                dd($m->total_attempt());
+                $accumulated_attempt += $m->total_attempt($end_date, 0);
             }
 //
             return round($accumulated_attempt,3);

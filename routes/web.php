@@ -68,6 +68,9 @@ Route::get('/teacher/upload/with-help','Teacher\AddquestionController@index_with
 Route::get('/teacher/upload/with-help-2','Teacher\AddquestionController@index_with_help_2')->middleware('teacher');;
 Route::get('/teacher/upload/with-help-3','Teacher\AddquestionController@index_with_help_3')->middleware('teacher');;
 Route::post('/teacher/upload/with-help/upload-file', 'Teacher\AddquestionController@upload_question_set');
+
+//For add phone number in about.teacher
+Route::get('/about/submit/phone-number', 'About\TeacherController@phone_number');
 // End for teachers
 
 
@@ -105,8 +108,9 @@ Route::get('/disclaimer', 'About\AboutController@disclaimer');
 Route::get('about/teacher/join-us', 'About\TeacherController@JoinUs')->name('about-teacher-join-us');
 Route::get('about/teacher/compensation-for-contributors', 'About\TeacherController@compensation');
 
-//For add phone number in about.teacher
-Route::get('/about/submit/phone-number', 'About\AboutController@phone_number');
+// About Us - Company
+Route::get('about/for-company', 'About\CompanyController@index');
+Route::post('about/for-company/submit', 'About\CompanyController@submit');
 // End About Us
 
 /* Routes to add question */

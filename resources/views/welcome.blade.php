@@ -685,9 +685,8 @@
             <div class="row mt-4">
                 <div class="offset-lg-1 col-lg-10 p-3" style="text-align: center">
                     <p class="section-4-headline my-2"><b>If you are with a <u>company</u></b></p>
-                    <p style="font-size:1.4em">We need your help as sponsors. With just RM1000 per month, you can help hundreds of students to access
-                    free exercise questions for their study.</p>
-{{--                    <a href="#" class="btn btn-lg btn-primary btn-block mt-1">Sponsors, Click Here To Know More</a>--}}
+                    <p style="font-size:1.4em">Ultimately, we are sustainable as a service. But with your help as a sponsor, we can grow and serve more students faster.</p>
+                    <a href="/about/for-company" class="btn btn-lg btn-primary btn-block mt-1">Companies, Click Here</a>
                 </div>
             </div>
         </div>

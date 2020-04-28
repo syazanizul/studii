@@ -135,6 +135,8 @@
 {{--                                <div class="dropdown-divider"></div>--}}
                                 <a class="dropdown-item" href="/about/teacher/join-us">Studii For Teachers</a>
                                 <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/about/for-company">Studii For Companies</a>
+                                <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/about/teacher/compensation-for-contributors">Compensation for Contributors</a>
                             </div>
                         </li>

@@ -425,7 +425,7 @@
                                 @if(session('qid')[$data['num']+1] != -1)
                                     <a href="/practice?num={{$data['num']+1}}" class="btn btn-lg btn-block btn-primary">Next Question</a>
                                 @else
-                                    <p style="padding:0.6em 1em; border:1.5px solid grey; text-align: center; font-size:1.1em; cursor:default; border-radius: 10px;">No More Question</p>
+                                    <p style="padding:0.6em 1em; border:1.5px solid grey; text-align: center; font-size:1.1em; cursor:default; border-radius: 10px; background-color:white">No More Question</p>
                                 @endif
                             @else
                                 <p style="padding:0.6em 1em; border:1.5px solid grey; text-align: center; font-size:1.1em; cursor:default; border-radius: 10px; background-color:white">No More Question</p>
@@ -435,7 +435,7 @@
                             <br>
                         <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px; background-color: #eae7d9">
                             @if(Session('adding_question') == 1)
-                                <a href="/question/add" class="btn btn-lg btn-secondary">Add Another Question</a>
+                                <a href="/question/add" class="btn btn-lg btn-secondary m-3">Add Another Question</a>
                             @endif
 
                             <button type="button" class="btn btn-lg btn-block btn-danger" data-toggle="modal" data-target="#report_modal">

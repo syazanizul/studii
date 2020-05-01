@@ -528,7 +528,7 @@
                                                         </div>
                                                         <div class="col-lg-6">
                                                             <label class="switch m-2">
-                                                                <input type="checkbox" name="random-order" value="1">
+                                                                <input type="checkbox" name="random-order" value="1" checked>
                                                                 <span class="slider round"></span>
                                                             </label>
                                                         </div>
@@ -692,26 +692,26 @@
         </div>
     </section>
 
-    <section id="section-4" class="py-5" style="background-color: white">
-        <div class="container my-5">
-            <div class="row my-3">
-                <div class="col-lg-12">
-                    <p class="div-headline mb-0" style="text-align:  center;"><b>Special Appreciation &#10084;</b></p>
-                    <p class="div-headline-2 mt-0" style="text-align: center">for sharing our dream of abundant & free practice for students in Malaysia</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 p-3 px-5" style="text-align: center">
-                    <p class="section-4-headline my-2" style="color:purple;"><b>Company 1</b></p>
-                    <p style="font-size:1.4em">this can be you</p>
-                </div>
-                <div class="col-lg-6 p-3 px-5" style="text-align: center">
-                    <p class="section-4-headline my-2" style="color:#b5382f;"><b>Company 2</b></p>
-                    <p style="font-size:1.4em">this can be you</p>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--    <section id="section-4" class="py-5" style="background-color: white">--}}
+{{--        <div class="container my-5">--}}
+{{--            <div class="row my-3">--}}
+{{--                <div class="col-lg-12">--}}
+{{--                    <p class="div-headline mb-0" style="text-align:  center;"><b>Special Appreciation &#10084;</b></p>--}}
+{{--                    <p class="div-headline-2 mt-0" style="text-align: center">for sharing our dream of abundant & free practice for students in Malaysia</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-lg-6 p-3 px-5" style="text-align: center">--}}
+{{--                    <p class="section-4-headline my-2" style="color:purple;"><b>Company 1</b></p>--}}
+{{--                    <p style="font-size:1.4em">this can be you</p>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-6 p-3 px-5" style="text-align: center">--}}
+{{--                    <p class="section-4-headline my-2" style="color:#b5382f;"><b>Company 2</b></p>--}}
+{{--                    <p style="font-size:1.4em">this can be you</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
 
 

@@ -25,6 +25,7 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 // Registration Routes...
 Route::get('register', 'Auth\RegisterController@showRegistrationChoose')->name('register');
+Route::get('register/data-protected', 'Auth\RegisterController@dataProtectedIndex');
 Route::get('register/form', 'Auth\RegisterController@registerForm');
 Route::post('register', 'Auth\RegisterController@register');
 

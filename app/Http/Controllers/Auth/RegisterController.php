@@ -54,6 +54,10 @@ class RegisterController extends Controller
         return view('auth.register', compact('role','category'));
     }
 
+    public function dataProtectedIndex()  {
+        return view('auth.data_protected');
+    }
+
     /**
      * Where to redirect users after registration.
      *

@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/NotificationTeacher.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_05_02_022705_notification_teacher_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Ajax/Dashboard/TeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Ajax/Dashboard/TeacherController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Teacher/TeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Teacher/TeacherController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_15_103830_teacher_notification_table.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -537,7 +538,9 @@
       <workItem from="1588055304494" duration="897000" />
       <workItem from="1588285664273" duration="178000" />
       <workItem from="1588335760427" duration="1268000" />
-      <workItem from="1588379126655" duration="2032000" />
+      <workItem from="1588379126655" duration="2205000" />
+      <workItem from="1588382661954" duration="619000" />
+      <workItem from="1588385813666" duration="3106000" />
     </task>
     <servers />
   </component>
@@ -569,14 +572,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="449" y="143" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1585349675392" />
-    <state x="941" y="158" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1588048256215">
+    <state x="941" y="158" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1588388178150">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="941" y="158" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1588048256215" />
-    <state x="477" y="239" width="582" height="310" key="com.intellij.ide.util.TipDialog" timestamp="1588379244161">
+    <state x="941" y="158" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1588388178150" />
+    <state x="477" y="239" width="582" height="310" key="com.intellij.ide.util.TipDialog" timestamp="1588385815134">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="477" y="239" width="582" height="310" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1588379244161" />
+    <state x="477" y="239" width="582" height="310" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1588385815134" />
     <state x="580" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583618863049">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -585,14 +588,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="474" y="173" width="588" height="488" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1583618859456" />
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1588048329874">
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1588387067196">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1588048329874" />
-    <state x="683" y="86" width="672" height="676" key="search.everywhere.popup" timestamp="1587885911892">
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1588387067196" />
+    <state x="683" y="86" width="672" height="676" key="search.everywhere.popup" timestamp="1588388324892">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="683" y="86" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1587885911892" />
+    <state x="683" y="86" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1588388324892" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

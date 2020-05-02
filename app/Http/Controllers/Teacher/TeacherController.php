@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Teacher;
 
+use App\NotificationTeacher;
 use App\Question;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -17,7 +18,8 @@ class TeacherController extends Controller
     {
         //Checkings for notifications ----------------------------------------
             //Check if user enters the first time for modal instruction (if they need instructions)
-                $check_first = DB::table('teacher_notification') -> where('user_teacher_id' , Auth::user()-> id)-> where('welcome', 1) -> get();
+                $check_first = NotificationTeacher::where('noti_id' , 1) -> where('user_id', Auth::user()->id) -> get();
+
                 if ($check_first -> isEmpty())    {
                     $noti_first = 1;
                 }   else    {
@@ -40,7 +42,7 @@ class TeacherController extends Controller
             //End check if user profile is complete
 
             //Check second noti
-                $check_2 = DB::table('teacher_notification') -> where('user_teacher_id' , Auth::user()-> id)-> where('noti_two', 1) -> get();
+                $check_2 = NotificationTeacher::where('noti_id' , 2) -> where('user_id', Auth::user()->id) -> get();
                 if ($check_2 -> isEmpty())    {
                     $noti_2 = 1;
                 }   else    {
@@ -49,7 +51,7 @@ class TeacherController extends Controller
             //End check second noti
 
             //Check third noti
-                $check_3 = DB::table('teacher_notification') -> where('user_teacher_id' , Auth::user()-> id)-> where('noti_three', 1) -> get();
+                $check_3 = NotificationTeacher::where('noti_id' , 3) -> where('user_id', Auth::user()->id) -> get();
                 if ($check_3 -> isEmpty())    {
                     $noti_3 = 1;
                 }   else    {
@@ -63,28 +65,6 @@ class TeacherController extends Controller
         $noti[2] = $noti_2;
         $noti[3] = $noti_3;
 
-
-        //Count all the statistics ---------------------------------------------
-        //Count total questions submitted
-//        $question_submitted = DB::table('count_attempt')->where('creator', Auth::user()->id) -> where('finished', 1)-> get();
-//        $data_question_submitted = $question_submitted->count();
-        //End count total questions submitted
-
-        //Attempt today and this month
-//        if (!DB::table('count_teacher_attempt')-> where('user_teacher_id', Auth::user()-> id)->whereDate('created_at', Carbon::today())->get() -> isEmpty())   {
-//            $data_attempt_today = DB::table('count_teacher_attempt')-> where('user_teacher_id', Auth::user()-> id)->whereDate('created_at', Carbon::today())->first()->total_attempt;
-//            $data_attempt_month = DB::table('count_teacher_attempt')-> where('user_teacher_id', Auth::user()-> id)->whereMonth('created_at', Carbon::now()->month)->get();
-//
-//            $total_monthly = 0;
-//
-//            foreach($data_attempt_month as $m)    {
-//                $total_monthly += $m->total_attempt;
-//            }
-//
-//        }   else    {
-//            $data_attempt_today = 0;
-//            $total_monthly = 0;
-//        }
 
         if(DB::table('count_attempt')->where('creator', Auth::user()->id)->whereMonth('created_at', Carbon::now()->month)->get() -> isNotEmpty())    {
             $data_attempt_today = DB::table('count_attempt')->where('creator', Auth::user()->id)->whereDate('created_at', Carbon::today())->count();

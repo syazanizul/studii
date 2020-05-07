@@ -6,6 +6,7 @@ use App\Answer;
 use App\Content;
 use App\Mail\event;
 use App\Question;
+use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -102,6 +103,11 @@ class QuestionController extends Controller
 
     public function index(Request $request)
     {
+        //SEO
+        SEOMeta::setTitle('Practice Page - Studii');
+        SEOMeta::setDescription('Practice exercise questions as much as you want here. it is totally free and forever will be.');
+        SEOMeta::setCanonical('https://www.studii.my');
+
         //----------------------------------------------------------------------------
         //Get num from GET of url
         $num = request() -> get('num');

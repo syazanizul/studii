@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\event;
+use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -10,6 +11,10 @@ use Illuminate\Support\Facades\Mail;
 class ContactController extends Controller
 {
     public function index() {
+        //SEO
+        SEOMeta::setTitle('Contact Us - Studii');
+        SEOMeta::setDescription('Send to us any question, suggestion, or anything.');
+        SEOMeta::setCanonical('https://www.studii.my');
         return view('contact.contact');
     }
 

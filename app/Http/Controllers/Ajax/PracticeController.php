@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Ajax;
 use App\Http\Controllers\Controller;
 use App\Mail\event;
 use App\Question;
-use App\QuestionAllocation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -17,6 +16,7 @@ class PracticeController extends Controller
 
 //--------------------------------------------------------------------------------------------------------------
     public function count_attempt() {
+
         $question_id = request() -> get('question_id');
         $correct = request() -> get('correct');
 

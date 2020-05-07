@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Mail\event;
+use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Http\Controllers\Controller;
@@ -28,6 +29,9 @@ class RegisterController extends Controller
 
     public function showRegistrationChoose()
     {
+        SEOMeta::setTitle('Register (Choose Role)');
+        SEOMeta::setDescription('Choose Role to Register in Studii');
+        SEOMeta::setCanonical('https://www.studii.my');
         return view('auth.register_choose');
     }
 
@@ -51,6 +55,9 @@ class RegisterController extends Controller
                 break;
         }
 
+        SEOMeta::setTitle('Register Form - Studii');
+        SEOMeta::setDescription('Fill in details to register');
+        SEOMeta::setCanonical('https://www.studii.my');
         return view('auth.register', compact('role','category'));
     }
 

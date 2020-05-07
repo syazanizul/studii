@@ -4,6 +4,7 @@ namespace App\Http\Controllers\About;
 
 use App\Http\Controllers\Controller;
 use App\Mail\event;
+use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -11,11 +12,19 @@ class TeacherController extends Controller
 {
     public function JoinUs()
     {
+        //SEO
+        SEOMeta::setTitle('Studii for Teachers');
+        SEOMeta::setDescription('Role of Teachers In Studii');
+        SEOMeta::setCanonical('https://www.studii.my');
         return view('about.teacher.about_teachers');
     }
 
     public function compensation()
     {
+        //SEO
+        SEOMeta::setTitle('Compensation For Contributors');
+        SEOMeta::setDescription('Questions are pieces of peoples contribution - learn about them here');
+        SEOMeta::setCanonical('https://www.studii.my');
         return view('about.teacher.compensation');
     }
 

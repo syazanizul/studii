@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('link-in-head')
 
 @endsection
@@ -548,6 +549,19 @@
                     </div>
                 </div>
             </div>
+    </section>
+
+    <section id="section-0" class="py-5" style="background-color: white">
+        <div class="container my-1">
+            <div class="row">
+                <div class="col-lg-12">
+                    <hr>
+                    <h1 class="div-headline my-4" style="text-align:  center;"><b>Studii - Study <span style="color:green">SPM</span> Questions for free</b></h1>
+                    <h2 class="" style="text-align:  center; font-size:1.7em; line-height: 1.4em"><b>Practice Add Math, Physics, Ekonomi (and more SPM subjects) questions at Studii for free</b></h2>
+                    <hr>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="section-1" class="py-5" style="background-color: white">

@@ -29,7 +29,7 @@ class RegisterController extends Controller
 
     public function showRegistrationChoose()
     {
-        SEOMeta::setTitle('Register (Choose Role)');
+        SEOMeta::setTitle('Register - Choose Role');
         SEOMeta::setDescription('Choose Role to Register in Studii');
         SEOMeta::setCanonical('https://www.studii.my');
         return view('auth.register_choose');
@@ -55,7 +55,7 @@ class RegisterController extends Controller
                 break;
         }
 
-        SEOMeta::setTitle('Register Form - Studii');
+        SEOMeta::setTitle('Register Form');
         SEOMeta::setDescription('Fill in details to register');
         SEOMeta::setCanonical('https://www.studii.my');
         return view('auth.register', compact('role','category'));

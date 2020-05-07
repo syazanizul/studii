@@ -13,7 +13,7 @@ class AboutController extends Controller
     public function index()
     {
         //SEO
-        SEOMeta::setTitle('About - Studii');
+        SEOMeta::setTitle('About');
         SEOMeta::setDescription('About Studii');
         SEOMeta::setCanonical('https://www.studii.my');
         return view('about.about');

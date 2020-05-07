@@ -2,51 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/seotools.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon/android-icon-144x144.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon/android-icon-192x192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon/android-icon-36x36.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon/android-icon-48x48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon/android-icon-72x72.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon/android-icon-96x96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-114x114.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-120x120.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-144x144.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-152x152.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-180x180.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-57x57.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-60x60.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-72x72.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-76x76.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon-precomposed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon/apple-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon/browserconfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon/favicon-16x16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon/favicon-32x32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon/favicon-96x96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon/ms-icon-144x144.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon/ms-icon-150x150.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon/ms-icon-310x310.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon/ms-icon-70x70.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/pictocat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pictocat.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/About/AboutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/About/AboutController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/About/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/About/CompanyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/About/TeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/About/TeacherController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Ajax/PracticeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Ajax/PracticeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,65 +59,32 @@
       <path value="$PROJECT_DIR$/vendor/symfony/translation" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
-      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
       <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
       <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
-      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
-      <path value="$PROJECT_DIR$/vendor/beyondcode/laravel-dump-server" />
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
       <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
       <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
       <path value="$PROJECT_DIR$/vendor/erusev/parsedown" />
       <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
-      <path value="$PROJECT_DIR$/vendor/filp/whoops" />
-      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
-      <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
       <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-color" />
       <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-highlighter" />
       <path value="$PROJECT_DIR$/vendor/laravel/framework" />
       <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
       <path value="$PROJECT_DIR$/vendor/league/flysystem" />
-      <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
       <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
-      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
       <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
-      <path value="$PROJECT_DIR$/vendor/nunomaduro/collision" />
       <path value="$PROJECT_DIR$/vendor/opis/closure" />
       <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
-      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
-      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
-      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
-      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
-      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
       <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
-      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
       <path value="$PROJECT_DIR$/vendor/psr/container" />
       <path value="$PROJECT_DIR$/vendor/psr/log" />
       <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
       <path value="$PROJECT_DIR$/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
       <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
       <path value="$PROJECT_DIR$/vendor/symfony/console" />
       <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
@@ -168,8 +98,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
       <path value="$PROJECT_DIR$/vendor/nicolaslopezj/searchable" />
       <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
-      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
-      <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
       <path value="$PROJECT_DIR$/vendor/artesaos/seotools" />
     </include_path>
   </component>
@@ -587,7 +515,8 @@
       <workItem from="1588539417254" duration="975000" />
       <workItem from="1588618454981" duration="2611000" />
       <workItem from="1588797996162" duration="722000" />
-      <workItem from="1588841453576" duration="3398000" />
+      <workItem from="1588841453576" duration="4283000" />
+      <workItem from="1588884160482" duration="161000" />
     </task>
     <servers />
   </component>
@@ -627,10 +556,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="564" y="247" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1588503240434" />
-    <state x="477" y="239" width="582" height="310" key="com.intellij.ide.util.TipDialog" timestamp="1588841469153">
+    <state x="477" y="239" width="582" height="310" key="com.intellij.ide.util.TipDialog" timestamp="1588884182878">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="477" y="239" width="582" height="310" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1588841469153" />
+    <state x="477" y="239" width="582" height="310" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1588884182878" />
     <state x="580" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583618863049">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -12,7 +12,7 @@ class ContactController extends Controller
 {
     public function index() {
         //SEO
-        SEOMeta::setTitle('Contact Us - Studii');
+        SEOMeta::setTitle('Contact Us');
         SEOMeta::setDescription('Send to us any question, suggestion, or anything.');
         SEOMeta::setCanonical('https://www.studii.my');
         return view('contact.contact');

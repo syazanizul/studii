@@ -308,7 +308,6 @@
                                     <p>Yes we understand, this website is only developing so it may look sort of fishy. But you can always talk to
                                         Syazani Zulkhairi (the captain) at 019-209 9853 to ask about anything. Ask any of your doubts and I will try my best to solve it.</p>
                                     <p>Besides, this website is totally free, so we wont ask you for your banking information at all. Just use the free practice!</p>
-                                    <p>Besides, this website is totally free, so we wont ask you for your banking information at all. Just use the free practice!</p>
                                 </div>
                             </div>
                         </div>
@@ -334,7 +333,7 @@
                 <div class="col-lg-6 p-3 px-5 text-center">
                     <p class="section-4-headline my-2 font-weight-bold">If you are a <span class="underline">teacher</span></p>
                     <p class="headline-3">We work with passionate teachers to grow our content. Click the button below to know more.</p>
-                    <a href="\about\teacher\join-us" class="btn btn-lg btn-primary btn-block mt-1">Teachers, Click Here</a>
+                    <a href="/about/teacher/join-us" class="btn btn-lg btn-primary btn-block mt-1">Teachers, Click Here</a>
                 </div>
             </div>
             <div class="row mt-4">

@@ -104,7 +104,7 @@ class QuestionController extends Controller
     public function index(Request $request)
     {
         //SEO
-        SEOMeta::setTitle('Practice Page');
+        SEOMeta::setTitle('Practice Page - Studii');
         SEOMeta::setDescription('Practice exercise questions as much as you want here. it is totally free and forever will be.');
         SEOMeta::setCanonical('https://www.studii.my');
 

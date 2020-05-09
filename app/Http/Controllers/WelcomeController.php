@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Session;
 class WelcomeController extends Controller
 {
     public function index()   {
-        SEOMeta::setTitle('Study SPM subjects for free');
+        SEOMeta::setTitle('Studii - Study SPM Subjects For Free');
         SEOMeta::setDescription('Study and practice exercise questions for free | Add Math, Physics - SPM | A Malaysian-made study platform');
         SEOMeta::setCanonical('https://www.studii.my');
         SEOMeta::addKeyword(['studii', 'study', 'spm' , 'practice', 'question' , 'exercise question', 'add math', 'additional mathematics',

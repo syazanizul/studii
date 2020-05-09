@@ -31,12 +31,17 @@ The above copyright notice and this permission notice shall be included in all c
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <!-- CSS Files -->
-    <link href="{{asset('css/paper-dashboard/bootstrap.min.css')}}" rel="stylesheet" />
+{{--    <link href="{{asset('css/paper-dashboard/bootstrap.min.css')}}" rel="stylesheet" />--}}
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" />
+
     <link href="{{asset('css/paper-dashboard/paper-dashboard.css?v=2.0.0')}}" rel="stylesheet" />
+
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{asset('css/paper-dashboard/demo.css')}}" rel="stylesheet" /> <!--?-->
+
     <!--Intro.js-->
     <link href="{{asset('css/introjs/introjs.css')}}" rel="stylesheet" />
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118039009-2"></script>
     <script>
@@ -168,7 +173,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 <!--   Core JS Files   -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  <!--?-->
-<script src="{{asset('js/paperdashboard/core/popper.min.js')}}"></script>  <!--?-->
+<script src="https://unpkg.com/@popperjs/core@2"></script>  <!--?-->
 <script src="{{asset('js/paperdashboard/core/bootstrap.min.js')}}"></script>   <!--?-->
 <script src="{{asset('js/paperdashboard/plugins/scrollbar.js')}}"></script> <!--TAK-->
 <!-- Chart JS -->
@@ -181,7 +186,7 @@ The above copyright notice and this permission notice shall be included in all c
 <script src="{{asset('js/paperdashboard/demo.js')}}"></script>
 
 <!--Intro.js-->
-<script type="text/javascript" src="{{asset('js/introjs/intro.js')}}"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/intro.min.js"></script>
 
 <script>
     $(document).ready(function() {

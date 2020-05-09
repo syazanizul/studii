@@ -30,7 +30,7 @@
     <meta name="theme-color" content="#ffffff">
 
 {{--    For whatsapp--}}
-    <meta property="og:image" content="{{asset('images/cat.png')}}"/>
+    <meta property="og:image" content="{{asset('images/favicon/android-icon-192x192.png')}}"/>
     <meta property="og:title" content="Studii - Study Add Math for Free"/>
     <meta property="og:description" content="Practice exercise questions for free | SPM , PT3, UPSR |"/>
 
@@ -39,6 +39,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/base.css') }}" rel="stylesheet">
 
     <!--Intro.js-->
     <link href="{{asset('css/introjs/introjs.css')}}" rel="stylesheet" />
@@ -50,57 +51,9 @@
     @yield('link-in-head')
 
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Dosis&display=swap');
-        @import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700&display=swap');
-
         @yield('style')
 
-        .logo {
-            font-family:'dosis', sans-serif;
-            font-weight: bold;
-            font-size:2.0em;
-        }
 
-        .main-nav {
-            border-top:5px solid #29ca8e;
-            background-color: #edf1f7;
-        }
-
-        .navbar-nav li   {
-            padding-left: 1em;
-            padding-right: 1em;
-            font-size:1.1em;
-        }
-
-        /*Footer*/
-
-        .section-footer {
-            background-color: #6E6A6F;
-            min-height:10em;
-        }
-
-        .section-footer div div {
-            color:white;
-            font-family:'Quicksand', sans-serif;
-        }
-
-        .section-footer div div h4 {
-            font-weight:bold;
-        }
-
-        #footer-links a  {
-            color:white;
-        }
-
-        #div-right  {
-            text-align:right;
-        }
-
-        @media only screen and (max-width: 780px) {
-            #div-right  {
-                text-align:left;
-            }
-        }
 
     </style>
 
@@ -119,10 +72,10 @@
 
 <body>
     <div id="app">
-        <nav class="main-nav navbar navbar-expand-md navbar-light shadow-sm">
+        <nav class="app-main-nav navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container">
-                <a class="navbar-brand logo" href="{{ url('/') }}">
-                    Stud<span style="color:green">ii</span>
+                <a class="navbar-brand app-logo" href="{{ url('/') }}">
+                    Stud<span class="app-color-green">ii</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -177,7 +130,7 @@
                             <li class="nav-item dropdown">
 
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <span style="text-transform: capitalize">{{ ucwords(strtolower(Auth::user()->firstname)) }}</span> <span class="caret"></span>
+                                    <span class="text-capitalize">{{ ucwords(strtolower(Auth::user()->firstname)) }}</span> <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -204,7 +157,7 @@
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
                                 </div>
@@ -220,16 +173,16 @@
         </main>
 
         <main>
-            <section class="section-footer">
-                <div class="container" style="padding:0;">
+            <section class="app-section-footer">
+                <div class="container p-0">
                     <div class="pt-5 pb-2 px-4 row">
                         <div class="col-lg-4 my-3">
                             <h4>Why Studii exists?</h4>
                             <p>The only goal is to make exercise questions abundant & free for students. Literally that's it. </p>
                         </div>
-                        <div id="div-right" class="col-lg-3 my-3">
+                        <div id="app-div-right" class="col-lg-3 my-3">
                             <h4>Easy Navigate</h4>
-                            <ul id="footer-links" style="list-style: none; padding-left: 0; color:white;">
+                            <ul id="app-footer-links">
                                 <a href="/"><li>Practice</li></a>
                                 <a href="/about/teacher/join-us"><li>Join us as a Teacher</li></a>
                                 <a href="/about/teacher/compensation-for-contributors"><li>Compensation for Contributors</li></a>
@@ -245,10 +198,10 @@
                             <h4>Subscribe to our newsletter</h4>
                             <form action="/mail/newsletter">
                                 <div class="row">
-                                    <div class="m-1" style="display:inline-block; width: 55%">
-                                        <input type="email" name="email" class="form-control" placeholder="your email" style="background-color: #e8eaed;" onkeyup="document.getElementById('btn-newsletter').disabled = false">
+                                    <div class="m-1 d-inline-block w-50">
+                                        <input type="email" name="email" class="form-control" placeholder="your email" onkeyup="document.getElementById('btn-newsletter').disabled = false">
                                     </div>
-                                    <div class="m-1" style="display:inline-block; width:35%">
+                                    <div class="m-1 d-inline-block w-25 float-right">
                                         <input id="btn-newsletter" type="submit" value="subscribe" class="btn btn-primary w-100" disabled>
                                     </div>
                                 </div>
@@ -258,14 +211,14 @@
                     <div class="py-2 px-4 pb-5 row">
                         <div class="col-lg-3 my-3">
                             <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.facebook.com%2Fstudii.malaysia%2F&layout=button_count&size=large&width=102&height=28&appId"
-                                    width="102" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                                    width="102" height="28" id="app-facebook" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                         </div>
                         <div class="col-lg-4">
                             <h5>Studii is the work of some university students who work on it in our free time. <br>Please give us some time to grow this platform.</h5>
-                            <hr style="border:1px solid grey; border-radius: 1px">
+                            <hr>
                         </div>
-                        <div class="col-lg-5" style="text-align: right">
-                            <h5>Do note that we will have our own <span style="font-weight: bold">mobile app</span> later on, that will allow you to practice
+                        <div class="col-lg-5 text-right">
+                            <h5>Do note that we will have our own <span class="font-weight-bold">mobile app</span> later on, that will allow you to practice
                                 exercise questions easier. Stay tuned.</h5>
                         </div>
                     </div>
@@ -282,7 +235,7 @@
     <script src="{{ asset('js/app.js') }}"></script>
 
     <!--Intro.js-->
-    <script type="text/javascript" src="{{asset('js/introjs/intro.js')}}"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/intro.min.js"></script>
 
     <script>
         $(function () {

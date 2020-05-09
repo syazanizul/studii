@@ -2,397 +2,22 @@
 
 
 @section('link-in-head')
-
+    <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
 @endsection
 
-<style>
-    @section('style')
-        @import url('https://fonts.googleapis.com/css?family=Lobster+Two&display=swap');
-
-    /*Pictocat Title At Top Of Page*/
-    .text-below	{
-        font-family:'Dosis', serif;
-        font-weight:bold;
-        font-size:30px;
-        margin-bottom:15px;
-        padding:0 0.3em;
-        }
-
-    .clip-text {
-        font-family: 'Dosis', sans-serif;
-        font-size: 65px;
-        font-weight: bold;
-        position: relative;
-        display: inline-block;
-        margin: .25em .25em 0.1em .25em;
-        padding: .35em .75em;
-        text-align: center;
-        color: #f7f8f9;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        -moz-background-clip: text;
-        -moz-text-fill-color: transparent;
-        -ms-background-clip: text;
-        -ms-text-fill-color: transparent;
-        background-clip: text;
-        text-fill-color: transparent;
-    }
-
-    .clip-text:before,
-    .clip-text:after {
-        position: absolute;
-        content: '';
-    }
-
-    .clip-text:before {
-        z-index: -2;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-image: inherit;
-        background-size: cover;
-        -webkit-animation:anim 20s infinite ease-in;
-        -moz-animation:anim 20s infinite ease-in;
-        -ms-animation:anim 20s infinite ease-in;
-        animation:anim 20s infinite ease-in;
-    }
-
-    .clip-text:after {
-        position: absolute;
-        z-index: -1;
-        top: .125em;
-        right: .125em;
-        bottom: .125em;
-        left: .125em;
-        background-color: #f7f8f9;
-    }
-
-    .clip-text {
-        background-image:url(images/assets/patterns2.jpg);
-        background-size: cover;
-        -webkit-animation:anim 20s infinite linear;
-        -moz-animation:anim 20s infinite ease-in;
-        -ms-animation:anim 20s infinite ease-in;
-        animation:anim 20s infinite ease-in;
-    }
-    /*End Pictocat Top Title*/
-
-    /*What do you wish to study?*/
-    .text-wish {
-        font-family: 'Lobster Two', cursive;
-        margin: 3% auto 2.5% 2%;
-        font-size:60px;
-        line-height:normal;
-        color:#f9f9f9;
-    }
-    /*End What do you wish to study*/
-
-    /*Jumbotron for quick browsing*/
-    .row-jumbo .jumbotron {
-        padding:2em 2.5em 1em 2.5em;
-    }
-
-    #quick-browse   {
-        width:90%;
-    }
-
-    .heading-text {
-        font-family:'Quicksand', sans-serif;
-        font-size:29px;
-    }
-
-    #quick-browse select {
-        min-width:40%;
-        margin-left:1.2em;
-        margin-top:0.4em;
-    }
-
-    #quick-browse button {
-       margin:0;
-    }
-    /*End Jumbotron for quick browsing*/
-
-    /*Jumbotron for detailed browsing*/
-    .text-number-question {
-        font-size:1.2em;
-    }
-
-    .tags-property {
-        font-size:1.4em;
-        margin-bottom:0.2em;
-    }
-    /*End Jumbotron for detailed browsing*/
-
-    /*Toggle Button*/
-    /* The switch - the box around the slider */
-    .switch {
-        position: relative;
-        display: inline-block;
-        width: 60px;
-        height: 34px;
-    }
-
-    /* Hide default HTML checkbox */
-    .switch input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-    }
-
-    /* The slider */
-    .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        -webkit-transition: .4s;
-        transition: .4s;
-    }
-
-    .slider:before {
-        position: absolute;
-        content: "";
-        height: 26px;
-        width: 26px;
-        left: 4px;
-        bottom: 4px;
-        background-color: white;
-        -webkit-transition: .4s;
-        transition: .4s;
-    }
-
-    input:checked + .slider {
-        background-color: #2196F3;
-    }
-
-    input:focus + .slider {
-        box-shadow: 0 0 1px #2196F3;
-    }
-
-    input:checked + .slider:before {
-        -webkit-transform: translateX(26px);
-        -ms-transform: translateX(26px);
-        transform: translateX(26px);
-    }
-
-    /* Rounded sliders */
-    .slider.round {
-        border-radius: 34px;
-    }
-
-    .slider.round:before {
-        border-radius: 50%;
-    }
-    /*End Toggle Button*/
-
-    /* Section 1 */
-
-    #section-1 img  {
-        width: 60%;
-    }
-
-    /* End Section 1*/
-
-    /* Accordion */
-
-    .btn-link:hover  {
-        cursor: pointer;
-        /*color: black;*/
-    }
-
-    .accordion .card {
-        border-color: #1B998B;
-        background-color: #AFD0D6;
-    }
-
-    .accordion .card-header {
-        background-color: #1B998B;
-        height: auto;
-    }
-
-    .accordion .card-header p {
-        font-size: 1.6em;
-        line-height: normal;
-        overflow-wrap: break-word;
-        white-space:normal;
-        text-align: left;
-    }
-
-    .accordion .collapse {
-        background-color: #AFD0D6;
-    }
-
-    .card-body p    {
-        font-size:1.3em;
-        line-height: normal;
-    }
-
-    /* End Accordion */
-
-    /* Random things */
-    .div-headline   {
-        font-size:4em;
-    }
-
-    .div-headline-2   {
-        font-size:2.4em;
-    }
-
-    .section-4-headline  {
-        font-size: 3em;
-        line-height: 1.2;
-    }
-    /* End Random things */
-
-    /*Animation and media content*/
-    @-webkit-keyframes anim
-    {0%{background-position: top;}50%{background-position: bottom;}100%{background-position: top;}}
-
-    @media only screen and (max-width: 1250px) {
-        .heading-text {
-            font-size:26px;
-        }
-
-        #quick-browse select {
-            min-width:30%;
-        }
-    }
-
-    @media only screen and (max-width: 1000px) {
-        .text-wish {
-            font-size:53px;
-        }
-
-        #quick-browse {
-            width:100%;
-        }
-
-        .heading-text {
-            font-size:23px;
-        }
-
-        #quick-browse select {
-            margin-left:0.3em;
-        }
-
-        #quick-browse button {
-            float:none;
-        }
-
-        .text-number-question {
-            font-size:1.1em;
-
-        }
-
-        #section-1 img  {
-            width: 80%;
-        }
-
-        .div-headline   {
-            font-size:3em;
-        }
-
-        .div-headline-2   {
-            font-size:1.8em;
-        }
-
-        .accordion .card-header p {
-            font-size: 1.45em;
-        }
-
-        .section-4-headline  {
-            padding-bottom: 15px;
-        }
-    }
-
-    @media only screen and (max-width: 780px) {
-        .row-jumbo .jumbotron {
-            padding:1em 1.5em 1em 1.5em;
-        }
-
-        .text-wish {
-            font-size:45px;
-            margin-bottom:0.3em;
-        }
-        .clip-text {
-            font-size:50px;
-        }
-        .text-below	{
-            font-size:27px;
-        }
-
-        .heading-text {
-            margin-bottom:0.2em;
-        }
-
-        #quick-browse select {
-            min-width:70%;
-            margin-left: 0;
-        }
-
-        .text-number-question {
-            font-size:1em;
-            margin-right:-8px;
-        }
-
-        #heading-text2 {
-            margin-top:-10px;
-            margin-bottom:10px;
-        }
-
-        .tags-property {
-            font-size:1.3em;
-            margin-left:-10px;
-        }
-
-        #section-1 img  {
-            width: 95%;
-        }
-
-        .accordion .card-header p {
-            font-size: 1.4em;
-        }
-    }
-
-    @media only screen and (max-width: 590px) {
-        .clip-text {
-            font-size:43px;
-        }
-        .text-below	{
-            font-size:24px;
-        }
-
-        #quick-browse select {
-            min-width:60%;
-        }
-
-        .tags-property {
-            margin-left:-35px;
-        }
-
-    }
-    /*End Animation and media content*/
-
-    @endsection
-</style>
-
 @section('content')
-    <section style="margin:-25px auto">
-        <div class="row" style="margin:20px auto 10px auto; display:block;">
+    <section id="section-main-jumbotron">
+        <div class="row">
             <div align="center" data-step="1"  data-intro="Welcome to Studii! This platform is very simple to use. First, in this page you will tell the system what type of questions do you want">
-                <div class="clip-text">studii.my</div>
+                <div class="clip-text" aria-label="Studii - Main Logo">studii.my</div>
                 <div class="text-below">Center of exercise questions for your daily study needs</div>
-                <hr style="border-top:5px solid;border-radius: 15px; width:90%; margin-bottom:8px;">
+                <hr>
             </div>
         </div>
     </section>
 
-    <section class="main-content" style="margin:3em 0 0 0; background-image:url(images/assets/sky.jpg) ">
-            <div class="container" style="padding:0;">
+    <section id="main-content" aria-label="Studii - Main Content And Main Image">
+            <div class="container p-0">
                 <div class="row row-jumbo">
                     <div class="col-sm-12">
                         <p class="text-wish">What do you wish to study today?</p>
@@ -426,28 +51,28 @@
                                     </div>
                                     <hr>
                                     <div class="row">
-                                        <div class="col-lg-3" style="margin:0em -10px auto -10px">
+                                        <div class="col-lg-3">
                                             <p class="heading-text" id="heading-text2">Or select exactly what you need</p>
                                         </div>
                                         <form>
                                             <div class="col-lg-6">
                                                 <div class="p-1 ml-4">
                                                     <div class="mb-3">
-                                                        <div class="d-inline-block" style="width:25%;">
+                                                        <div class="d-inline-block w-25">
                                                             <label class="tags-property">Exam :</label>
                                                         </div>
-                                                        <div class="d-inline-block" style="width:70%;">
-                                                            <select name="s_exam" id="s_select" class="form-control form-control-lg" style="width:100%;">
+                                                        <div class="d-inline-block width-70">
+                                                            <select name="s_exam" id="s_select" class="form-control form-control-lg w-100">
                                                                 <option value="1" checked>SPM</option>
                                                             </select>
                                                         </div>
                                                     </div>
                                                     <div class="mb-3">
-                                                        <div class="d-inline-block" style="width:25%;">
+                                                        <div class="d-inline-block w-25">
                                                             <label class="tags-property">Subject :</label>
                                                         </div>
-                                                        <div class="d-inline-block" style="width:70%;">
-                                                            <select name="s_subject" id="s_subject" class="form-control form-control-lg" style="width:100%;" onchange="fetch_subject_level_change_chapter(); count()">
+                                                        <div class="d-inline-block width-70">
+                                                            <select name="s_subject" id="s_subject" class="form-control form-control-lg w-100" onchange="fetch_subject_level_change_chapter(); count()">
                                                                 <option value="-">Select Subject</option>
                                                                 @foreach ($property['subjects'] as $subject)
                                                                     <option value="{{$subject -> id}}">{{  ucwords(strtolower($subject -> name)) }}</option>
@@ -456,11 +81,11 @@
                                                         </div>
                                                     </div>
                                                     <div class="mb-3">
-                                                        <div class="d-inline-block" style="width:25%;">
+                                                        <div class="d-inline-block w-25">
                                                             <label class="tags-property">Level :</label>
                                                         </div>
-                                                        <div class="d-inline-block" style="width:70%;">
-                                                            <select name="s_level" id="s_level" class="form-control form-control-lg" style="width:100%;" onchange="fetch_subject_level_change_chapter(); count()">
+                                                        <div class="d-inline-block width-70">
+                                                            <select name="s_level" id="s_level" class="form-control form-control-lg w-100" onchange="fetch_subject_level_change_chapter(); count()">
                                                                 <option value="0">All Level</option>
                                                                 @foreach ($property['levels'] as $level)
                                                                     <option value="{{$level -> id}}">{{  $level -> name }}</option>
@@ -469,22 +94,22 @@
                                                         </div>
                                                     </div>
                                                     <div class="mb-3">
-                                                        <div class="d-inline-block" style="width:25%;">
+                                                        <div class="d-inline-block w-25">
                                                             <label class="tags-property">Chapter :</label>
                                                         </div>
-                                                        <div class="d-inline-block" style="width:70%;">
-                                                            <select name="s_chapter" id="s_chapter" class="form-control form-control-lg" style="width:100%;" onchange="fetch_chapter_change_subtopic(); count()">
+                                                        <div class="d-inline-block width-70">
+                                                            <select name="s_chapter" id="s_chapter" class="form-control form-control-lg w-100" onchange="fetch_chapter_change_subtopic(); count()">
                                                                 <option value="0">All Chapters</option>
                                                                 <option value="0">Pick Subject and Level first</option>
                                                             </select>
                                                         </div>
                                                     </div>
                                                     <div class="mb-3">
-                                                        <div class="d-inline-block" style="width:25%;">
+                                                        <div class="d-inline-block w-25">
                                                             <label class="tags-property">Subtopic :</label>
                                                         </div>
-                                                        <div class="d-inline-block" style="width:70%;">
-                                                            <select name="s_subtopic" id="s_subtopic" class="form-control form-control-lg" style="width:100%;" onchange="count()">
+                                                        <div class="d-inline-block width-70">
+                                                            <select name="s_subtopic" id="s_subtopic" class="form-control form-control-lg w-100" onchange="count()">
                                                                 <option value="0">All Subtopics</option>
                                                                 <option value="0">Pick Chapters</option>
                                                             </select>
@@ -495,7 +120,7 @@
                                             <div class="col-lg-3">
                                                 <p class="text-number-question">Optional filters</p>
                                                 <div class="mt-1 mb-2">
-                                                    <select name="s_source" id="s_source" class="form-control" style="width:95%" onchange="count()">
+                                                    <select name="s_source" id="s_source" class="form-control width-95" onchange="count()">
                                                         <option value="0">All Sources</option>
                                                         @foreach ($property['sources'] as $source)
                                                             <option value="{{$source -> id}}">{{  $source -> name }}</option>
@@ -503,17 +128,17 @@
                                                     </select>
                                                 </div>
                                                 <div class="mt-1 mb-2">
-                                                    <select name="s_paper" id="s_paper" class="form-control" style="width:95%" onchange="count()">
+                                                    <select name="s_paper" id="s_paper" class="form-control width-95" onchange="count()">
                                                         <option value="0">All Paper</option>
                                                         <option value="1">Paper 1</option>
                                                         <option value="2">Paper 2</option>
                                                     </select>
                                                 </div>
                                                 <div class="mt-1 mb-2">
-                                                    <input name="s_year" id="s_year" type="number" class="form-control" placeholder="All Year" max="2019" min="2010" style="width:90%;" onchange="count()">
+                                                    <input name="s_year" id="s_year" type="number" class="form-control width-95" placeholder="All Year" max="2019" min="2010" onchange="count()">
                                                 </div>
                                                 <div class="mt-1 mb-2">
-                                                    <select name="s_difficulty" id="s_difficulty" class="form-control" style="width:95%" onchange="count()">
+                                                    <select name="s_difficulty" id="s_difficulty" class="form-control width-95" onchange="count()">
                                                         <option value="0">All Difficulty</option>
                                                         <option value="1">Easy (1)</option>
                                                         <option value="2">Fair (2)</option>
@@ -523,7 +148,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="mt-1 mb-2">
-                                                    <div class="row" style="border:2px solid grey; border-radius: 20px">
+                                                    <div id="div-randomize" class="row">
                                                         <div class="col-lg-6">
                                                             <p class=" m-1">Randomize the order?</p>
                                                         </div>
@@ -544,39 +169,37 @@
                             </form>
                         </div>
 
-                        <button onclick="introJs().setOption('showProgress', true).start();" class="btn btn-primary btn-lg m-3 mb-5 float-right" style="font-size:1.5em"
+                        <button onclick="introJs().setOption('showProgress', true).start();" class="btn btn-primary btn-lg m-3 mb-5 float-right"
                                 data-toggle="tooltip" title="Click me if you don't know what to do">Help me</button>
                     </div>
                 </div>
             </div>
     </section>
 
-    <section id="section-0" class="py-5" style="background-color: white">
+    <section id="section-0" class="py-5 background-white">
         <div class="container my-1">
             <div class="row">
                 <div class="col-lg-12">
                     <hr>
-                    <h1 class="div-headline my-4" style="text-align:  center;"><b>Studii - Study <span style="color:green">SPM</span> Questions for free</b></h1>
-                    <h2 class="" style="text-align:  center; font-size:1.7em; line-height: 1.4em"><b>Practice Add Math, Physics, Ekonomi (and more SPM subjects) questions at Studii for free</b></h2>
+                    <h1 class="div-headline my-4 text-center font-weight-bold">Studii - Study <span class="app-color-green">SPM</span> Questions for free</h1>
+                    <h2 class="font-weight-bold headline-2 text-center">Practice Add Math, Physics, Ekonomi (and more SPM subjects) questions at Studii for free</h2>
                     <hr>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="section-1" class="py-5" style="background-color: white">
+    <section id="section-1" class="py-5 background-white">
         <div class="container my-5">
             <div class="row">
                 <div class="col-lg-8">
-                    <img src="{{asset('images/assets/logo.png')}}" style="display: block; margin: auto">
-                    <p style="font-size:1.7em; text-align:  center;">A platform made with only 2 goals in mind - <br/>
-                        To make exercise questions <b>abundant</b> and <b>free</b>.</p>
+                    <img src="{{asset('images/assets/logo.png')}}" class="d-block m-auto w-75" alt="Studii, Study For Free - Logo">
+                    <p class="headline-2 text-center">A platform made with only 2 goals in mind - <br/>
+                        To make exercise questions <span class="font-weight-bold">abundant</span> and <span class="font-weight-bold">free</span>.</p>
                 </div>
                 <div class="col-lg-4">
-                    <div style="vertical-align: middle; text-align: center">
-                        <p style="font-size:1.5em;">Read why practice should be this way:</p>
-{{--                        <a href="" class="btn btn-lg btn-primary btn-block m-3">Abundant Practice</a>--}}
-{{--                        <a href="" class="btn btn-lg btn-primary btn-block m-3">Free Practice</a>--}}
+                    <div class="align-middle text-center">
+                        <p class="headline-2">Read why practice should be this way:</p>
                         <a class="btn btn-lg btn-primary btn-block m-3">Abundant Practice</a>
                         <a class="btn btn-lg btn-primary btn-block m-3">Free Practice</a>
                         <p>Links under development</p>
@@ -586,29 +209,29 @@
         </div>
     </section>
 
-    <section id="section-2" class="py-5" style="background-color: white">
+    <section id="section-2" class="py-5 background-white">
         <div class="container my-5">
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="div-headline" style="text-align:  center;"><b>How Stud<span style="color:green">ii</span> Is Run?</b></p>
-                    <p style="font-size:1.7em; text-align:  center;">We are not an expensive startup. <b>Studii</b> is a self-funded
+                    <p class="div-headline text-center font-weight-bold">How Stud<span class="app-color-green">ii</span> Is Run?</p>
+                    <p class="text-center headline-2">We are not an expensive startup. <span class="font-weight-bold">Studii</span> is a self-funded
                     side project by a group of university students who work on this in our free time.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="faq" class="py-5" style="background-color: #2E294E; color: #2E294E">
+    <section id="faq" class="py-5">
         <div class="container my-5">
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="div-headline" style="color:#AFD0D6"><b>Frequently Asked Questions - FAQ</b></p>
+                    <p class="div-headline form-text">Frequently Asked Questions - FAQ</p>
                     <div class="accordion" id="accordion">
                         <div class="card">
                             <div class="card-header" id="headingOne">
                                 <a class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                     <p class="mb-0">
-                                        <b>Is this really free?</b>
+                                        <span class="font-weight-bold">Is this really free?</span>
                                     </p>
                                 </a>
                             </div>
@@ -625,7 +248,7 @@
                             <div class="card-header" id="headingTwo">
                                 <a class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                                     <p class="mb-0">
-                                        <b>How can Studii provides the question for free?</b>
+                                        <span class="font-weight-bold">How can Studii provides the question for free?</span>
                                     </p>
                                 </a>
                             </div>
@@ -642,7 +265,7 @@
                             <div class="card-header" id="headingThree">
                                 <a class="btn btn-link" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                                     <p class="mb-0">
-                                        <b>Where do the questions come from?</b>
+                                        <span class="font-weight-bold">Where do the questions come from?</span>
                                     </p>
                                 </a>
                             </div>
@@ -659,7 +282,7 @@
                             <div class="card-header" id="headingFour">
                                 <a class="btn btn-link" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
                                     <p class="mb-0">
-                                        <b>What do teachers get from contributing?</b>
+                                        <span class="font-weight-bold">What do teachers get from contributing?</span>
                                     </p>
                                 </a>
                             </div>
@@ -671,35 +294,53 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="card">
+                            <div class="card-header" id="headingFive">
+                                <a class="btn btn-link" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                                    <p class="mb-0">
+                                        <span class="font-weight-bold">How do I know this website is legit (not a scam) ?</span>
+                                    </p>
+                                </a>
+                            </div>
+
+                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>Yes we understand, this website is only developing so it may look sort of fishy. But you can always talk to
+                                        Syazani Zulkhairi (the captain) at 019-209 9853 to ask about anything. Ask any of your doubts and I will try my best to solve it.</p>
+                                    <p>Besides, this website is totally free, so we wont ask you for your banking information at all. Just use the free practice!</p>
+                                    <p>Besides, this website is totally free, so we wont ask you for your banking information at all. Just use the free practice!</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="section-4" class="py-5" style="background-color: white">
+    <section id="section-4" class="py-5 background-white">
         <div class="container my-5">
             <div class="row my-3">
                 <div class="col-lg-12">
-                    <p class="div-headline" style="text-align:  center;"><b>How can <span style="color:green">you</span> help us to grow?</b></p>
+                    <p class="div-headline font-weight-bold text-center">How can <span class="app-color-green">you</span> help us to grow?</p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6 p-3 px-5" style="text-align: center">
-                    <p class="section-4-headline my-2"><b>If you are a <u>student</u></b></p>
-                    <p style="font-size:1.4em">Simply use our questions to study. <br>In order to grow, we need traction. To show your support, you can help us by
+                <div class="col-lg-6 p-3 px-5 text-center">
+                    <p class="section-4-headline my-2 font-weight-bold">If you are a <span class="underline">student</span></p>
+                    <p class="headline-3">Simply use our questions to study. <br>In order to grow, we need traction. To show your support, you can help us by
                     just practicing as much questions here as you need.</p>
                 </div>
-                <div class="col-lg-6 p-3 px-5" style="text-align: center">
-                    <p class="section-4-headline my-2"><b>If you are a <u>teacher</u></b></p>
-                    <p style="font-size:1.4em">We work with passionate teachers to grow our content. Click the button below to know more.</p>
+                <div class="col-lg-6 p-3 px-5 text-center">
+                    <p class="section-4-headline my-2 font-weight-bold">If you are a <span class="underline">teacher</span></p>
+                    <p class="headline-3">We work with passionate teachers to grow our content. Click the button below to know more.</p>
                     <a href="\about\teacher\join-us" class="btn btn-lg btn-primary btn-block mt-1">Teachers, Click Here</a>
                 </div>
             </div>
             <div class="row mt-4">
-                <div class="offset-lg-1 col-lg-10 p-3" style="text-align: center">
-                    <p class="section-4-headline my-2"><b>If you are with a <u>company</u></b></p>
-                    <p style="font-size:1.4em">Ultimately, we are sustainable as a service. But with your help as a sponsor, we can grow and serve more students faster.</p>
+                <div class="offset-lg-1 col-lg-10 p-3 text-center">
+                    <p class="section-4-headline my-2 font-weight-bold">If you are with a <span class="underline">company</span></p>
+                    <p class="headline-3">Ultimately, we are sustainable as a service. But with your help as a sponsor, we can grow and serve more students faster.</p>
                     <a href="/about/for-company" class="btn btn-lg btn-primary btn-block mt-1">Companies, Click Here</a>
                 </div>
             </div>
@@ -711,7 +352,7 @@
 {{--            <div class="row my-3">--}}
 {{--                <div class="col-lg-12">--}}
 {{--                    <p class="div-headline mb-0" style="text-align:  center;"><b>Special Appreciation &#10084;</b></p>--}}
-{{--                    <p class="div-headline-2 mt-0" style="text-align: center">for sharing our dream of abundant & free practice for students in Malaysia</p>--}}
+{{--                    <p class="div-headline-3 mt-0" style="text-align: center">for sharing our dream of abundant & free practice for students in Malaysia</p>--}}
 {{--                </div>--}}
 {{--            </div>--}}
 {{--            <div class="row">--}}
@@ -722,23 +363,6 @@
 {{--                <div class="col-lg-6 p-3 px-5" style="text-align: center">--}}
 {{--                    <p class="section-4-headline my-2" style="color:#b5382f;"><b>Company 2</b></p>--}}
 {{--                    <p style="font-size:1.4em">this can be you</p>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </section>--}}
-
-
-
-{{--    <section style="background-color: white">--}}
-{{--        <div class="container py-5">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-lg-3">--}}
-{{--                    <a href="#" class="btn btn-lg btn-primary btn-block mt-3 mb-5">Join The Team</a>--}}
-{{--                </div>--}}
-{{--                <div class="col-lg-1"></div>--}}
-{{--                <div class="col-lg-8">--}}
-{{--                    <h1 style="font-size:4em">Calling for the enthusiasts!</h1>--}}
-{{--                    <p style="font-size:1.5em">We really value people who are willing to work hard for the benefit of others. If you do, we want you to be apart of our team</p>--}}
 {{--                </div>--}}
 {{--            </div>--}}
 {{--        </div>--}}

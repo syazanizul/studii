@@ -1,0 +1,56 @@
+.app-logo {
+    font-family:'dosis', sans-serif;
+    font-weight: bold;
+    font-size:2.0em;
+}
+
+.app-main-nav {
+    border-top:5px solid #29ca8e;
+    background-color: #edf1f7;
+}
+
+.navbar-nav li   {
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size:1.1em;
+}
+
+.app-color-green {
+    color:green;
+}
+
+/*Footer*/
+
+.app-section-footer {
+    background-color: #6E6A6F;
+    min-height:10em;
+}
+
+.app-section-footer div div {
+    color:white;
+    font-family:'Quicksand', sans-serif;
+}
+
+.app-section-footer div div h4 {
+    font-weight:bold;
+}
+
+#app-footer-links a  {
+    color:white;
+    list-style: none;
+    padding-left: 0;
+}
+
+#app-div-right  {
+    text-align:right;
+}
+
+#app-facebook {
+    border:none;overflow:hidden;
+}
+
+@media only screen and (max-width: 780px) {
+    #app-div-right  {
+        text-align:left;
+    }
+}

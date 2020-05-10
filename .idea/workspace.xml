@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/QuestionCollectionController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/QuestionCollectionByCharacteristics.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/QuestionCollectionElement.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/QuestionCollectionParent.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_05_10_032751_question_collection_element_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_05_10_051759_question_collection_by_characteristics_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_05_10_074739_question_allocation_parent_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Teacher/AddquestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Teacher/AddquestionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Teacher/SubmissionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Teacher/SubmissionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/QuestionSet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/QuestionSetParent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/QuestionSetElement.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/QuestionSetElement.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/welcome.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/welcome.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_10_074739_question_collection_parent_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_10_074739_question_collection_parent_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -535,7 +521,7 @@
       <workItem from="1589042107352" duration="1224000" />
       <workItem from="1589080756046" duration="2595000" />
       <workItem from="1589083445887" duration="12532000" />
-      <workItem from="1589108014942" duration="112000" />
+      <workItem from="1589108014942" duration="760000" />
     </task>
     <servers />
   </component>
@@ -599,10 +585,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1589011727724" />
-    <state x="683" y="86" width="672" height="676" key="search.everywhere.popup" timestamp="1589095713838">
+    <state x="683" y="86" width="672" height="676" key="search.everywhere.popup" timestamp="1589108747214">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="683" y="86" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589095713838" />
+    <state x="683" y="86" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589108747214" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

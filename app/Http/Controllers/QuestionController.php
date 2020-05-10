@@ -27,6 +27,7 @@ class QuestionController extends Controller
         $questions = Question::where('subject', $subject)->where('finished', 1)->inRandomOrder()->get();
 
         session() -> pull('qid');
+
         foreach ($questions as $question) {
             session() -> push('qid', $question->id);
         }
@@ -50,7 +51,11 @@ class QuestionController extends Controller
         $input_year = request() -> get('s_year');
         $input_difficulty = request() -> get('s_difficulty');
 
-        $questions = Question::where('subject', $input_subject)->where('finished', 1);
+        $questions = Question::where('finished', 1);
+
+        if ($input_subject != 0) {
+            $questions = $questions -> where('subject', $input_subject);
+        }
 
         if ($input_level != 0) {
             $questions = $questions -> where('level', $input_level);

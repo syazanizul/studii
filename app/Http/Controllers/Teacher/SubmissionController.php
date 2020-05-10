@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Teacher;
 
 use App\Http\Controllers\Controller;
 use App\Question;
-use App\QuestionSet;
+use App\QuestionSetParent;
 use App\QuestionSetElement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 class SubmissionController extends Controller
 {
     public function index() {
-        $question_set = QuestionSet::where('submitter_id', Auth::user()->id);
+        $question_set = QuestionSetParent::where('submitter_id', Auth::user()->id);
         $statement1 = 0;
 
         foreach($question_set->get() as $m) {
@@ -45,7 +45,7 @@ class SubmissionController extends Controller
     }
 
     public function verify_set_parent($id)  {
-        $question_set_element = QuestionSet::find($id);
+        $question_set_element = QuestionSetParent::find($id);
         $question_set_element -> verified_by_submitter = 1;
         $question_set_element -> save();
 

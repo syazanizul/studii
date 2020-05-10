@@ -9,7 +9,7 @@ class QuestionSetElement extends Model
     protected $table = 'question_set_element';
 
     public function question_set()  {
-        return $this -> belongsTo(QuestionSet::class, 'question_set_id','id');
+        return $this -> belongsTo(QuestionSetParent::class, 'question_set_id','id');
     }
 
     public function question()  {

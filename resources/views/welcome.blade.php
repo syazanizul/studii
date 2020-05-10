@@ -21,7 +21,7 @@
             <div class="container p-0">
                 <div class="row row-jumbo">
                     <div class="col-sm-12">
-                        <p class="text-wish">What do you wish to study today?</p>
+                        <p class="text-wish almost-white">What do you wish to study today?</p>
                         <div class="jumbotron" data-step="2" data-intro="If you're not actually looking for any specific questions, you can just quick browse on any subjects.
                              This will fetch random questions from the database."
                              data-toggle="tooltip" title="If you're not looking for specific chapters, use this">
@@ -175,6 +175,49 @@
                     </div>
                 </div>
             </div>
+    </section>
+
+    <section id="section-0" class="py-3">
+        <div class="container my-1">
+            <div class="row">
+                <div class="col-lg-3">
+                    <p class="text-wish">Featured Collection</p>
+                </div>
+                <div class="col-lg-3 p-2">
+                    <div class="card w-100 card-box-shadow">
+                        <a href="/practice/collection_id/1">
+                            <div class="card-body">
+                                <p class="card-headline-1 m-0 p-0">Physics - Form 5 - Chapter 2, Electricity</p>
+                                <span class="card-subtitle text-muted">By Mr Haree</span>
+                                <p class="card-text mt-2">A series of questions to test and improve your understanding</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 p-2">
+                    <div class="card w-100 card-box-shadow">
+                        <a href="/practice/collection_id/2">
+                            <div class="card-body">
+                                <p class="card-headline-1 m-0 p-0">Add Math - All Chapter</p>
+                                <span class="card-subtitle text-muted">By Cikgu Asyraf Zuraimi</span>
+                                <p class="card-text mt-2">Seemingly endless questions for you to practice with</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+{{--                <div class="col-lg-3 p-2">--}}
+{{--                    <div class="card w-100 card-box-shadow">--}}
+{{--                        <a href="#">--}}
+{{--                            <div class="card-body">--}}
+{{--                                <p class="card-headline-1 m-0 p-0">Card title</p>--}}
+{{--                                <span class="card-subtitle text-muted">Card subtitle</span>--}}
+{{--                                <p class="card-text mt-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+            </div>
+        </div>
     </section>
 
     <section id="section-0" class="py-5 background-white">

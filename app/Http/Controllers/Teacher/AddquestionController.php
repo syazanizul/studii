@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Teacher;
 
 use App\Http\Controllers\Controller;
 use App\Mail\event;
-use App\QuestionSet;
+use App\QuestionSetParent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -45,7 +45,7 @@ class AddquestionController extends Controller
         $name = Auth::user()->id .'-'. rand(10000, 99999).'.'.$file->clientExtension();
 
         if($file->move('storage/question_set', $name))    {
-            $m = new QuestionSet;
+            $m = new QuestionSetParent;
             $m -> file_name_actual = $file->getClientOriginalName();
             $m-> file_name_studii = $name;
             $m -> exam_id = $exam;

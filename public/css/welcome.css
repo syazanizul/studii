@@ -75,7 +75,6 @@
     margin: 3% auto 2.5% 2%;
     font-size:60px;
     line-height:normal;
-    color:#f9f9f9;
 }
 /*End What do you wish to study*/
 
@@ -298,6 +297,53 @@ input:checked + .slider:before {
 
 .underline  {
     text-decoration: underline;
+}
+
+.almost-white   {
+    color:#f9f9f9;
+}
+
+.card-box-shadow    {
+    box-shadow: 5px 5px grey;
+    border: 2px solid #0E7C7B;
+    cursor: pointer;
+    background-color: #A0DDE6;
+}
+
+.card-headline-1 {
+    font-weight: bold;
+}
+
+.card-headline-2 {
+    font-size:0.4px;
+}
+
+
+.card-box-shadow a {
+    text-decoration: none;
+    color:#2A2D34;
+}
+
+#feature-box-1  {
+
+}
+
+#feature-box-2  {
+
+}
+
+#feature-box-3  {
+
+}
+
+.card-box-shadow:hover     {
+    box-shadow: 7px 10px grey;
+    transform: translate(-2px, -5px);
+}
+
+.card-box-shadow:active    {
+    box-shadow: 3px 3px grey;
+    transform: translate(2px, 2px);
 }
 
 /* End Random things */

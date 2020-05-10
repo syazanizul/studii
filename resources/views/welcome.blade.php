@@ -199,7 +199,7 @@
                         <a href="/practice/collection_id/2">
                             <div class="card-body">
                                 <p class="card-headline-1 m-0 p-0">Add Math - All Chapter</p>
-                                <span class="card-subtitle text-muted">By Cikgu Asyraf Zuraimi</span>
+                                <span class="card-subtitle text-muted">By Cikgu Zefry Hanif</span>
                                 <p class="card-text mt-2">Seemingly endless questions for you to practice with</p>
                             </div>
                         </a>

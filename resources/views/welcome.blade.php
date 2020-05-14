@@ -225,7 +225,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <hr>
-                    <h1 class="div-headline my-4 text-center font-weight-bold">Studii - Study <span class="app-color-green">SPM</span> Questions for free</h1>
+                    <h1 class="div-headline my-4 text-center font-weight-bold">Studii - Study <span class="app-color-green">SPM</span> Subjects for free</h1>
                     <h2 class="font-weight-bold headline-2 text-center">Practice Add Math, Physics, Ekonomi (and more SPM subjects) questions at Studii for free</h2>
                     <hr>
                 </div>
@@ -236,16 +236,15 @@
     <section id="section-1" class="py-5 background-white">
         <div class="container my-5">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-7">
                     <img src="{{asset('images/assets/logo.png')}}" class="d-block m-auto w-75" alt="Studii, Study For Free - Logo">
                     <p class="headline-2 text-center">A platform made with only 2 goals in mind - <br/>
                         To make exercise questions <span class="font-weight-bold">abundant</span> and <span class="font-weight-bold">free</span>.</p>
                 </div>
-                <div class="col-lg-4">
-                    <div class="align-middle text-center">
-                        <p class="headline-2">Read why practice should be this way:</p>
-                        <a class="btn btn-lg btn-primary btn-block m-3">Abundant Practice</a>
-                        <a class="btn btn-lg btn-primary btn-block m-3">Free Practice</a>
+                <div class="col-lg-5">
+                    <div class="text-center mt-5">
+                        <p class="headline-2">Studii is in <span class="font-weight-bold">testing & improve</span> stage</p>
+                        <a class="btn btn-lg btn-primary btn-block m-3">Read How Studii Started</a>
                         <p>Links under development</p>
                     </div>
                 </div>
@@ -302,6 +301,8 @@
                                     <p>Everytime you attempt a question here, we will pay the contributors of that question. So how
                                     do we pay them if we provide this service for free?</p>
                                     <p>The answer is <b>advertising</b>. We don't like students to pay for your practice, so we let the advertisers to pay them for you.</p>
+                                    <p>If you really don't like to see ads when you're practicing, then you will be able to subscribe to <span class="font-weight-bold">Studii Smarter</span>
+                                        to lose those ads. <span class="font-weight-bold">Studii Smarter</span> coming very soon.</p>
                                 </div>
                             </div>
                         </div>
@@ -342,16 +343,33 @@
                             <div class="card-header" id="headingFive">
                                 <a class="btn btn-link" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
                                     <p class="mb-0">
-                                        <span class="font-weight-bold">How do I know this website is legit (not a scam) ?</span>
+                                        <span class="font-weight-bold">Studii is in what stage right now?</span>
                                     </p>
                                 </a>
                             </div>
 
                             <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
                                 <div class="card-body">
+                                    <p>Currently, Studii is in the <span class="font-weight-bold">testing & improve</span> stage.</p>
+                                    <p>This means, officially we are not launched yet. However all of the features we have are already served. You can use all of the features
+                                    for free.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingSix">
+                                <a class="btn btn-link" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                                    <p class="mb-0">
+                                        <span class="font-weight-bold">How do I know this website is legit (not a scam) ?</span>
+                                    </p>
+                                </a>
+                            </div>
+
+                            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                                <div class="card-body">
                                     <p>Yes we understand, this website is only developing so it may look sort of fishy. But you can always talk to
                                         Syazani Zulkhairi (the captain) at 019-209 9853 to ask about anything. Ask any of your doubts and I will try my best to solve it.</p>
-                                    <p>Besides, this website is totally free, so we wont ask you for your banking information at all. Just use the free practice!</p>
+                                    <p>Besides, this website is totally free, all features. Scam websites usually will ask for your money :) . Here we just want you to use the free practice!</p>
                                 </div>
                             </div>
                         </div>

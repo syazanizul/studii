@@ -196,6 +196,7 @@
                         <div class="col-lg-1"></div>
                         <div class="col-md-4 my-3">
                             <h4>Subscribe to our newsletter</h4>
+                            <p>Stay updated with the progress with Studii - <span class="font-weight-bold">testing & improve</span> stage.</p>
                             <form action="/mail/newsletter">
                                 <div class="row">
                                     <div class="m-1 d-inline-block w-50">

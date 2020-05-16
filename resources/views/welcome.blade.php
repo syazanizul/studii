@@ -185,7 +185,7 @@
                 </div>
                 <div class="col-lg-3 p-2">
                     <div class="card w-100 card-box-shadow">
-                        <a href="/practice/collection_id/1">
+                        <a href="/practice/collection-id/1">
                             <div class="card-body">
                                 <p class="card-headline-1 m-0 p-0">Physics - Form 5 - Chapter 2, Electricity</p>
                                 <span class="card-subtitle text-muted">By Mr Haree</span>
@@ -196,7 +196,7 @@
                 </div>
                 <div class="col-lg-3 p-2">
                     <div class="card w-100 card-box-shadow">
-                        <a href="/practice/collection_id/2">
+                        <a href="/practice/collection-id/2">
                             <div class="card-body">
                                 <p class="card-headline-1 m-0 p-0">Add Math - All Chapter</p>
                                 <span class="card-subtitle text-muted">By Cikgu Zefry Hanif</span>

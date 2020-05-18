@@ -17,4 +17,8 @@ class AnswerParent extends Model
     {
         return $this -> hasMany(AnswerElement::class);
     }
+
+    public function working_parent()    {
+        return $this-> hasMany(WorkingParent::class);
+    }
 }

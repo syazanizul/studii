@@ -144,7 +144,13 @@ Route::get('/teacher/question', 'AddQuestion\AddController@index');
     Route::get('/question/add/save/answer/insert','AddQuestion\AddAnswer@store_insert');
     Route::get('/question/add/save/answer/update','AddQuestion\AddAnswer@store_update');
     Route::get('/question/publish/{id}','AddQuestion\AddAnswer@publish');
-    /* End Routes to add question */
+
+    /* Route Add Working */
+    Route::get('/question/working/{id}', 'AddQuestion\AddWorking@index');
+    Route::post('/question/working/text/insert', 'AddQuestion\AddWorking@insert_text');
+    Route::post('/question/working/image/insert', 'AddQuestion\AddWorking@insert_image');
+    Route::post('/question/working/delete', 'AddQuestion\AddWorking@delete');
+
 /* End Routes to add question */
 
 Route::get('/redirect/quick','QuestionController@quick');

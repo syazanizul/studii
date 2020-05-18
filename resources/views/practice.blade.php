@@ -272,7 +272,7 @@
     <section style="margin-top:2em;">
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-lg-8">
                     <div id="row-property" data-step="1" data-intro="This is the basic information of this question.">
                         {{--1. Properties Question --}}
                         <p class="p-info d-inline-block">{{ucwords(strtolower($question -> subject_name -> name))}},  {{ucwords(strtolower($question -> chapter_name -> name))}}</p>
@@ -365,13 +365,14 @@
                         <div>
                             <?php $i=1?>
                             <?php $j=1?>
+                            <?php $k=1?>
                             @foreach($question->contents as $n)
                                 @if($n->answer_parent != null)
                                     @foreach($n->answer_parent as $o)
-                                            <div style="margin-bottom:1em;">
+                                            <div style="margin-bottom:1.5em;">
                                                 <a class="" data-toggle="collapse" href="#answer{{($i)}}" role="button" aria-expanded="false"><p style="margin-bottom: 0.5em">Answer {{$n->symbol()}}</p></a>
                                                 <div id="answer{{($i)}}" class="collapse show">
-                                                    <div class="control-group" style="width:90%">
+                                                    <div class="control-group" style="width:95%">
 
 
                                                         @foreach($o->answer_element as $m)
@@ -385,12 +386,30 @@
                                                                 </label>
                                                             </div>
                                                         @endforeach
-                                                        <button id="check_question_{{$j}}" onclick="check_answer({{$j}})" style="float:right; cursor: pointer">Check Answer</button>
+                                                        @if($o->working_parent->count() !== 0)
+                                                            <button id="show_working_{{$k}}" data-toggle="collapse" href="#working{{($k)}}" role="button" aria-expanded="false" style="float:right" class="mx-1 btn btn-primary" disabled>Show Working</button>
+                                                        @endif
+                                                        <button id="check_question_{{$j}}" onclick="check_answer({{$j}}); able_show_working({{$k}})" style="float:right; cursor: pointer" class="mx-1 btn">Check Answer</button>
                                                     </div>
+                                                    @if($o->working_parent->count() !== 0)
+                                                        <div id="working{{$k}}" class="collapse mb-5">
+                                                            <p class="text-right font-weight-bold mr-4 m-2 mt-3">Working for {{$n->symbol()}}</p>
+                                                            <div class="control-group ml-auto mr-4 d-block" style="width:90%">
+                                                                @foreach($o->working_parent as $h)
+                                                                    @if($h->type == 1)
+                                                                        <p>{{$h->working_text->content}}</p>
+                                                                    @elseif($h->type == 2)
+                                                                        <img src="/images/working_images/{{$h->working_image->image_name}}?rand={{rand(0,1000)}}" style="width: 100%">
+                                                                    @endif
+                                                                @endforeach
+                                                            </div>
+                                                        </div>
+                                                    @endif
                                                 </div>
                                             </div>
                                             <?php $i++?>
                                             <?php $j++?>
+                                            <?php $k++?>
                                     @endforeach
                                 @endif
                             @endforeach
@@ -413,7 +432,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-3 offset-lg-1"
+                <div class="col-lg-3 offset-lg-1"
                      data-step="6" data-intro="Finally, you have a control panel right here. Everything that you may need can be find here. That's it, goodluck!">
                     <div id="right-panel" class="p-4">
 
@@ -435,7 +454,7 @@
                             <br>
                         <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px; background-color: #eae7d9">
                             @if(Session('adding_question') == 1)
-                                <a href="/question/add" class="btn btn-lg btn-secondary m-3">Add Another Question</a>
+                                <a href="/question/add" class="btn btn-lg btn-secondary btn-block">Add Another Question</a>
                             @endif
 
                             <button type="button" class="btn btn-lg btn-block btn-danger" data-toggle="modal" data-target="#report_modal">
@@ -694,7 +713,11 @@
         'Amazing!',
         "You're sure you not the Megamind?",
         "Heck you're good",
-        "Tahniah!"
+        "Tahniah!",
+        "Cool",
+        "Gempak",
+        "Power",
+        "First blood",
     ];
 
     let alertify_wrong = [
@@ -705,7 +728,8 @@
         "Ah just one little fall",
         'Even the Avengers got beaten the first round',
         "At least you're improving",
-        "Better to make mistakes now rather than during the exam"
+        "Better to make mistakes now rather than during the exam",
+        "Slowly..."
     ];
 
     let answer = [];
@@ -762,8 +786,9 @@
 
         }
 
-        // document.getElementById('check_question_' + x).disabled = true;
-        document.getElementById('check_question_' + x).style.visibility = "hidden";
+        document.getElementById('check_question_' + x).disabled = true;
+        // document.getElementById('check_question_' + x).style.visibility = "hidden";
+        document.getElementById('check_question_' + x).style.color = "white";
         count_attempt++;
 
 
@@ -773,6 +798,16 @@
 
     }
     // END CHECKING METHOD ------------------------------------------------------------------------------------
+
+    // RANDOM -------------------------------------------------------------------------------------------------
+    function able_show_working(v) {
+        let show_working = 'show_working_'+ v;
+        console.log(show_working);
+
+        document.getElementById(show_working).disabled = false;
+        document.getElementById(show_working).style.cursor = "pointer";
+    }
+    // END RANDOM ---------------------------------------------------------------------------------------------
 
     //For rating form under content -------------------------------------------------------------------------------
     let s1 = document.getElementById("s1");

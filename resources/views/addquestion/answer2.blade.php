@@ -46,35 +46,34 @@
         <div class="row">
             <div class="col-md-5">
                 <div class="row">
-                    <div class="col-md-1">  </div>
-                    <div class="col-md-11 py-4" style="background-color:#d4d9d6; border-radius: 20px">
-                        <div>
-                            <p id="display_1">
-                                @if (isset($question->contents[0]))
-                                    {!!$question->contents[0]->content!!}
-                                @endif
-                            </p>
-                            <br>
-                            @if ($question->question_image == 1)
-                                <img src="/images/question_images/id-{{$question->id}}.jpg?n={{rand(1,10)}}" alt="question_image" style="width:90%">
-                            @endif
-                            <br><br>
-                            <p id="display_2">
-                                @if (isset($question->contents[1]))
-                                    {!!$question->contents[1]-> content!!}
-                                @endif
-                            </p>
-                            <div style="padding-left:20px;">
 
-                                @for($k=2; $k<7; $k++)
-                                    @if(isset($question->contents[$k]))
-                                        <div style="width:100%; margin:8px auto">
-                                            <p id="symbol_{{$k+1}}" style="width:7%; display: inline-block; float:left">@if (isset($question->contents[$k])) {!! $question->contents[$k]->symbol() !!} @endif</p>
-                                            <p id="display_{{$k+1}}" style="width:90%;display: inline-block">@if (isset($question->contents[$k])) {!! $question->contents[$k]-> content !!} @endif</p>
-                                        </div>
-                                    @endif
-                                @endfor
-                            </div>
+                    <div class="col-md-11 offset-md-1 py-4" style="background-color:#d4d9d6; border-radius: 20px">
+
+                        <p id="display_1">
+                            @if (isset($question->contents[0]))
+                                {!!$question->contents[0]->content!!}
+                            @endif
+                        </p>
+                        <br>
+                        @if ($question->question_image == 1)
+                            <img src="/images/question_images/id-{{$question->id}}.jpg?n={{rand(1,10)}}" alt="question_image" style="width:90%">
+                        @endif
+                        <br><br>
+                        <p id="display_2">
+                            @if (isset($question->contents[1]))
+                                {!!$question->contents[1]-> content!!}
+                            @endif
+                        </p>
+                        <div style="padding-left:20px;">
+
+                            @for($k=2; $k<7; $k++)
+                                @if(isset($question->contents[$k]))
+                                    <div style="width:100%; margin:8px auto">
+                                        <p id="symbol_{{$k+1}}" style="width:7%; display: inline-block; float:left">@if (isset($question->contents[$k])) {!! $question->contents[$k]->symbol() !!} @endif</p>
+                                        <p id="display_{{$k+1}}" style="width:90%;display: inline-block">@if (isset($question->contents[$k])) {!! $question->contents[$k]-> content !!} @endif</p>
+                                    </div>
+                                @endif
+                            @endfor
                         </div>
                     </div>
                 </div>
@@ -89,10 +88,19 @@
                                 @foreach($n->answer_parent as $o)
                                     <div class="box">
                                         <p class="d-inline-block mx-1"><b>Answer {{$n->symbol()}}</b></p>
-                                        <form action="/question/add/save/answer/setup/update/{{$question->id}}" class="d-inline-block mx-5">
+                                        <form action="/question/add/save/answer/setup/update/{{$question->id}}" class="d-inline-block ml-5 mx-1">
                                             <input type="hidden" name="answer_parent_id" value="{{$o->id}}">
-                                            <input type="submit" class="btn btn-primary" value="Edit">
+                                            <input type="submit" class="btn btn-primary" value="Edit Answer">
                                         </form>
+                                        <form action="/question/working/{{$question->id}}" class="d-inline-block mx-1">
+                                            <input type="hidden" name="answer_parent_id" value="{{$o->id}}">
+                                            @if($o->working_parent->count() == 0)
+                                                <input type="submit" class="btn btn-primary" value="Add Working">
+                                            @else
+                                                <input type="submit" class="btn btn-primary" value="Edit Working">
+                                            @endif
+                                        </form>
+                                        <p class="float-right mx-3">Working: <b>{{$o->working_parent->count()}}</b></p>
                                         <div style="margin:0.5em auto auto 2em">
 
                                             @foreach($o->answer_element as $m)

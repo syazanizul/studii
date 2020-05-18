@@ -2,8 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AddQuestion/AddWorking.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/WorkingImage.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/WorkingParent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/WorkingText.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_05_16_122822_working_parent_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_05_16_122841_working_text_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_05_16_122851_working_image_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/working_images/2-752.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/working_images/Capture-211.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/working_images/Capture-220.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/working_images/Capture-666.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/working_images/laptop-275.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/addquestion/working.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/AnswerParent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AnswerParent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/addquestion/answer2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/addquestion/answer2.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/practice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/practice.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -528,7 +543,21 @@
       <workItem from="1589228908474" duration="399000" />
       <workItem from="1589489161079" duration="1972000" />
       <workItem from="1589560966522" duration="614000" />
-      <workItem from="1589596167167" duration="46000" />
+      <workItem from="1589596167167" duration="275000" />
+      <workItem from="1589605822998" duration="408000" />
+      <workItem from="1589606848014" duration="1474000" />
+      <workItem from="1589631211080" duration="1380000" />
+      <workItem from="1589638629098" duration="327000" />
+      <workItem from="1589641354441" duration="607000" />
+      <workItem from="1589647310622" duration="4300000" />
+      <workItem from="1589666417682" duration="594000" />
+      <workItem from="1589684203524" duration="2511000" />
+      <workItem from="1589688817137" duration="2000" />
+      <workItem from="1589698455716" duration="3072000" />
+      <workItem from="1589724303144" duration="2223000" />
+      <workItem from="1589778873796" duration="1917000" />
+      <workItem from="1589783636898" duration="2721000" />
+      <workItem from="1589787478302" duration="4637000" />
     </task>
     <servers />
   </component>
@@ -564,10 +593,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="523" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1589082192373" />
-    <state x="941" y="158" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1589085086506">
+    <state x="941" y="158" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1589779478224">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="941" y="158" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1589085086506" />
+    <state x="941" y="158" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1589779478224" />
     <state x="549" y="170" key="FileChooserDialogImpl" timestamp="1589012929570">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -576,10 +605,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="564" y="247" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1588503240434" />
-    <state x="477" y="239" width="582" height="310" key="com.intellij.ide.util.TipDialog" timestamp="1589596186190">
+    <state x="477" y="239" width="582" height="310" key="com.intellij.ide.util.TipDialog" timestamp="1589787490123">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="477" y="239" width="582" height="310" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1589596186190" />
+    <state x="477" y="239" width="582" height="310" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1589787490123" />
     <state x="580" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583618863049">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -588,27 +617,27 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="474" y="173" width="588" height="488" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1583618859456" />
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1589011727724">
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1589786266175">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1589011727724" />
-    <state x="683" y="86" width="672" height="676" key="search.everywhere.popup" timestamp="1589108747214">
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1589786266175" />
+    <state x="683" y="86" width="672" height="676" key="search.everywhere.popup" timestamp="1589698692244">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="683" y="86" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589108747214" />
+    <state x="683" y="86" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589698692244" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/practice.blade.php</url>
-          <line>415</line>
+          <line>434</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/practice.blade.php</url>
-          <line>517</line>
-          <option name="timeStamp" value="2" />
+          <line>536</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

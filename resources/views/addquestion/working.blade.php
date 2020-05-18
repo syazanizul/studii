@@ -111,7 +111,7 @@
                                             <input type="hidden" name="working_text_id" value="{{$m->working_text->id}}">
                                             <input type="submit" value="Delete" class="btn btn-sm ml-auto mr-0 d-block">
                                         </form>
-                                        <p class="d-inline-block mx-1">{{$m->working_text->content}}</p>
+                                        <p class="d-inline-block mx-1">{!! $m->working_text->content !!}</p>
                                     </div>
                                 @elseif ($m->type == 2)
                                     <div class="box">

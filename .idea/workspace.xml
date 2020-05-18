@@ -2,24 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AddQuestion/AddWorking.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/WorkingImage.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/WorkingParent.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/WorkingText.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_05_16_122822_working_parent_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_05_16_122841_working_text_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_05_16_122851_working_image_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/working_images/2-752.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/working_images/Capture-211.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/working_images/Capture-220.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/working_images/Capture-666.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/working_images/laptop-275.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/addquestion/working.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/AnswerParent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AnswerParent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/addquestion/answer2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/addquestion/answer2.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/addquestion/working.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/addquestion/working.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/practice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/practice.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -557,7 +542,7 @@
       <workItem from="1589724303144" duration="2223000" />
       <workItem from="1589778873796" duration="1917000" />
       <workItem from="1589783636898" duration="2721000" />
-      <workItem from="1589787478302" duration="4637000" />
+      <workItem from="1589787478302" duration="6104000" />
     </task>
     <servers />
   </component>

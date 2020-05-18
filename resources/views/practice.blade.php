@@ -393,7 +393,7 @@
                                                     </div>
                                                     @if($o->working_parent->count() !== 0)
                                                         <div id="working{{$k}}" class="collapse mb-5">
-                                                            <p class="text-right font-weight-bold mr-4 m-2 mt-3">Working for {{$n->symbol()}}</p>
+                                                            <p class="text-right font-weight-bold mr-4 m-2 mt-3">Working {{$n->symbol()}}</p>
                                                             <div class="control-group ml-auto mr-4 d-block" style="width:90%">
                                                                 @foreach($o->working_parent as $h)
                                                                     @if($h->type == 1)

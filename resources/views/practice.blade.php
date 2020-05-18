@@ -397,7 +397,7 @@
                                                             <div class="control-group ml-auto mr-4 d-block" style="width:90%">
                                                                 @foreach($o->working_parent as $h)
                                                                     @if($h->type == 1)
-                                                                        <p>{!! $h->working_text->content !!}</p>
+                                                                        <p style="font-size:1.1em">{!! $h->working_text->content !!}</p>
                                                                     @elseif($h->type == 2)
                                                                         <img src="/images/working_images/{{$h->working_image->image_name}}?rand={{rand(0,1000)}}" style="width: 100%">
                                                                     @endif

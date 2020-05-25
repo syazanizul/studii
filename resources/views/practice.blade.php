@@ -387,9 +387,9 @@
                                                             </div>
                                                         @endforeach
                                                         @if($o->working_parent->count() !== 0)
-                                                            <button id="show_working_{{$k}}" data-toggle="collapse" href="#working{{($k)}}" role="button" aria-expanded="false" style="float:right" class="mx-1 btn btn-primary" disabled>Show Working</button>
+                                                            <button id="show_working_{{$k}}" data-toggle="collapse" href="#working{{($k)}}" role="button" aria-expanded="false" style="float:right" class="mx-1 btn btn-secondary" disabled>Show Working</button>
                                                         @endif
-                                                        <button id="check_question_{{$j}}" onclick="check_answer({{$j}}); able_show_working({{$k}})" style="float:right; cursor: pointer" class="mx-1 btn">Check Answer</button>
+                                                        <button id="check_question_{{$j}}" onclick="check_answer({{$j}}); able_show_working({{$k}})" style="float:right; cursor: pointer" class="mx-1 btn btn-primary">Check Answer</button>
                                                     </div>
                                                     @if($o->working_parent->count() !== 0)
                                                         <div id="working{{$k}}" class="collapse mb-5">

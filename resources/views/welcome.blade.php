@@ -205,6 +205,17 @@
                         </a>
                     </div>
                 </div>
+                <div class="col-lg-3 p-2">
+                    <div class="card w-100 card-box-shadow">
+                        <a href="/practice/collection-id/4">
+                            <div class="card-body">
+                                <p class="card-headline-1 m-0 p-0">Ekonomi - Semua Topik</p>
+                                <span class="card-subtitle text-muted">Oleh Cikgu Puteri Maryam</span>
+                                <p class="card-text mt-2">Uji pemahaman anda dalam subjek Ekonomi di sini</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
 {{--                <div class="col-lg-3 p-2">--}}
 {{--                    <div class="card w-100 card-box-shadow">--}}
 {{--                        <a href="#">--}}

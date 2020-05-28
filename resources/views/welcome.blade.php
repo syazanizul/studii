@@ -409,13 +409,13 @@
                     <a href="/about/teacher/join-us" class="btn btn-lg btn-primary btn-block mt-1">Teachers, Click Here</a>
                 </div>
             </div>
-            <div class="row mt-4">
-                <div class="offset-lg-1 col-lg-10 p-3 text-center">
-                    <p class="section-4-headline my-2 font-weight-bold">If you are with a <span class="underline">company</span></p>
-                    <p class="headline-3">Ultimately, we are sustainable as a service. But with your help as a sponsor, we can grow and serve more students faster.</p>
-                    <a href="/about/for-company" class="btn btn-lg btn-primary btn-block mt-1">Companies, Click Here</a>
-                </div>
-            </div>
+{{--            <div class="row mt-4">--}}
+{{--                <div class="offset-lg-1 col-lg-10 p-3 text-center">--}}
+{{--                    <p class="section-4-headline my-2 font-weight-bold">If you are with a <span class="underline">company</span></p>--}}
+{{--                    <p class="headline-3">Ultimately, we are sustainable as a service. But with your help as a sponsor, we can grow and serve more students faster.</p>--}}
+{{--                    <a href="/about/for-company" class="btn btn-lg btn-primary btn-block mt-1">Companies, Click Here</a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
         </div>
     </section>
 

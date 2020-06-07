@@ -90,7 +90,7 @@
                     <p>Uploaded by : <b>You</b></p>
                     <p>Complexity : <b>Complex</b> (require HTML and Mathjax skills)</p>
                     <p>You maximise <b>earning</b>, but you have to <b>upload it yourself</b>.</p>
-                    <a href="/question/add" class="btn btn-primary btn-lg btn-block">Upload</a>
+                    <a href="/question/add" class="btn btn-primary btn-lg btn-block" disabled>Upload</a>
                     <p class="text-center">As of the <i>Early Involvement Offer</i>, this method is not recommended.</p>
                 </div>
             </div>

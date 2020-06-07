@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/add-question/contributeQuestion.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/add-question/contributeQuestion.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/QuestionSetParent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/QuestionSetParent.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -535,6 +535,9 @@
       <workItem from="1590652621945" duration="280000" />
       <workItem from="1590652911104" duration="20000" />
       <workItem from="1591521227765" duration="318000" />
+      <workItem from="1591521622756" duration="36000" />
+      <workItem from="1591530204024" duration="661000" />
+      <workItem from="1591540347588" duration="1192000" />
     </task>
     <servers />
   </component>

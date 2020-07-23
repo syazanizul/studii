@@ -416,6 +416,7 @@
 
                         </div>
 
+                        @if(false)
                         <div class="m-1 p-4 mb-4">
                             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                             <!-- below_answer -->
@@ -429,6 +430,7 @@
                                 (adsbygoogle = window.adsbygoogle || []).push({});
                             </script>
                         </div>
+                        @endif
                     </div>
                 </div>
 

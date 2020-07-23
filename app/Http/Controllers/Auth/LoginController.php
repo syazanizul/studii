@@ -44,7 +44,7 @@ class LoginController extends Controller
                 return $this->redirectTo;
                 break;
             case 4:
-                $this->redirectTo = '/volunteer';
+                $this->redirectTo = '/tutor';
                 return $this->redirectTo;
                 break;
             case 5:

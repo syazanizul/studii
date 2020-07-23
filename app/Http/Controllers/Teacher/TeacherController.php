@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Teacher;
 use App\NotificationTeacher;
 use App\Question;
 use App\Http\Controllers\Controller;
+use App\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -16,6 +17,7 @@ class TeacherController extends Controller
 
     public function index()
     {
+        //--------------------------------------------------------------------
         //Checkings for notifications ----------------------------------------
             //Check if user enters the first time for modal instruction (if they need instructions)
                 $check_first = NotificationTeacher::where('noti_id' , 1) -> where('user_id', Auth::user()->id) -> get();
@@ -65,7 +67,8 @@ class TeacherController extends Controller
         $noti[2] = $noti_2;
         $noti[3] = $noti_3;
 
-
+        //--------------------------------------------------------------------
+        //Statistics ---------------------------------------------------------
         if(DB::table('count_attempt')->where('creator', Auth::user()->id)->whereMonth('created_at', Carbon::now()->month)->get() -> isNotEmpty())    {
             $data_attempt_today = DB::table('count_attempt')->where('creator', Auth::user()->id)->whereDate('created_at', Carbon::today())->count();
             $data_attempt_month = DB::table('count_attempt')->where('creator', Auth::user()->id)->whereMonth('created_at', Carbon::now()->month)->count();
@@ -80,6 +83,14 @@ class TeacherController extends Controller
         $data['question_submitted'] = $data_question_submitted;
         $data['attempt_today'] = $data_attempt_today;
         $data['attempt_month'] = $data_attempt_month;
+
+
+        //----------------------------------------------------------------------
+        // CHECK IF THIS TEACHER HAS SUBMITTED ANYTHING ------------------------
+
+        $need_nav_performance = Teacher::need_nav_performance(Auth::user()->id);
+
+        session(['need_nav_performance' => $need_nav_performance]);
 
         return view('dashboard.teacher.teacher', compact('noti','data'));
     }

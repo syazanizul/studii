@@ -21,25 +21,27 @@
             </a>
         </li>
         <li @yield('nav-submit-question')>
-            <a href="/teacher/question">
-                <p>Submit Question</p>
+            <a href="/teacher/set">
+                <p>Contribute</p>
             </a>
         </li>
-        <li @yield('nav-submission-status')>
-            <a href="/teacher/submission-status">
-                <p>Upload With Help - Status</p>
-            </a>
-        </li>
-        <li @yield('nav-performance')>
-            <a href="/teacher/performance">
-                <p>Performance</p>
-            </a>
-        </li>
-        <li @yield('nav-instruction')>
-            <a href="/teacher/instruction">
-                <p>Instruction</p>
-            </a>
-        </li>
+{{--        <li @yield('nav-submission-status')>--}}
+{{--            <a href="/teacher/submission-status">--}}
+{{--                <p>Upload With Help - Status</p>--}}
+{{--            </a>--}}
+{{--        </li>--}}
+{{--        @if(Session::has('need_nav_performance') && Session('need_nav_performance') == 1)--}}
+{{--            <li @yield('nav-performance')>--}}
+{{--                <a href="/teacher/performance">--}}
+{{--                    <p>Performance</p>--}}
+{{--                </a>--}}
+{{--            </li>--}}
+{{--        @endif--}}
+{{--        <li @yield('nav-instruction')>--}}
+{{--            <a href="/teacher/instruction">--}}
+{{--                <p>Instruction</p>--}}
+{{--            </a>--}}
+{{--        </li>--}}
     </ul>
 @endsection
 

@@ -26,7 +26,7 @@ class Student
             return redirect()->route('parents');
         }
         elseif (Auth::check() && Auth::user()->role == 4) {
-            return redirect()->route('volunteer');
+            return redirect()->route('tutor');
         }
         elseif (Auth::check() && Auth::user()->role == 5) {
             return redirect()->route('admin');

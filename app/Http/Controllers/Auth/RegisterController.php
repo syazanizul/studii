@@ -50,7 +50,7 @@ class RegisterController extends Controller
             case 'parent':
                 $role = 3;
                 break;
-            case 'volunteer':
+            case 'tutor':
                 $role = 4;
                 break;
         }
@@ -88,7 +88,7 @@ class RegisterController extends Controller
                 return $this->redirectTo;
                 break;
             case 4:
-                $this->redirectTo = '/volunteer';
+                $this->redirectTo = '/tutor';
                 return $this->redirectTo;
                 break;
             case 5:

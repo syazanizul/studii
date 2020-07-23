@@ -139,4 +139,17 @@ class Teacher extends Model
         }
         return 1;
     }
+
+    public static function need_nav_performance(int $teacher_id)    {
+        $has_question = Question::where('creator', $teacher_id)->where('finished',1)->get();
+
+        if($has_question->isNotEmpty())    {
+            $need_nav_performance = 1;
+        }   else    {
+            $need_nav_performance = 0;
+        }
+
+        return $need_nav_performance;
+    }
+
 }

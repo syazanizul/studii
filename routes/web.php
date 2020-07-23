@@ -61,22 +61,49 @@ Route::get('/teacher/submission-status/{set_id}', 'Teacher\SubmissionController@
 Route::get('/teacher/submission-status/verify/set-element/{id}', 'Teacher\SubmissionController@verify_set_element')->middleware('teacher');
 Route::get('/teacher/submission-status/verify/set-parent/{id}', 'Teacher\SubmissionController@verify_set_parent')->middleware('teacher');
 
-Route::get('/teacher/instruction', 'Teacher\InstructionController@index')->middleware('teacher');
-Route::get('/teacher/instruction/process-upload-questions', 'Teacher\InstructionController@process_upload_questions')->middleware('teacher');
-Route::get('/teacher/instruction/disclaimer', 'Teacher\InstructionController@disclaimer')->middleware('teacher');
+//Route::get('/teacher/instruction', 'Teacher\InstructionController@index')->middleware('teacher');
+//Route::get('/teacher/instruction/process-upload-questions', 'Teacher\InstructionController@process_upload_questions')->middleware('teacher');
+//Route::get('/teacher/instruction/disclaimer', 'Teacher\InstructionController@disclaimer')->middleware('teacher');
 
-Route::get('/teacher/upload/with-help','Teacher\AddquestionController@index_with_help')->middleware('teacher');;
-Route::get('/teacher/upload/with-help-2','Teacher\AddquestionController@index_with_help_2')->middleware('teacher');;
-Route::get('/teacher/upload/with-help-3','Teacher\AddquestionController@index_with_help_3')->middleware('teacher');;
-Route::post('/teacher/upload/with-help/upload-file', 'Teacher\AddquestionController@upload_question_set');
+//Route::get('/teacher/upload/with-help','Teacher\AddquestionController@index_with_help')->middleware('teacher');;
+//Route::get('/teacher/upload/with-help-2','Teacher\AddquestionController@index_with_help_2')->middleware('teacher');;
+//Route::get('/teacher/upload/with-help-3','Teacher\AddquestionController@index_with_help_3')->middleware('teacher');;
+//Route::post('/teacher/upload/with-help/upload-file', 'Teacher\AddquestionController@upload_question_set');
 
 //For add phone number in about.teacher
 Route::get('/about/submit/phone-number', 'About\TeacherController@phone_number');
-// End for teachers
+
+//For Contributing Set
+Route::get('/teacher/set', 'Teacher\AddquestionController@index')->middleware('teacher');
+Route::get('/teacher/set/template', 'Teacher\AddquestionController@contribute_set_template')->middleware('teacher');
+Route::get('/teacher/set/submit', 'Teacher\AddquestionController@contribute_set_submit')->middleware('teacher');
+Route::get('/teacher/set/status', 'Teacher\AddquestionController@contribute_set_status')->middleware('teacher');
+
+Route::get('/teacher/set/see/{id}', 'Teacher\AddquestionController@contribute_set_see')->middleware('teacher');
+Route::get('/teacher/set/see/{id}/show-question', 'Teacher\AddquestionController@see_set_choose')->middleware('teacher');
+
+Route::post('/teacher/set/submit/post', 'Teacher\AddquestionController@upload_set')->middleware('teacher');
+Route::post('/teacher/set/verify-finish/{id}', 'Teacher\AddquestionController@verify_set_finish')->middleware('teacher');
+
+// End for teachers-------------------------------------------------------------------------------------------------------
+
+
+//For Tutors ------------------------------------------------------------------------------------------------
+Route::get('/tutor', 'Tutor\HomeController@index')->name('tutor')->middleware('tutor');
+
+Route::get('/tutor/contribute', 'Tutor\ContributeController@index')->middleware('tutor');
+Route::get('/tutor/contribute/choose-set/{id}', 'Tutor\ContributeController@choose_set')->middleware('tutor');
+
+Route::get('/tutor/contribute/see-set/{id}', 'Tutor\ContributeController@see_set')->middleware('tutor');
+Route::get('/tutor/contribute/see-set/{id}/show-question', 'Tutor\ContributeController@see_set_choose')->middleware('tutor');
+Route::post('/tutor/contribute/see-set/declare-uploaded/{id}', 'Tutor\ContributeController@declare_set_uploaded')->middleware('tutor');
+
+Route::get('/tutor/contribute/add-property/{id}', 'Tutor\AddquestionController@index')->middleware('tutor');
+Route::post('/tutor/contribute/add-property/store', 'Tutor\AddquestionController@store')->middleware('tutor');
+// End for tutors
 
 
 Route::get('/parent', 'ParentsController@index')->name('parents')->middleware('parents');
-Route::get('/volunteer', 'VolunteerController@index')->name('volunteer')->middleware('volunteer');
 
 // For Admin
 Route::get('/admin', 'Admin\AdminController@index')->name('admin')->middleware('admin');
@@ -118,7 +145,7 @@ Route::post('about/for-company/submit', 'About\CompanyController@submit');
 // End About Us
 
 /* Routes to add question */
-Route::get('/teacher/question', 'AddQuestion\AddController@index');
+//Route::get('/teacher/question', 'AddQuestion\AddController@index');
 
     //Save 1
     Route::get('/question/add', 'AddQuestion\AddProperty@index');     //Show Add Property Page
@@ -155,6 +182,8 @@ Route::get('/teacher/question', 'AddQuestion\AddController@index');
 
 Route::get('/redirect/quick','QuestionController@quick');
 Route::get('/redirect/detailed','QuestionController@detailed');
+
+
 
 // ALL AJAX ----------
 // AJAX for Welcome page

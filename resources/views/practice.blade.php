@@ -453,9 +453,9 @@
                         </div>
                             <br>
                         <div style="border:2px solid #dbdbdb; border-radius: 7px; padding:10px; background-color: #eae7d9">
-                            @if(Session('adding_question') == 1)
-                                <a href="/question/add" class="btn btn-lg btn-secondary btn-block">Add Another Question</a>
-                            @endif
+{{--                            @if(Session('adding_question') == 1)--}}
+{{--                                <a href="/question/add" class="btn btn-lg btn-secondary btn-block">Add Another Question</a>--}}
+{{--                            @endif--}}
 
                             <button type="button" class="btn btn-lg btn-block btn-danger" data-toggle="modal" data-target="#report_modal">
                                Report

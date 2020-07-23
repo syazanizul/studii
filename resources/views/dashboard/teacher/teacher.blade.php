@@ -17,59 +17,12 @@
 
 @section('content')
 <div data-step="1" data-intro="This is your dashboard, where you can find all the relevant information.">
-    <div class="row mb-3">
-        <div class="col-sm-12">
-            <a href="javascript:void(0);" onclick="introJs().setOption('showProgress', true).start();" class="btn btn-primary btn-lg float-right m-2">I need help</a>
-            <a href="#" id="btn-role-teachers" class="btn btn-primary btn-lg float-right m-2">Role of teachers in Studii</a>
-        </div>
-    </div>
-
-    <div class="row my-2">
-        @if($noti[0] == 1)
-        <div class="col-md-12">
-            <div class="alert alert-warning alert-block">
-                <button type="button" class="close" data-dismiss="alert">×</button>
-                <strong>We still don't know your complete profile yet. Can you please fill them first by clicking <a href="/teacher/details">here</a>.</strong>
-            </div>
-        </div>
-        <div class="col-md-7">
-            <div class="alert alert-info alert-block">
-                <button type="button" class="close" data-dismiss="alert">×</button>
-                <strong>You need to complete your profile first before you can contribute your own questions.</strong>
-            </div>
-        </div>
-        @else
-        <div class="col-md-12">
-            <div class="alert alert-info alert-block">
-                <button type="button" class="close" data-dismiss="alert">×</button>
-                <strong>You have set up your profile. Our team will contact you soon to help you get around. Thank you.</strong>
-            </div>
-        </div>
-        @endif
-        @if($noti[2] == 1)
-        <div class="col-md-7">
-            <div class="alert alert-info alert-block">
-                <a type="button" class="close" data-dismiss="alert" onclick="disable_help('/ajax/dashboard/noti2')">×</a>
-                <strong>Do note that this Dashboard is best viewed on a computer (not a mobile phone)</strong>
-            </div>
-        </div>
-        @endif
-{{--        @if($noti[3] == 1)--}}
-{{--        <div class="col-md-5">--}}
-{{--            <div class="alert alert-info alert-block">--}}
-{{--                <a type="button" class="close" data-dismiss="alert" onclick="disable_help('/ajax/dashboard/noti3')">×</a>--}}
-{{--                <strong>This page can use your ideas! Tell us what you want to see on this page <a href="#" style="color:#b8732a">here</a>.</strong>--}}
-{{--            </div>--}}
+{{--    <div class="row mb-3">--}}
+{{--        <div class="col-sm-12">--}}
+{{--            <a href="javascript:void(0);" onclick="introJs().setOption('showProgress', true).start();" class="btn btn-primary btn-lg float-right m-2">I need help</a>--}}
+{{--            <a href="#" id="btn-role-teachers" class="btn btn-primary btn-lg float-right m-2">Role of teachers in Studii</a>--}}
 {{--        </div>--}}
-{{--        @endif--}}
-            <div class="col-md-9">
-                <div class="alert alert-warning alert-block">
-                    <button type="button" class="close" data-dismiss="alert">×</button>
-                    <strong>Click <a href="/teacher/instruction/process-upload-questions">here</a> to read the guide about the process of adding questions into Studii. When you're
-                        ready to submit your question, you can go to <a href="/teacher/question">ADD QUESTION</a> &rarr; <a href="/teacher/upload/with-help">UPLOAD WITH HELP</a> to upload your Microsoft Word (.docx) file.</strong>
-                </div>
-            </div>
-    </div>
+{{--    </div>--}}
 
     <div class="row" data-step="2" data-intro="These cards show you the statistics of the questions that you contribute.">
         <div class="col-lg-2 col-md-5 col-sm-5"  data-step="3" data-intro="Firstly, you have the total number of questions.">
@@ -154,7 +107,7 @@
             </div>
         </div>
 
-
+        @if(false)
         <div class="col-lg-3 col-md-6 col-sm-6" data-step="5" data-intro="Then of course the calculated earnings.">
             <div class="card card-stats">
                 <div class="card-body ">
@@ -221,10 +174,62 @@
                 </div>
             </div>
         </div>
-
-
-        {{-- Big Ones  --}}
+        @endif
     </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <p>More statistics coming soon</p>
+        </div>
+    </div>
+
+    <div class="row my-2">
+        @if($noti[0] == 1)
+            <div class="col-md-12">
+                <div class="alert alert-warning alert-block">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>We would love to know more about you! Can you please spend some time to tell us about yourself by clicking <a href="/teacher/details">here</a>.</strong>
+                </div>
+            </div>
+{{--            <div class="col-md-7">--}}
+{{--                <div class="alert alert-info alert-block">--}}
+{{--                    <button type="button" class="close" data-dismiss="alert">×</button>--}}
+{{--                    <strong>You need to complete your profile first before you can contribute your own questions.</strong>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+        @else
+            <div class="col-md-12">
+                <div class="alert alert-info alert-block">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>You have set up your profile. Our team will contact you soon to help you get around. Thank you.</strong>
+                </div>
+            </div>
+        @endif
+        @if($noti[2] == 1)
+            <div class="col-md-7">
+                <div class="alert alert-info alert-block">
+                    <a type="button" class="close" data-dismiss="alert" onclick="disable_help('/ajax/dashboard/noti2')">×</a>
+                    <strong>Do note that this Dashboard is best viewed on a computer (not a mobile phone)</strong>
+                </div>
+            </div>
+        @endif
+        {{--        @if($noti[3] == 1)--}}
+        {{--        <div class="col-md-5">--}}
+        {{--            <div class="alert alert-info alert-block">--}}
+        {{--                <a type="button" class="close" data-dismiss="alert" onclick="disable_help('/ajax/dashboard/noti3')">×</a>--}}
+        {{--                <strong>This page can use your ideas! Tell us what you want to see on this page <a href="#" style="color:#b8732a">here</a>.</strong>--}}
+        {{--            </div>--}}
+        {{--        </div>--}}
+        {{--        @endif--}}
+{{--        <div class="col-md-9">--}}
+{{--            <div class="alert alert-warning alert-block">--}}
+{{--                <button type="button" class="close" data-dismiss="alert">×</button>--}}
+{{--                <strong>Click <a href="/teacher/instruction/process-upload-questions">here</a> to read the guide about the process of adding questions into Studii. When you're--}}
+{{--                    ready to submit your question, you can go to <a href="/teacher/question">ADD QUESTION</a> &rarr; <a href="/teacher/upload/with-help">UPLOAD WITH HELP</a> to upload your Microsoft Word (.docx) file.</strong>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+    </div>
+
 {{--    <div class="row">--}}
 {{--        <div class="col-md-12" data-step="6" data-intro="Here you can see how many students attempt we have in Studii in daily basis. God we hope the graph is increasing.">--}}
 {{--            <div class="card ">--}}

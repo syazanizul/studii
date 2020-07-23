@@ -1,7 +1,7 @@
 @extends('dashboard.teacher.teacherApp')
 
 @section('dashboard-name')
-    teacher's dashboard
+    User Details
 @endsection
 
 @section('nav-user-details')
@@ -34,6 +34,21 @@
                                     @if($completed['add_image'] == 1)
                                         <h3>Add Image <span style="color:green">&#10003</span></h3>
                                     @endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @else
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p class="font-weight-bold" style="font-size:1.3em;">Your data submitted here is safe</p>
+                                    <p style="font-size:1.15em">Any data saved by us is purely for you, so that you have a good experience using this platform and will not be given to any other parties without your consent.</p>
+                                    <p></p>
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="{{asset('images/assets/shut-it.png')}}" class="w-75 d-block m-auto">
                                 </div>
                             </div>
                         </div>
@@ -156,9 +171,10 @@
 {{--            </div>--}}
             @if($completed['edit_profile'] == 0)
             <div class="col-md-11">
-                <div class="card card-user">
+                <div class="card card-user" style="border:3px solid grey">
                     <div class="card-header">
-                        <h5 class="card-title">Edit Profile</h5>
+                        <p class="float-right m-3 font-weight-bold">Please fill in this section first</p>
+                        <h5 class="card-title">Basic Information About You</h5>
                     </div>
                     <div class="card-body">
                         <form method="post" action="/teacher/details/edit-profile">
@@ -242,11 +258,13 @@
                                 </div>
                             </div>
                             <hr>
-                            <p>Please fill in this section first</p>
                             <input type="submit" class="btn btn-primary btn-lg m-2 float-right" value="Submit">
 
                         </form>
                     </div>
+                </div>
+                <div>
+
                 </div>
             </div>
             @endif
@@ -266,15 +284,15 @@
                                     <form action="/teacher/details/teaching-details/exam" method="post">
                                         @csrf
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">You teach for which exam?</label>
+                                            <label for="exam">You teach for which exam?</label>
                                             <div class="d-flex">
-                                                <select name="exam" class="form-control m-1">
-                                                    <option>Choose Exam</option>
+                                                <select name="exam" class="form-control m-1" required>
+                                                    <option value="">Choose Exam</option>
                                                     @foreach($data['exam'] as $n)
                                                         <option value="{{$n->id}}">{{$n->name_shortened}}</option>
                                                     @endforeach
                                                 </select>
-                                                <input type="submit" class="btn btn-primary d-inline-block m-1" value="Add Exam">
+                                                <input type="submit" class="btn btn-primary d-inline-block m-1" value="Add Exam" @if($completed['edit_profile'] == 0) disabled @endif>
                                             </div>
                                         </div>
                                     </form>
@@ -283,8 +301,9 @@
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">You are a teacher of what subject?</label>
                                             <div class="d-flex">
-                                                <select name="exam" class="form-control m-1" onchange="subject_based_on_exam(this.value)">
+                                                <select name="exam" class="form-control m-1" onchange="subject_based_on_exam(this.value)" required>
                                                     @if(!$data['exam_chosen']->isEmpty())
+                                                        <option value="">Choose Exam</option>
                                                         @foreach($data['exam_chosen'] as $n)
                                                             <option value="{{$n->exam_id}}">{{\App\Exam::exam_name($n->exam_id)}}</option>
                                                         @endforeach
@@ -292,20 +311,25 @@
                                                         <option value="">No exam</option>
                                                     @endif
                                                 </select>
-                                                <select name="subject" id="select_subject_teaching_details" class="form-control m-1">
+                                                <select name="subject" id="select_subject_teaching_details" class="form-control m-1" required>
                                                     @if(!$data['exam_chosen']->isEmpty())
+                                                        <option value="">Choose Subject</option>
                                                         @foreach($data['subject'] as $b)
                                                             @if($b->exam == $data['exam_chosen'][0]->exam_id)
                                                                 <option value="{{$b->id}}">{{$b->name}}</option>
                                                             @endif
                                                         @endforeach
                                                     @else
-                                                        <option>Subject?</option>
+                                                        <option>No Subject</option>
                                                     @endif
                                                 </select>
-                                                <button class="btn btn-primary d-inline-block m-1">Add Subject</button>
+                                                @if(!$data['exam_chosen']->isEmpty())
+                                                    <button class="btn btn-primary d-inline-block m-1" @if($completed['edit_profile'] == 0) disabled @endif>Add Subject</button>
+                                                @else
+                                                    <button class="btn btn-primary d-inline-block m-1" disabled>Add Exam First</button>
+                                                @endif
                                             </div>
-                                            <p>Eg: Add Math for SPM, or Math for STPM</p>
+                                            <p>Eg: Add Math for SPM, or Science for STPM</p>
                                         </div>
                                     </form>
                                 </div>
@@ -314,6 +338,7 @@
                             </div>
                             <div class="col-md-4 p-2">
                                 @if(!$data['exam_chosen']->isEmpty())
+                                    <p>You teach:</p>
                                     @foreach($data['exam_chosen'] as $n)
                                         <table class="p-5 my-3" style="border:2px solid #d4d4d4; border-radius:10px">
                                             <tr>
@@ -347,15 +372,20 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <a class="btn-primary btn m-0" onclick="not_in_list(); this.style.display = 'none'">If your school is not in the list, click here</a>
+                                    <a class="btn-primary btn m-0" onclick="not_in_list(); this.style.display = 'none'" @if($completed['edit_profile'] == 0) disabled @endif>If your school is not in the list, click here</a>
                                 </div>
                                 <div class="col-md-12" id="revealdiv" style="visibility: hidden;">
                                     <input id="schoolname2" class="form-control" type="text" name="schoolname2" placeholder="School Name">
                                     <p class="mt-2"><b>Please put school name together with the location:</b> Eg : Mahad Attarbiyah Al-Islamiyah, Beseri, Perlis.</p>
                                 </div>
                             </div>
-                            <a onclick="submit_form()" class="btn btn-primary btn-lg m-2 float-right" @if($completed['edit_profile'] == 0) disabled @endif>Submit</a>
-                            @if($completed['edit_profile'] == 0) <p>Please fill in <b>Profile (top)</b> section first.</p> @endif
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <hr>
+                                    <a onclick="submit_form()" class="btn btn-primary btn-lg m-2 float-right" @if($completed['edit_profile'] == 0) disabled @endif>Done</a>
+                                    @if($completed['edit_profile'] == 0) <p>Please fill in <b>Profile (top)</b> section first.</p> @endif
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -380,7 +410,7 @@
                         <div class="row">
                             <div class="col-md-2"></div>
                             <div class="col-md-8">
-                                <button class=" btn btn-primary btn-block" onclick="this.style.display='none'; document.getElementById('form_add_button').style.display='block'">Add an image</button>
+                                <button class=" btn btn-primary btn-block" onclick="this.style.display='none'; document.getElementById('form_add_button').style.display='block'" @if($completed['edit_profile'] == 0) disabled @endif>Add an image</button>
                                 <form id="form_add_button" style="display: none" action="/teacher/details/add-image" method="POST" role="form" enctype="multipart/form-data">
                                     @csrf
                                     <label for="fileupload"> Add an image of you</label>
@@ -390,7 +420,7 @@
                                     >
                                     <input class="btn btn-primary" type="submit" value="Add Image" @if($completed['edit_profile'] == 0) disabled @endif>
                                 </form>
-                                <a href="#" onclick="document.getElementById('text-dont-have').innerText = 'Are you sure you dont want to add any?'; document.getElementById('btn-dont-have').style.visibility = 'visible'" class="my-4 btn btn-primary btn-block">I don't want any image</a>
+                                <a href="#" onclick="document.getElementById('text-dont-have').innerText = 'Are you sure you dont want to add any?'; document.getElementById('btn-dont-have').style.visibility = 'visible'" class="my-4 btn btn-primary btn-block" @if($completed['edit_profile'] == 0) disabled @endif>I don't want any image</a>
 
                                 {{--                        <p class="description text-center">--}}
                                 {{--                            "I like the way you work it--}}
@@ -433,10 +463,15 @@
             </div>
             @endif
         </div>
-        <hr>
-{{--        If done...--}}
+       {{--        If done...--}}
 
     <div class="row">
+
+        @if($completed['add_image'] == 1 || $completed['edit_profile'] == 1 || $completed['teaching_details'] == 1)
+            <div class="col-lg-12">
+                <h3>Saved Info</h3>
+            </div>
+        @endif
 
         @if($completed['add_image'] == 1)
             <div class="col-md-4">
@@ -460,7 +495,7 @@
         @endif
 
         @if($completed['edit_profile'] == 1)
-            <div class="col-md-7">
+            <div class="col-md-4">
                 <div class="card card-user">
                     <div class="card-header">
                         <h5 class="card-title">Your Profile</h5>
@@ -472,16 +507,16 @@
                                     {{$data['profile_title']}} {{\Illuminate\Support\Facades\Auth::user()-> firstname}} {{\Illuminate\Support\Facades\Auth::user()-> lastname}}
                                 </h4>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <p class="p-bigger">Gender: @if($data['profile']-> gender == 1) Male @elseif(($data['profile']-> gender == 2)) Female   @endif</p>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <p class="p-bigger">IC number: {{$data['profile']->ic}}</p>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <p class="p-bigger">Phone number: {{$data['profile']->phone}}</p>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <p class="p-bigger">You prefer: {{$data['profile_mode_comm']}}</p>
                             </div>
                             @if($completed['teaching_details'] == 1)
@@ -498,7 +533,7 @@
         @endif
 
         @if($completed['teaching_details'] == 1)
-            <div class="col-md-8">
+            <div class="col-md-4">
                 <div class="card card-user">
                     <div class="card-header">
                         <h5 class="card-title">Teaching Details</h5>
@@ -517,7 +552,7 @@
                                                 @if($m->exam_id == $n->exam_id)
                                                     <tr>
                                                         <td class="px-2">{{\App\Subject::subject_name($m->subject_id)}}</td>
-                                                        <td class="px-2"><button class="btn btn-primary m-1" disabled>Remove</button></td>
+{{--                                                        <td class="px-2"><button class="btn btn-primary m-1" disabled>Remove</button></td>--}}
                                                     </tr>
                                                 @endif
                                             @endforeach
@@ -531,6 +566,12 @@
 
                     </div>
                 </div>
+            </div>
+        @endif
+
+        @if($completed['edit_profile'] == 1 || $completed['teaching_details'] == 1)
+            <div class="col-lg-12">
+                <p>The <b>edit button</b> is under development.</p>
             </div>
         @endif
     </div>

@@ -1,6 +1,9 @@
 /node_modules
 /public/hot
-/public/storage
+/public/storage/question_set
+/public/images/question_images
+/public/images/user_images
+/public/images/working_images
 /storage/*.key
 /vendor
 .env

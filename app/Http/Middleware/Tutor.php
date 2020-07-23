@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Auth;
 
-class Teacher
+class Tutor
 {
     /**
      * Handle an incoming request.
@@ -20,13 +20,13 @@ class Teacher
             return redirect()->route('student');
         }
         elseif (Auth::check() && Auth::user()->role == 2) {
-            return $next($request);
+            return redirect()->route('teacher');
         }
         elseif (Auth::check() && Auth::user()->role == 3) {
             return redirect()->route('parents');
         }
         elseif (Auth::check() && Auth::user()->role == 4) {
-            return redirect()->route('tutor');
+            return $next($request);
         }
         elseif (Auth::check() && Auth::user()->role == 5) {
             return redirect()->route('admin');

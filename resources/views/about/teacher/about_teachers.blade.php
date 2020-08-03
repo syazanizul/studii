@@ -69,7 +69,7 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <p class="big-p my-1">We are just a platform. We don't work without the teachers. We want to collaborate with you to have your exercise questions in our library.</p>
+                    <p class="big-p my-1">We are just a platform. We are nothing without the teachers. We want to work with you to have your exercise questions in our library.</p>
                     <p class="big-p my-4"><b>You make the exercise questions, we provide the platform. Then the students study :)</b></p>
                 </div>
                 <div class="col-md-1"></div>
@@ -96,7 +96,7 @@
                 <div class="col-lg-12">
                     <h1 class="headline">We appreciate your contribution</h1>
                     <p class="big-p mt-4">For every question submitted by you, you will be compensated everytime a student attempts it.</p>
-                    <p class="big-p "><b>Everytime a student attempts.</b> One student may have multiple attempts, and there are lots of students!</p>
+{{--                    <p class="big-p "><b>Everytime a student attempts.</b> One student may have multiple attempts, and there are lots of students!</p>--}}
 {{--                    <p class="big-p my-2"><b>1 cent for every attempt</b></p>--}}
 {{--                    <p style="font-size:1em">* 1 cent = 1 attempt is part of the <b>Early Involvement Offer</b>, up until August 2020 (estimated) only. After that the rate may changed.</p>--}}
                 </div>

@@ -15,6 +15,11 @@
                 <p>Dashboard</p>
             </a>
         </li>
+        <li @yield('nav-earning-tracker')>
+            <a href="/admin/earning-tracker">
+                <p>Earning Tracker</p>
+            </a>
+        </li>
         <li @yield('nav-set-price')>
             <a href="/admin/set-price">
                 <p>Set Price</p>

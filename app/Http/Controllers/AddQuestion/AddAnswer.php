@@ -7,21 +7,17 @@ use App\AnswerElement;
 use App\AnswerParent;
 use App\Question;
 use App\QuestionSetElement;
+use App\WorkingImage;
+use App\WorkingText;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 
 class AddAnswer extends Controller
 {
-    //  ---------------------NINTH METHOD
-//    public function answer($id) {
-//
-//        $question = Question::query()->findOrFail($id);
-//
-//        return view('/addquestion/answer', compact('question'));
-//    }
-
+    // === Index
     public function index($id, Request $request) {
 
         $question = Question::query()->findOrFail($id);
@@ -29,48 +25,7 @@ class AddAnswer extends Controller
         return view('/addquestion/answer2', compact('question'));
     }
 
-//    //  ----------------------TENTH METHOD
-//    public function check_answer($id, Request $request)  {
-//        $content_id = request('contentid');
-//
-////        $content = DB::table('answers')->where('content_id', $content_id) -> get();
-//        $content = AnswerElement::where('content_id', $content_id)->get();
-////        dd($content);
-//
-//        if ($content -> isEmpty())    {
-//            $exist = 0;
-//            $data = [
-//                'content1' => null,
-//                'content2' => null,
-//                'correct' => null,
-//                'contentid' => $content_id,
-//                'new' => 1
-//            ];
-//
-//        }   else    {
-//
-//            if ($content[0] -> correct == 1)    {
-//                $correct = 1;
-//            }   else    {
-//                $correct = 2;
-//            }
-//
-//            $exist = 1;
-//            $data = [
-//                'content1' => $content[0]-> answer,
-//                'content2' => $content[1]-> answer,
-//                'correct' => $correct,
-//                'contentid' => $content_id,
-//                'new' => 0
-//            ];
-//        }
-
-//        dd($data['new']);
-//
-//        $request->flash();
-//        return redirect('/question/update/answer/'.$id)-> with('exist', $exist) -> with($data);
-//    }
-
+    // ===  For Edit Answer Element
     public function set_up_update($id,Request $request) {
 
         $answer_parent = AnswerParent::query()->findOrFail($request->answer_parent_id);
@@ -78,8 +33,8 @@ class AddAnswer extends Controller
         return back()->with(compact('answer_parent'));
     }
 
+    // ===  For storing new answer element
     public function store_insert(Request $request) {
-//        dd($request->all());
 
         $order = AnswerParent::where('content_id', $request->contentid)->count();
 
@@ -92,7 +47,7 @@ class AddAnswer extends Controller
         $n->save();
 
         $i=1;
-//        dd($request->answer);
+
         foreach($request->answer as $m)   {
             $k = new AnswerElement;
             $k->answer_parent_id = $n->id;
@@ -112,13 +67,11 @@ class AddAnswer extends Controller
         return redirect()->back();
     }
 
+    // ===  To update answer element
     public function store_update(Request $request) {
-//        dd($request->all());
 
         $n = AnswerParent::query()->find($request->get('answer_parent_id'));
-
         $answer_elements = AnswerElement::query()->where('answer_parent_id', $n->id)->get();
-
 
         $i=0;
 
@@ -139,103 +92,35 @@ class AddAnswer extends Controller
         return redirect()->back();
     }
 
-//    public function store3($id, Request $request)    {
-////        dd($request -> all());
-//
-//        $new = $request -> get('new');
-//        $correct = $request -> get('correct');
-//        $answer1 = $request -> get('answer1');
-//        $answer2 = $request -> get('answer2');
-//        $answer3 = $request -> get('answer3');
-//        $answer4 = $request -> get('answer4');
-//        $content_id = $request -> get('contentid');
-//
-////        dd($new);
-//
-//        if ($new == 1)  {
-//            //Answer 1
-//            $this->store_answer_insert($content_id, 1 ,$answer1
-//                , $correct);
-//
-//            //Answer 2
-//            $this->store_answer_insert($content_id, 2 ,$answer2, $correct);
-//
-//            //Answer 3
-//            if ($answer3 != '')   {
-//                $this->store_answer_insert($content_id, 3 ,$answer3, $correct);
-//            }
-//
-//            //Answer 3
-//            if ($answer4 != '')   {
-//                $this->store_answer_insert($content_id, 4 ,$answer4, $correct);
-//            }
-//
-//
-//        }   else    {
-//            $update = Answer::where('content_id', $content_id) -> get();
-////            dd($answer1);
-//
-////            Answer 1
-//            $this ->store_answer_update($content_id ,1 ,$answer1, $correct);
-//
-//
-////            Answer 2
-//            $this ->store_answer_update($content_id ,2 ,$answer2, $correct);
-//
-//
-////            Answer 3
-//            if ($answer3 != "" && isset($update[2]))   {
-//
-//                $this ->store_answer_update($content_id ,3 ,$answer3, $correct);
-//
-//            }   else if ($answer3 != "")   {
-//
-//                $this->store_answer_insert($content_id, 3 ,$answer3, $correct);
-//            }
-//
-////            Answer 3
-//            if ($answer4 != "" && isset($update[3]))   {
-//
-//                $this ->store_answer_update($content_id ,4 ,$answer4, $correct);
-//
-//            }   else if ($answer4 != "")   {
-//
-//                $this->store_answer_insert($content_id, 4 ,$answer4, $correct);
-//            }
-//        }
-//        return redirect('/question/update/answer/'. $id);
-//    }
+    // === Delete answer parents, including its working and answer element
+    public function delete(Request $request)    {
+        $answer_parent = AnswerParent::query()->find($request->get('answer_parent_id'));
 
-//    public function store_answer_insert($content_id, $num, $answer, $correct)   {
-//        $m = new Answer;
-//        $m -> content_id = $content_id;
-//        $m -> answer = $answer;
-//        if ((int)$correct == $num)  {
-//            $m -> correct = 1;
-//        }   else    {
-//            $m -> correct = 0;
-//        }
-//        $m -> created_at = now();
-//        $m -> updated_at = now();
-//
-//        $m -> save();
-//    }
-//
-//    public function store_answer_update($content_id ,int $num ,$answer, $correct)   {
-//        $update = Answer::where('content_id', $content_id) -> get();
-//
-//        $update[$num-1] -> answer = $answer;
-////        dd($update[$num]);
-//        if ((int)$correct == $num)  {
-//            $update[$num-1] -> correct = 1;
-////            dd('yes');
-//        }   else    {
-//            $update[$num-1] -> correct = 0;
-//        }
-//
-//        $update[$num-1] -> updated_at = now();
-//        $update[$num-1] -> save();
-//    }
+        // 1. Delete all working_parent and its working_children
+        foreach($answer_parent->working_parent as $m)  {
+            if($m->type == 1)    {
+                $working_text = WorkingText::where('working_parent_id', $m->id)->first();
+                $working_text->delete();
+
+            }   else if ($m->type == 2)  {
+                $working_image = WorkingImage::where('working_parent_id', $m->id)->first();
+                $s = Storage::disk('public')->delete('images/working_images/'. $working_image->image_name);
+                $working_image->delete();
+            }
+
+            $m->delete();
+        }
+
+        // 2. Delete all answer element
+        foreach($answer_parent->answer_element as $b)   {
+            $b->delete();
+        }
+
+        // 3. Delete answer parent
+        $answer_parent->delete();
+
+        return redirect()->back();
+    }
 
     public function publish($id)   {
         $m = QuestionSetElement::where('question_id', $id)->first();
@@ -243,11 +128,10 @@ class AddAnswer extends Controller
             $m->upload_status = 1;
             $m -> save();
         }
-        
+
         $n = Question::find($id);
         $n -> finished = 1;
         $n -> save();
-//        dd($id);
 
         session(['qid' => [$id, -1]]);
         return redirect('/practice?num=0')->with('adding_question',1);

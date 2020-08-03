@@ -94,7 +94,11 @@
                 <p><b>Data Protection Statement</b></p>
 {{--                <p>We attach great importance to the protection of your personal data. We therefore strictly adhere to the legal provisions governing the admissibility of the handling of personal data and have taken appropriate technical and organisational precautions. The following declaration gives you an overview of how we guarantee this protection and what kind of data we collect for what purpose.</p>--}}
                 We attach great importance to the protection of your personal data. We therefore strictly adhere to the legal provisions governing the admissibility of the handling of personal data and have taken appropriate technical and organisational precautions.
-                <p>Click here for the declaration. <a href="/register/data-protected" class="btn btn-primary mx-4 my-2">Read Declaration</a></p>
+
+                @if(false)
+                    <p>Click here for the declaration. <a href="/register/data-protected" class="btn btn-primary mx-4 my-2">Read Declaration</a></p>
+                @endif
+
                 <p>By registering in Studii, you admit that you understand that your data saved and generated in Studii will not be exploited or sold, unless
                     for the the benefit of you, in which will be check and approved by you first.</p>
             </div>

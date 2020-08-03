@@ -13,6 +13,11 @@ class AdminController extends Controller
     public function index()
     {
 
+        return view('dashboard.admin.admin');
+    }
+
+    public function earning_tracker()   {
+
         $feedback = DB::table('feedback_form_quick_rating')->get();
 
         $feedback_accumulate = 0;
@@ -27,6 +32,6 @@ class AdminController extends Controller
             $feedback_average = 0;
         }
 
-        return view('dashboard.admin.admin', compact('feedback_average'));
+        return view('dashboard.admin.earning_tracker', compact('feedback_average'));
     }
 }

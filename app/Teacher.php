@@ -48,7 +48,7 @@ class Teacher extends Model
 
     public static function total_earning_cumulative(int $type, $teacher_id) {
 
-        $g = ContributionEarningTracker::where('user_id', $teacher_id)->orderBy('end_date', 'desc')->first();
+//        $g = ContributionEarningTracker::where('user_id', $teacher_id)->orderBy('end_date', 'desc')->first();
 
         if($type==1)    {
 

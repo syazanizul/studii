@@ -506,7 +506,7 @@
     </section>
 
     <section>
-        <div style="height:100px    "></div>
+        <div style="height:100px"></div>
     </section>
 
 @endsection

@@ -108,6 +108,8 @@ Route::get('/parent', 'ParentsController@index')->name('parents')->middleware('p
 // For Admin
 Route::get('/admin', 'Admin\AdminController@index')->name('admin')->middleware('admin');
 
+Route::get('/admin/earning-tracker', 'Admin\AdminController@earning_tracker')->name('admin')->middleware('admin');
+
 Route::get('/admin/set-price', 'Admin\SetPriceQuestionController@index')->middleware('admin');
 Route::get('/admin/set-price/show', 'Admin\SetPriceQuestionController@show_question')->middleware('admin');
 Route::post('/admin/set-price/save', 'Admin\SetPriceQuestionController@save')->middleware('admin');
@@ -163,13 +165,12 @@ Route::post('about/for-company/submit', 'About\CompanyController@submit');
     Route::get('/question/add/save/content/{id}/remove/{order}', 'AddQuestion\AddContent@removecontent');
 
     //Save 3
-//    Route::get('/question/update/answer/{id}', 'AddQuestion\AddAnswer@answer'); //view answer page
     Route::get('/question/update/answer/{id}', 'AddQuestion\AddAnswer@index'); //view answer page
     Route::get('/question/add/check/answer/{id}','AddQuestion\AddAnswer@check_answer');
-//    Route::get('/question/add/save/answer/{id}','AddQuestion\AddAnswer@store3');
     Route::get('/question/add/save/answer/setup/update/{id}','AddQuestion\AddAnswer@set_up_update');
     Route::get('/question/add/save/answer/insert','AddQuestion\AddAnswer@store_insert');
     Route::get('/question/add/save/answer/update','AddQuestion\AddAnswer@store_update');
+    Route::get('/question/add/save/answer/delete','AddQuestion\AddAnswer@delete');
     Route::get('/question/publish/{id}','AddQuestion\AddAnswer@publish');
 
     /* Route Add Working */
@@ -195,6 +196,10 @@ Route::get('/ajax/count', 'Ajax\WelcomeController@count');
 // End AJAX for Welcome page
 
 //AJAX for general
+
+//Ajax for Welcome Page
+Route::get('/ajax/welcome/hide-modal', 'Ajax\WelcomeController@hide_first_impression_modal');
+
 //Route::get('/ajax/feedback', 'Ajax\AjaxController@feedback');
 Route::get('/ajax/feedback/rating', 'Ajax\PracticeController@feedback_form_quick_rating');
 Route::get('/ajax/feedback/improvement', 'Ajax\PracticeController@feedback_form_quick_improvement');

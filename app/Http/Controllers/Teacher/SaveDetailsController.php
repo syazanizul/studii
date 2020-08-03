@@ -4,53 +4,64 @@ namespace App\Http\Controllers\Teacher;
 
 use App\Http\Controllers\Controller;
 use App\ProfileTracker;
-use App\User;
+use App\Traits\UploadTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-class DetailsController extends Controller
+class SaveDetailsController extends Controller
 {
+    use UploadTrait;
+
     public function index() {
 
-        // === To see how many requirements haven't settled yet
+        //To see how many requirements haven't settled yet
         $i = 3;
 
-        // -------------------------------------------------------------------------------------------------
-        // === Check for Edit Profile
-        $edit_profile = ProfileTracker::where('role', 2)->where('user_id', Auth::user()->id)->where('event', 1)->get();
+        //        ------------------------------------------------------------------------------
+        //Check for edit profile
+        $edit_profile = DB::table('teacher_profile_tracker')->where('user_teacher_id', Auth::user()->id)
+            ->where('edit_profile',1)
+            ->get();
 
-        if($edit_profile->isNotEmpty())    {
+        if ($edit_profile->isNotEmpty())  {
             $data['profile'] = DB::table('teacher_details')->where('user_teacher_id', Auth::user()-> id)->first();
 
-            // --- Cikgu, Sir, Miss, etc...
             $data['profile_title'] = ProfileTracker::title_int_to_string($data['profile']->title);
 
-            // --- WhatsApp, email, sms, etc...
-            $data['profile_mode_comm'] = ProfileTracker::profile_mode_communication($data['profile']->preferred_mode_communication);
+            switch($data['profile']->preferred_mode_communication)    {
+                case 1:
+                    $data['profile_mode_comm'] = 'Whatsapp';
+                    break;
+                case 2:
+                    $data['profile_mode_comm'] = 'Call & SMS';
+                    break;
+                case 3:
+                    $data['profile_mode_comm'] = 'Email';
+                    break;
+            }
 
-            // --- for functionality of next page
             $completed['edit_profile'] = 1 ;
             $i--;
-
         }   else    {
-            $completed['edit_profile'] = 0 ;
 
+            $completed['edit_profile'] = 0 ;
         }
 
-        // -------------------------------------------------------------------------------------------------
-        // === Check for Teaching Details
+        ///---------------------------------------------------------------------
+        //        --------------------------------------- for teaching details
 
-        $teaching_details = ProfileTracker::where('role', 2)->where('user_id', Auth::user()->id)->where('event', 2)->get();
+        $teaching_details = DB::table('teacher_profile_tracker')->where('user_teacher_id', Auth::user()->id)
+            ->where('teaching_details',1)
+            ->get();
 
         if ($teaching_details->isNotEmpty())  {
-
-            // --- for functionality of next page
+            //Settle the counter
             $completed['teaching_details'] = 1 ;
             $i--;
         }   else    {
-
             $completed['teaching_details'] = 0 ;
+
         }
 
         //Other things
@@ -62,21 +73,21 @@ class DetailsController extends Controller
 
         $data['school_list'] = DB::table('schools_list')->get();
 
-        // -------------------------------------------------------------------------------------------------
-        // === Check for Add Image
-
-        $add_image = ProfileTracker::where('role', 2)->where('user_id', Auth::user()->id)->where('event', 3)->get();
+        //---------------------------------------------------------------------
+        //        --------------------------------------- for add image
+        $add_image = DB::table('teacher_profile_tracker')->where('user_teacher_id', Auth::user()->id)
+            ->where('add_image',1)
+            ->get();
 
         if ($add_image->isNotEmpty())  {
-
-            // --- for functionality of next page
             $completed['add_image'] = 1 ;
             $i--;
         }   else    {
-
             $completed['add_image'] = 0 ;
             $data['profile_pic'] = 0;
         }
+
+//        dd(\App\Exam::exam_name(1));
 
         return view('dashboard.teacher.details', compact('i','completed', 'data'));
     }
@@ -88,10 +99,7 @@ class DetailsController extends Controller
         $check = DB::table('teacher_details') -> where('user_teacher_id', Auth::user() -> id)->get();
 
         //Update First and Last name in USERS table first.
-        $user = User::find(Auth::user()->id);
-        $user->firstname = $d['firstname'];
-        $user->lastname = $d['lastname'];
-        $user->save();
+        DB::table('users') -> where('id', Auth::user()->id) ->update(['firstname' => $d['firstname'], 'lastname' => $d['lastname']]);
 
         //Insert or Update in TEACHERS DETAILS table
         if (!$check-> isEmpty())   {
@@ -107,16 +115,27 @@ class DetailsController extends Controller
         }
 
         //Now go to TEACHER PROFILE TRACKER table to update this save
-        $m = new ProfileTracker();
-        $m -> role = 2;
-        $m -> user_id = Auth::user()->id;
-        $m -> event = 1;
-        $m -> save();
+        $check_tracker = DB::table('teacher_profile_tracker') -> where('user_teacher_id', Auth::user() -> id)->get();
+
+        if (!$check_tracker-> isEmpty())   {
+            DB::table('teacher_profile_tracker') -> where('user_teacher_id', Auth::user() -> id)
+                -> update(
+                    ['edit_profile' => true, 'updated_at' => now()]
+                );
+
+        }   else    {
+            DB::table('teacher_profile_tracker')
+                -> insert(
+                    ['user_teacher_id' => Auth::user()->id, 'edit_profile'=> true, 'created_at' => now(), 'updated_at' => now()]
+                );
+        }
 
         return redirect()->back();
     }
 
 
+//    ---------------------------------------------------------------------------------------------------------------------------
+//    TEACHING DETAILS
     public function teaching_details_exam() {
         $x = request()->post('exam');
 
@@ -128,7 +147,6 @@ class DetailsController extends Controller
 
         return redirect()->back();
     }
-
 
     public function teaching_details_subject()  {
         $exam = request()->post('exam');
@@ -142,7 +160,6 @@ class DetailsController extends Controller
 
         return redirect()->back();
     }
-
 
     public function teaching_details()  {
         $x = request()->post();
@@ -172,12 +189,23 @@ class DetailsController extends Controller
             }
         }
 
+
+
         //Now go to TEACHER PROFILE TRACKER table to update this save
-        $m = new ProfileTracker();
-        $m -> role = 2;
-        $m -> user_id = Auth::user()->id;
-        $m -> event = 2;
-        $m -> save();
+        $check_tracker = DB::table('teacher_profile_tracker') -> where('user_teacher_id', Auth::user() -> id)->get();
+
+        if (!$check_tracker-> isEmpty())   {
+            DB::table('teacher_profile_tracker') -> where('user_teacher_id', Auth::user() -> id)
+                -> update(
+                    ['teaching_details' => true, 'updated_at' => now()]
+                );
+        }   else    {
+            DB::table('teacher_profile_tracker')
+                -> insert(
+                    ['user_teacher_id' => Auth::user()->id, 'teaching_details'=> true, 'created_at' => now(), 'updated_at' => now()]
+                );
+        }
+
 
         return redirect() -> back();
     }
@@ -188,6 +216,19 @@ class DetailsController extends Controller
         $request->validate([
             'avatar'     =>  'required|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
+
+//        // Get image file
+//        $image = $request->file('avatar');
+//        // Make a image name based on user name and current timestamp
+//        $name = Str::slug($request->input('name')).'_'.time();
+//        // Define folder path
+//        $folder = '/images/user_images';
+//        // Make a file path where image will be stored [ folder path + file name + file extension]
+//        $filePath = $folder . $name. '.' . $image->getClientOriginalExtension();
+//        // Upload image
+//        $this->uploadOne($image, $folder, 'public', $name);
+
+
 
         $image = $request->file('avatar');
 
@@ -211,20 +252,27 @@ class DetailsController extends Controller
                         );
                 }
 
+
+
                 //Now go to TEACHER PROFILE TRACKER table to update this save
-                $m = new ProfileTracker();
-                $m -> role = 2;
-                $m -> user_id = Auth::user()->id;
-                $m -> event = 3;
-                $m -> save();
+                $check_tracker = DB::table('teacher_profile_tracker') -> where('user_teacher_id', Auth::user() -> id)->get();
+
+                if (!$check_tracker-> isEmpty())   {
+                    DB::table('teacher_profile_tracker') -> where('user_teacher_id', Auth::user() -> id)
+                        -> update(
+                            ['add_image' => true, 'updated_at' => now()]
+                        );
+                }   else    {
+                    DB::table('teacher_profile_tracker')
+                        -> insert(
+                            ['user_teacher_id' => Auth::user()->id, 'add_image'=> true, 'created_at' => now(), 'updated_at' => now()]
+                        );
+                }
 
                 return redirect() -> back();
             }
         }
-
-        return false;
     }
-
 
     public function no_image()  {
 
@@ -243,12 +291,22 @@ class DetailsController extends Controller
                 );
         }
 
+
+
         //Now go to TEACHER PROFILE TRACKER table to update this save
-        $m = new ProfileTracker();
-        $m -> role = 2;
-        $m -> user_id = Auth::user()->id;
-        $m -> event = 3;
-        $m -> save();
+        $check_tracker = DB::table('teacher_profile_tracker') -> where('user_teacher_id', Auth::user() -> id)->get();
+
+        if (!$check_tracker-> isEmpty())   {
+            DB::table('teacher_profile_tracker') -> where('user_teacher_id', Auth::user() -> id)
+                -> update(
+                    ['add_image' => true, 'updated_at' => now()]
+                );
+        }   else    {
+            DB::table('teacher_profile_tracker')
+                -> insert(
+                    ['user_teacher_id' => Auth::user()->id, 'add_image'=> true, 'created_at' => now(), 'updated_at' => now()]
+                );
+        }
 
         return redirect() -> back();
     }

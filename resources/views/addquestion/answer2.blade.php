@@ -92,15 +92,21 @@
                                             <input type="hidden" name="answer_parent_id" value="{{$o->id}}">
                                             <input type="submit" class="btn btn-primary" value="Edit Answer">
                                         </form>
-                                        <form action="/question/working/{{$question->id}}" class="d-inline-block mx-1">
+                                        <form action="/question/add/save/answer/delete" class="d-inline-block mx-2">
                                             <input type="hidden" name="answer_parent_id" value="{{$o->id}}">
-                                            @if($o->working_parent->count() == 0)
-                                                <input type="submit" class="btn btn-primary" value="Add Working">
-                                            @else
-                                                <input type="submit" class="btn btn-primary" value="Edit Working">
-                                            @endif
+                                            <input type="submit" class="btn btn-secondary" value="Delete Answer">
                                         </form>
-                                        <p class="float-right mx-3">Working: <b>{{$o->working_parent->count()}}</b></p>
+                                        <div class="float-right d-block">
+                                            <form action="/question/working/{{$question->id}}" class="d-inline-block mx-1 ">
+                                                <input type="hidden" name="answer_parent_id" value="{{$o->id}}">
+                                                @if($o->working_parent->count() == 0)
+                                                    <input type="submit" class="btn btn-primary" value="Add Working">
+                                                @else
+                                                    <input type="submit" class="btn btn-primary" value="Edit Working">
+                                                @endif
+                                            </form>
+                                            <p class="mx-1 d-inline-block">Working: <b>{{$o->working_parent->count()}}</b></p>
+                                        </div>
                                         <div style="margin:0.5em auto auto 2em">
 
                                             @foreach($o->answer_element as $m)

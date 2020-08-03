@@ -41,6 +41,7 @@ class TeacherController extends Controller
 //                }   else    {
 //                    $noti_user_profile = 0;
 //                }
+            $noti_user_profile = 0;
 
             //End check if user profile is complete
 

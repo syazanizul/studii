@@ -31,7 +31,7 @@ class TeacherController extends Controller
             //End check if user enters the first time for modal instruction (if they need instructions)
 
             //Check if user profile is complete
-                $check_user_profile = ProfileTracker::where('user_teacher_id',Auth::user()->id);
+                $check_user_profile = ProfileTracker::where('user_id',Auth::user()->id);
 
                 if ($check_user_profile -> where('event', 1) ->get() -> isNotEmpty() && $check_user_profile -> where('event', 2) ->get() -> isNotEmpty() && $check_user_profile -> where('event', 3) ->get() -> isNotEmpty())   {
                     $noti_user_profile = 0;

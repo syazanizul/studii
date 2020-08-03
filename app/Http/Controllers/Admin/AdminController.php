@@ -13,36 +13,6 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $teacher_profile_tracker = DB::table('teacher_profile_tracker')->get();
-
-        foreach($teacher_profile_tracker as $m)   {
-            if($m->edit_profile == 1)    {
-                $p = new ProfileTracker();
-                $p -> role = 2;
-                $p -> user_id = $m->user_teacher_id;
-                $p -> event = 1;
-                $p -> save();
-            }
-
-            if($m->teaching_details == 1)    {
-                $p = new ProfileTracker();
-                $p -> role = 2;
-                $p -> user_id = $m->user_teacher_id;
-                $p -> event = 2;
-                $p -> save();
-            }
-
-            if($m->add_image == 1)    {
-                $p = new ProfileTracker();
-                $p -> role = 2;
-                $p -> user_id = $m->user_teacher_id;
-                $p -> event = 3;
-                $p -> save();
-            }
-
-        }
-
-
         return view('dashboard.admin.admin');
     }
 

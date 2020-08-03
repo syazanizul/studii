@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Teacher;
 
 use App\NotificationTeacher;
+use App\ProfileTracker;
 use App\Question;
 use App\Http\Controllers\Controller;
 use App\Teacher;
@@ -30,16 +31,16 @@ class TeacherController extends Controller
             //End check if user enters the first time for modal instruction (if they need instructions)
 
             //Check if user profile is complete
-                $check_user_profile = DB::table('teacher_profile_tracker')->where('user_teacher_id',Auth::user()->id)
-                    ->where('edit_profile',1)
-                    ->where('teaching_details',1)
-                    ->where('add_image',1)
-                    ->get();
-                if ($check_user_profile -> isEmpty())   {
-                        $noti_user_profile = 1;
-                }   else    {
-                    $noti_user_profile = 0;
-                }
+//                $check_user_profile = ProfileTracker::where('user_teacher_id',Auth::user()->id)
+//                    ->where('edit_profile',1)
+//                    ->where('teaching_details',1)
+//                    ->where('add_image',1)
+//                    ->get();
+//                if ($check_user_profile -> isEmpty())   {
+//                        $noti_user_profile = 1;
+//                }   else    {
+//                    $noti_user_profile = 0;
+//                }
 
             //End check if user profile is complete
 

@@ -5,8 +5,10 @@
 @endsection
 
 @section('link-in-head')
-    <link rel="stylesheet" href="{{asset('css/alertify/alertify.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('css/alertify/default.min.css')}}" />
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 @endsection
 
 @section('nav-verify-question')

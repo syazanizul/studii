@@ -4,8 +4,7 @@
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/addquestion/answer2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/addquestion/answer2.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/add-set/see.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/add-set/see.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/admin/verify_question.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/admin/verify_question.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -624,7 +623,7 @@
       <workItem from="1596497617218" duration="4054000" />
       <workItem from="1596518387223" duration="2357000" />
       <workItem from="1596532829945" duration="1608000" />
-      <workItem from="1596535376718" duration="1771000" />
+      <workItem from="1596535376718" duration="2251000" />
     </task>
     <servers />
   </component>

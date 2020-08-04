@@ -134,6 +134,7 @@
                     <div class="col">
                         @if($question->verified == 0)
                             <a href="/admin/verify-question/verify/{{$question->id}}" class="btn btn-lg btn-primary btn-block my-3">VERIFY THIS QUESTION</a>
+                            <a href="/question/update/{{$question->id}}" class="btn btn-lg btn-primary btn-block my-3">edit question</a>
                         @else
                             <p class="font-weight-bold text-center my-3">Verified</p>
                         @endif

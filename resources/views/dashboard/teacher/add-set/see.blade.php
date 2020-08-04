@@ -5,6 +5,11 @@
 @endsection
 
 @section('link-in-head')
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <style>
         .div-link:hover {
             border:2px solid #42b3f5;
@@ -203,6 +208,9 @@
 <script>
     @section('script')
 
+    function newTypeset(){
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
     @endsection
 </script>
 

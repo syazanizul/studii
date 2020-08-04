@@ -60,12 +60,10 @@
                     </div>
                 </div>
                 <div class="row">
-                    <?php $i=1?>
-                    <?php $j=1?>
                     @foreach($question->contents as $n)
                         @if($n->answer_parent != null)
                             @foreach($n->answer_parent as $o)
-                                <div class="col-lg-4" style="font-size: 1.3em">
+                                <div class="col-lg-4" style="font-size: 1.15em">
                                     <div class="card card-stats">
                                         <div class="card-body ">
                                             <p><b>Answer {{$n->symbol()}}</b></p>
@@ -79,8 +77,31 @@
                                         </div>
                                     </div>
                                 </div>
-                                <?php $i++?>
-                                <?php $j++?>
+                            @endforeach
+                        @endif
+                    @endforeach
+                </div>
+                <div class="row">
+                    @foreach($question->contents as $n)
+                        @if($n->answer_parent != null)
+                            @foreach($n->answer_parent as $o)
+                                <div class="col-lg-12">
+                                    @if($o->working_parent->count() !== 0)
+                                    <div class="card card-stats">
+                                        <div class="card-body ">
+                                            <p><b>Working {{$n->symbol()}}</b></p>
+                                            <hr>
+                                            @foreach($o->working_parent as $p)
+                                                @if($p->type == 1)
+                                                    <p>{{$p->working_text->content}}</p>
+                                                @elseif($p->type == 2)
+                                                    <img src="/images/working_images/{{$p->working_image->image_name}}?rand={{rand(0,1000)}}" style="width:100%">
+                                                @endif
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                        @endif
+                                </div>
                             @endforeach
                         @endif
                     @endforeach
@@ -122,7 +143,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card card-stats">
-                        <div class="card-body table-responsive" style="max-height:600px;">
+                        <div class="card-body table-responsive" style="max-height:600px; overflow:auto">
                             <table class="table mx-4">
                                 <thead class=" text-primary">
 

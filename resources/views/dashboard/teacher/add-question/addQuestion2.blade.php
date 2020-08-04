@@ -79,7 +79,11 @@
                                         @endif
 
                                         @if($m->upload_status == 1)
-                                            <td><a href="/teacher/set/see/{{$m->id}}" class="btn btn-primary btn-block">See</a></td>
+                                            @if($m->verified_by_submitter == 1)
+                                                <td><a href="/teacher/set/see/{{$m->id}}" class="btn btn-primary btn-block">See</a></td>
+                                            @else
+                                                <td><a href="/teacher/set/see/{{$m->id}}" class="btn btn-primary btn-block">Verify</a></td>
+                                            @endif
                                         @else
                                             <td>-</td>
                                         @endif

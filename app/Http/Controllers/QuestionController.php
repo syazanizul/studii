@@ -24,7 +24,7 @@ class QuestionController extends Controller
     {
         // First type !!!
         $subject = request()->get('subject');
-        $questions = Question::where('subject', $subject)->where('finished', 1)->inRandomOrder()->get();
+        $questions = Question::where('subject', $subject)->where('finished', 1)->where('verified', 1)->inRandomOrder()->get();
 
         session() -> pull('qid');
 
@@ -51,7 +51,7 @@ class QuestionController extends Controller
         $input_year = request() -> get('s_year');
         $input_difficulty = request() -> get('s_difficulty');
 
-        $questions = Question::where('finished', 1);
+        $questions = Question::where('finished', 1)->where('verified', 1);
 
         if ($input_subject != 0) {
             $questions = $questions -> where('subject', $input_subject);
@@ -184,8 +184,6 @@ class QuestionController extends Controller
         }
 
 
-
-        //-------------------------------------------------------------------------
         //-------------------------------------------------------------------------
         // Gather all the shits together
         $noti['need_instruction'] = $need_instruction;
@@ -196,6 +194,7 @@ class QuestionController extends Controller
 
         return view('practice' , compact('question','data', 'noti' ));
     }
+
 
     public function report()    {
         $report = request()->get('report');
@@ -209,6 +208,7 @@ class QuestionController extends Controller
 
         return back()->with('report','report is submitted');
     }
+
 
     public function go_to_practicelink($id)    {
 

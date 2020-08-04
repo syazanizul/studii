@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use phpDocumentor\Reflection\Types\Integer;
 
 class Teacher extends Model
@@ -152,4 +153,18 @@ class Teacher extends Model
         return $need_nav_performance;
     }
 
+//    -------------------- Others -------------------------------------------------------
+//  ----------------------------------------------------------------------------------
+
+    public static function profile_image(int $teacher_id)
+    {
+        $check = DB::table('teacher_details') -> where('user_teacher_id', $teacher_id) ->get();
+
+        if ($check -> isNotEmpty()) {
+            return $check->first()->profile_pic;
+
+        }   else    {
+            return 0;
+        }
+    }
 }

@@ -42,7 +42,7 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
 Route::get('/student', 'StudentController@index')->name('student')->middleware('student');
 // End for students
 
-
+// =====================================================================================================
 // For teachers ----------------------------------------------------------------------------------------
 Route::get('/teacher', 'Teacher\TeacherController@index')->name('teacher')->middleware('teacher');
 Route::get('/teacher/details', 'Teacher\DetailsController@index')->middleware('teacher');
@@ -58,8 +58,8 @@ Route::post('/teacher/details/teaching-details/subject', 'Teacher\DetailsControl
 
 Route::get('/teacher/submission-status', 'Teacher\SubmissionController@index')->middleware('teacher');
 Route::get('/teacher/submission-status/{set_id}', 'Teacher\SubmissionController@verify_index')->middleware('teacher');
-Route::get('/teacher/submission-status/verify/set-element/{id}', 'Teacher\SubmissionController@verify_set_element')->middleware('teacher');
-Route::get('/teacher/submission-status/verify/set-parent/{id}', 'Teacher\SubmissionController@verify_set_parent')->middleware('teacher');
+//Route::get('/teacher/submission-status/verify/set-element/{id}', 'Teacher\SubmissionController@verify_set_element')->middleware('teacher');
+Route::post('/teacher/submission-status/verify/set-parent/{id}', 'Teacher\SubmissionController@verify_set_parent')->middleware('teacher');
 
 //Route::get('/teacher/instruction', 'Teacher\InstructionController@index')->middleware('teacher');
 //Route::get('/teacher/instruction/process-upload-questions', 'Teacher\InstructionController@process_upload_questions')->middleware('teacher');
@@ -83,9 +83,10 @@ Route::get('/teacher/set/see/{id}', 'Teacher\AddquestionController@contribute_se
 Route::get('/teacher/set/see/{id}/show-question', 'Teacher\AddquestionController@see_set_choose')->middleware('teacher');
 
 Route::post('/teacher/set/submit/post', 'Teacher\AddquestionController@upload_set')->middleware('teacher');
-Route::post('/teacher/set/verify-finish/{id}', 'Teacher\AddquestionController@verify_set_finish')->middleware('teacher');
+//Route::post('/teacher/set/verify-finish/{id}', 'Teacher\AddquestionController@verify_set_finish')->middleware('teacher');
 
 // End for teachers-------------------------------------------------------------------------------------------------------
+// ======================================================================================================================
 
 
 //For Tutors ------------------------------------------------------------------------------------------------
@@ -108,7 +109,12 @@ Route::get('/parent', 'ParentsController@index')->name('parents')->middleware('p
 // For Admin
 Route::get('/admin', 'Admin\AdminController@index')->name('admin')->middleware('admin');
 
-Route::get('/admin/earning-tracker', 'Admin\AdminController@earning_tracker')->name('admin')->middleware('admin');
+Route::get('/admin/question-database', 'Admin\QuestionDatabaseController@index')->middleware('admin');
+
+Route::get('/admin/earning-tracker', 'Admin\EarningTrackerController@index')->middleware('admin');
+
+Route::get('/admin/verify-question', 'Admin\VerifyQuestionController@index')->middleware('admin');
+Route::get('/admin/verify-question/verify/{id}', 'Admin\VerifyQuestionController@verify')->middleware('admin');
 
 Route::get('/admin/set-price', 'Admin\SetPriceQuestionController@index')->middleware('admin');
 Route::get('/admin/set-price/show', 'Admin\SetPriceQuestionController@show_question')->middleware('admin');

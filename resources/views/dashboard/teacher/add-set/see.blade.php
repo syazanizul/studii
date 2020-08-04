@@ -182,7 +182,7 @@
         <div class="col-lg-6">
             @if(isset($question_set))
                 @if($question_set->verified_by_submitter == 0)
-                    <form action="/teacher/set/verify-finish/{{$question_set->id}}" method="post">
+                    <form action="/teacher/submission-status/verify/set-parent/{{$question_set->id}}" method="post">
                         @csrf
                         <input type="submit" value="Verify this set of questions uploaded to be correct" class="btn btn-primary btn-lg btn-block">
                     </form>

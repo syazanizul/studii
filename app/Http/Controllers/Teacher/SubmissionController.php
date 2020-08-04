@@ -36,6 +36,7 @@ class SubmissionController extends Controller
         }
     }
 
+//    Currently not used
     public function verify_set_element($id)  {
         $question_set_element = QuestionSetElement::find($id);
         $question_set_element -> verified_by_submitter = 1;
@@ -45,9 +46,15 @@ class SubmissionController extends Controller
     }
 
     public function verify_set_parent($id)  {
-        $question_set_element = QuestionSetParent::find($id);
-        $question_set_element -> verified_by_submitter = 1;
-        $question_set_element -> save();
+        $question_set_parent = QuestionSetParent::find($id);
+        $question_set_parent -> verified_by_submitter = 1;
+        $question_set_parent -> save();
+
+        foreach($question_set_parent->question_set_element as $m)   {
+            $h = Question::find($m->question_id);
+            $h -> finished = 1;
+            $h -> save();
+        }
 
         return redirect()->back();
     }

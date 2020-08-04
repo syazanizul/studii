@@ -15,9 +15,19 @@
                 <p>Dashboard</p>
             </a>
         </li>
+        <li @yield('nav-question-database')>
+            <a href="/admin/question-database">
+                <p>Question Database</p>
+            </a>
+        </li>
         <li @yield('nav-earning-tracker')>
             <a href="/admin/earning-tracker">
                 <p>Earning Tracker</p>
+            </a>
+        </li>
+        <li @yield('nav-verify-question')>
+            <a href="/admin/verify-question">
+                <p>Verify Question</p>
             </a>
         </li>
         <li @yield('nav-set-price')>

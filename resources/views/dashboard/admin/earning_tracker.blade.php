@@ -46,7 +46,7 @@
                                 </thead>
                                 <tbody>
 
-                                @foreach(\App\User::where('role', 2)->get() as $m)
+                                @foreach($user as $m)
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$m->firstname}} {{$m->lastname}}</td>

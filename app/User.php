@@ -12,18 +12,6 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    public function profile_image()
-    {
-        $check = DB::table('teacher_details') -> where('user_teacher_id', $this->id) ->get();
-
-        if ($check -> isNotEmpty()) {
-            return $check->first()->profile_pic;
-
-        }   else    {
-            return 0;
-        }
-    }
-
     public function role_name() {
 
         switch (Auth::user() -> role)  {

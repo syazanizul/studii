@@ -82,7 +82,7 @@ class WelcomeController extends Controller
         $year = request() -> get('year');
         $difficulty = request() -> get('difficulty');
 
-        $count = DB::table('questions')-> where('subject', $subject) -> where('finished', 1);
+        $count = DB::table('questions')-> where('subject', $subject) -> where('finished', 1)->where('verified', 1);
 
         if ($chapter != 0) {
             $count = $count -> where('chapter', $chapter);
@@ -114,5 +114,12 @@ class WelcomeController extends Controller
 
         $count = $count -> count();
         echo $count;
+    }
+
+
+    public function hide_first_impression_modal()   {
+        return response(1) ->cookie(
+            'first_impression_modal','0', 525600
+        );
     }
 }

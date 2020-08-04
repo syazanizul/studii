@@ -17,12 +17,8 @@ class AddquestionController extends Controller
 
     public function index() {
 
-//        $draft = Question::where('creator', Auth::user()->id)->where('finished', 0);
-//        $question_done = Question::where('creator', Auth::user()->id)->where('finished', 1)->count();
-
         $question_set = QuestionSetParent::where('submitter_id', Auth::user()->id)->latest()->get();
 
-//        return view('dashboard.teacher.add-question.addQuestion2', compact('draft', 'question_done'));
         return view('dashboard.teacher.add-question.addQuestion2', compact('question_set'));
     }
 
@@ -45,7 +41,7 @@ class AddquestionController extends Controller
             $m -> file_name_actual = $name;
             $m -> submitter_id = Auth::user()->id;
             $m -> taken_by = 0;
-            $m -> upload_status = false;
+            $m -> upload_status = 0;
             $m -> verified_by_submitter = 0;
             $m -> save();
 
@@ -87,15 +83,6 @@ class AddquestionController extends Controller
             $question = Question::find($qid);
             return view('dashboard.teacher.add-set.see', compact('question_set_element', 'question','question_set'));
         }
-    }
-
-    public function verify_set_finish($id) {
-        $set = QuestionSetParent::find($id);
-
-        $set->verified_by_submitter = 1;
-        $set->save();
-
-        return redirect('/teacher/set');
     }
 
 

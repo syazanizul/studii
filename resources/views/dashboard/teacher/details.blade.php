@@ -482,7 +482,11 @@
                     <div class="card-boy">
                         <div class="author">
                             <a href="#">
-                                <img class="avatar border-gray" src="{{asset('images/user_images/id-'.\Illuminate\Support\Facades\Auth::user()->id.'.jpg?n='.rand(1,10))}}" alt="User Image" style="object-fit: cover;">
+                                @if(\App\Teacher::profile_image(\Illuminate\Support\Facades\Auth::user()->id) == 1)
+                                    <img class="avatar border-gray" src="{{asset('images/user_images/id-'.\Illuminate\Support\Facades\Auth::user()->id.'.jpg?n='.rand(1,10))}}" alt="User Image" style="object-fit: cover;">
+                                @else
+                                    <img class="avatar border-gray" src="{{asset('/images/user_images/unknown.png')}}" alt="User Image" style="object-fit: cover;">
+                                @endif
                                 <h5 class="title">{{Auth::user() -> firstname }} {{Auth::user() -> lastname }}</h5>
                             </a>
                         </div>

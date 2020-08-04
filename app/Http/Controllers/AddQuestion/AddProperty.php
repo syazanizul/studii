@@ -113,8 +113,8 @@ class AddProperty extends Controller
         $question -> source = $source;
         $question -> question_number = 0;
         $question -> difficulty = $difficulty;
-        $question -> finished = false;
-        $question -> verified = false;
+        $question -> finished = 0;
+        $question -> verified = 0;
         $question -> creator = $submitter1;
         $question -> uploader = $submitter2;
         $question -> question_image = 0;

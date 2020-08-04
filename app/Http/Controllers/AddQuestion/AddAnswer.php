@@ -127,11 +127,13 @@ class AddAnswer extends Controller
         if ($m != null) {
             $m->upload_status = 1;
             $m -> save();
-        }
 
-        $n = Question::find($id);
-        $n -> finished = 1;
-        $n -> save();
+        }   else    {
+            $n = Question::find($id);
+            $n -> finished = 1;
+            $n -> save();
+
+        }
 
         session(['qid' => [$id, -1]]);
         return redirect('/practice?num=0')->with('adding_question',1);

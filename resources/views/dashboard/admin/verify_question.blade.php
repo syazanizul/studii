@@ -1,19 +1,16 @@
-@extends('dashboard.teacher.teacherApp')
+@extends('dashboard.admin.adminApp')
 
 @section('dashboard-name')
-    teacher's dashboard
-@endsection
-
-@section('nav-submission-status')
-    class="active"
+    admin's dashboard
 @endsection
 
 @section('link-in-head')
-    <style>
-        .div-link:hover {
-            border:2px solid #42b3f5;
-        }
-    </style>
+    <link rel="stylesheet" href="{{asset('css/alertify/alertify.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/alertify/default.min.css')}}" />
+@endsection
+
+@section('nav-verify-question')
+    class="active"
 @endsection
 
 @section('content')
@@ -112,10 +109,10 @@
             @if(isset($question))
                 <div class="row">
                     <div class="col">
-                        @if($question->question_set_element->verified_by_submitter == 0)
-                            <a href="/teacher/submission-status/verify/set-element/{{$question->question_set_element->id}}" class="btn btn-lg btn-primary btn-block my-5">VERIFY THIS QUESTION</a>
+                        @if($question->verified == 0)
+                            <a href="/admin/verify-question/verify/{{$question->id}}" class="btn btn-lg btn-primary btn-block my-3">VERIFY THIS QUESTION</a>
                         @else
-                            <a class="btn btn-lg btn-primary btn-block my-5" disabled>VERIFIED</a>
+                            <p class="font-weight-bold text-center my-3">Verified</p>
                         @endif
                     </div>
                 </div>
@@ -123,7 +120,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card card-stats">
-                        <div class="card-body table-responsive">
+                        <div class="card-body table-responsive" style="max-height:600px;">
                             <table class="table mx-4">
                                 <thead class=" text-primary">
 
@@ -132,18 +129,14 @@
                                 <th>Action</th>
                                 </thead>
                                 <tbody>
-                                @foreach($question_set_element->where('upload_status', 1)->get() as $m)
+                                @foreach($all_question as $m)
                                     <tr>
-                                        <td>{{\App\Question::find($m->question_id)->id}}</td>
+                                        <td>{{$m->id}}</td>
                                         <td>
-                                            @if($m->verified_by_submitter == 0)
-                                                Not Verified
-                                            @else
-                                                Verified
-                                            @endif
+
                                         </td>
                                         <td>
-                                            <a href="/teacher/submission-status/{{$m->question_set_id}}?qid={{$m->question_id}}" class="btn">See Question</a>
+                                            <a href="/admin/verify-question?qid={{$m->id}}" class="btn">See Question</a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -160,12 +153,9 @@
 @endsection
 
 @section('modal')
-
 @endsection
 
 <script>
     @section('script')
-
     @endsection
 </script>
-

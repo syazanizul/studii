@@ -36,11 +36,8 @@ The above copyright notice and this permission notice shall be included in all c
 
     <link href="{{asset('css/paper-dashboard/paper-dashboard.css?v=2.0.0')}}" rel="stylesheet" />
 
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="{{asset('css/paper-dashboard/demo.css')}}" rel="stylesheet" /> <!--?-->
-
     <!--Intro.js-->
-    <link href="{{asset('css/introjs/introjs.css')}}" rel="stylesheet" />
+{{--    <link href="{{asset('css/introjs/introjs.css')}}" rel="stylesheet" />--}}
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118039009-2"></script>
@@ -174,25 +171,17 @@ The above copyright notice and this permission notice shall be included in all c
 <!--   Core JS Files   -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  <!--?-->
 <script src="https://unpkg.com/@popperjs/core@2"></script>  <!--?-->
-<script src="{{asset('js/paperdashboard/core/bootstrap.min.js')}}"></script>   <!--?-->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>   <!--?-->
 <script src="{{asset('js/paperdashboard/plugins/scrollbar.js')}}"></script> <!--TAK-->
-<!-- Chart JS -->
-<script src="{{asset('js/paperdashboard/plugins/chartjs.min.js')}}"></script>
+
 <!--  Notifications Plugin    -->
-<script src="{{asset('js/paperdashboard/plugins/bootstrap-notify.js')}}"></script>
+{{--<script src="{{asset('js/paperdashboard/plugins/bootstrap-notify.js')}}"></script>--}}
 <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="{{asset('js/paperdashboard/paper-dashboard.min.js?v=2.0.0')}}" type="text/javascript"></script>
 <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-<script src="{{asset('js/paperdashboard/demo.js')}}"></script>
-
-<!--Intro.js-->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/intro.min.js"></script>
+{{--<script src="{{asset('js/paperdashboard/demo.js')}}"></script>--}}
 
 <script>
-    $(document).ready(function() {
-        // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
-        demo.initChartsPages();
-    });
 
 @yield('script')
 

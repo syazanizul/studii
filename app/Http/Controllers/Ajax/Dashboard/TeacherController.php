@@ -61,10 +61,6 @@ class TeacherController extends Controller
 //        }
 //    }
 
-    public function hide_modal()    {
-        (new \App\NotificationTeacher)->insert(1);
-    }
-
     public function subject_based_on_exam() {
         $exam = request() -> get('exam');
 
@@ -77,13 +73,9 @@ class TeacherController extends Controller
         echo '</select>';
     }
 
-
-    public function noti2() {
-        (new \App\NotificationTeacher)->insert(2);
-    }
-
-    public function noti3() {
-        (new \App\NotificationTeacher)->insert(3);
+    public function notification(Request $request)  {
+        $id = $request -> get('id');
+        (new \App\NotificationTeacher)->insert($id);
     }
 
 //    public function insert_to_notification_teacher_table(int $noti_id)  {

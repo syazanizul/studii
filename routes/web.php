@@ -212,9 +212,10 @@ Route::get('/ajax/feedback/improvement', 'Ajax\PracticeController@feedback_form_
 //End Ajax for general
 
 // AJAX for teacher dashboard
-Route::get('/ajax/dashboard/hide-modal', 'Ajax\Dashboard\TeacherController@hide_modal');
-Route::get('/ajax/dashboard/noti2', 'Ajax\Dashboard\TeacherController@noti2');
-Route::get('/ajax/dashboard/noti3', 'Ajax\Dashboard\TeacherController@noti3');
+//Route::get('/ajax/dashboard/hide-modal', 'Ajax\Dashboard\TeacherController@hide_modal');
+//Route::get('/ajax/dashboard/noti2', 'Ajax\Dashboard\TeacherController@noti2');
+//Route::get('/ajax/dashboard/noti3', 'Ajax\Dashboard\TeacherController@noti3');
+Route::get('/ajax/dashboard/notification', 'Ajax\Dashboard\TeacherController@notification');
 Route::get('/ajax/dashboard/teacher/details/subject_based_on_exam', 'Ajax\Dashboard\TeacherController@subject_based_on_exam');
 // End AJAX for teacher dashboard
 

@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/admin/verify_question.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/admin/verify_question.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/practice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/practice.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -626,7 +627,10 @@
       <workItem from="1596535376718" duration="2316000" />
       <workItem from="1596542926855" duration="270000" />
       <workItem from="1596546034792" duration="726000" />
-      <workItem from="1596549448921" duration="954000" />
+      <workItem from="1596549448921" duration="1106000" />
+      <workItem from="1596551242187" duration="149000" />
+      <workItem from="1596553147655" duration="92000" />
+      <workItem from="1596677337325" duration="569000" />
     </task>
     <servers />
   </component>

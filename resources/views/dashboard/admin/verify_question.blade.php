@@ -93,7 +93,7 @@
                                             <hr>
                                             @foreach($o->working_parent as $p)
                                                 @if($p->type == 1)
-                                                    <p>{{$p->working_text->content}}</p>
+                                                    <p>{!! $p->working_text->content !!}</p>
                                                 @elseif($p->type == 2)
                                                     <img src="/images/working_images/{{$p->working_image->image_name}}?rand={{rand(0,1000)}}" style="width:100%">
                                                 @endif
@@ -134,7 +134,7 @@
                     <div class="col">
                         @if($question->verified == 0)
                             <a href="/admin/verify-question/verify/{{$question->id}}" class="btn btn-lg btn-primary btn-block my-3">VERIFY THIS QUESTION</a>
-                            <a href="/question/update/{{$question->id}}" class="btn btn-lg btn-primary btn-block my-3">edit question</a>
+                            <a href="/question/update/{{$question->id}}" class="btn btn-primary btn-block my-3">edit question</a>
                         @else
                             <p class="font-weight-bold text-center my-3">Verified</p>
                         @endif

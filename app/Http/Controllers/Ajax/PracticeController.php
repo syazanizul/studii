@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Ajax;
 
+use App\DifficultyRating;
 use App\Http\Controllers\Controller;
 use App\Mail\event;
 use App\Question;
@@ -76,15 +77,19 @@ class PracticeController extends Controller
             $user = 0;
         }
 
-        $db = DB::table('difficulty_rating') -> insert(
-            ['user_id' => $user, 'question_id' => $question_id, 'rating' => $rating, 'created_at' => now(), 'updated_at' => now()]
-        );
+        $m = new DifficultyRating();
+        $m->user_id = $user;
+        $m->question_id = $question_id;
+        $m->rating = $rating;
+        $m->save();
 
         //Get new average
-        $average = DB::table('difficulty_rating')-> where('question_id', $question_id) -> avg('rating');
+        $average = DifficultyRating::where('question_id', $question_id) -> avg('rating');
 
         //Save into 'question' table
-        $update = DB::table('questions') -> where('id', $question_id) -> update(['difficulty' => (int)$average]);
+        $update = Question::find($question_id);
+        $update->difficulty = (int)$average;
+        $update->save();
     }
 
     public function session_for_new(Request $request)  {

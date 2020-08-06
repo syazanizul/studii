@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\DB;
 
 class Question extends Model
 {
@@ -36,23 +35,21 @@ class Question extends Model
     public function difficulty_name()   {
         switch ($this -> difficulty) {
             case 1:
-                $difficulty = 'Easy (1)';
+                return $difficulty = 'Easy (1)';
                 break;
             case 2:
-                $difficulty = 'Fair (2)';
+                return $difficulty = 'Fair (2)';
                 break;
             case 3:
-                $difficulty = 'Moderate (3)';
+                return $difficulty = 'Moderate (3)';
                 break;
             case 4:
-                $difficulty = 'Hard (4)';
+                return $difficulty = 'Hard (4)';
                 break;
             case 5:
-                $difficulty = 'Harder (5)';
+                return $difficulty = 'Harder (5)';
                 break;
         }
-
-        return $difficulty;
     }
 
     public function creator_info() {
@@ -66,6 +63,12 @@ class Question extends Model
     public function question_set_element()   {
         return $this->HasOne(QuestionSetElement::class);
     }
+
+    public function difficulty_rating() {
+        return $this->hasMany(DifficultyRating::class);
+    }
+
+    // === Non-relationship functions -----------------------------------------------------
 
     public function question_image() {
         if ($this->question_image() == 1)    {
@@ -124,4 +127,7 @@ class Question extends Model
         return round($total_attempt*$question_price,3);
     }
 
+    public function total_difficulty_rating()   {
+       return $this->difficulty_rating()->count();
+    }
 }

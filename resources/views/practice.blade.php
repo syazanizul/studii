@@ -341,7 +341,7 @@
                         </div>
                     </div>
                     <div>
-                        <div class="float-right" data-toggle="tooltip" data-placement="right" title="please take some time to rate the difficulty of this question"
+                        <div class="float-right" data-toggle="tooltip" data-placement="right" title="Rate the difficulty of this question by clicking the stars"
                              data-step="4" data-intro="Here you can rate the difficulty of this question. Your rating will contribute to an average value, collected from other students also.">
                             <p class="d-inline-block mr-2">Easy (1)</p>
                             @for($i=1; $i<= 5; $i++)
@@ -351,7 +351,7 @@
                                 <span id="s{{$i}}" class="fa fa-star rating_star" onclick="rating_click({{$i}})"></span>
                                 @endif
                             @endfor
-                            <p class="d-inline-block ml-2">Hardest (5)</p>
+                            <p class="d-inline-block ml-2">Hardest (5)  &nbsp &nbsp<span class="font-weight-bold">&#8594; of {{$question->total_difficulty_rating()}} votes</span></p>
                         </div>
                         <p>&nbsp</p>
                     </div>

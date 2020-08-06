@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/DifficultyRating.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Ajax/PracticeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Ajax/PracticeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/admin/verify_question.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/admin/verify_question.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Question.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Question.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/practice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/practice.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
@@ -630,7 +632,7 @@
       <workItem from="1596549448921" duration="1106000" />
       <workItem from="1596551242187" duration="149000" />
       <workItem from="1596553147655" duration="92000" />
-      <workItem from="1596677337325" duration="569000" />
+      <workItem from="1596677337325" duration="2169000" />
     </task>
     <servers />
   </component>

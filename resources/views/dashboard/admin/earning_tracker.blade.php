@@ -56,7 +56,7 @@
                                         <td>{{$m->id}}</td>
                                         <td>{{\App\Teacher::total_attempt_fresh(1, $m->id)}}</td>
                                         <td>{{\App\Teacher::total_earning_fresh(1, $m->id)}}</td>
-                                        <td>{{\App\Teacher::improved_earning_fresh(1, $m->id)}}</td>
+{{--                                        <td>{{\App\Teacher::improved_earning_fresh(1, $m->id)}}</td>--}}
                                     </tr>
                                 @endforeach
 

@@ -78,6 +78,7 @@ class Question extends Model
         }
     }
 
+
     public function total_attempt($fromDate, $untilDate) {
         $id = $this->id;
 
@@ -98,25 +99,14 @@ class Question extends Model
         return $total_attempt;
     }
 
+
     public function earning_per_question($fromDate, $untilDate) {
 
         $rate = 0;
 
         $id = $this->id;
 
-        if ($fromDate != 0)   {
-
-            if($untilDate == 0)    {
-                $total_attempt = Attempt::where('question_id', $id)->whereDate('created_at','>=',$fromDate)->count();
-            }   else    {
-                return 'error';
-            }
-
-        }   else    {
-
-            $total_attempt = Attempt::where('question_id', $id)->count();
-
-        }
+        $total_attempt = $this->total_attempt($fromDate, $untilDate);
 
         if(Question::find($id)->price != null)  {
             $question_price = Question::find($id)->price * 0.01;
@@ -126,6 +116,7 @@ class Question extends Model
 
         return round($total_attempt*$question_price,3);
     }
+
 
     public function total_difficulty_rating()   {
        return $this->difficulty_rating()->count();

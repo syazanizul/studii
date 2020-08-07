@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Auth;
 
@@ -18,6 +19,13 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
+    public function LoginForm()
+    {
+        SEOMeta::setTitle('Log In');
+        SEOMeta::setDescription('Log In Here');
+        SEOMeta::setCanonical('https://www.studii.my');
+        return view('auth.login');
+    }
 
     use AuthenticatesUsers;
 

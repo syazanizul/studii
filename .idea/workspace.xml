@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Attempt.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Attempt.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Question.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Question.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Teacher.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Teacher.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/teacherApp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/teacherApp.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
@@ -645,7 +645,8 @@
       <workItem from="1596784731895" duration="2673000" />
       <workItem from="1596798644959" duration="425000" />
       <workItem from="1596804966209" duration="6675000" />
-      <workItem from="1596814203076" duration="2493000" />
+      <workItem from="1596814203076" duration="2548000" />
+      <workItem from="1596838434525" duration="232000" />
     </task>
     <servers />
   </component>

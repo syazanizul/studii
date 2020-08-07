@@ -146,28 +146,34 @@ class Question extends Model
 
                 if($m->creator == $user_id)    {
                     $portion += 9/14;
-//                    $earning_creator += 9/14 * $question_price;
+                    $earning_creator += 9/14 * $question_price;
                 }
 
                 if($m->uploader == $user_id)    {
                     $portion += 2/14;
-//                    $earning_uploader += 2/14 * $question_price;
+                    $earning_uploader += 2/14 * $question_price;
                 }
 
                 if($m->working == $user_id)    {
                     $portion += 2/14;
-//                    $earning_working += 2/14 * $question_price;
+                    $earning_working += 2/14 * $question_price;
                 }
 
                 if($m->language == $user_id)    {
                     $portion += 2/14;
-//                    $earning_language += 1/14 * $question_price;
+                    $earning_language += 1/14 * $question_price;
                 }
 
                 $earning_total += $portion*$question_price;
             }
 
-            return $earning_total;
+            $earning['creator'] = $earning_creator;
+            $earning['uploader'] = $earning_uploader;
+            $earning['working'] = $earning_working;
+            $earning['language'] = $earning_language;
+            $earning['total'] = $earning_total;
+
+            return $earning;
 
         }   else    {
             return false;

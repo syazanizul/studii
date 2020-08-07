@@ -95,6 +95,34 @@ class Teacher extends Model
         return 1;
     }
 
+
+    public static function improved_earning_fresh(int $type, $teacher_id) {
+
+        $g = ContributionEarningTracker::where('user_id', $teacher_id)->orderBy('end_date', 'desc')->first();
+
+        if ($g != null)   {
+            $end_date = $g->end_date;
+        }   else    {
+            $end_date = 0;
+        }
+
+        if($type==1)    {
+
+            //Type 1 means earning for Creator
+            $question = Question::where('creator', $teacher_id)->get();
+
+            $accumulated_earning = 0;
+
+            foreach($question as $m)   {
+//                dd($m->total_attempt());
+                $accumulated_earning += $m->improved_earning_per_question($teacher_id, $end_date, 0)*11/15;
+            }
+
+            return round($accumulated_earning,3);
+        }
+        return 1;
+    }
+
 //    -------------------- Total Attempt -------------------------------------------------------
 //  ----------------------------------------------------------------------------------
 
@@ -140,6 +168,8 @@ class Teacher extends Model
         }
         return 1;
     }
+
+
 
 //    -------------------- Others -------------------------------------------------------
 //  ----------------------------------------------------------------------------------

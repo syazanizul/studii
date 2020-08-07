@@ -68,6 +68,10 @@ class Question extends Model
         return $this->hasMany(DifficultyRating::class);
     }
 
+    public function attempt()   {
+        return $this->hasMany(Attempt::class);
+    }
+
     // === Non-relationship functions -----------------------------------------------------
 
     public function question_image() {
@@ -76,6 +80,16 @@ class Question extends Model
         }   else    {
             return 0;
         }
+    }
+
+
+    public function question_price()    {
+        if(Question::find($this->id)->price != null)  {
+            $question_price = Question::find($this->id)->price * 0.01;
+        }   else    {
+            $question_price = 0;
+        }
+        return $question_price;
     }
 
 
@@ -108,13 +122,56 @@ class Question extends Model
 
         $total_attempt = $this->total_attempt($fromDate, $untilDate);
 
-        if(Question::find($id)->price != null)  {
-            $question_price = Question::find($id)->price * 0.01;
-        }   else    {
-            $question_price = 0;
-        }
+        $question_price = $this->question_price();
 
         return round($total_attempt*$question_price,3);
+    }
+
+
+    public function improved_earning_per_question($user_id, $fromDate, $untilDate) {
+        $earning_creator = 0;
+        $earning_uploader = 0;
+        $earning_working = 0;
+        $earning_language = 0;
+        $earning_total = 0;
+
+        $question_price = $this->question_price();
+
+        if($untilDate == 0)    {
+            $attempt = Attempt::whereDate('created_at','>=',$fromDate)->get();
+
+            foreach ($attempt as $m) {
+                $portion = 0;
+
+                if($m->creator == $user_id)    {
+                    $portion += 9/14;
+                    $earning_creator += 9/14 * $question_price;
+                }
+
+                if($m->uploader == $user_id)    {
+                    $portion += 2/14;
+                    $earning_uploader += 2/14 * $question_price;
+                }
+
+                if($m->working == $user_id)    {
+                    $portion += 2/14;
+                    $earning_working += 2/14 * $question_price;
+                }
+
+                if($m->language == $user_id)    {
+                    $portion += 2/14;
+                    $earning_language += 1/14 * $question_price;
+                }
+
+                $earning_total += $portion*$question_price;
+            }
+
+            return $earning_total;
+
+        }   else    {
+            return false;
+        }
+
     }
 
 

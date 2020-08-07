@@ -19,6 +19,7 @@ class ContributionEarningTracker extends Migration
             $table->date('start_date');
             $table->date('end_date');
             $table->float('amount', 4, 2);
+            $table->boolean('paid');
             $table->timestamps();
         });
     }

@@ -41,7 +41,10 @@
                                     Total Attempt
                                 </th>
                                 <th>
-                                    Total Earnings
+                                    Total Earnings Old
+                                </th>
+                                <th>
+                                    Total Earnings New
                                 </th>
                                 </thead>
                                 <tbody>
@@ -53,6 +56,7 @@
                                         <td>{{$m->id}}</td>
                                         <td>{{\App\Teacher::total_attempt_fresh(1, $m->id)}}</td>
                                         <td>{{\App\Teacher::total_earning_fresh(1, $m->id)}}</td>
+                                        <td>{{\App\Teacher::improved_earning_fresh(1, $m->id)}}</td>
                                     </tr>
                                 @endforeach
 

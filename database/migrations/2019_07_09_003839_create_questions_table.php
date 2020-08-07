@@ -33,8 +33,8 @@ class CreateQuestionsTable extends Migration
             $table->unsignedBigInteger('creator');
             $table->unsignedBigInteger('uploader');
             $table->unsignedBigInteger('working')->nullable();
-            $table->unsignedBigInteger('verified_by_1')->nullable();
-            $table->unsignedBigInteger('verified_by_2')->nullable();
+//            $table->unsignedBigInteger('verified_by_1')->nullable();
+//            $table->unsignedBigInteger('verified_by_2')->nullable();
             $table->unsignedBigInteger('language_primary')->nullable();
             $table->unsignedBigInteger('language_secondary')->nullable();
             $table->unsignedBigInteger('language_tertiary')->nullable();

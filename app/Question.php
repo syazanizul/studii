@@ -162,8 +162,9 @@ class Question extends Model
                     $portion += 2/14;
 //                    $earning_language += 1/14 * $question_price;
                 }
-                
+
                 $earning_total += $portion*$question_price;
+                dd($earning_total);
             }
 
             return $earning_total;

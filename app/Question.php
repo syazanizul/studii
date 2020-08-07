@@ -138,31 +138,31 @@ class Question extends Model
         $question_price = $this->question_price();
 
         if($untilDate == 0)    {
-            $attempt = Attempt::whereDate('created_at','>=',$fromDate)->get();
+            $attempt = Attempt::where('question_id', $this->id)->whereDate('created_at','>=',$fromDate)->get();
 
             foreach ($attempt as $m) {
                 $portion = 0;
 
                 if($m->creator == $user_id)    {
                     $portion += 9/14;
-                    $earning_creator += 9/14 * $question_price;
+//                    $earning_creator += 9/14 * $question_price;
                 }
 
                 if($m->uploader == $user_id)    {
                     $portion += 2/14;
-                    $earning_uploader += 2/14 * $question_price;
+//                    $earning_uploader += 2/14 * $question_price;
                 }
 
                 if($m->working == $user_id)    {
                     $portion += 2/14;
-                    $earning_working += 2/14 * $question_price;
+//                    $earning_working += 2/14 * $question_price;
                 }
 
                 if($m->language == $user_id)    {
                     $portion += 2/14;
-                    $earning_language += 1/14 * $question_price;
+//                    $earning_language += 1/14 * $question_price;
                 }
-
+                
                 $earning_total += $portion*$question_price;
             }
 

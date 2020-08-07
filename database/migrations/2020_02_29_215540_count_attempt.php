@@ -19,8 +19,6 @@ class CountAttempt extends Migration
             $table->unsignedBigInteger('creator');
             $table->unsignedBigInteger('uploader');
             $table->unsignedBigInteger('working')->nullable();
-            $table->unsignedBigInteger('verified_by_1');
-            $table->unsignedBigInteger('verified_by_2');
             $table->unsignedBigInteger('language')->nullable();
             $table->integer('correct');
             $table->timestamps();

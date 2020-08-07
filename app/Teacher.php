@@ -87,7 +87,7 @@ class Teacher extends Model
 
             foreach($question as $m)   {
 //                dd($m->total_attempt());
-                $accumulated_earning += $m->earning_per_question($end_date, 0);
+                $accumulated_earning += $m->earning_per_question($end_date, 0)*11/15;
             }
 
             return round($accumulated_earning,3);
@@ -141,6 +141,9 @@ class Teacher extends Model
         return 1;
     }
 
+//    -------------------- Others -------------------------------------------------------
+//  ----------------------------------------------------------------------------------
+
     public static function need_nav_performance(int $teacher_id)    {
         $has_question = Question::where('creator', $teacher_id)->where('finished',1)->get();
 
@@ -152,9 +155,6 @@ class Teacher extends Model
 
         return $need_nav_performance;
     }
-
-//    -------------------- Others -------------------------------------------------------
-//  ----------------------------------------------------------------------------------
 
     public static function profile_image(int $teacher_id)
     {

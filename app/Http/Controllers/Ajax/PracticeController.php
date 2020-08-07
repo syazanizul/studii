@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Ajax;
 
+use App\Attempt;
 use App\DifficultyRating;
 use App\Http\Controllers\Controller;
 use App\Mail\event;
@@ -57,11 +58,13 @@ class PracticeController extends Controller
             $x->verified_by_2 = 0;
         }
 
-        DB::table('count_attempt')-> insert(
-                ['question_id' => $question_id, 'creator' => $x->creator , 'uploader' => $x->uploader, 'working' => $x->working ,
-                    'verified_by_1' => $x->verified_by_1, 'verified_by_2' => $x->verified_by_2, 'correct' => $correct,
-                    'created_at' => now() , 'updated_at' => now()]
-            );
+        $m = new Attempt();
+        $m->question_id = $question_id;
+        $m->creator = $x->creator;
+        $m->uploader = $x->uploader;
+        $m->working = $x->working;
+        $m->correct = $correct;
+        $m->save();
 
 //        dd($x);
 

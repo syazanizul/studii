@@ -119,7 +119,7 @@ class Question extends Model
         }
 
         if(Question::find($id)->price != null)  {
-            $question_price = Question::find($id)->price * 0.01 *11/15;
+            $question_price = Question::find($id)->price * 0.01;
         }   else    {
             $question_price = 0;
         }

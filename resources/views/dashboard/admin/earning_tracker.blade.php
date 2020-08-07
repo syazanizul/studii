@@ -16,11 +16,68 @@
 @endsection
 
 @section('content')
-    <div>
 
-        <div class="row my-2">
+
+    <div class="row">
+        <div class="col-lg-10">
+            <div class="card card-stats">
+                <div class="card-body ">
+                    <form method="get">
+                        <input type="number" name="user_id" placeholder="user_id">
+                        <input type="submit" value="go">
+                    </form>
+                </div>
+            </div>
         </div>
+    </div>
 
+    @if($index == 2)
+        <div class="row">
+            <div class="col-lg-10">
+                <div class="card card-stats">
+                    <div class="card-body ">
+                        <div class="row">
+                            <table class="table mx-4">
+                                <thead class=" text-primary">
+                                <th>
+                                    Teacher
+                                </th>
+                                <th>
+                                    User ID
+                                </th>
+                                <th>
+                                    Total Attempt
+                                </th>
+                                <th>
+                                    Total Earnings Old
+                                </th>
+                                <th>
+                                    Total Earnings New
+                                </th>
+                                </thead>
+                                <tbody>
+
+                                    <tr>
+                                        <td>{{$user->firstname}} {{$user->lastname}}</td>
+                                        <td>{{$user->id}}</td>
+                                        <td>{{\App\Teacher::total_attempt_fresh(1, $user->id)}}</td>
+                                        <td>{{\App\Teacher::total_earning_fresh(1, $user->id)}}</td>
+                                        <td>{{\App\Teacher::improved_earning_fresh(1, $user->id)}}</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer ">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+
+    @if($index == 1)
         <div class="row">
             <div class="col-lg-10">
                 <div class="card card-stats">
@@ -70,22 +127,7 @@
                 </div>
             </div>
         </div>
-
-
-        <div class="row">
-            <div class="col-lg-2">
-                <div class="card card-stats">
-                    <div class="card-body ">
-                        <div class="row">
-                            Feedback = {{round($feedback_average, 3)}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-    </div>
+    @endif
 @endsection
 
 @section('modal')

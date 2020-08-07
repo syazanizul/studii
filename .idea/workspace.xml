@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/EarningTrackerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/EarningTrackerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/FeedbackController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/FeedbackController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/admin/earning_tracker.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/admin/earning_tracker.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/admin/feedback.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/admin/feedback.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/teacherApp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/teacherApp.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
@@ -642,7 +646,8 @@
       <workItem from="1596775443886" duration="1140000" />
       <workItem from="1596784731895" duration="2673000" />
       <workItem from="1596798644959" duration="425000" />
-      <workItem from="1596804966209" duration="5417000" />
+      <workItem from="1596804966209" duration="6675000" />
+      <workItem from="1596814203076" duration="1073000" />
     </task>
     <servers />
   </component>
@@ -713,10 +718,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1596718803280" />
-    <state x="683" y="86" width="672" height="160" key="search.everywhere.popup" timestamp="1596724785349">
+    <state x="683" y="86" width="672" height="160" key="search.everywhere.popup" timestamp="1596814410688">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="683" y="86" width="672" height="160" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1596724785349" />
+    <state x="683" y="86" width="672" height="160" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1596814410688" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

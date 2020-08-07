@@ -9,8 +9,21 @@ use Illuminate\Support\Facades\DB;
 class FeedbackController extends Controller
 {
     public function index() {
-        $feedback = DB::table('feedback_form_quick_improvement')->get();
+        $suggestions = DB::table('feedback_form_quick_improvement')->get();
 
-        return view('dashboard.admin.feedback', compact('feedback'));
+        $feedback = DB::table('feedback_form_quick_rating')->get();
+        $feedback_accumulate = 0;
+
+        foreach($feedback as $m)   {
+            $feedback_accumulate += $m->like;
+        }
+
+        if ($feedback->count() != 0)   {
+            $feedback_average = $feedback_accumulate/$feedback->count();
+        }   else    {
+            $feedback_average = 0;
+        }
+
+        return view('dashboard.admin.feedback', compact('suggestions', 'feedback_average'));
     }
 }

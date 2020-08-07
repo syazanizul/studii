@@ -34,7 +34,7 @@
                                 </thead>
                                 <tbody>
 
-                                @foreach($feedback as $m)
+                                @foreach($suggestions as $m)
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$m->suggestion}}</td>
@@ -52,6 +52,17 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="card card-stats">
+                    <div class="card-body ">
+                        <div class="row">
+                            Feedback = {{round($feedback_average, 3)}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
 

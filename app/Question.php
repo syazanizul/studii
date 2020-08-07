@@ -135,12 +135,13 @@ class Question extends Model
         $earning_language = 0;
         $earning_total = 0;
 
-        $question_price = $this->question_price();
-
         if($untilDate == 0)    {
             $attempt = Attempt::where('question_id', $this->id)->whereDate('created_at','>=',$fromDate)->get();
 
             foreach ($attempt as $m) {
+
+                $question_price = $m->question->question_price();
+
                 $portion = 0;
 
                 if($m->creator == $user_id)    {
@@ -164,7 +165,6 @@ class Question extends Model
                 }
 
                 $earning_total += $portion*$question_price;
-                dd($earning_total);
             }
 
             return $earning_total;

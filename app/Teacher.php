@@ -87,7 +87,7 @@ class Teacher extends Model
 
             foreach($question as $m)   {
 //                dd($m->total_attempt());
-                $accumulated_earning += $m->earning_per_question($end_date, 0)*11/15;
+                $accumulated_earning += $m->earning_per_question($end_date, 0)*11/14;
             }
 
             return round($accumulated_earning,3);

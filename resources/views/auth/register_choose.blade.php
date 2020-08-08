@@ -257,7 +257,7 @@
                         <a href="/register/form?c=tutor">
                             <img src="images/volunteer.png" alt="Avatar" style="width:100%">
                             <div class="container">
-                                <h2 class="role_text"><b><Tutor></Tutor></b></h2>
+                                <h2 class="role_text"><b>Tutor</b></h2>
                                 <p>&nbsp</p>
                             </div>
                         </a>

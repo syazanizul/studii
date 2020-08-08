@@ -202,18 +202,19 @@
         </div>
     </div>
 
-
+    @if($notification[1] == 0)
     <div class="row">
         <div class="col-lg-12">
             <p class="text-right">More statistics coming soon</p>
         </div>
     </div>
+    @endif
 
     <div class="row my-2">
         @if($notification[0] == 1)
             <div class="col-md-12">
                 <div class="alert alert-warning alert-block">
-                    <a class="close pointer" data-dismiss="alert">×</button>
+                    <a class="close pointer" data-dismiss="alert">×</a>
                     <strong>We would love to know more about you! Can you please spend some time to tell us about yourself by clicking <a href="/teacher/details">here</a>.</strong>
                 </div>
             </div>

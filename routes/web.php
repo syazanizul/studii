@@ -61,6 +61,9 @@ Route::get('/teacher/submission-status/{set_id}', 'Teacher\SubmissionController@
 //Route::get('/teacher/submission-status/verify/set-element/{id}', 'Teacher\SubmissionController@verify_set_element')->middleware('teacher');
 Route::post('/teacher/submission-status/verify/set-parent/{id}', 'Teacher\SubmissionController@verify_set_parent')->middleware('teacher');
 
+// --- For 30 questions = RM50
+Route::get('/teacher/promo', 'Teacher\PromoController@index')->middleware('teacher');
+
 //Route::get('/teacher/instruction', 'Teacher\InstructionController@index')->middleware('teacher');
 //Route::get('/teacher/instruction/process-upload-questions', 'Teacher\InstructionController@process_upload_questions')->middleware('teacher');
 //Route::get('/teacher/instruction/disclaimer', 'Teacher\InstructionController@disclaimer')->middleware('teacher');
@@ -112,6 +115,7 @@ Route::get('/admin', 'Admin\AdminController@index')->name('admin')->middleware('
 Route::get('/admin/question-database', 'Admin\QuestionDatabaseController@index')->middleware('admin');
 
 Route::get('/admin/earning-tracker', 'Admin\EarningTrackerController@index')->middleware('admin');
+Route::get('/admin/earning-tracker/save-new-contribution-earning-tracker', 'Admin\EarningTrackerController@save_new_contribution_earning_tracker')->middleware('admin');
 
 Route::get('/admin/verify-question', 'Admin\VerifyQuestionController@index')->middleware('admin');
 Route::get('/admin/verify-question/verify/{id}', 'Admin\VerifyQuestionController@verify')->middleware('admin');

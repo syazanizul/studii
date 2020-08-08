@@ -79,6 +79,55 @@
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="card card-stats">
+                    <div class="card-body">
+                        <p>Save new into contribution earning tracker</p>
+                        <form action="/admin/earning-tracker/save-new-contribution-earning-tracker" method="get">
+                            <input type="hidden" name="user_id" value="{{$user->id}}">
+                            <input type="number" name="amount" placeholder="amount">
+                            <input type="date" name="until_date">
+                            <input type="submit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @if (Session::get('success'))
+            <div class="alert alert-success alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>Success</strong>
+            </div>
+        @endif
+
+{{--        <div class="row">--}}
+{{--            <div class="col-lg-4">--}}
+{{--                <div class="card card-stats">--}}
+{{--                    <div class="card-body">--}}
+{{--                        <p>Save new into contribution earning tracker</p>--}}
+{{--                        <form action="/admin/earning-tracker/save-new-contribution-earning-tracker" method="get">--}}
+{{--                            <input type="hidden" name="user_id" value="{{$user->id}}">--}}
+
+{{--                            <div class="m-1">--}}
+{{--                                <label for="amount">Amount</label>--}}
+{{--                                <input type="number" name="amount" placeholder="amount">--}}
+{{--                            </div>--}}
+
+{{--                            <div class="m-1">--}}
+{{--                                <label for="until_date">Until Date</label>--}}
+{{--                                <input type="datetime-local" name="until_date" placeholder="until date">--}}
+{{--                            </div>--}}
+
+{{--                            <input type="submit" class="m-3 mx-5 float-right">--}}
+{{--                        </form>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+
     @endif
 
     @if($index == 1)

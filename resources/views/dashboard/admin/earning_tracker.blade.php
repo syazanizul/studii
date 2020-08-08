@@ -52,10 +52,10 @@
                                     Total Earnings Old
                                 </th>
                                 <th>
-                                    Total Earnings New (No Promo)
+                                    Total Earnings New <br>(No Promo)
                                 </th>
                                 <th>
-                                    Total Earnings New (With Promo)
+                                    Total Earnings New <br>(With Promo)
                                 </th>
                                 </thead>
                                 <tbody>

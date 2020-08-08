@@ -33,7 +33,7 @@
 
     @if($index == 2)
         <div class="row">
-            <div class="col-lg-10">
+            <div class="col-lg-12">
                 <div class="card card-stats">
                     <div class="card-body ">
                         <div class="row">
@@ -103,9 +103,6 @@
                                 </th>
                                 <th>
                                     Total Earnings Old
-                                </th>
-                                <th>
-                                    Total Earnings New
                                 </th>
                                 </thead>
                                 <tbody>

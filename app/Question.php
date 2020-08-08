@@ -128,7 +128,7 @@ class Question extends Model
     }
 
 
-    public function improved_earning_per_question($user_id, $fromDate, $untilDate) {
+    public function improved_earning_per_question($user_id, $fromDate, $untilDate, $promo) {
         $earning_creator = 0;
         $earning_uploader = 0;
         $earning_working = 0;
@@ -149,7 +149,7 @@ class Question extends Model
                     $earning_creator += 9/14 * $question_price;
                 }
 
-                if($m->uploader == $user_id)    {
+                if($m->uploader == $user_id || $promo)    {
                     $portion += 2/14;
                     $earning_uploader += 2/14 * $question_price;
                 }

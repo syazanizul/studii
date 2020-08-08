@@ -52,7 +52,10 @@
                                     Total Earnings Old
                                 </th>
                                 <th>
-                                    Total Earnings New
+                                    Total Earnings New (No Promo)
+                                </th>
+                                <th>
+                                    Total Earnings New (With Promo)
                                 </th>
                                 </thead>
                                 <tbody>
@@ -62,7 +65,8 @@
                                         <td>{{$user->id}}</td>
                                         <td>{{\App\Teacher::total_attempt_fresh(1, $user->id)}}</td>
                                         <td>{{\App\Teacher::total_earning_fresh(1, $user->id)}}</td>
-                                        <td>{{\App\Teacher::improved_earning_fresh(1, $user->id)}}</td>
+                                        <td>{{\App\Teacher::improved_earning_fresh(1, $user->id, false)}}</td>
+                                        <td>{{\App\Teacher::improved_earning_fresh(1, $user->id, true)}}</td>
                                     </tr>
 
                                 </tbody>

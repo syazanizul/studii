@@ -96,7 +96,7 @@ class Teacher extends Model
     }
 
 
-    public static function improved_earning_fresh(int $type, $teacher_id) {
+    public static function improved_earning_fresh(int $type, $teacher_id, $promo) {
 
         $g = ContributionEarningTracker::where('user_id', $teacher_id)->orderBy('end_date', 'desc')->first();
 
@@ -115,7 +115,7 @@ class Teacher extends Model
 
             foreach($question as $m)   {
 //                dd($m->total_attempt());
-                $accumulated_earning += $m->improved_earning_per_question($teacher_id, $end_date, 0)['total'];
+                $accumulated_earning += $m->improved_earning_per_question($teacher_id, $end_date, 0, $promo)['total'];
             }
 
             return round($accumulated_earning,3);

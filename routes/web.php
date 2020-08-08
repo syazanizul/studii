@@ -124,6 +124,8 @@ Route::get('/admin/set-price', 'Admin\SetPriceQuestionController@index')->middle
 Route::get('/admin/set-price/show', 'Admin\SetPriceQuestionController@show_question')->middleware('admin');
 Route::post('/admin/set-price/save', 'Admin\SetPriceQuestionController@save')->middleware('admin');
 
+Route::get('/admin/price-manipulator', 'Admin\PriceManipulatorController@index')->middleware('admin');
+
 Route::get('/admin/feedback', 'Admin\FeedbackController@index')->middleware('admin');
 
 Route::get('/admin/question', 'Admin\QuestionController@index')->middleware('admin');

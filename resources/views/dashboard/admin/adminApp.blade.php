@@ -35,6 +35,11 @@
                 <p>Set Price</p>
             </a>
         </li>
+        <li @yield('nav-price-manipulator')>
+            <a href="/admin/price-manipulator">
+                <p>Price Manipulator</p>
+            </a>
+        </li>
         <li @yield('nav-feedback')>
             <a href="/admin/feedback">
                 <p>Feedback</p>

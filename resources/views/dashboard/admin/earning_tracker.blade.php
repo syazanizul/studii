@@ -5,10 +5,6 @@
 @endsection
 
 @section('link-in-head')
-    <link rel="stylesheet" href="{{asset('css/alertify/alertify.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('css/alertify/default.min.css')}}" />
-
-    <script src="js/alertify/alertify.min.js"></script>
 @endsection
 
 @section('nav-earning-tracker')

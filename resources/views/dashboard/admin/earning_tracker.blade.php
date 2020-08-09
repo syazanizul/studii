@@ -83,7 +83,7 @@
                         <p>Save new into contribution earning tracker</p>
                         <form action="/admin/earning-tracker/save-new-contribution-earning-tracker" method="get">
                             <input type="hidden" name="user_id" value="{{$user->id}}">
-                            <input type="number" name="amount" placeholder="amount">
+                            <input type="number" name="amount" placeholder="amount" step="0.01">
                             <input type="date" name="until_date">
                             <input type="submit">
                         </form>

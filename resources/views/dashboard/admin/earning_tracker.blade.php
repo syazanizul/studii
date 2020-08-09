@@ -250,6 +250,7 @@
 
 <script>
     @section('script')
+    @if($index == 2)
     var ctx = document.getElementById('chart1').getContext('2d');
     var lineChart = new Chart(ctx, {
         type: 'line',
@@ -293,5 +294,6 @@
             }
         }
     });
+    @endif
     @endsection
 </script>

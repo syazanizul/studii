@@ -5,6 +5,7 @@
 @endsection
 
 @section('link-in-head')
+
 @endsection
 
 @section('nav-earning-tracker')
@@ -41,17 +42,20 @@
                                 <th>
                                     User ID
                                 </th>
+{{--                                <th>--}}
+{{--                                    Total Attempt--}}
+{{--                                </th>--}}
                                 <th>
-                                    Total Attempt
+                                    Cumulative Earning New<br>(With Promo)
                                 </th>
                                 <th>
-                                    Total Earnings Old
+                                    Fresh Earnings Old
                                 </th>
                                 <th>
-                                    Total Earnings New <br>(No Promo)
+                                    Fresh Earnings New <br>(No Promo)
                                 </th>
                                 <th>
-                                    Total Earnings New <br>(With Promo)
+                                    Fresh Earnings New <br>(With Promo)
                                 </th>
                                 </thead>
                                 <tbody>
@@ -59,7 +63,7 @@
                                     <tr>
                                         <td>{{$user->firstname}} {{$user->lastname}}</td>
                                         <td>{{$user->id}}</td>
-                                        <td>{{\App\Teacher::total_attempt_fresh(1, $user->id)}}</td>
+                                        <td>{{\App\Teacher::improved_earning_cumulative(1, $user->id, true)}}</td>
                                         <td>{{\App\Teacher::total_earning_fresh(1, $user->id)}}</td>
                                         <td>{{\App\Teacher::improved_earning_fresh(1, $user->id, false)}}</td>
                                         <td>{{\App\Teacher::improved_earning_fresh(1, $user->id, true)}}</td>
@@ -103,6 +107,7 @@
             <div class="col-lg-12">
                 <div class="card card-stats">
                     <div class="card-body">
+                        <p>Contribution Earning Tracker Table</p>
                         <table class="table mx-4">
                             <thead class=" text-primary">
                             <th>
@@ -135,6 +140,25 @@
 
                             </tbody>
                         </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Number of attempts / day for the month of <b>{{date('F')}}</b></h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id=chart1 width="400" height="70"></canvas>
+                    </div>
+                    <div class="card-footer ">
+                        <hr>
+                        <div class="stats">
+                            <i class="fa fa-history"></i> Updated Today
+                        </div>
                     </div>
                 </div>
             </div>
@@ -219,13 +243,55 @@
 
 @section('modal')
 
-    {{--    @if($noti[1] == 1)--}}
-
-    {{--     @endif--}}
+    <!-- Chart JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 
 @endsection
 
 <script>
     @section('script')
+    var ctx = document.getElementById('chart1').getContext('2d');
+    var lineChart = new Chart(ctx, {
+        type: 'line',
+        hover: false,
+        data:  {
+            labels: ["1", "", "", "", "", "","", "", "", "10", "", "", "", "", "", "", "", "", "", "20", "","", "", "", "", "", "", "", "", "30"],
+            datasets: [
+                {
+                    // data: [0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    data: [
+                        @foreach($data['attempt_daily'] as $o)
+                            "{{$o}}",
+                        @endforeach
+                    ],
+                    fill: false,
+                    borderColor: '#fbc658',
+                    backgroundColor: 'transparent',
+                    pointBorderColor: '#fbc658',
+                    pointRadius: 1,
+                    pointHoverRadius: 5,
+                    pointBorderWidth: 5,
+                }
+            ]
+        },
+        options: {
+            legend: {
+                display: false,
+                position: 'top'
+            },
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }],
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
     @endsection
 </script>

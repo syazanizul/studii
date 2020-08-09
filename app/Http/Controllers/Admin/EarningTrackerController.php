@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Attempt;
 use App\ContributionEarningTracker;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class EarningTrackerController extends Controller
@@ -21,13 +24,20 @@ class EarningTrackerController extends Controller
             $index = 1;
             $user = User::where('role', 2)->get();
 
+            return view('dashboard.admin.earning_tracker', compact('index','user'));
+
         }   else    {
             $index = 2;
             $user = User::findOrFail($user_id);
 
+
+            for($i=1; $i<31; $i++)   {
+                $data['attempt_daily'][$i] =  Attempt::where('creator', $user_id)->whereMonth('created_at', Carbon::now()->month)->whereDay('created_at', $i)->count();
+            }
+
+            return view('dashboard.admin.earning_tracker', compact('index','user', 'data'));
         }
 
-        return view('dashboard.admin.earning_tracker', compact('index','user'));
 
     }
 

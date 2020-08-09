@@ -123,6 +123,20 @@ class Teacher extends Model
         return 1;
     }
 
+    public static function improved_earning_cumulative(int $type, $teacher_id, $promo)   {
+        $contribution_earning = ContributionEarningTracker::where('user_id', $teacher_id)->where('paid',0)->orderBy('end_date', 'desc')->get();
+
+        $balance = Teacher::improved_earning_fresh($type, $teacher_id, $promo);
+
+        $accumulative_value = 0;
+
+        foreach($contribution_earning as $g)   {
+            $accumulative_value += $g->amount;
+        }
+
+        return($accumulative_value + $balance);
+    }
+
 //    -------------------- Total Attempt -------------------------------------------------------
 //  ----------------------------------------------------------------------------------
 

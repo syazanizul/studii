@@ -123,8 +123,15 @@ class Teacher extends Model
         return 1;
     }
 
-    public static function improved_earning_cumulative(int $type, $teacher_id, $promo)   {
-        $contribution_earning = ContributionEarningTracker::where('user_id', $teacher_id)->where('paid',0)->orderBy('end_date', 'desc')->get();
+    public static function improved_earning_cumulative(int $type, $teacher_id, $promo, $paid)   {
+
+        if($paid == 0)    {
+            $contribution_earning = ContributionEarningTracker::where('user_id', $teacher_id)->where('paid', 0)->orderBy('end_date', 'desc')->get();
+        }   else if($paid == 1)    {
+            $contribution_earning = ContributionEarningTracker::where('user_id', $teacher_id)->where('paid', 0)->orderBy('end_date', 'desc')->get();
+        }   else    {
+            $contribution_earning = ContributionEarningTracker::where('user_id', $teacher_id)->orderBy('end_date', 'desc')->get();
+        }
 
         $balance = Teacher::improved_earning_fresh($type, $teacher_id, $promo);
 

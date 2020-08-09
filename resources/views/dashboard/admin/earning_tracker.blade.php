@@ -34,7 +34,7 @@
                 <div class="card card-stats">
                     <div class="card-body ">
                         <div class="row">
-                            <table class="table mx-4">
+                            <table class="table mx-4  table-responsive">
                                 <thead class=" text-primary">
                                 <th>
                                     Teacher
@@ -46,7 +46,10 @@
 {{--                                    Total Attempt--}}
 {{--                                </th>--}}
                                 <th>
-                                    Cumulative Earning New<br>(With Promo)
+                                    Cumulative Earning New<br>(With Promo, Paid + Not Paid)
+                                </th>
+                                <th>
+                                    Cumulative Earning New<br>(With Promo, Not Paid)
                                 </th>
                                 <th>
                                     Fresh Earnings Old
@@ -63,7 +66,8 @@
                                     <tr>
                                         <td>{{$user->firstname}} {{$user->lastname}}</td>
                                         <td>{{$user->id}}</td>
-                                        <td>{{\App\Teacher::improved_earning_cumulative(1, $user->id, true)}}</td>
+                                        <td>{{\App\Teacher::improved_earning_cumulative(1, $user->id, true, 2)}}</td>
+                                        <td>{{\App\Teacher::improved_earning_cumulative(1, $user->id, true, 0)}}</td>
                                         <td>{{\App\Teacher::total_earning_fresh(1, $user->id)}}</td>
                                         <td>{{\App\Teacher::improved_earning_fresh(1, $user->id, false)}}</td>
                                         <td>{{\App\Teacher::improved_earning_fresh(1, $user->id, true)}}</td>

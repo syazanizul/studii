@@ -125,23 +125,11 @@ class Teacher extends Model
 
     public static function improved_earning_cumulative(int $type, $teacher_id, $promo, $paid)   {
 
-        if($paid == 0)    {
-            $contribution_earning = ContributionEarningTracker::where('user_id', $teacher_id)->where('paid', 0)->orderBy('end_date', 'desc')->get();
-        }   else if($paid == 1)    {
-            $contribution_earning = ContributionEarningTracker::where('user_id', $teacher_id)->where('paid', 0)->orderBy('end_date', 'desc')->get();
-        }   else    {
-            $contribution_earning = ContributionEarningTracker::where('user_id', $teacher_id)->orderBy('end_date', 'desc')->get();
-        }
+        $contribution_earning = Teacher::contribution_earning_summary($teacher_id, $paid);
 
         $balance = Teacher::improved_earning_fresh($type, $teacher_id, $promo);
 
-        $accumulative_value = 0;
-
-        foreach($contribution_earning as $g)   {
-            $accumulative_value += $g->amount;
-        }
-
-        return($accumulative_value + $balance);
+        return($contribution_earning + $balance);
     }
 
 //    -------------------- Total Attempt -------------------------------------------------------
@@ -190,6 +178,29 @@ class Teacher extends Model
         return 1;
     }
 
+//    -------------------- Summary -------------------------------------------------------
+
+    public static function contribution_earning_summary($user_id, $paid)   {
+
+        if ($paid == 0)   {
+            $contribution_earning = ContributionEarningTracker::where('user_id', $user_id)->where('paid', 0)->get();
+
+        }   else if ($paid == 1)    {
+            $contribution_earning = ContributionEarningTracker::where('user_id', $user_id)->where('paid', 1)->get();
+
+        }   else    {
+            $contribution_earning = ContributionEarningTracker::where('user_id', $user_id)->get();
+
+        }
+
+        $accumulated_earning = 0;
+
+        foreach($contribution_earning as $g)   {
+            $accumulated_earning += $g->amount;
+        }
+
+        return $accumulated_earning;
+    }
 
 
 //    -------------------- Others -------------------------------------------------------

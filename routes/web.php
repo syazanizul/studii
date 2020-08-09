@@ -114,6 +114,8 @@ Route::get('/admin', 'Admin\AdminController@index')->name('admin')->middleware('
 
 Route::get('/admin/question-database', 'Admin\QuestionDatabaseController@index')->middleware('admin');
 
+Route::get('/admin/pay-calculation', 'Admin\PayCalculationController@index')->middleware('admin');
+
 Route::get('/admin/earning-tracker', 'Admin\EarningTrackerController@index')->middleware('admin');
 Route::get('/admin/earning-tracker/save-new-contribution-earning-tracker', 'Admin\EarningTrackerController@save_new_contribution_earning_tracker')->middleware('admin');
 

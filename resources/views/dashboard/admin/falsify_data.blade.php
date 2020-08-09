@@ -23,6 +23,20 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-4">
+                <div class="card card-stats">
+                    <div class="card-body">
+                        <p>Undo falsify (delete)</p>
+                        <a href="/admin/falsify-data/delete" class="btn btn-secondary">Undo</a>
+                    </div>
+                </div>
+            </div>
+            @if (Session::get('success'))
+                <div class="alert alert-success alert-block">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>Success</strong>
+                </div>
+            @endif
         @else
             <div class="col-lg-4">
                 <div class="card card-stats">

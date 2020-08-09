@@ -51,6 +51,21 @@ class FalsifyDataController extends Controller
         }
 
         return view('dashboard.admin.falsify_data', compact('done_falsify'));
+    }
 
+    public function delete()    {
+        $record = FalsifyData::whereDay('created_at', Carbon::today())->first();
+
+        if($record != null)    {
+            $record -> delete();
+        }
+
+        $falsified_data = Attempt::whereDay('created_at', Carbon::today())->get();
+
+        foreach($falsified_data as $n)   {
+            $n->delete();
+        }
+
+        return redirect()->back()->with('success', 1);
     }
 }

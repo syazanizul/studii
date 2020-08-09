@@ -20,6 +20,11 @@
                 <p>Question Database</p>
             </a>
         </li>
+        <li @yield('nav-pay-calculation')>
+            <a href="/admin/pay-calculation">
+                <p>To Pay</p>
+            </a>
+        </li>
         <li @yield('nav-earning-tracker')>
             <a href="/admin/earning-tracker">
                 <p>Earning Tracker</p>

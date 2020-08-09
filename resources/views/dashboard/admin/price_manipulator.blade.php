@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col-lg-10">
             <div class="card card-stats">
-                <div class="card-body"
+                <div class="card-body">
                 <p>Price Manipulator</p>
                     <form method="get">
                         <label for="changes" class="m-2">Changes</label>

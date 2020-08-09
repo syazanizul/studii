@@ -40,6 +40,11 @@
                 <p>Price Manipulator</p>
             </a>
         </li>
+        <li @yield('nav-falsify-data')>
+            <a href="/admin/falsify-data">
+                <p>Falsify Data</p>
+            </a>
+        </li>
         <li @yield('nav-feedback')>
             <a href="/admin/feedback">
                 <p>Feedback</p>

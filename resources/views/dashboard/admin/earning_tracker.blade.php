@@ -99,6 +99,47 @@
             </div>
         @endif
 
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card card-stats">
+                    <div class="card-body">
+                        <table class="table mx-4">
+                            <thead class=" text-primary">
+                            <th>
+                                No
+                            </th>
+                            <th>
+                                Start Date
+                            </th>
+                            <th>
+                                End Date
+                            </th>
+                            <th>
+                                Amount
+                            </th>
+                            <th>
+                                Paid
+                            </th>
+                            </thead>
+                            <tbody>
+
+                            @foreach($user->contribution_earning_tracker as $n)
+                                <tr>
+                                    <td>{{$loop->iteration}}</td>
+                                    <td>{{$n->start_date}}</td>
+                                    <td>{{$n->end_date}}</td>
+                                    <td>{{$n->amount}}</td>
+                                    <td>{{$n->paid}}</td>
+                                </tr>
+                            @endforeach
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 {{--        <div class="row">--}}
 {{--            <div class="col-lg-4">--}}
 {{--                <div class="card card-stats">--}}

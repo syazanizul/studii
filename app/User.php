@@ -12,6 +12,14 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    // --- Relationships ----------------------------------------------------------------
+
+    public function contribution_earning_tracker()  {
+        return $this->hasMany(ContributionEarningTracker::class);
+    }
+
+    // --- Others -----------------------------------------------------------------------
+
     public function role_name() {
 
         switch (Auth::user() -> role)  {
@@ -25,17 +33,19 @@ class User extends Authenticatable
                 $role_name = 'parent';
                 break;
             case 4:
-                $role_name = 'volunteer';
+                $role_name = 'tutor';
                 break;
         }
 
         return $role_name;
     }
 
+
     public function getId()
     {
         return $this->id;
     }
+
 
     public static function school_name($id)
     {

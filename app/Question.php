@@ -150,7 +150,7 @@ class Question extends Model
             $attempt = Attempt::where('question_id', $this->id)->whereDate('created_at','>',$fromDate)->get();
 
         }   else    {
-            $attempt = Attempt::where('question_id', $this->id)->whereDay('created_at','=',$day)->get();
+            $attempt = Attempt::where('question_id', $this->id)->whereDay('created_at','=', $day)->get();
         }
 
         foreach ($attempt as $m) {

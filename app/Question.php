@@ -93,6 +93,15 @@ class Question extends Model
     }
 
 
+    public function attempt_for_date($day)   {
+        $id = $this->id;
+
+        $total_attempt = Attempt::where('question_id', $id)->whereDay('created_at', $day)->count();
+
+        return $total_attempt;
+    }
+
+
     public function total_attempt($fromDate, $untilDate) {
         $id = $this->id;
 
@@ -130,56 +139,56 @@ class Question extends Model
     }
 
 
-    public function improved_earning_per_question($user_id, $fromDate, $untilDate, $promo) {
+    public function improved_earning_per_question($user_id, $fromDate, $untilDate, $day, $promo) {
         $earning_creator = 0;
         $earning_uploader = 0;
         $earning_working = 0;
         $earning_language = 0;
         $earning_total = 0;
 
-        if($untilDate == null)    {
+        if($untilDate != null || $fromDate != null)    {
             $attempt = Attempt::where('question_id', $this->id)->whereDate('created_at','>',$fromDate)->get();
 
-            foreach ($attempt as $m) {
+        }   else    {
+            $attempt = Attempt::where('question_id', $this->id)->whereDay('created_at','=',$day)->get();
+        }
 
-                $question_price = $m->question->question_price();
+        foreach ($attempt as $m) {
 
-                $portion = 0;
+            $question_price = $m->question->question_price();
 
-                if($m->creator == $user_id)    {
-                    $portion += 9/14;
-                    $earning_creator += 9/14 * $question_price;
-                }
+            $portion = 0;
 
-                if($m->uploader == $user_id || $promo)    {
-                    $portion += 2/14;
-                    $earning_uploader += 2/14 * $question_price;
-                }
-
-                if($m->working == $user_id)    {
-                    $portion += 2/14;
-                    $earning_working += 2/14 * $question_price;
-                }
-
-                if($m->language == $user_id)    {
-                    $portion += 2/14;
-                    $earning_language += 1/14 * $question_price;
-                }
-
-                $earning_total += $portion*$question_price;
+            if($m->creator == $user_id)    {
+                $portion += 9/14;
+                $earning_creator += 9/14 * $question_price;
             }
 
-            $earning['creator'] = $earning_creator;
-            $earning['uploader'] = $earning_uploader;
-            $earning['working'] = $earning_working;
-            $earning['language'] = $earning_language;
-            $earning['total'] = $earning_total;
+            if($m->uploader == $user_id || $promo)    {
+                $portion += 2/14;
+                $earning_uploader += 2/14 * $question_price;
+            }
 
-            return $earning;
+            if($m->working == $user_id)    {
+                $portion += 2/14;
+                $earning_working += 2/14 * $question_price;
+            }
 
-        }   else    {
-            return false;
+            if($m->language == $user_id)    {
+                $portion += 2/14;
+                $earning_language += 1/14 * $question_price;
+            }
+
+            $earning_total += $portion*$question_price;
         }
+
+        $earning['creator'] = $earning_creator;
+        $earning['uploader'] = $earning_uploader;
+        $earning['working'] = $earning_working;
+        $earning['language'] = $earning_language;
+        $earning['total'] = $earning_total;
+
+        return $earning;
 
     }
 

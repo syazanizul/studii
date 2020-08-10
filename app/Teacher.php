@@ -114,8 +114,8 @@ class Teacher extends Model
             $accumulated_earning = 0;
 
             foreach($question as $m)   {
-//                dd($m->total_attempt());
-                $accumulated_earning += $m->improved_earning_per_question($teacher_id, $end_date, null, $promo)['total'];
+
+                $accumulated_earning += $m->improved_earning_per_question($teacher_id, $end_date, null, null, $promo)['total'];
             }
 
             return round($accumulated_earning,3);
@@ -132,7 +132,7 @@ class Teacher extends Model
         return($contribution_earning + $balance);
     }
 
-    public static function earning_for_date($type, $teacher_id, $fromDate, $untilDate, $promo)   {
+    public static function earning_for_date($type, $teacher_id, $day, $promo)   {
         if($type==1)    {
 
             $question = Question::where('creator', $teacher_id)->get();
@@ -140,7 +140,8 @@ class Teacher extends Model
             $accumulated_earning = 0;
 
             foreach($question as $m)   {
-                $accumulated_earning += $m->improved_earning_per_question($teacher_id, $fromDate, $untilDate, $promo);
+
+                $accumulated_earning += $m->improved_earning_per_question($teacher_id, null, null, $day, $promo)['total'];
 
             }
             return round($accumulated_earning,3);
@@ -196,7 +197,7 @@ class Teacher extends Model
         return 1;
     }
 
-    public static function attempt_for_date($type, $teacher_id, $fromDate, $untilDate)   {
+    public static function attempt_for_date($type, $teacher_id, $day)   {
 
         if($type==1)    {
 
@@ -205,7 +206,7 @@ class Teacher extends Model
             $accumulated_attempt = 0;
 
             foreach($question as $m)   {
-                $accumulated_attempt += $m->total_attempt($fromDate, $untilDate);
+                $accumulated_attempt += $m->attempt_for_date($day);
 
             }
             return round($accumulated_attempt,3);

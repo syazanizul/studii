@@ -19,10 +19,10 @@ class PayCalculationController extends Controller
         $teacher = User::where('role', 2)-> get();
 
         foreach($teacher as $m)   {
-            $data['attempt_today'] += Teacher::attempt_for_date(1, $m->id, Carbon::today(), Carbon::tomorrow());
-            $data['to_pay_today'] += Teacher::earning_for_date(1, $m->id, Carbon::today(), Carbon::tomorrow(), 1);
-            $data['attempt_yesterday'] += Teacher::attempt_for_date(1, $m->id, Carbon::yesterday(), Carbon::today());
-            $data['to_pay_yesterday'] += Teacher::earning_for_date(1, $m->id, Carbon::yesterday(), Carbon::today(), 1);
+            $data['attempt_today'] += Teacher::attempt_for_date(1, $m->id, Carbon::today());
+            $data['to_pay_today'] += Teacher::earning_for_date(1, $m->id, Carbon::today(), 1);
+            $data['attempt_yesterday'] += Teacher::attempt_for_date(1, $m->id, Carbon::yesterday());
+            $data['to_pay_yesterday'] += Teacher::earning_for_date(1, $m->id, Carbon::yesterday(), 1);
         }
 
         return view('dashboard.admin.pay_calculation', compact('teacher', 'data'));

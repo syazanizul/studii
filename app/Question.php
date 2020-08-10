@@ -96,12 +96,14 @@ class Question extends Model
     public function total_attempt($fromDate, $untilDate) {
         $id = $this->id;
 
-        if ($fromDate != 0)   {
+        if ($fromDate != null)   {
 
-            if($untilDate == 0)    {
+            if($untilDate == null)    {
                 $total_attempt = Attempt::where('question_id', $id)->whereDate('created_at','>',$fromDate)->count();
+
             }   else    {
-                return 'error';
+
+                $total_attempt = Attempt::where('question_id', $id)->whereBetween('created_at', [$fromDate, $untilDate])->count();
             }
 
         }   else    {
@@ -135,7 +137,7 @@ class Question extends Model
         $earning_language = 0;
         $earning_total = 0;
 
-        if($untilDate == 0)    {
+        if($untilDate == null)    {
             $attempt = Attempt::where('question_id', $this->id)->whereDate('created_at','>',$fromDate)->get();
 
             foreach ($attempt as $m) {

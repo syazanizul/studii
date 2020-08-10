@@ -60,7 +60,7 @@ class Teacher extends Model
 
             foreach($question as $m)   {
 //                dd($m->total_attempt());
-                $accumulated_earning += $m->earning_per_question(0, 0);
+                $accumulated_earning += $m->earning_per_question(null, null);
             }
 //
             return round($accumulated_earning,3);
@@ -87,7 +87,7 @@ class Teacher extends Model
 
             foreach($question as $m)   {
 //                dd($m->total_attempt());
-                $accumulated_earning += $m->earning_per_question($end_date, 0)*11/14;
+                $accumulated_earning += $m->earning_per_question($end_date, null)*11/14;
             }
 
             return round($accumulated_earning,3);
@@ -115,7 +115,7 @@ class Teacher extends Model
 
             foreach($question as $m)   {
 //                dd($m->total_attempt());
-                $accumulated_earning += $m->improved_earning_per_question($teacher_id, $end_date, 0, $promo)['total'];
+                $accumulated_earning += $m->improved_earning_per_question($teacher_id, $end_date, null, $promo)['total'];
             }
 
             return round($accumulated_earning,3);
@@ -188,7 +188,7 @@ class Teacher extends Model
 
             foreach($question as $m)   {
 //                dd($m->total_attempt());
-                $accumulated_attempt += $m->total_attempt($end_date, 0);
+                $accumulated_attempt += $m->total_attempt($end_date, null);
             }
 //
             return round($accumulated_attempt,3);

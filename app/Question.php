@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
@@ -96,7 +97,7 @@ class Question extends Model
     public function attempt_for_date($day)   {
         $id = $this->id;
 
-        $total_attempt = Attempt::where('question_id', $id)->whereDay('created_at', $day)->count();
+        $total_attempt = Attempt::where('question_id', $id)->whereMonth('created_at' , '=' , Carbon::now()->month)->whereDay('created_at', $day)->count();
 
         return $total_attempt;
     }
@@ -150,7 +151,7 @@ class Question extends Model
             $attempt = Attempt::where('question_id', $this->id)->whereDate('created_at','>',$fromDate)->get();
 
         }   else    {
-            $attempt = Attempt::where('question_id', $this->id)->whereDay('created_at','=', $day)->get();
+            $attempt = Attempt::where('question_id', $this->id)->whereMonth('created_at' , '=' , Carbon::now()->month)->whereDay('created_at','=', $day)->get();
         }
 
         foreach ($attempt as $m) {

@@ -12,14 +12,14 @@ class PayCalculationController extends Controller
 {
     public function index(Request $request) {
 
-        if ($request->get('day') == null)   {
-            return view('dashboard.admin.pay_calculation');
-        }
-
         $data['attempt'] = 0;
         $data['to_pay'] = 0;
 
         $teacher = User::where('role', 2)-> get();
+
+        if ($request->get('day') == null)   {
+            return view('dashboard.admin.pay_calculation' , compact('teacher'));
+        }
 
         foreach($teacher as $m)   {
             $data['attempt'] += Teacher::attempt_for_date(1, $m->id, $request->get('day'));
@@ -33,6 +33,6 @@ class PayCalculationController extends Controller
 //            $data['to_pay_yesterday'] += Teacher::earning_for_date(1, $m->id, Carbon::yesterday(), 1);
 //        }
 
-        return view('dashboard.admin.pay_calculation', compact('data'));
+        return view('dashboard.admin.pay_calculation', compact('teacher','data'));
     }
 }

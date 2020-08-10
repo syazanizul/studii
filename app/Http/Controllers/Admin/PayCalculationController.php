@@ -10,24 +10,20 @@ use Illuminate\Http\Request;
 
 class PayCalculationController extends Controller
 {
-    public function index() {
+    public function index(Request $request) {
 
-        for($i=1; $i<31; $i++)   {
-            $data['attempt'][$i] = 0;
-            $data['to_pay'][$i] = 0;
+        if ($request->get('day') == null)   {
+            return view('dashboard.admin.pay_calculation');
+        }
 
-            $teacher = User::where('role', 2)-> get();
+        $data['attempt'] = 0;
+        $data['to_pay'] = 0;
 
-            foreach($teacher as $m)   {
-                $data['attempt'][$i] += Teacher::attempt_for_date(1, $m->id, $i);
-                $data['to_pay'][$i] += Teacher::earning_for_date(1, $m->id, $i, 1);
-            }
+        $teacher = User::where('role', 2)-> get();
 
-            if(Carbon::now() -> day == $i)    {
-                $data['attempt_today'] = $data['attempt'][$i];
-                $data['to_pay_today'] = $data['to_pay'][$i];
-            }
-
+        foreach($teacher as $m)   {
+            $data['attempt'] += Teacher::attempt_for_date(1, $m->id, $request->get('day'));
+            $data['to_pay'] += Teacher::earning_for_date(1, $m->id, $request->get('day'), 1);
         }
 
 //        foreach($teacher as $m)   {
@@ -37,6 +33,6 @@ class PayCalculationController extends Controller
 //            $data['to_pay_yesterday'] += Teacher::earning_for_date(1, $m->id, Carbon::yesterday(), 1);
 //        }
 
-        return view('dashboard.admin.pay_calculation', compact('teacher', 'data'));
+        return view('dashboard.admin.pay_calculation', compact('data'));
     }
 }

@@ -14,6 +14,53 @@
 
 @section('content')
     <div class="row">
+        <div class="col-lg-3">
+            <div class="card card-stats">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p> Attempt Today : {{$data['attempt_today']}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card card-stats">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p>To pay for today : {{$data['to_pay_today']}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card card-stats">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p> Attempt yesterday : {{$data['attempt_yesterday']}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card card-stats">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p>To pay for yesterday : {{$data['to_pay_yesterday']}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
         <div class="col-lg-12">
             <div class="card card-stats">
                 <div class="card-body">

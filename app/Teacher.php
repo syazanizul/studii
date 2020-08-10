@@ -132,6 +132,24 @@ class Teacher extends Model
         return($contribution_earning + $balance);
     }
 
+    public static function earning_for_date($type, $teacher_id, $fromDate, $untilDate, $promo)   {
+        if($type==1)    {
+
+            $question = Question::where('creator', $teacher_id)->get();
+
+            $accumulated_earning = 0;
+
+            foreach($question as $m)   {
+                $accumulated_earning += $m->improved_earning_per_question($teacher_id, $fromDate, $untilDate, $promo);
+
+            }
+            return round($accumulated_earning,3);
+
+        }
+        return 1;
+
+    }
+
 //    -------------------- Total Attempt -------------------------------------------------------
 //  ----------------------------------------------------------------------------------
 
@@ -176,6 +194,25 @@ class Teacher extends Model
             return round($accumulated_attempt,3);
         }
         return 1;
+    }
+
+    public static function attempt_for_date($type, $teacher_id, $fromDate, $untilDate)   {
+
+        if($type==1)    {
+
+            $question = Question::where('creator', $teacher_id)->get();
+
+            $accumulated_attempt = 0;
+
+            foreach($question as $m)   {
+                $accumulated_attempt += $m->total_attempt($fromDate, $untilDate);
+
+            }
+            return round($accumulated_attempt,3);
+
+        }
+        return 1;
+
     }
 
 //    -------------------- Summary -------------------------------------------------------

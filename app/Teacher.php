@@ -44,6 +44,26 @@ class Teacher extends Model
 //        return 1;
 //    }
 
+    public static function user_rating($teacher_id)   {
+        $user_rating = UserRating::where('user_id', $teacher_id)->first();
+
+        if($user_rating != null)    {
+            return $user_rating-> rating;
+        }   else    {
+            return 1;
+        }
+    }
+
+    public static function price_regulatory_rating($teacher_id)   {
+        $user_price_regulatory_rating = UserRating::where('user_id', $teacher_id)->where('true', 1)->first();
+
+        if($user_price_regulatory_rating != null)    {
+            return $user_price_regulatory_rating-> rating;
+        }   else    {
+            return 1;
+        }
+    }
+
 //  --------------Total Earning------------------------------------------------------------
 //---------------------------------------------------------------------------------------
 
@@ -98,6 +118,9 @@ class Teacher extends Model
 
     public static function improved_earning_fresh(int $type, $teacher_id, $promo) {
 
+        $user_rating = Teacher::user_rating($teacher_id);
+        $price_regulatory_rating = Teacher::price_regulatory_rating($teacher_id);
+
         $g = ContributionEarningTracker::where('user_id', $teacher_id)->orderBy('end_date', 'desc')->first();
 
         if ($g != null)   {
@@ -118,12 +141,13 @@ class Teacher extends Model
                 $accumulated_earning += $m->improved_earning_per_question($teacher_id, $end_date, null, null, $promo)['total'];
             }
 
-            return round($accumulated_earning,3);
+            return round($accumulated_earning,3) * $user_rating * $price_regulatory_rating;
         }
         return 1;
     }
 
     public static function improved_earning_cumulative(int $type, $teacher_id, $promo, $paid)   {
+
 
         $contribution_earning = Teacher::contribution_earning_summary($teacher_id, $paid);
 
@@ -133,6 +157,10 @@ class Teacher extends Model
     }
 
     public static function earning_for_date($type, $teacher_id, $day, $promo)   {
+
+        $user_rating = Teacher::user_rating($teacher_id);
+        $price_regulatory_rating = Teacher::price_regulatory_rating($teacher_id);
+
         if($type==1)    {
 
             $question = Question::where('creator', $teacher_id)->get();
@@ -144,7 +172,7 @@ class Teacher extends Model
                 $accumulated_earning += $m->improved_earning_per_question($teacher_id, null, null, $day, $promo)['total'];
 
             }
-            return round($accumulated_earning,3);
+            return round($accumulated_earning,3) * $user_rating * $price_regulatory_rating;
 
         }
         return 1;
@@ -188,7 +216,6 @@ class Teacher extends Model
             $accumulated_attempt = 0;
 
             foreach($question as $m)   {
-//                dd($m->total_attempt());
                 $accumulated_attempt += $m->total_attempt($end_date, null);
             }
 //

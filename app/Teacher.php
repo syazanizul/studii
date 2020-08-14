@@ -55,7 +55,7 @@ class Teacher extends Model
     }
 
     public static function price_regulatory_rating($teacher_id)   {
-        $user_price_regulatory_rating = UserRating::where('user_id', $teacher_id)->where('true', 1)->first();
+        $user_price_regulatory_rating = UserPriceRegulatoryRating::where('user_id', $teacher_id)->where('true', 1)->first();
 
         if($user_price_regulatory_rating != null)    {
             return $user_price_regulatory_rating-> rating;

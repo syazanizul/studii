@@ -73,10 +73,6 @@ class TeacherController extends Controller
         echo '</select>';
     }
 
-    public function notification(Request $request)  {
-        $id = $request -> get('id');
-        (new \App\NotificationTeacher)->insert($id);
-    }
 
 //    public function insert_to_notification_teacher_table(int $noti_id)  {
 //        $m = new NotificationTeacher;

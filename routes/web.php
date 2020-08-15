@@ -52,6 +52,7 @@ Route::post('/teacher/details/edit-profile', 'Teacher\DetailsController@edit_pro
 Route::post('/teacher/details/teaching-details', 'Teacher\DetailsController@teaching_details');
 Route::post('/teacher/details/add-image', 'Teacher\DetailsController@add_image');
 Route::get('/teacher/details/add-image/no-image', 'Teacher\DetailsController@no_image');
+Route::post('/teacher/details/add-resume', 'Teacher\DetailsController@resume');
 
 Route::post('/teacher/details/teaching-details/exam', 'Teacher\DetailsController@teaching_details_exam');
 Route::post('/teacher/details/teaching-details/subject', 'Teacher\DetailsController@teaching_details_subject');
@@ -204,6 +205,8 @@ Route::get('/redirect/detailed','QuestionController@detailed');
 
 
 // ALL AJAX ----------
+Route::get('/ajax/notification', 'Ajax\NotificationController@index');
+
 // AJAX for Welcome page
 Route::get('/ajax/fetch', 'Ajax\WelcomeController@fetch');
 Route::get('/ajax/fetch_subject_change_chapter', 'Ajax\WelcomeController@fetch_subject_change_chapter');
@@ -226,7 +229,7 @@ Route::get('/ajax/feedback/improvement', 'Ajax\PracticeController@feedback_form_
 //Route::get('/ajax/dashboard/hide-modal', 'Ajax\Dashboard\TeacherController@hide_modal');
 //Route::get('/ajax/dashboard/noti2', 'Ajax\Dashboard\TeacherController@noti2');
 //Route::get('/ajax/dashboard/noti3', 'Ajax\Dashboard\TeacherController@noti3');
-Route::get('/ajax/dashboard/notification', 'Ajax\Dashboard\TeacherController@notification');
+
 Route::get('/ajax/dashboard/teacher/details/subject_based_on_exam', 'Ajax\Dashboard\TeacherController@subject_based_on_exam');
 // End AJAX for teacher dashboard
 

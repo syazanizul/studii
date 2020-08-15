@@ -16,7 +16,7 @@ class PriceRegulatoryRating extends Migration
         Schema::create('user_price_regulatory_rating', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id');
-            $table->integer('rating');
+            $table->float('rating');
             $table->boolean('true');
             $table->timestamps();
         });

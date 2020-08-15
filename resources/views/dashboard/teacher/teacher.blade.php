@@ -372,8 +372,11 @@ var lineChart = new Chart(ctx, {
     function notification(id) {
         $.ajax({
             type: 'get',
-            url: '/ajax/dashboard/notification',
-            data: { id: id},
+            url: '/ajax/notification',
+            data: {
+                role: 2,
+                notification_id: id
+            },
             success: function (response) {
                 return 1;
             },

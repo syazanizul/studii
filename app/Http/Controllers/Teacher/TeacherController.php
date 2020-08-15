@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Teacher;
 
 use App\Attempt;
-use App\NotificationTeacher;
+use App\Notification;
 use App\ProfileTracker;
 use App\Question;
 use App\Http\Controllers\Controller;
@@ -25,8 +25,9 @@ class TeacherController extends Controller
                 $check_user_profile1 = ProfileTracker::where('user_id', Auth::user()->id) -> where('event', 1) ->get();
                 $check_user_profile2 = ProfileTracker::where('user_id', Auth::user()->id) -> where('event', 2) ->get();
                 $check_user_profile3 = ProfileTracker::where('user_id', Auth::user()->id) -> where('event', 3) ->get();
+                $check_user_profile4 = ProfileTracker::where('user_id', Auth::user()->id) -> where('event', 4) ->get();
 
-                if ($check_user_profile1 -> isNotEmpty() && $check_user_profile2 -> isNotEmpty() && $check_user_profile3 -> isNotEmpty())   {
+                if ($check_user_profile1 -> isNotEmpty() && $check_user_profile2 -> isNotEmpty() && $check_user_profile3 -> isNotEmpty() && $check_user_profile4 -> isNotEmpty())   {
                     $notification[0] = 0;
                 }   else {
                     $notification[0] = 1;
@@ -34,7 +35,7 @@ class TeacherController extends Controller
 
 
             // --- Check if user enters the first time for modal instruction (if they need instructions)
-            $check_1 = NotificationTeacher::where('noti_id' , 1) -> where('user_id', Auth::user()->id) -> get();
+            $check_1 = Notification::where('notification_id' , 1) -> where('user_id', Auth::user()->id) -> get();
             if ($check_1 -> isEmpty())    {
                 $notification_2 = 1;
             }   else    {
@@ -43,7 +44,7 @@ class TeacherController extends Controller
 
 
             //Check second noti
-                $check_2 = NotificationTeacher::where('noti_id' , 2) -> where('user_id', Auth::user()->id) -> get();
+                $check_2 = Notification::where('notification_id' , 2) -> where('user_id', Auth::user()->id) -> get();
                 if ($check_2 -> isEmpty())    {
                     $notification_3 = 1;
                 }   else    {
@@ -52,7 +53,7 @@ class TeacherController extends Controller
             //End check second noti
 
             //Check ==> Feedback (not used)
-                $check_3 = NotificationTeacher::where('noti_id' , 3) -> where('user_id', Auth::user()->id) -> get();
+                $check_3 = Notification::where('notification_id' , 3) -> where('user_id', Auth::user()->id) -> get();
                 if ($check_3 -> isEmpty())    {
                     $notification_4 = 1;
                 }   else    {
@@ -61,7 +62,7 @@ class TeacherController extends Controller
             //End check third noti
 
         for($i=0; $i<4; $i++)   {
-            $check[$i] = NotificationTeacher::where('noti_id' , $i+1) -> where('user_id', Auth::user()->id) -> get();
+            $check[$i] = Notification::where('notification_id' , $i+1) -> where('user_id', Auth::user()->id) -> get();
             if ($check[$i] -> isEmpty())    {
                 $notification[$i+1] = 1;
             }   else    {

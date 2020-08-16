@@ -64,6 +64,7 @@ class PracticeController extends Controller
         $m->uploader = $x->uploader;
         $m->working = $x->working;
         $m->correct = $correct;
+        $m->falsified = 0;
         $m->save();
 
 //        dd($x);

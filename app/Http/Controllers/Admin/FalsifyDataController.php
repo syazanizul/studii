@@ -37,6 +37,7 @@ class FalsifyDataController extends Controller
                         $k->working = $n->working;
                     }
                     $k->correct = $correct;
+                    $k->falsified = 1;
                     $k->save();
                 }
             }

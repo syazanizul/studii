@@ -284,7 +284,7 @@ class DetailsController extends Controller
 
         $fileName = Auth::user()->id.'.'.$request->file('resume')->extension();
 
-        $store = $request->file('resume')->move(public_path('\storage\resume_upload'), $fileName);
+        $store = $request->file('resume')->move('storage/resume_upload', $fileName);
 
         if($store)    {
             $m = new ProfileTracker();

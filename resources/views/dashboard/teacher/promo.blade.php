@@ -32,15 +32,17 @@
                     </div>
                 </div>
             </div>
-            @if($stage == 5)
             <div class="col-lg-3">
                 <div class="card">
                     <div class="card-body">
-                        <p class="font-weight-bold text-center" style="font-size:2em; color:green">CLAIMED</p>
+                        @if($stage == 5)
+                            <p class="font-weight-bold text-center" style="font-size:2em; color:green">CLAIMED</p>
+                        @else
+                            <p class="font-weight-bold text-center" style="font-size:2em; color:red">NOT CLAIMED</p>
+                        @endif
                     </div>
                 </div>
             </div>
-            @endif
         </div>
         @if($stage != 5)
         <div class="row">

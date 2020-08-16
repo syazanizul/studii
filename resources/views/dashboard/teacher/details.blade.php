@@ -20,20 +20,26 @@
     <div class="content">
         <div class="row">
             <div class="col-md-7">
-                @if($completed['edit_profile'] == 1 || $completed['teaching_details'] == 1 || $completed['add_image'] == 1)
+                @if($completed['edit_profile'] == 1 || $completed['teaching_details'] == 1 || $completed['add_image'] == 1 || $completed['resume'] == 1)
                     <div class="card">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12">
                                     @if($completed['edit_profile'] == 1)
-                                        <h3>Edit Profile <span style="color:green">&#10003</span></h3>
+                                        <p style="font-size:1.7em">Edit Profile <span style="color:green">&#10003</span></p>
                                     @endif
                                     @if($completed['teaching_details'] == 1)
-                                        <h3>Teaching Details <span style="color:green">&#10003</span></h3>
+                                            <p style="font-size:1.7em">Teaching Details <span style="color:green">&#10003</span></p>
                                     @endif
                                     @if($completed['add_image'] == 1)
-                                        <h3>Add Image <span style="color:green">&#10003</span></h3>
+                                            <p style="font-size:1.7em">Add Image <span style="color:green">&#10003</span></p>
                                     @endif
+                                    @if($completed['resume'] == 1)
+                                            <p style="font-size:1.7em">Upload Resume <span style="color:green">&#10003</span></p>
+                                    @endif
+{{--                                    @if($completed['bank_details'] == 1)--}}
+{{--                                            <p style="font-size:1.7em">Bank Details <span style="color:green">&#10003</span></p>--}}
+{{--                                    @endif--}}
                                 </div>
                             </div>
                         </div>
@@ -79,7 +85,12 @@
                                 @if($completed['add_image'] == 0)
                                     <p class="my-1">- Add Image</p>
                                 @endif
-
+                                @if($completed['resume'] == 0)
+                                    <p class="my-1">- Add Resume</p>
+                                @endif
+{{--                                @if($completed['bank_details'] == 0)--}}
+{{--                                    <p class="my-1">- Add Bank Details</p>--}}
+{{--                                @endif--}}
                             </div>
                         </div>
                     </div>
@@ -98,6 +109,17 @@
                 </div>
             </div>
             @endif
+        </div>
+        <div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="font-weight-bold" style="font-size:1.2em">Please note that this page is best shown on a computer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <hr>
         <div class="row">
@@ -183,7 +205,7 @@
                                 <div class="col-md-2">
                                     <div class="form-group">
                                         <label>Title</label>
-                                        <select name="title" class="form-control pb-2" required>
+                                        <select name="title" class="form-control pt-1" required>
                                             <option value="0" disabled>Select</option>
                                             <option value="1">Cikgu</option>
                                             <option value="2">Tuan</option>
@@ -214,7 +236,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Gender</label>
-                                        <select name="gender" class="form-control" required>
+                                        <select name="gender" class="form-control pt-2" required>
                                             <option value="">Select</option>
                                             <option value="1">Male</option>
                                             <option value="2">Female</option>
@@ -249,7 +271,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="">How should we reach you?</label>
-                                        <select name="preferred_communication" class="form-control pb-2" required>
+                                        <select name="preferred_communication" class="form-control pt-1" required>
                                             <option value="1">Whatsapp (Best)</option>
                                             <option value="2">Call & SMS</option>
                                             <option value="3">Email</option>
@@ -270,12 +292,39 @@
             @endif
         </div>
         <div class="row">
+            @if($completed['resume'] == 0)
+            <div class="col-md-6">
+                <div class="card card-user">
+                    <div class="card-header">
+                        <h5 class="card-title">Upload Resume</h5>
+                        <p>For verification purposes - please submit a <span class="font-weight-bold">pdf format document</span>.</p>
+                        <div>
+                            <form method="post" action="/teacher/details/add-resume" enctype="multipart/form-data">
+                                @csrf
+                                <input type="file" class="mx-2 p-2" name="resume" style="background-color:grey; border-radius:5px; color:white" accept="application/pdf">
+                                <input type="submit" value="Upload" class="my-2 mx-2" @if($completed['edit_profile'] == 0) disabled @endif>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endif
+            @if ($message = Session::get('success'))
+                <div class="col-lg-12">
+                    <div class="alert alert-success alert-block">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>{{$message}}</strong>
+                    </div>
+                </div>
+            @endif
+        </div>
+        <div class="row">
             @if($completed['teaching_details'] == 0)
             <div class="col-md-8">
                 <div class="card card-user">
                     <div class="card-header">
                         <h5 class="card-title">Teaching Details</h5>
-                        <p><b>Note:</b> This part can be complicated to fill in - reach <i>Syazani</i> at 019-209 9853 or for assistance.</p>
+                        <p><b>Note:</b> This part can be complicated to fill in - reach <i>Syazani</i> at 019-209 9853 for assistance.</p>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -286,7 +335,7 @@
                                         <div class="form-group">
                                             <label for="exam">You teach for which exam?</label>
                                             <div class="d-flex">
-                                                <select name="exam" class="form-control m-1" required>
+                                                <select name="exam" class="form-control m-1 pt-2" required>
                                                     <option value="">Choose Exam</option>
                                                     @foreach($data['exam'] as $n)
                                                         <option value="{{$n->id}}">{{$n->name_shortened}}</option>
@@ -301,7 +350,7 @@
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">You are a teacher of what subject?</label>
                                             <div class="d-flex">
-                                                <select name="exam" class="form-control m-1" onchange="subject_based_on_exam(this.value)" required>
+                                                <select name="exam" class="form-control m-1 pt-2" onchange="subject_based_on_exam(this.value)" required>
                                                     @if(!$data['exam_chosen']->isEmpty())
                                                         <option value="">Choose Exam</option>
                                                         @foreach($data['exam_chosen'] as $n)
@@ -311,7 +360,7 @@
                                                         <option value="">No exam</option>
                                                     @endif
                                                 </select>
-                                                <select name="subject" id="select_subject_teaching_details" class="form-control m-1" required>
+                                                <select name="subject" id="select_subject_teaching_details" class="form-control m-1 pt-1" required>
                                                     @if(!$data['exam_chosen']->isEmpty())
                                                         <option value="">Choose Subject</option>
                                                         @foreach($data['subject'] as $b)
@@ -363,7 +412,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Name of School</label>
-                                        <select name="schoolname1" class="form-control" id="hidediv" required>
+                                        <select name="schoolname1" class="form-control pt-2" id="hidediv" required>
                                             <option value="0">Choose School</option>
                                             @foreach($data['school_list'] as $n)
                                                 <option value="{{$n->id}}">{{$n->name}}</option>
@@ -416,7 +465,7 @@
                                     <label for="fileupload"> Add an image of you</label>
                                     <input type="file"
                                            id="avatar" name="avatar"
-{{--                                           accept="image/png, image/jpeg"--}}
+                                           accept="image/png, image/jpeg"
                                     >
                                     <input class="btn btn-primary" type="submit" value="Add Image" @if($completed['edit_profile'] == 0) disabled @endif>
                                 </form>
@@ -467,7 +516,7 @@
 
     <div class="row">
 
-        @if($completed['add_image'] == 1 || $completed['edit_profile'] == 1 || $completed['teaching_details'] == 1)
+        @if($completed['add_image'] == 1 || $completed['edit_profile'] == 1 || $completed['teaching_details'] == 1  || $completed['resume'] == 1)
             <div class="col-lg-12">
                 <h3>Saved Info</h3>
             </div>
@@ -501,15 +550,13 @@
         @if($completed['edit_profile'] == 1)
             <div class="col-md-4">
                 <div class="card card-user">
-                    <div class="card-header">
-                        <h5 class="card-title">Your Profile</h5>
-                    </div>
                     <div class="card-body">
-                        <div class="row my-1">
+                        <h5 class="card-title">Your Profile</h5>
+                        <div class="row m-1">
                             <div class="col-md-12">
-                                <h4>
+                                <p class="font-weight-bold p-bigger">
                                     {{$data['profile_title']}} {{\Illuminate\Support\Facades\Auth::user()-> firstname}} {{\Illuminate\Support\Facades\Auth::user()-> lastname}}
-                                </h4>
+                                </p>
                             </div>
                             <div class="col-md-12">
                                 <p class="p-bigger">Gender: @if($data['profile']-> gender == 1) Male @elseif(($data['profile']-> gender == 2)) Female   @endif</p>
@@ -568,6 +615,19 @@
                         <hr>
                         <a onclick="" class="btn btn-primary btn-lg m-2 float-right" disabled>Edit</a>
 
+                    </div>
+                </div>
+            </div>
+        @endif
+
+        @if($completed['resume'] == 1)
+            <div class="col-md-3">
+                <div class="card card-user">
+                    <div class="card-header">
+                        <h5 class="card-title">Resume</h5>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{{asset('/storage/resume_upload/' . Auth::user()->id . '.pdf')}}" class="btn btn-block" download>Download</a>
                     </div>
                 </div>
             </div>

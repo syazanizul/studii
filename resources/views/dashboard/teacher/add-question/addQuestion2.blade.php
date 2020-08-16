@@ -2,8 +2,6 @@
 
 @section('link-in-head')
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,400&display=swap');
-
         .div-link:hover {
             border:2px solid #42b3f5;
         }

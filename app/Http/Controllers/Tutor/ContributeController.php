@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Tutor;
 
 use App\Http\Controllers\Controller;
+use App\PromoTracking;
 use App\Question;
 use App\QuestionSetElement;
 use App\QuestionSetParent;
@@ -61,11 +62,15 @@ class ContributeController extends Controller
         }
     }
 
+    // === To declare set finished uploaded
     public function declare_set_uploaded($id) {
         $set = QuestionSetParent::find($id);
 
         $set->upload_status = 1;
         $set->save();
+
+        // --- for 30 question = RM50 promo - this is temporary
+        PromoTracking::add_stage(Auth::user()->id, 2);
 
         return redirect('/tutor/contribute');
     }

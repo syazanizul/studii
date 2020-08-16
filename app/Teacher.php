@@ -294,4 +294,16 @@ class Teacher extends Model
             return 0;
         }
     }
+
+    public static function is_active($teacher) {
+        $question = Question::where('creator', $teacher) -> where('finished', 1) -> where('verified', 1) -> get();
+
+        if($question -> isNotEmpty())    {
+
+            return true;
+        }   else    {
+
+            return false;
+        }
+    }
 }

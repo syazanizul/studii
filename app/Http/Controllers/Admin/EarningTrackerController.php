@@ -58,6 +58,7 @@ class EarningTrackerController extends Controller
         $m -> user_id = $user_id;
         $m -> start_date = $start_date;
         $m -> end_date = $until_date;
+        $m -> event = 0;
         $m -> amount = $amount;
         $m -> paid = 0;
         $m -> save();

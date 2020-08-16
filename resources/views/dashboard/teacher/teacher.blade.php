@@ -29,6 +29,49 @@
 {{--            <a href="#" id="btn-role-teachers" class="btn btn-primary btn-lg float-right m-2">Role of teachers in Studii</a>--}}
 {{--        </div>--}}
 {{--    </div>--}}
+    @if($data['promo'] == 1)
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="card card-user">
+                <div class="card-header">
+                    <p class="font-weight-bold" style="font-family: 'rubik', sans-serif; font-size:1.3em">Your submitted questions are verified. Please tell us of your banking details so we can proceed.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card card-user">
+                <div class="card-header">
+                    <h5 class="card-title">Bank Details</h5>
+                    <form action="/teacher/promo/bank-details" method="post">
+                        @csrf
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <label>Bank Name</label>
+                                <input type="text" class="form-control" placeholder="Bank" name="bank_name" required>
+                            </div>
+                            <div class="col-lg-8">
+                                <label>Account number</label>
+                                <input type="number" class="form-control" placeholder="Account No" name="account_number" required>
+                            </div>
+                        </div>
+                        <input type="submit" value="submit" class="btn btn-primary float-right mx-3">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    @endif
+    @if ($message = Session::get('success'))
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="alert alert-success alert-block">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>{{$message}}</strong>
+                </div>
+            </div>
+        </div>
+    @endif
 
     <div class="row">
         <div class="col-lg-2 col-md-5 col-sm-5">

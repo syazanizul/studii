@@ -55,9 +55,14 @@
                 <p>Feedback</p>
             </a>
         </li>
-        <li @yield('nav-question')>
-            <a href="/admin/question">
-                <p>Question</p>
+        <li @yield('nav-user')>
+            <a href="/admin/user">
+                <p>User</p>
+            </a>
+        </li>
+        <li @yield('nav-promo')>
+            <a href="/admin/promo">
+                <p>Promo</p>
             </a>
         </li>
     </ul>

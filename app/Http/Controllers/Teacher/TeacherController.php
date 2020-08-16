@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Teacher;
 use App\Attempt;
 use App\Notification;
 use App\ProfileTracker;
+use App\PromoTracking;
 use App\Question;
 use App\Http\Controllers\Controller;
 use App\Teacher;
@@ -33,33 +34,6 @@ class TeacherController extends Controller
                     $notification[0] = 1;
                 }
 
-
-            // --- Check if user enters the first time for modal instruction (if they need instructions)
-            $check_1 = Notification::where('notification_id' , 1) -> where('user_id', Auth::user()->id) -> get();
-            if ($check_1 -> isEmpty())    {
-                $notification_2 = 1;
-            }   else    {
-                $notification_2 = 0;
-            }
-
-
-            //Check second noti
-                $check_2 = Notification::where('notification_id' , 2) -> where('user_id', Auth::user()->id) -> get();
-                if ($check_2 -> isEmpty())    {
-                    $notification_3 = 1;
-                }   else    {
-                    $notification_3 = 0;
-                }
-            //End check second noti
-
-            //Check ==> Feedback (not used)
-                $check_3 = Notification::where('notification_id' , 3) -> where('user_id', Auth::user()->id) -> get();
-                if ($check_3 -> isEmpty())    {
-                    $notification_4 = 1;
-                }   else    {
-                    $notification_4 = 0;
-                }
-            //End check third noti
 
         for($i=0; $i<4; $i++)   {
             $check[$i] = Notification::where('notification_id' , $i+1) -> where('user_id', Auth::user()->id) -> get();
@@ -93,13 +67,28 @@ class TeacherController extends Controller
         }
 
         //----------------------------------------------------------------------
-        // CHECK IF THIS TEACHER HAS SUBMITTED ANYTHING ------------------------
+        // === check if teacher need navigation help  ------------------------
 
         $need_nav_performance = Teacher::need_nav_performance(Auth::user()->id);
 
         session(['need_nav_performance' => $need_nav_performance]);
 
+        //--------------------------------------------------------------------
+        // === temporary --- 30 questions = RM50 promo ------------------------------------------
+        $promo1 = PromoTracking::where('user_id', Auth::user()->id)->where('event' , 3)->first();
+        $promo2 = PromoTracking::where('user_id', Auth::user()->id)->where('event' , 4)->first();
+
+        if ($promo1 != null && $promo2 == null)   {
+
+            $data['promo'] = 1;
+        }   else    {
+
+            $data['promo'] = 0;
+        }
+
         return view('dashboard.teacher.teacher', compact('notification','data'));
     }
+
+
 
 }

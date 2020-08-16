@@ -4,17 +4,19 @@ namespace App\Http\Controllers\Teacher;
 
 use App\Http\Controllers\Controller;
 use App\ProfileTracker;
+use App\PromoTracking;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class DetailsController extends Controller
 {
     public function index() {
 
         // === To see how many requirements haven't settled yet
-        $i = 3;
+        $i = 4;
 
         // -------------------------------------------------------------------------------------------------
         // === Check for Edit Profile
@@ -53,7 +55,7 @@ class DetailsController extends Controller
             $completed['teaching_details'] = 0 ;
         }
 
-        //Other things
+        // === Other things
         $data['exam_chosen'] = DB::table('teacher_teaching_details_exam')->where('user_teacher_id', Auth::user()->id)->get();
         $data['subject_chosen'] = DB::table('teacher_teaching_details_subject')->where('user_teacher_id', Auth::user()->id)->get();
 
@@ -76,6 +78,27 @@ class DetailsController extends Controller
 
             $completed['add_image'] = 0 ;
             $data['profile_pic'] = 0;
+        }
+
+        // -------------------------------------------------------------------------------------------------
+        // === Check for Add Resume
+
+        $resume = ProfileTracker::where('role', 2)->where('user_id', Auth::user()->id)->where('event', 4)->get();
+
+        if ($resume->isNotEmpty())  {
+
+            // --- for functionality of next page
+            $completed['resume'] = 1 ;
+            $i--;
+        }   else    {
+
+            $completed['resume'] = 0 ;
+        }
+
+        // -------------------------------------------------------------------------------------------------
+        // === for Promo Table --- this is temporary
+        if($i == 0)    {
+            PromoTracking::add_stage(Auth::user()->id, 1);
         }
 
         return view('dashboard.teacher.details', compact('i','completed', 'data'));
@@ -251,5 +274,30 @@ class DetailsController extends Controller
         $m -> save();
 
         return redirect() -> back();
+    }
+
+
+    public function resume(Request $request)    {
+        $request->validate([
+            'resume' => 'required|mimes:pdf',
+        ]);
+
+        $fileName = Auth::user()->id.'.'.$request->file('resume')->extension();
+
+        $store = $request->file('resume')->move(public_path('\storage\resume_upload'), $fileName);
+
+        if($store)    {
+            $m = new ProfileTracker();
+            $m->role = 2;
+            $m->user_id = Auth::user()->id;
+            $m->event = 4;
+            $m->save();
+
+            return redirect()->back()->with('success', 'Your resume is successfully uploaded.');
+
+        }   else    {
+            return redirect()->back()->with('success', 'Failed');
+
+        }
     }
 }

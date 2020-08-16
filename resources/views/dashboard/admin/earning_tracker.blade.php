@@ -34,7 +34,7 @@
                 <div class="card card-stats">
                     <div class="card-body ">
                         <div class="row">
-                            <table class="table mx-4  table-responsive">
+                            <table class="table mx-4">
                                 <thead class=" text-primary">
                                 <th>
                                     Teacher
@@ -222,14 +222,16 @@
                                 <tbody>
 
                                 @foreach($user as $m)
-                                    <tr>
-                                        <td>{{$loop->iteration}}</td>
-                                        <td>{{$m->firstname}} {{$m->lastname}}</td>
-                                        <td>{{$m->id}}</td>
-                                        <td>{{\App\Teacher::total_attempt_fresh(1, $m->id)}}</td>
-                                        <td>{{\App\Teacher::total_earning_fresh(1, $m->id)}}</td>
-{{--                                        <td>{{\App\Teacher::improved_earning_fresh(1, $m->id)}}</td>--}}
-                                    </tr>
+                                    @if(\App\Teacher::is_active($m->id))
+                                        <tr>
+                                            <td>{{$loop->iteration}}</td>
+                                            <td>{{$m->full_name()}}</td>
+                                            <td>{{$m->id}}</td>
+                                            <td>{{\App\Teacher::total_attempt_fresh(1, $m->id)}}</td>
+                                            <td>{{\App\Teacher::total_earning_fresh(1, $m->id)}}</td>
+                                            {{--                                        <td>{{\App\Teacher::improved_earning_fresh(1, $m->id)}}</td>--}}
+                                        </tr>
+                                    @endif
                                 @endforeach
 
                                 </tbody>

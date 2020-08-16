@@ -53,6 +53,8 @@ The above copyright notice and this permission notice shall be included in all c
     <script data-ad-client="ca-pub-7446857168486939" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     {{--    END ADSENSE --}}
 
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
     @yield('link-in-head')
 </head>
 

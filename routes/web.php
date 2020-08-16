@@ -64,6 +64,7 @@ Route::post('/teacher/submission-status/verify/set-parent/{id}', 'Teacher\Submis
 
 // --- For 30 questions = RM50
 Route::get('/teacher/promo', 'Teacher\PromoController@index')->middleware('teacher');
+Route::post('/teacher/promo/bank-details', 'Teacher\PromoController@bank')->middleware('teacher');
 
 //Route::get('/teacher/instruction', 'Teacher\InstructionController@index')->middleware('teacher');
 //Route::get('/teacher/instruction/process-upload-questions', 'Teacher\InstructionController@process_upload_questions')->middleware('teacher');
@@ -134,9 +135,12 @@ Route::get('/admin/falsify-data/delete', 'Admin\FalsifyDataController@delete')->
 
 Route::get('/admin/feedback', 'Admin\FeedbackController@index')->middleware('admin');
 
-Route::get('/admin/question', 'Admin\QuestionController@index')->middleware('admin');
+Route::get('/admin/user', 'Admin\UserController@index')->middleware('admin');
 
 Route::get('/admin/record-new-earning', 'Admin\RecordNewEarningController@index')->middleware('admin');
+
+Route::get('/admin/promo', 'Admin\PromoController@index')->middleware('admin');
+Route::get('/admin/promo/stage', 'Admin\PromoController@stage')->middleware('admin');
 // End for Admin
 
 // Basics

@@ -18,11 +18,19 @@ class User extends Authenticatable
         return $this->hasMany(ContributionEarningTracker::class);
     }
 
+    public function bank_details()  {
+        return $this->hasOne(BankDetails::class);
+    }
+
     // --- Others -----------------------------------------------------------------------
+
+    public function full_name() {
+        return $this->firstname . " " . $this->lastname;
+    }
 
     public function role_name() {
 
-        switch (Auth::user() -> role)  {
+        switch ($this->role)  {
             case 1:
                 $role_name = 'student';
                 break;

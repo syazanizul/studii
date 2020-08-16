@@ -38,7 +38,7 @@
                         @if($stage == 5)
                             <p class="font-weight-bold text-center" style="font-size:2em; color:green">CLAIMED</p>
                         @else
-                            <p class="font-weight-bold text-center" style="font-size:2em; color:red">NOT CLAIMED</p>
+                            <p class="font-weight-bold text-center" style="font-size:2em; color:red">not claimed yet</p>
                         @endif
                     </div>
                 </div>

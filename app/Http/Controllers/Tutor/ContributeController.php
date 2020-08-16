@@ -70,7 +70,7 @@ class ContributeController extends Controller
         $set->save();
 
         // --- for 30 question = RM50 promo - this is temporary
-        PromoTracking::add_stage(Auth::user()->id, 2);
+        PromoTracking::add_stage($set->submitter_id, 2);
 
         return redirect('/tutor/contribute');
     }

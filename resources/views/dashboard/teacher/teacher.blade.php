@@ -1,7 +1,7 @@
 @extends('dashboard.teacher.teacherApp')
 
 @section('dashboard-name')
-    teacher's dashboard
+    Dashboard
 @endsection
 
 @section('link-in-head')
@@ -296,7 +296,7 @@
 {{--        <div class="col-md-9">--}}
 {{--            <div class="alert alert-warning alert-block">--}}
 {{--                <button type="button" class="close" data-dismiss="alert">×</button>--}}
-{{--                <strong>Click <a href="/teacher/instruction/process-upload-questions">here</a> to read the guide about the process of adding questions into Studii. When you're--}}
+{{--                <strong>Click <a href="/teacher/read/process-upload-questions">here</a> to read the guide about the process of adding questions into Studii. When you're--}}
 {{--                    ready to submit your question, you can go to <a href="/teacher/question">ADD QUESTION</a> &rarr; <a href="/teacher/upload/with-help">UPLOAD WITH HELP</a> to upload your Microsoft Word (.docx) file.</strong>--}}
 {{--            </div>--}}
 {{--        </div>--}}

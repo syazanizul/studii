@@ -17,7 +17,7 @@
         </li>
         <li @yield('nav-user-details')>
             <a href="/teacher/details">
-                <p>User details</p>
+                <p>User profile</p>
             </a>
         </li>
         <li @yield('nav-submit-question')>
@@ -42,11 +42,11 @@
 {{--                </a>--}}
 {{--            </li>--}}
 {{--        @endif--}}
-{{--        <li @yield('nav-instruction')>--}}
-{{--            <a href="/teacher/instruction">--}}
-{{--                <p>Instruction</p>--}}
-{{--            </a>--}}
-{{--        </li>--}}
+        <li @yield('nav-read')>
+            <a href="/teacher/read">
+                <p>Read</p>
+            </a>
+        </li>
     </ul>
 @endsection
 

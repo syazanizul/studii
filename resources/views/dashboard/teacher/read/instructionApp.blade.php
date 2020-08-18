@@ -20,7 +20,7 @@ th, td {
     Teacher's Dashboard
 @endsection
 
-@section('nav-instruction')
+@section('nav-read')
     class="active"
 @endsection
 
@@ -30,7 +30,7 @@ th, td {
             @yield('headline')
         </div>
         <div class="col-lg-2">
-            <a class="btn btn-primary float-right" href="/teacher/instruction">Back</a>
+            <a class="btn btn-primary float-right" href="/teacher/read">Back</a>
         </div>
     </div>
     <div class="row">
@@ -38,9 +38,7 @@ th, td {
             <div class="card card-stats">
                 <div class="card-body pl-4">
                     @yield('contents')
-                    <div style="height:100px">
-
-                    </div>
+                    <div style="height:100px"></div>
                 </div>
             </div>
         </div>

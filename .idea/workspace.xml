@@ -2,32 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/BankDetails.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PromoController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/PromoTracking.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_08_15_133908_promo_tracking_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_08_16_041731_bank_details_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/admin/promo.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/assets/pricing.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/read/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/read/pricing.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/EarningTrackerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/EarningTrackerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/QuestionController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Teacher/DetailsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Teacher/DetailsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Teacher/TeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Teacher/TeacherController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Tutor/ContributeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Tutor/ContributeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Teacher/InstructionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Teacher/InstructionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Teacher.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Teacher.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_25_142304_contribution_earning_tracker.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_25_142304_contribution_earning_tracker.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/admin/adminApp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/admin/adminApp.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/admin/earning_tracker.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/admin/earning_tracker.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/add-question/addQuestion2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/add-question/addQuestion2.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/add-question/addWithHelp/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/add-question/addWithHelp/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/details.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/instruction/disclaimer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/read/disclaimer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/instruction/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/instruction/instructionApp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/read/instructionApp.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/instruction/uploadQuestion.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/read/uploadQuestion.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/promo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/promo.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/teacher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/teacher.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/teacherApp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/teacherApp.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboardApp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboardApp.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -130,26 +119,26 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/storage" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images/assets" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images\assets" />
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\public\storage" />
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images" />
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images\assets\teacher\instruction" />
+      <recent name="C:\Users\syazani\website\pictocat\public\css\introjs" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\syazani\Documents\GitHub\studii\app\Http\Controllers\Admin" />
       <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images\assets" />
       <recent name="C:\Users\syazani\Documents\GitHub\studii\resources\views\dashboard\tutor\contribute" />
       <recent name="C:\Users\syazani\Documents\GitHub\studii\resources\views\about" />
       <recent name="C:\Users\syazani\Documents\GitHub\studii\resources\views\dashboard\teacher\submissionStatus" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\syazani\Documents\GitHub\studii\public\storage" />
-      <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images\assets" />
-      <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images" />
-      <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images\assets\teacher\instruction" />
-      <recent name="C:\Users\syazani\website\pictocat\public\css\introjs" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.practice.blade.php">
@@ -702,7 +691,14 @@
       <workItem from="1597505037465" duration="2053000" />
       <workItem from="1597507730594" duration="3166000" />
       <workItem from="1597544071337" duration="8910000" />
-      <workItem from="1597556164772" duration="223000" />
+      <workItem from="1597556164772" duration="1006000" />
+      <workItem from="1597560689237" duration="1338000" />
+      <workItem from="1597588541859" duration="541000" />
+      <workItem from="1597680260965" duration="780000" />
+      <workItem from="1597730565669" duration="2029000" />
+      <workItem from="1597735720997" duration="443000" />
+      <workItem from="1597740872080" duration="2118000" />
+      <workItem from="1597744408290" duration="56000" />
     </task>
     <servers />
   </component>

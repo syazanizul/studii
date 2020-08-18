@@ -1,7 +1,7 @@
 @extends('dashboard.teacher.teacherApp')
 
 @section('dashboard-name')
-    teacher's dashboard
+    30 questions = RM50 promo
 @endsection
 
 @section('link-in-head')

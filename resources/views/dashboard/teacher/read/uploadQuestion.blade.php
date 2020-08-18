@@ -1,4 +1,4 @@
-@extends('dashboard.teacher.instruction.instructionApp')
+@extends('dashboard.teacher.read.instructionApp')
 
 @section('headline')
     <h1>Process to add questions into Studii</h1>
@@ -20,7 +20,7 @@
         <br>
         <p><u>1) From brain to a piece of paper</u></p>
         <p>Draft the question and think about how to get the answer. Recheck multiple times to make sure the question and its answer are correct.</p>
-        <img class="ml-auto mr-auto d-block" src="{{asset('images/assets/teacher/instruction/sample-written-question-1.jpg')}}" width="80%" style="border:2px solid black">
+        <img class="ml-auto mr-auto d-block" src="{{asset('images/assets/teacher/read/sample-written-question-1.jpg')}}" width="80%" style="border:2px solid black">
         <p class="text-center">Example : A question drafted on a paper</p>
         <br>
         <br><br>
@@ -39,13 +39,13 @@
             <li>The possible answers <b>(optional)</b></li>
             <li>The answers</li>
         </ul>
-        <img class="ml-auto mr-auto d-block" src="{{asset('images/assets/teacher/instruction/sample-question-1.PNG')}}" width="80%" style="border:2px solid grey">
+        <img class="ml-auto mr-auto d-block" src="{{asset('images/assets/teacher/read/sample-question-1.PNG')}}" width="80%" style="border:2px solid grey">
         <p class="text-center">Example 1 : Question written in Microsoft Words containing all important informations.</p>
         <br>
-        <img class="ml-auto mr-auto d-block" src="{{asset('images/assets/teacher/instruction/sample-question-2.PNG')}}" width="80%" style="border:2px solid grey">
+        <img class="ml-auto mr-auto d-block" src="{{asset('images/assets/teacher/read/sample-question-2.PNG')}}" width="80%" style="border:2px solid grey">
         <p class="text-center">Example 2 : Many questions with the same information.</p>
         <br>
-        <img class="ml-auto mr-auto d-block" src="{{asset('images/assets/teacher/instruction/sample-question-3.PNG')}}" width="80%" style="border:2px solid grey">
+        <img class="ml-auto mr-auto d-block" src="{{asset('images/assets/teacher/read/sample-question-3.PNG')}}" width="80%" style="border:2px solid grey">
         <p class="text-center">Example 3 : Question with possible answers (in this case, 3 possible answers). This is best because uploader does not need to come up with their possible answers
         themselves, but instead just copy and paste from the creator.</p>
 
@@ -81,15 +81,15 @@
         <br><br>
         <p>There are 3 steps to upload questions. Add property, add content, and add answer.</p>
         <p><u>1) Add Property</u></p>
-        <img class="ml-auto mr-auto d-block" src="{{asset('images/assets/teacher/instruction/add-property.PNG')}}" width="60%" style="border:2px solid grey">
+        <img class="ml-auto mr-auto d-block" src="{{asset('images/assets/teacher/read/add-property.PNG')}}" width="60%" style="border:2px solid grey">
         <p class="text-center">Step 1: Tell us the information of the question</p>
 
         <p><u>2) Add Content</u></p>
-        <img class="ml-auto mr-auto d-block" src="{{asset('images/assets/teacher/instruction/add-content.PNG')}}" width="80%" style="border:2px solid grey">
+        <img class="ml-auto mr-auto d-block" src="{{asset('images/assets/teacher/read/add-content.PNG')}}" width="80%" style="border:2px solid grey">
         <p class="text-center">Step 2: The content of the question (the question itself)</p>
 
         <p><u>3) Add Answer</u></p>
-        <img class="ml-auto mr-auto d-block" src="{{asset('images/assets/teacher/instruction/add-answer.PNG')}}" width="90%" style="border:2px solid grey">
+        <img class="ml-auto mr-auto d-block" src="{{asset('images/assets/teacher/read/add-answer.PNG')}}" width="90%" style="border:2px solid grey">
         <p class="text-center">Step 3: Add the possible answer and tell us which answer is correct (Green is correct, Red is wrong).</p>
 
         <br>

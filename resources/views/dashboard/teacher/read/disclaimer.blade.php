@@ -1,11 +1,11 @@
-@extends('dashboard.teacher.instruction.instructionApp')
+@extends('dashboard.teacher.read.instructionApp')
 
 @section('headline')
-    <h1>Disclaimer - Add Question</h1>
+    <p style="font-size:2.4em; font-family: 'rubik', sans-serif;">How Studii calculates your earnings?</p>
 @endsection
 
 @section('contents')
-    <div class="row">
+    <div class="row" style="font-family: 'rubik', sans-serif;">
 {{--        <div class="col-lg-12">--}}
 {{--            <p><b>Disclaimer</b></p>--}}
 {{--            <p>Studii gives compensation to the contributors (the teachers) everytime their contributions (exercise questions) are attempted.</p>--}}

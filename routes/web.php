@@ -66,9 +66,10 @@ Route::post('/teacher/submission-status/verify/set-parent/{id}', 'Teacher\Submis
 Route::get('/teacher/promo', 'Teacher\PromoController@index')->middleware('teacher');
 Route::post('/teacher/promo/bank-details', 'Teacher\PromoController@bank')->middleware('teacher');
 
-//Route::get('/teacher/instruction', 'Teacher\InstructionController@index')->middleware('teacher');
-//Route::get('/teacher/instruction/process-upload-questions', 'Teacher\InstructionController@process_upload_questions')->middleware('teacher');
-//Route::get('/teacher/instruction/disclaimer', 'Teacher\InstructionController@disclaimer')->middleware('teacher');
+Route::get('/teacher/read', 'Teacher\InstructionController@index')->middleware('teacher');
+Route::get('/teacher/read/pricing', function () { return view('dashboard.teacher.read.pricing');})->middleware('teacher');
+//Route::get('/teacher/read/process-upload-questions', 'Teacher\InstructionController@process_upload_questions')->middleware('teacher');
+//Route::get('/teacher/read/disclaimer', 'Teacher\InstructionController@disclaimer')->middleware('teacher');
 
 //Route::get('/teacher/upload/with-help','Teacher\AddquestionController@index_with_help')->middleware('teacher');;
 //Route::get('/teacher/upload/with-help-2','Teacher\AddquestionController@index_with_help_2')->middleware('teacher');;

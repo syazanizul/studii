@@ -28,7 +28,7 @@
                         <p>If you write your questions using Google Docs, you must download that file as Microsoft Words, and then submit that Microsoft Words
                             file here. (Go to <b>File</b> -> <b>Download</b> -> <b>Microsoft Docs</b> )</p>
                         <p>Here you can see a sample.</p>
-                        <img class="ml-auto mr-auto d-block" src="{{asset('images/assets/teacher/instruction/sample-question-2.PNG')}}" width="50%" style="border:2px solid grey">
+                        <img class="ml-auto mr-auto d-block" src="{{asset('images/assets/teacher/read/sample-question-2.PNG')}}" width="50%" style="border:2px solid grey">
                         <p class="text-center">Example: A snippet of Microsoft Words containing questions.</p>
                     </div>
                 </div>

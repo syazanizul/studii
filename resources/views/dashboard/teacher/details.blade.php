@@ -1,7 +1,7 @@
 @extends('dashboard.teacher.teacherApp')
 
 @section('dashboard-name')
-    User Details
+    User Profile
 @endsection
 
 @section('nav-user-details')

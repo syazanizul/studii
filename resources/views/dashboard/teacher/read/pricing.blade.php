@@ -1,5 +1,9 @@
 @extends('dashboard.teacher.read.instructionApp')
 
+@section('dashboard-name')
+    Read &#8594; Compensation Mechanism
+@endsection
+
 @section('headline')
     <p style="font-size:2.4em; font-family: 'rubik', sans-serif;">How Studii calculates your earnings?</p>
 @endsection

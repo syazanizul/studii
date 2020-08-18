@@ -17,7 +17,7 @@ th, td {
 @endsection
 
 @section('dashboard-name')
-    Teacher's Dashboard
+    @yield('dashboard-name')
 @endsection
 
 @section('nav-read')

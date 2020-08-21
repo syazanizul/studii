@@ -84,7 +84,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h1 class="headline" style="text-align:center">1 attempt = 0.2 cent !</h1>
+                    <h1 class="headline" style="text-align:center">1 attempt = 1 cent !</h1>
                 </div>
             </div>
         </div>

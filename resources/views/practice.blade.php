@@ -70,10 +70,10 @@
         background-color: white;
     }
 
-    #accordion1 div div {
-        width:45%;
-        display: inline-block;
-    }
+    /*#accordion1 div div {*/
+    /*    width:45%;*/
+    /*    display: inline-block;*/
+    /*}*/
 
     #right-panel {
         background-color: #442727;
@@ -282,28 +282,29 @@
                         <div class="collapse multi-collapse" id="accordion1">
                             <div class="card-body">
                                 <p>Question Properties:</p>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <ul>
+                                            <li>Exam : SPM</li>
+                                            <li>Level : {{ucwords(strtolower($question -> level_name -> name))}}</li>
+                                            <li>Subject : {{ucwords(strtolower($question -> subject_name -> name))}}</li>
+                                            <li>Chapter : {{ucwords(strtolower($question -> chapter_name -> name))}}</li>
+                                            <li>Year : {{ucwords(strtolower($question -> year))}}</li>
+                                            <li>Paper {{ucwords(strtolower($question -> paper))}}</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <ul>
+                                            <li>Question ID : {{$question ->  id}}</li>
+                                            <li>Source : {{ucwords(strtolower($question -> source_name -> name))}}</li>
+                                            {{--                                        <li>Question No : {{$question -> question_number}}</li>--}}
+                                            <li>Difficulty : {{$question -> difficulty_name()}}</li>
 
-                                <div>
-                                    <ul>
-                                        <li>Exam : SPM</li>
-                                        <li>Level : {{ucwords(strtolower($question -> level_name -> name))}}</li>
-                                        <li>Subject : {{ucwords(strtolower($question -> subject_name -> name))}}</li>
-                                        <li>Chapter : {{ucwords(strtolower($question -> chapter_name -> name))}}</li>
-                                        <li>Year : {{ucwords(strtolower($question -> year))}}</li>
-                                        <li>Paper {{ucwords(strtolower($question -> paper))}}</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <ul>
-                                        <li>Question ID : {{$question ->  id}}</li>
-                                        <li>Source : {{ucwords(strtolower($question -> source_name -> name))}}</li>
-{{--                                        <li>Question No : {{$question -> question_number}}</li>--}}
-                                        <li>Difficulty : {{$question -> difficulty_name()}}</li>
-
-                                        <li style="text-transform: capitalize">Creator : {{ucwords(strtolower($question->creator_info->firstname))}} {{ucwords(strtolower($question->creator_info->lastname))}}</li>
-{{--                                        <li style="text-transform: capitalize">Submitted By (2) : @if(isset($question -> submitter2)){{$question->question_allocation->uploader_user->firstname}} {{$question->question_allocation->uploader_user->lastname}} @else    - @endif</li>--}}
-                                        <li style="text-transform: capitalize">Uploader : {{ucwords(strtolower($question->uploader_info->firstname))}} {{ucwords(strtolower($question->uploader_info->lastname))}}</li>
-                                    </ul>
+                                            <li style="text-transform: capitalize">Creator : {{ucwords(strtolower($question->creator_info->firstname))}} {{ucwords(strtolower($question->creator_info->lastname))}}</li>
+                                            {{--                                        <li style="text-transform: capitalize">Submitted By (2) : @if(isset($question -> submitter2)){{$question->question_allocation->uploader_user->firstname}} {{$question->question_allocation->uploader_user->lastname}} @else    - @endif</li>--}}
+                                            <li style="text-transform: capitalize">Uploader : {{ucwords(strtolower($question->uploader_info->firstname))}} {{ucwords(strtolower($question->uploader_info->lastname))}}</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>

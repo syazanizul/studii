@@ -27,12 +27,12 @@
                         </thead>
                         <tbody>
                         @foreach($users as $m)
+                            <tr>
+                                <td>{{$m->id}}</td>
+                                <td>{{$m->full_name()}}</td>
+                                <td><a class="btn btn-primary" href="/admin/user/{{$m->id}}">See</a></td>
+                            </tr>
                         @endforeach
-                        <tr>
-                            <td>{{$m->id}}</td>
-                            <td>{{$m->full_name()}}</td>
-                            <td><a class="btn btn-primary" href="/admin/user/{{$m->id}}">See</a></td>
-                        </tr>
                         </tbody>
                     </table>
                 </div>

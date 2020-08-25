@@ -137,6 +137,7 @@ Route::get('/admin/falsify-data/delete', 'Admin\FalsifyDataController@delete')->
 Route::get('/admin/feedback', 'Admin\FeedbackController@index')->middleware('admin');
 
 Route::get('/admin/user', 'Admin\UserController@index')->middleware('admin');
+Route::get('/admin/user/{id}', 'Admin\UserController@see')->middleware('admin');
 
 Route::get('/admin/record-new-earning', 'Admin\RecordNewEarningController@index')->middleware('admin');
 

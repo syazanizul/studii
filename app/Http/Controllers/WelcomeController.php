@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Session;
 
 class WelcomeController extends Controller
 {
-    public function index()   {
+    public function index(Request $request)   {
         SEOMeta::setTitle('Study SPM Subjects For Free');
         SEOMeta::setDescription('Study and practice exercise questions for free | Add Math, Physics - SPM | A Malaysian-made study platform');
         SEOMeta::setCanonical('https://www.studii.my');
@@ -23,6 +23,18 @@ class WelcomeController extends Controller
 
         $noti['feedback_form'] = session('feedback');
 
-        return view('welcome', compact('property' , 'noti'));
+        // === For first impression modal
+     
+        if ($request->hasCookie('first_impression_modal')) {
+
+            // hide modal
+            $first_impression_modal = 0;
+        }   else    {
+
+            // show modal
+            $first_impression_modal = 1;
+        }
+
+        return view('welcome', compact('property' , 'noti', 'first_impression_modal'));
     }
 }

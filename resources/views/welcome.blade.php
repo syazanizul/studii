@@ -255,8 +255,9 @@
                 <div class="col-lg-5">
                     <div class="text-center mt-5">
                         <p class="headline-2">Studii is in <span class="font-weight-bold">testing & improve</span> stage</p>
-                        <a class="btn btn-lg btn-primary btn-block m-3">Read How Studii Started</a>
-                        <p>Links under development</p>
+{{--                        <a class="btn btn-lg btn-primary btn-block m-3">Read How Studii Started</a>--}}
+{{--                        <p>Links under development</p>--}}
+                        <p class="headline-3">That means all of the basic features are ready. More features are added every now and then.</p>
                     </div>
                 </div>
             </div>
@@ -292,9 +293,7 @@
 
                             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                                 <div class="card-body">
-                                    <p>We hate it when people lie to us too. So when we say Studii is free, its really free.
-                                        <br>In fact, it is a part of our biggest mission, which is to make practice abundant and free, as we think
-                                        that could be so useful for students.</p>
+                                    <p>We hate it when people lie to us too. So when we say Studii is free, its really free. 100%.</p>
                                 </div>
                             </div>
                         </div>
@@ -311,9 +310,8 @@
                                 <div class="card-body">
                                     <p>Everytime you attempt a question here, we will pay the contributors of that question. So how
                                     do we pay them if we provide this service for free?</p>
-                                    <p>The answer is <b>advertising</b>. We don't like students to pay for your practice, so we let the advertisers to pay them for you.</p>
-                                    <p>If you really don't like to see ads when you're practicing, then you will be able to subscribe to <span class="font-weight-bold">Studii Smarter</span>
-                                        to lose those ads. <span class="font-weight-bold">Studii Smarter</span> coming very soon.</p>
+                                    <p>The answer is <b>advertising</b>. We don't like you the students to pay for your practice, so we let the advertisers to pay them for you.</p>
+                                    <p>But if you really don't like to see ads when you're practicing, no worries. Our subscription plan will allow you to do that, coming very soon.</p>
                                 </div>
                             </div>
                         </div>
@@ -330,7 +328,6 @@
                                 <div class="card-body">
                                     <p>The questions come from any school teachers who wish to contribute. The teachers can submit their questions, in which
                                     then will be verified by us, before we serve them for students.</p>
-                                    <p>This way, more teachers can contribute verified contents to the library.</p>
                                 </div>
                             </div>
                         </div>
@@ -345,8 +342,7 @@
 
                             <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
                                 <div class="card-body">
-                                    <p>Besides the opportunity to help countless students in their study, teachers will get compensated for every attempt. </p>
-                                    <p>This royalty compensation is to honour the contributor's contribution towards the library.</p>
+                                    <p>Besides the opportunity to help countless students in their study, teachers will get compensated for every attempt. This royalty compensation is to honour the contributor's contribution towards the library.</p>
                                 </div>
                             </div>
                         </div>
@@ -367,23 +363,23 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card">
-                            <div class="card-header" id="headingSix">
-                                <a class="btn btn-link" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
-                                    <p class="mb-0">
-                                        <span class="font-weight-bold">How do I know this website is legit (not a scam) ?</span>
-                                    </p>
-                                </a>
-                            </div>
+{{--                        <div class="card">--}}
+{{--                            <div class="card-header" id="headingSix">--}}
+{{--                                <a class="btn btn-link" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">--}}
+{{--                                    <p class="mb-0">--}}
+{{--                                        <span class="font-weight-bold">How do I know this website is legit (not a scam) ?</span>--}}
+{{--                                    </p>--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
 
-                            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
-                                <div class="card-body">
-                                    <p>Yes we understand, this website is only developing so it may look sort of fishy. But you can always talk to
-                                        Syazani Zulkhairi (the captain) at 019-209 9853 to ask about anything. Ask any of your doubts and I will try my best to solve it.</p>
-                                    <p>Besides, this website is totally free, all features. Scam websites usually will ask for your money :) . Here we just want you to use the free practice!</p>
-                                </div>
-                            </div>
-                        </div>
+{{--                            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">--}}
+{{--                                <div class="card-body">--}}
+{{--                                    <p>Yes we understand, this website is only developing so it may look sort of fishy. But you can always talk to--}}
+{{--                                        Syazani Zulkhairi (the captain) at 019-209 9853 to ask about anything. Ask any of your doubts and I will try my best to solve it.</p>--}}
+{{--                                    <p>Besides, this website is totally free, all features. Scam websites usually will ask for your money :) . Here we just want you to use the free practice!</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>
@@ -444,10 +440,32 @@
 
 @section('modal')
 
+    @if($first_impression_modal == 1)
+        <div id="myModal" class="modal fade mt-4" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <img src="\images\assets\poster-welcome.png" class="w-100">
+                    </div>
+                    <div class="modal-footer">
+                        <button onclick="hide_first_impression_modal()" class="btn btn-primary mx-auto d-block" data-dismiss="modal">Okay</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    @endif
+
 @endsection
 
 <script>
     @section('script')
+    $(window).on('load',function(){
+        $('#myModal').modal('show');
+    });
+
     //-----------------------------------------------------------
     //For all the ajax
     let input;
@@ -556,13 +574,26 @@
             },
             success: function (response) {
                 document.getElementById('text_count').innerHTML = 'Number of questions that specify your search : <b>' + response + '</b>';
+                document.getElementById('button_detail').disabled = response === '0';
 
-                if (response === '0') {
-                    document.getElementById('button_detail').disabled = true;
-                }   else {
-                    document.getElementById('button_detail').disabled = false;
-                }
+                // if (response === '0') {
+                //     document.getElementById('button_detail').disabled = true;
+                // }   else {
+                //     document.getElementById('button_detail').disabled = false;
+                // }
             }
+        });
+    }
+
+
+    function hide_first_impression_modal() {
+        //Ajax to update session that no read is needed
+        $.ajax({
+            type: 'get',
+            url: '/ajax/welcome/hide-modal',
+            success: function (response) {
+                return 1;
+            },
         });
     }
 

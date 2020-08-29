@@ -430,6 +430,12 @@
                                 (adsbygoogle = window.adsbygoogle || []).push({});
                             </script>
                         </div>
+                        @else
+                        <div id="ad-space" class="m-1 p-4 mb-4">
+                            <hr>
+                            <p class="text-right font-weight-bold mb-0">Ads</p>
+                            <img src="/storage/ad_images/{{$ads->name}}?rand={{rand(0,1000)}}" alt="studii-{{$ads->name}}" class="w-100">
+                        </div>
                         @endif
                     </div>
                 </div>
@@ -719,7 +725,7 @@
         "Cool",
         "Gempak",
         "Power",
-        "First blood",
+        "First blood"
     ];
 
     let alertify_wrong = [
@@ -731,7 +737,8 @@
         'Even the Avengers got beaten the first round',
         "At least you're improving",
         "Better to make mistakes now rather than during the exam",
-        "Slowly..."
+        "Slowly...",
+        'Lek saja'
     ];
 
     let answer = [];

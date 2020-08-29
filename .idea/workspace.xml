@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/storage/ad_images/bulb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/storage/ad_images/selective.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/storage/ad_images/thank-you-internet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/storage/ad_images/this-is-free.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/read/instructionApp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/read/instructionApp.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/read/pricing.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/read/pricing.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/practice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/practice.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,19 +112,21 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images/assets" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/storage/ad_images" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\public\storage\ad_images" />
       <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images\assets" />
       <recent name="C:\Users\syazani\Documents\GitHub\studii\public\storage" />
       <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images" />
       <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images\assets\teacher\instruction" />
-      <recent name="C:\Users\syazani\website\pictocat\public\css\introjs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\syazani\Documents\GitHub\studii\app\Http\Controllers\Admin" />
@@ -686,7 +693,24 @@
       <workItem from="1597730565669" duration="2029000" />
       <workItem from="1597735720997" duration="443000" />
       <workItem from="1597740872080" duration="2118000" />
-      <workItem from="1597744408290" duration="443000" />
+      <workItem from="1597744408290" duration="684000" />
+      <workItem from="1597745895062" duration="571000" />
+      <workItem from="1597841681236" duration="11000" />
+      <workItem from="1598048948113" duration="618000" />
+      <workItem from="1598049674968" duration="759000" />
+      <workItem from="1598332852572" duration="1248000" />
+      <workItem from="1598335794385" duration="1096000" />
+      <workItem from="1598340593832" duration="10000" />
+      <workItem from="1598344569073" duration="1547000" />
+      <workItem from="1598347437554" duration="1236000" />
+      <workItem from="1598352076967" duration="3818000" />
+      <workItem from="1598365207791" duration="661000" />
+      <workItem from="1598411671637" duration="210000" />
+      <workItem from="1598414784501" duration="620000" />
+      <workItem from="1598486105895" duration="1448000" />
+      <workItem from="1598619959403" duration="32000" />
+      <workItem from="1598620045092" duration="573000" />
+      <workItem from="1598622560177" duration="89000" />
     </task>
     <servers />
   </component>
@@ -721,18 +745,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="449" y="143" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1596431814605" />
-    <state x="523" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1589082192373">
+    <state x="417" y="208" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598353048320">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="523" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1589082192373" />
-    <state x="417" y="208" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1597548259526">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="417" y="208" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1597548259526" />
+    <state x="417" y="208" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1598353048320" />
     <state x="484" y="97" key="#dev" timestamp="1593494280128">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="484" y="97" key="#dev/0.0.1536.824@0.0.1536.824" timestamp="1593494280128" />
+    <state x="515" y="256" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1598352165933">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="515" y="256" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1598352165933" />
     <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1593494325543">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -741,10 +765,6 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1597497972678" />
-    <state x="549" y="170" key="FileChooserDialogImpl" timestamp="1589012929570">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="549" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589012929570" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1597545164512">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -757,24 +777,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="477" y="239" width="582" height="310" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1590377492633" />
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1597465326282">
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1598352204061">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1597465326282" />
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1598352204061" />
     <state x="683" y="86" width="672" height="160" key="search.everywhere.popup" timestamp="1597497145570">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="683" y="86" width="672" height="160" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1597497145570" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/practice.blade.php</url>
-          <line>435</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

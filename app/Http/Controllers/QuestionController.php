@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Ads;
 use App\Answer;
 use App\Content;
 use App\Mail\event;
@@ -170,19 +171,23 @@ class QuestionController extends Controller
         //Put session to track if student needs pop up modal for instructions
 
 
-        if ($question -> source_name -> id != 2)   {
-            $check = DB::table('teacher_details') -> where('user_teacher_id', $question -> submitted_by1) ->get();
+//        if ($question -> source_name -> id != 2)   {
+//            $check = DB::table('teacher_details') -> where('user_teacher_id', $question -> submitted_by1) ->get();
+//
+//            if ($check -> isNotEmpty()) {
+//                $profile_pic = $check->first()->profile_pic;
+//
+//               $data['profile_pic'] = $profile_pic;
+//
+//            }   else    {
+//                $data['profile_pic'] = 0;
+//            }
+//        }
 
-            if ($check -> isNotEmpty()) {
-                $profile_pic = $check->first()->profile_pic;
+        // -----------------------------------------------------------------------
+        // For Ads
 
-               $data['profile_pic'] = $profile_pic;
-
-            }   else    {
-                $data['profile_pic'] = 0;
-            }
-        }
-
+        $ads = Ads::inRandomOrder()->first();
 
         //-------------------------------------------------------------------------
         // Gather all the shits together
@@ -192,7 +197,7 @@ class QuestionController extends Controller
         $data['answer_size'] = $answer_size;
         $data['answer_correct'] = $answer_correct;
 
-        return view('practice' , compact('question','data', 'noti' ));
+        return view('practice' , compact('question','data', 'noti', 'ads'));
     }
 
 

@@ -34,7 +34,7 @@ class FalsifyDataController extends Controller
 
                     if($antitrust == null)    {
 
-                        $question = Question::where('creator_id', $n->id)->where('verified', 1)->get();
+                        $question = Question::where('creator', $n->id)->where('verified', 1)->get();
 
                         foreach($question as $h)   {
                             $number_of_times = rand($min, $max);
@@ -62,7 +62,7 @@ class FalsifyDataController extends Controller
 
                         $random_number = rand(0, 10);
 
-                        $question = Question::where('creator_id', $n->id)->where('verified', 1)->get();
+                        $question = Question::where('creator', $n->id)->where('verified', 1)->get();
 
                         foreach($question as $h)   {
 

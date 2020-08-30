@@ -56,6 +56,44 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-5">
+                <div class="card card-stats">
+                    <div class="card-body">
+                        <p>Not Trusted User</p>
+                        <table class="table mx-4">
+                            <thead class="text-primary">
+                                <th>Name</th>
+                                <th>AntiTrust Level</th>
+                                <th>Action</th>
+                            </thead>
+                            <tbody>
+                                @foreach($specified_user_falsify_data as $m)
+                                    <tr>
+                                        <td>{{$m->user->full_name()}}</td>
+                                        <td>{{$m->antitrust_level}}</td>
+                                        <td></td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                        <hr>
+                        <div>
+                            <p>Add New</p>
+                            <form action="/admin/falsify-data/add-antitrust">
+                                <div>
+                                    <label for="user_id">User ID</label>
+                                    <input type="number" name="user_id" class="form-control">
+                                </div>
+                                <div>
+                                    <label for="level">Level</label>
+                                    <input type="number" name="level" min="0" max="10" class="form-control">
+                                </div>
+                                <input type="submit" value="Submit" class="btn ">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         @endif
     </div>
 @endsection

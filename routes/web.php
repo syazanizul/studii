@@ -133,6 +133,7 @@ Route::get('/admin/price-manipulator', 'Admin\PriceManipulatorController@index')
 
 Route::get('/admin/falsify-data', 'Admin\FalsifyDataController@index')->middleware('admin');
 Route::get('/admin/falsify-data/delete', 'Admin\FalsifyDataController@delete')->middleware('admin');
+Route::get('/admin/falsify-data/add-antitrust', 'Admin\FalsifyDataController@add_antitrust')->middleware('admin');
 
 Route::get('/admin/feedback', 'Admin\FeedbackController@index')->middleware('admin');
 

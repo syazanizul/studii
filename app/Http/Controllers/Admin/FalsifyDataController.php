@@ -59,7 +59,6 @@ class FalsifyDataController extends Controller
                     }   else    {
 
                         $antitrust_level = $antitrust->antitrust_level;
-                        dd($antitrust_level);
 
                         $random_number = rand(0, 10);
 
@@ -67,7 +66,7 @@ class FalsifyDataController extends Controller
 
                         foreach($question as $h)   {
 
-                            if($random_number > $antitrust)    {
+                            if($random_number > (int)$antitrust)    {
                                 $number_of_times = rand($min, $max);
 
                                 for($i=0; $i<$number_of_times; $i++)   {

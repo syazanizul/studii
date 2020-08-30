@@ -60,13 +60,12 @@ class FalsifyDataController extends Controller
 
                         $antitrust_level = $antitrust->antitrust_level;
 
-                        $random_number = rand(0, 10);
-
                         $question = Question::where('creator', $n->id)->where('verified', 1)->get();
 
                         foreach($question as $h)   {
+                            $random_number = rand(0, 10);
 
-                            if($random_number > (int)$antitrust)    {
+                            if($random_number > $antitrust_level)    {
                                 $number_of_times = rand($min, $max);
 
                                 for($i=0; $i<$number_of_times; $i++)   {

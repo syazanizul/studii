@@ -43,11 +43,11 @@ class FalsifyDataController extends Controller
                                 $correct = rand(0,1);
 
                                 $k = new Attempt();
-                                $k->question_id = $n->id;
-                                $k->creator = $n->creator;
-                                $k->uploader = $n->uploader;
-                                if($n->working != null)    {
-                                    $k->working = $n->working;
+                                $k->question_id = $h->id;
+                                $k->creator = $h->creator;
+                                $k->uploader = $h->uploader;
+                                if($h->working != null)    {
+                                    $k->working = $h->working;
                                 }
                                 $k->correct = $correct;
                                 $k->falsified = 1;
@@ -73,11 +73,11 @@ class FalsifyDataController extends Controller
                                     $correct = rand(0,1);
 
                                     $k = new Attempt();
-                                    $k->question_id = $n->id;
-                                    $k->creator = $n->creator;
-                                    $k->uploader = $n->uploader;
-                                    if($n->working != null)    {
-                                        $k->working = $n->working;
+                                    $k->question_id = $h->id;
+                                    $k->creator = $h->creator;
+                                    $k->uploader = $h->uploader;
+                                    if($h->working != null)    {
+                                        $k->working = $h->working;
                                     }
                                     $k->correct = $correct;
                                     $k->falsified = 1;

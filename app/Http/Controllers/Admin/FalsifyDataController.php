@@ -59,6 +59,7 @@ class FalsifyDataController extends Controller
                     }   else    {
 
                         $antitrust_level = $antitrust->antitrust_level;
+                        dd($antitrust_level);
 
                         $random_number = rand(0, 10);
 

@@ -319,11 +319,10 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    This is your very own dashboard, where everything you need is ready at your fingertips. Do you need help with the navigation?
+                    <img src="{{asset("/images/assets/teacher/teacher_instruction.png")}}" alt="studii-teacher-instruction" class="w-100">
                 </div>
                 <div class="modal-footer">
-                    <a  href="javascript:void(0);" onclick="show_instruction(); notification(1)" class="btn btn-primary" data-dismiss="modal">Yes help me please</a>
-                    <button type="button" onclick="notification(1)" class="btn btn-secondary" data-dismiss="modal">Its okay</button>
+                    <button type="button" onclick="notification(1)" class="btn btn-secondary" data-dismiss="modal">Okay Noted</button>
                 </div>
             </div>
         </div>

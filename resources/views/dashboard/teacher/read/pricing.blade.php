@@ -85,10 +85,13 @@
             <ol>
                 <li><p style="margin:auto 1em">The price per attempt will be fully decided by Studii.</p></li>
                 <br>
+                <li><p style="margin:auto 1em">All submission will be owned by the submitters (not Studii). However, every submitted questions must be present in the platform for at least 1 year after they are contributed.</p></li>
+                <br>
                 <li><p style="margin:auto 1em">Studii has the right to put a max cap or limit on the compensation for contributors.</p></li>
                 <br>
                 <ul>
                     <li><p>This may happens if we find we are incapable of providing the compensation with more attempts.</p></li>
+                    <li><p>Current max cap = <span class="font-weight-bold">RM25</span>.</p></li>
                     <li><p>If this happens, we will contact you personally. You will then decide to whether:</p></li>
                     <ul>
                         <li><p>Allow us to continue to serve the questions to students without the promise of compensation.</p></li>
@@ -96,7 +99,7 @@
                     </ul>
                 </ul>
                 <br>
-                <li><p style="margin:auto 1em">Ultimately, Studii can remove any content or contributors from this platform, if Studii decides it is the best for the growth of the platform. So, be kind :)</p></li>
+                <li><p style="margin:auto 1em">Ultimately, Studii cans remove any content or contributors from this platform, if Studii decides it is the best for the growth of the platform. So, be kind :)</p></li>
             </ol>
 
             <br><br><hr>

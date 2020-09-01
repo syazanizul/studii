@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/SpecifiedUserFalsifyData.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_08_30_111427_specified_user_falsify_data_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/assets/teacher/teacher_instruction.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/FalsifyDataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/FalsifyDataController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Teacher.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Teacher.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/admin/falsify_data.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/admin/falsify_data.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/read/pricing.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/read/pricing.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/teacher/teacher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/teacher/teacher.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +106,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images/assets" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images/assets/teacher" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -118,19 +115,19 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images\assets\teacher" />
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images\assets" />
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\public\storage\ad_images" />
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\public\storage" />
+      <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\syazani\Documents\GitHub\studii\app\Http\Controllers\Admin" />
       <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images\assets" />
       <recent name="C:\Users\syazani\Documents\GitHub\studii\resources\views\dashboard\tutor\contribute" />
       <recent name="C:\Users\syazani\Documents\GitHub\studii\resources\views\about" />
       <recent name="C:\Users\syazani\Documents\GitHub\studii\resources\views\dashboard\teacher\submissionStatus" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images\assets" />
-      <recent name="C:\Users\syazani\Documents\GitHub\studii\public\storage\ad_images" />
-      <recent name="C:\Users\syazani\Documents\GitHub\studii\public\storage" />
-      <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images" />
-      <recent name="C:\Users\syazani\Documents\GitHub\studii\public\images\assets\teacher\instruction" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.practice.blade.php">
@@ -712,7 +709,11 @@
       <workItem from="1598694583981" duration="1337000" />
       <workItem from="1598714055359" duration="579000" />
       <workItem from="1598783883459" duration="4381000" />
-      <workItem from="1598790040170" duration="167000" />
+      <workItem from="1598790040170" duration="309000" />
+      <workItem from="1598806521635" duration="116000" />
+      <workItem from="1598806677571" duration="641000" />
+      <workItem from="1598929474555" duration="9000" />
+      <workItem from="1598933279940" duration="1162000" />
     </task>
     <servers />
   </component>

@@ -75,8 +75,8 @@ class TeacherController extends Controller
 
         //--------------------------------------------------------------------
         // === temporary --- 30 questions = RM50 promo ------------------------------------------
-        $promo1 = PromoTracking::where('user_id', Auth::user()->id)->where('event' , 3)->first();
-        $promo2 = PromoTracking::where('user_id', Auth::user()->id)->where('event' , 4)->first();
+        $promo1 = PromoTracking::where('user_id', Auth::user()->id)->where('event' , 4)->first();
+        $promo2 = PromoTracking::where('user_id', Auth::user()->id)->where('event' , 5)->first();
 
         if ($promo1 != null && $promo2 == null)   {
 

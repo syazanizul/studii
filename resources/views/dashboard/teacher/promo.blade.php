@@ -23,10 +23,11 @@
                             <p>The process:</p>
                             <ol style="line-height: 1.8em;">
                                 <li @if($stage == 0) class="font-weight-bold"  @endif>Fill in your details in the user details column. @if($stage > 0) <span class="font-weight-bold" style="color:green">&#10003</span>  @endif</li>
-                                <li @if($stage == 1) class="font-weight-bold"  @endif>Upload your question set containing 30 questions. @if($stage > 1) <span class="font-weight-bold" style="color:green">&#10003</span>  @endif</li>
-                                <li @if($stage == 2) class="font-weight-bold"  @endif>Wait for us to verify your contribution. @if($stage > 2) <span class="font-weight-bold" style="color:green">&#10003</span>  @endif</li>
-                                <li @if($stage == 3) class="font-weight-bold"  @endif>Tell us your banking details. @if($stage > 3) <span class="font-weight-bold" style="color:green">&#10003</span>  @endif</li>
-                                <li @if($stage == 4) class="font-weight-bold"  @endif>The money is transferred. @if($stage > 4) <span class="font-weight-bold" style="color:green">&#10003</span>  @endif</li>
+                                <li @if($stage == 1) class="font-weight-bold"  @endif>Wait for us to verify your eligibility for this promo. @if($stage > 1) <span class="font-weight-bold" style="color:green">&#10003</span>  @endif</li>
+                                <li @if($stage == 2) class="font-weight-bold"  @endif>Upload your question set containing 30 questions. @if($stage > 2) <span class="font-weight-bold" style="color:green">&#10003</span>  @endif</li>
+                                <li @if($stage == 3) class="font-weight-bold"  @endif>Wait for us to verify your contribution. @if($stage > 3) <span class="font-weight-bold" style="color:green">&#10003</span>  @endif</li>
+                                <li @if($stage == 4) class="font-weight-bold"  @endif>Tell us your banking details. @if($stage > 4) <span class="font-weight-bold" style="color:green">&#10003</span>  @endif</li>
+                                <li @if($stage == 5) class="font-weight-bold"  @endif>The money is transferred. @if($stage > 5) <span class="font-weight-bold" style="color:green">&#10003</span>  @endif</li>
                             </ol>
                         </div>
                     </div>
@@ -35,7 +36,7 @@
             <div class="col-lg-3">
                 <div class="card">
                     <div class="card-body">
-                        @if($stage == 5)
+                        @if($stage == 6)
                             <p class="font-weight-bold text-center" style="font-size:2em; color:green">CLAIMED</p>
                         @else
                             <p class="font-weight-bold text-center" style="font-size:2em; color:red">not claimed yet</p>
@@ -44,7 +45,18 @@
                 </div>
             </div>
         </div>
-        @if($stage != 5)
+        @if($stage == 4)
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <p style="font-size:1.50em; font-family: 'Rubik', sans-serif;">Go to your dashboard <a href="/teacher">here</a> to fill in the banking details.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
+        @if($stage != 6)
         <div class="row">
             <div class="col-lg-11">
                 <div class="card">

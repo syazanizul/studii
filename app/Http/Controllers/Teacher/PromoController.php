@@ -27,7 +27,7 @@ class PromoController extends Controller
             $m -> account_number = $request->post('account_number');
             $m -> save();
 
-            PromoTracking::add_stage(Auth::user()->id, 4);
+            PromoTracking::add_stage(Auth::user()->id, 5);
         }
 
         return redirect()->back()->with('success', 'Your bank details is saved.');

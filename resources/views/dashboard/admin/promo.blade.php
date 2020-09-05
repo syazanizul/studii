@@ -39,21 +39,27 @@
                                             <form action="/admin/promo/stage" >
                                                 <input type="hidden" name="teacher_id" value="{{$m->id}}">
                                                 <input type="hidden" name="stage" value="2">
-                                                <input type="submit" value="Verify submitted 30 questions" class="btn btn-primary">
+                                                <input type="submit" value="Verify user is eligible" class="btn btn-primary">
                                             </form>
                                         @elseif (\App\PromoTracking::is_stage($m->id) == 2)
                                             <form action="/admin/promo/stage" >
                                                 <input type="hidden" name="teacher_id" value="{{$m->id}}">
                                                 <input type="hidden" name="stage" value="3">
-                                                <input type="submit" value="Verify 30 questions is correct" class="btn btn-primary">
+                                                <input type="submit" value="Verify submitted 30 questions" class="btn btn-primary">
                                             </form>
-                                        @elseif (\App\PromoTracking::is_stage($m->id) == 4)
+                                        @elseif (\App\PromoTracking::is_stage($m->id) == 3)
                                             <form action="/admin/promo/stage" >
                                                 <input type="hidden" name="teacher_id" value="{{$m->id}}">
-                                                <input type="hidden" name="stage" value="5">
-                                                <input type="submit" value="Transfer the money - done" class="btn btn-primary">
+                                                <input type="hidden" name="stage" value="4">
+                                                <input type="submit" value="Verify 30 questions is correct" class="btn btn-primary">
                                             </form>
                                         @elseif (\App\PromoTracking::is_stage($m->id) == 5)
+                                            <form action="/admin/promo/stage" >
+                                                <input type="hidden" name="teacher_id" value="{{$m->id}}">
+                                                <input type="hidden" name="stage" value="6">
+                                                <input type="submit" value="Transfer the money - done" class="btn btn-primary">
+                                            </form>
+                                        @elseif (\App\PromoTracking::is_stage($m->id) == 6)
                                             <p>Money transferred</p>
                                         @endif
 

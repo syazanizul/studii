@@ -16,7 +16,7 @@ class FalsifyDataController extends Controller
 {
     public function index(Request $request)
     {
-        $done_falsify = FalsifyData::whereDay('created_at', Carbon::today())->get();
+        $done_falsify = FalsifyData::whereMonth('created_at', Carbon::now()->month)->whereDay('created_at', Carbon::today())->get();
 
         $specified_user_falsify_data = SpecifiedUserFalsifyData::get();
 

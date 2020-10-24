@@ -27,7 +27,7 @@
         </li>
         <li @yield('nav-promo')>
             <a href="/teacher/promo">
-                <p>30 Questions = RM50</p>
+                <p>10 Questions = RM50</p>
             </a>
         </li>
 {{--        <li @yield('nav-submission-status')>--}}

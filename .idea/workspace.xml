@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="adfaec0e-010b-437c-adcd-e3c8e881f503" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/FalsifyDataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/FalsifyDataController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +103,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images/assets/teacher" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sec_ver_studii" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -719,7 +718,17 @@
       <workItem from="1599576078710" duration="1472000" />
       <workItem from="1599578702522" duration="708000" />
       <workItem from="1599585009847" duration="1000" />
-      <workItem from="1599616314281" duration="60000" />
+      <workItem from="1599616314281" duration="245000" />
+      <workItem from="1599920935850" duration="21000" />
+      <workItem from="1600053603846" duration="622000" />
+      <workItem from="1600116922951" duration="36000" />
+      <workItem from="1600117422118" duration="31000" />
+      <workItem from="1600123082807" duration="30000" />
+      <workItem from="1600148406311" duration="30000" />
+      <workItem from="1600148473001" duration="22000" />
+      <workItem from="1600180218957" duration="263000" />
+      <workItem from="1600180652262" duration="567000" />
+      <workItem from="1600512194325" duration="45000" />
     </task>
     <servers />
   </component>
@@ -774,6 +783,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1597497972678" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1600512229989">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600512229989" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1597545164512">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -782,10 +795,6 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="520" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1596534188788" />
-    <state x="477" y="239" width="582" height="310" key="com.intellij.ide.util.TipDialog" timestamp="1590377492633">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="477" y="239" width="582" height="310" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1590377492633" />
     <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1598352204061">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -18,7 +18,7 @@
             <div class="col-lg-8">
                 <div class="card">
                     <div class="card-body">
-                        <p style="font-size:2.3em">Promo <span class="font-weight-bold">30 questions = RM50</span>.</p>
+                        <p style="font-size:2.3em">Promo <span class="font-weight-bold">10 questions = RM50</span>.</p>
                         <div style="font-size:1.50em; font-family: 'Rubik', sans-serif;">
                             <p>The process:</p>
                             <ol style="line-height: 1.8em;">

@@ -74,17 +74,18 @@ class TeacherController extends Controller
         session(['need_nav_performance' => $need_nav_performance]);
 
         //--------------------------------------------------------------------
-        // === temporary --- 30 questions = RM50 promo ------------------------------------------
-        $promo1 = PromoTracking::where('user_id', Auth::user()->id)->where('event' , 4)->first();
-        $promo2 = PromoTracking::where('user_id', Auth::user()->id)->where('event' , 5)->first();
+        // === temporary --- 30 questions = RM50 promo ->  ------------------------------------------
+        // $promo1 = PromoTracking::where('user_id', Auth::user()->id)->where('event' , 4)->first();
+        // $promo2 = PromoTracking::where('user_id', Auth::user()->id)->where('event' , 5)->first();
 
-        if ($promo1 != null && $promo2 == null)   {
+        // if ($promo1 != null && $promo2 == null)   {
 
-            $data['promo'] = 1;
-        }   else    {
+        //     $data['promo'] = 1;
+        // }   else    {
 
-            $data['promo'] = 0;
-        }
+        //     $data['promo'] = 0;
+        // }
+        $data['promo'] = 0;
 
         return view('dashboard.teacher.teacher', compact('notification','data'));
     }
